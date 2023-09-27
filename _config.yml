@@ -109,9 +109,6 @@ author:
   location: "Paris, France"
   email: clementwang.pro@gmail.com
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:clementwang.pro@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://clementw168.github.io/"
@@ -124,6 +121,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/clementw168"
+    - label: "Linkedin"
+      icon: "fab fa-linkedin-in"
+      url: https://www.linkedin.com/in/clem-wang/
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/clement_wang_/"
@@ -143,6 +143,9 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/clementw168"
+    - label: "Linkedin"
+      icon: "fab fa-linkedin-in"
+      url: https://www.linkedin.com/in/clem-wang/
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
