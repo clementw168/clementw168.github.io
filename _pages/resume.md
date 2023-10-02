@@ -7,7 +7,6 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
 Please find attached a .pdf version of my
 [resume](http://clementw168.github.io/files/resume_clement_wang_v3_20230918.pdf)
 
