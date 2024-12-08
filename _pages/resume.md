@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 Please find attached a .pdf version of my
-[resume](http://clementw168.github.io/files/resume_clement_wang_v3_20230918.pdf)
+[resume](http://clementw168.github.io/files/resumes/resume_clement_wang_v3_20230918.pdf)
 
 Education
 ======
