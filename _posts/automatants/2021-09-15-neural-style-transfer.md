@@ -1,164 +1,123 @@
 ---
 layout:     post
-title:      "Perceptual Loss: Neural Style Transfer"
-subtitle:   "From Vanilla NST to Real-Time Style Transfer with Perceptual Loss"
-date:       2021-01-15 12:00:00
+title:      "Neural Style Transfer and Perceptual Loss"
+subtitle:   "From Vanilla NST to Real-Time Style Transfer"
+date:       2021-09-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/pages/home-bg.jpg"
+header-img: "/img/posts/automatants/nst-bg.png"
 catalog: true
 published: true
+mathjax: true
 tags:
     - Neural Style Transfer
     - Perceptual Loss
     - Computer Vision
-    - VGG
-    - Fast NST
-    - Real-Time Processing
+    - TensorFlow
     - OpenCV
+    - Deep Learning
 ---
 
-> "After GANs, I got hooked on perceptual losses. Implementing both vanilla and fast neural style transfer with real-time camera processing."
+## Introduction
 
-## Project Overview
+Neural Style Transfer (NST) is a fascinating application of computer vision. The ability to separate and recombine the content and style of images using perceptual loss opens new possibilities for how we can use neural networks. This project explored both the original NST algorithm and real-time style transfer.
 
-After GANs, I got hooked on perceptual losses. The idea of designing a "perceptual loss" instead of using a pixel-wise loss was so interesting that I had to implement it.
+The core idea behind NST is that deep convolutional networks trained for image classification learn hierarchical representations that can separate content from style. By using pre-trained VGG networks, we can extract perceptual features that capture the essence of an image's content and style separately, enabling us to optimize a new image to match both and thus transfer the style of one image to another.
 
-## Neural Style Transfer Visualization
+![Visualization of NST](/img/posts/automatants/nst.png)
 
-Neural Style Transfer Visualization|
-:-----:|
-![Visualization of NST](assets/images/nst.png)|
 
-## Technical Implementation
+## Mathematical Foundation
 
-### 1. Vanilla Neural Style Transfer
-- **Core Concept**: Using pre-trained VGG networks to extract content and style features
-- **Perceptual Loss**: Designing loss functions based on high-level features rather than pixels
-- **Content Loss**: Preserving the structure and content of the original image
-- **Style Loss**: Capturing the artistic style from reference images
-- **Optimization**: Iterative optimization to generate stylized images
+### Perceptual Loss and VGG Features
 
-### 2. Fast Neural Style Transfer
-- **Architecture Innovation**: Using a generator network to directly transform images
-- **Training Process**: Pre-training a network to minimize perceptual loss
-- **Speed Improvement**: Dramatic speed increase compared to vanilla NST
-- **Real-Time Capability**: Enabling real-time style transfer applications
+The key insight of Neural Style Transfer lies in the observation that convolutional neural networks trained for image classification learn hierarchical feature representations that naturally separate content from style. The VGG network, pre-trained on ImageNet, serves as our feature extractor.
 
-### 3. Real-Time Camera Processing
-- **Live Processing**: Real-time style transfer from camera feed
-- **Performance Optimization**: Optimizing for real-time performance
-- **User Interface**: Creating interactive style transfer experience
-- **Practical Application**: Making style transfer accessible and usable
+For a given image $\mathbf{x}$, let $\mathbf{F}^l$ be the feature maps at layer $l$ of the VGG network. The content representation is captured by the feature activations themselves, while the style representation is encoded in the correlations between different feature maps.
 
-## Technical Details
+### Content Loss
 
-### Perceptual Loss Design
-- **VGG Features**: Using pre-trained VGG networks for feature extraction
-- **Multi-Scale Loss**: Combining losses from different network layers
-- **Content Preservation**: Maintaining structural information from content image
-- **Style Capture**: Extracting artistic style from reference images
+The content loss measures the difference between the feature representations of the content image and the generated image:
 
-### Architecture Components
-- **Content Network**: VGG network for content feature extraction
-- **Style Network**: VGG network for style feature extraction
-- **Generator Network**: Fast NST generator for real-time processing
-- **Loss Functions**: Specialized loss functions for content and style
+<div>
+$$L_{\text{content}} = \frac{1}{2} \|\mathbf{F}^l - \mathbf{P}^l\|^2$$
+</div>
 
-### Optimization Process
-- **Iterative Optimization**: Vanilla NST optimization process
-- **Network Training**: Fast NST generator training
-- **Hyperparameter Tuning**: Balancing content and style losses
-- **Convergence**: Ensuring stable and effective training
+Where:
+- $\mathbf{F}^l$ are the feature maps of the generated image at layer $l$
+- $\mathbf{P}^l$ are the feature maps of the content image at layer $l$
 
-## Technical Stack
+### Style Loss
 
-- **TensorFlow**: Primary deep learning framework
-- **Keras**: High-level API for model development
-- **OpenCV**: Computer vision and camera processing
-- **VGG Networks**: Pre-trained networks for feature extraction
-- **Perceptual Loss**: Advanced loss function design
+The style loss captures the texture and artistic style by comparing the Gram matrices of the feature maps:
 
-## Key Innovations
+<div>
+$$G^l_{ij} = \sum_k F^l_{ik} F^l_{jk}$$
+</div>
 
-### Perceptual Loss Concept
-- **Feature-Based Loss**: Using high-level features instead of pixel differences
-- **Semantic Understanding**: Leveraging pre-trained networks for semantic features
-- **Quality Improvement**: Significant improvement in output quality
-- **Theoretical Foundation**: Understanding the importance of perceptual similarity
+<div>
+$$L_{\text{style}} = \frac{1}{4N^2M^2} \|G^l - A^l\|^2$$
+</div>
 
-### Fast NST Implementation
-- **Generator Architecture**: Designing efficient generator networks
-- **Training Strategy**: Pre-training for real-time inference
-- **Speed Optimization**: Achieving real-time performance
-- **Quality Maintenance**: Preserving quality while increasing speed
+Where:
+- $G^l$ is the Gram matrix of the generated image at layer $l$
+- $A^l$ is the Gram matrix of the style image at layer $l$
+- $N$ is the number of feature maps, $M$ is the size of each feature map
 
-### Real-Time Processing
-- **Camera Integration**: Live camera feed processing
-- **Performance Optimization**: Optimizing for real-time constraints
-- **User Experience**: Creating interactive and responsive interface
-- **Practical Deployment**: Making technology accessible to users
+### Total Loss
 
-## Learning Outcomes
+The total loss combines both content and style losses with weighting factors:
 
-### Technical Skills
-- **Perceptual Loss**: Understanding advanced loss function design
-- **Neural Style Transfer**: Mastering style transfer techniques
-- **Real-Time Processing**: Optimizing for real-time performance
-- **Computer Vision**: Advanced image processing techniques
+<div>
+$$L_{\text{total}} = \alpha \cdot L_{\text{content}} + \beta \cdot L_{\text{style}}$$
+</div>
 
-### Deep Learning Concepts
-- **Feature Extraction**: Understanding how CNNs extract features
-- **Transfer Learning**: Leveraging pre-trained networks
-- **Loss Function Design**: Creating effective loss functions
-- **Optimization**: Advanced optimization techniques
+Where $\alpha$ and $\beta$ control the relative importance of content vs. style preservation.
 
-### Practical Applications
-- **Real-Time Systems**: Building real-time AI applications
-- **User Interface**: Creating interactive AI experiences
-- **Performance Optimization**: Balancing quality and speed
-- **Deployment**: Moving from research to practical applications
+## Implementation details
 
-## Challenges and Solutions
+### 1. Optimization of an image to match the style of another image
 
-### Technical Challenges
-- **Speed vs Quality**: Balancing real-time performance with output quality
-- **Loss Function Design**: Creating effective perceptual loss functions
-- **Training Stability**: Ensuring stable training of generator networks
-- **Memory Optimization**: Managing memory usage for real-time processing
+The original approach treats style transfer as an optimization problem. Starting from either a random noise image or the content image, we iteratively update the image to minimize the total loss defined previously.
 
-### Implementation Challenges
-- **Camera Integration**: Seamless integration with camera systems
-- **Performance Optimization**: Achieving real-time processing speeds
-- **User Interface**: Creating intuitive and responsive interfaces
-- **Cross-Platform**: Ensuring compatibility across different systems
+The VGG layers chosen for the loss computation were the same ones used in the original paper.
 
-## Applications and Impact
+A total variation regularization term was added to the loss to prevent the generated image from becoming too noisy.
 
-### Educational Value
-- **Learning Platform**: Comprehensive learning experience in computer vision
-- **Community Engagement**: Demonstrating advanced AI capabilities
-- **Inspiration**: Motivating others to explore perceptual loss concepts
-- **Knowledge Sharing**: Contributing to association's technical knowledge
+I manually tuned the hyperparameters so that the content and style losses were balanced after a few iterations.
 
-### Technical Foundation
-- **Perceptual Loss Expertise**: Building foundation for future projects
-- **Real-Time AI**: Developing skills in real-time AI systems
-- **Computer Vision**: Advanced understanding of image processing
-- **User Experience**: Learning to make AI accessible and usable
+### 2. Feed-Forward Neural Style Transfer
 
-## Future Directions
+The optimization-based approach requires hundreds of iterations per image. Fast NST addresses this limitation by training a feed-forward network that can generate stylized images in a single forward pass. The neural network takes the content image as input and outputs the stylized image directly.
 
-- Integration with more advanced style transfer techniques
-- Extension to video style transfer
-- Development of mobile applications
-- Integration with augmented reality systems
 
-## Tags
+![Fast NST](/img/posts/automatants/fast-nst.png)
 
-- **Neural Style Transfer**: AI technique for artistic image transformation
-- **Perceptual Loss**: Advanced loss function based on human perception
-- **Computer Vision**: AI for visual understanding and processing
-- **VGG**: Visual Geometry Group network architecture
-- **Fast NST**: Real-time neural style transfer implementation
-- **Real-Time Processing**: Live processing of visual data
-- **OpenCV**: Computer vision library for image processing
+
+## Thoughts
+
+This project marked a significant milestone in my deep learning journey. Implementing Neural Style Transfer directly from research papers taught me several valuable lessons:
+
+### Technical lessons
+
+- **Playing with models and optimization**: This project taught me that we can actually use models and optimization as we want with whatever pre-trained layer and whatever loss.
+
+- **Perceptual Loss and Deep learning**: The concept of using pre-trained networks as feature extractors to construct a loss is fascinating. It suddenly broadens the scope of what we can do with neural networks.
+
+- **Optimization vs. Inference**: Optimizing a model to directly minimize the loss is also very exciting. In other words, we accept spending more time beforehand to train a model in order to achieve real-time inference.
+
+
+### Research Skills
+
+1. **Paper Implementation**: This was my first experience implementing algorithms directly from research papers without tutorials, which significantly improved my confidence in reading and implementing academic literature.
+
+2. **Debugging Complex Systems**: I encountered a lot of bugs during this project, so I learned to systematically troubleshoot deep learning pipelines.
+
+3. **Hyperparameter tuning**: I found it very interesting to visually observe the impact of hyperparameters on the output image. Everything felt much more concrete and intuitive.
+
+
+## References
+
+1. **Gatys, L. A., Ecker, A. S., & Bethge, M. (2015).** A neural algorithm of artistic style. *arXiv preprint arXiv:1508.06576*. [Link](https://arxiv.org/abs/1508.06576)
+
+2. **Ulyanov, D., Lebedev, V., Vedaldi, A., & Lempitsky, V. (2016).** Texture networks: Feed-forward synthesis of textures and stylized images. *arXiv preprint arXiv:1603.03417*. [Link](https://arxiv.org/abs/1603.03417)
+
