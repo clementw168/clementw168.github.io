@@ -54,6 +54,9 @@ References:
 
 Given limited computational resources, I focused on lightweight but effective architectures. My main choice was MobileNetV2 which was known to be both fast and efficient, and surprisingly powerful even on small datasets. I also experimented with classic CNNs and ResNet-style networks, but MobileNetV2 consistently offered the best trade-off between performance and training speed.
 
+![MobileNetV2](/img/posts/automatants/mobilenetv2.png)
+
+
 References:
 - He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep Residual Learning for Image Recognition. *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 770–778. [PDF](https://arxiv.org/pdf/1512.03385v1)
 - Sandler, M., Howard, A., Zhu, M., Zhmoginov, A., & Chen, L.-C. (2018). MobileNetV2: Inverted Residuals and Linear Bottlenecks. *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 4510–4520. [PDF](https://arxiv.org/pdf/1801.04381)
@@ -123,16 +126,16 @@ This competition was a fantastic way to consolidate and challenge my deep learni
 
 ## References
 
-1. Perez, L., & Wang, J. (2017). The Effectiveness of Data Augmentation in Image Classification using Deep Learning. *arXiv preprint arXiv:1712.04621*. https://arxiv.org/pdf/1712.04621.pdf  
-2. Zhang, H., Cisse, M., Dauphin, Y. N., & Lopez-Paz, D. (2017). mixup: Beyond Empirical Risk Minimization. *arXiv preprint arXiv:1710.09412*. https://arxiv.org/pdf/1710.09412  
-3. Zhong, Z., Zheng, L., Kang, G., Li, S., & Yang, Y. (2017). Random Erasing Data Augmentation. *arXiv preprint arXiv:1708.04896*. https://arxiv.org/pdf/1708.04896  
-4. Yun, S., Han, D., Oh, S. J., Chun, S., Choe, J., & Yoo, Y. (2019). CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features. *Proceedings of the IEEE International Conference on Computer Vision (ICCV)*, 6023–6032. https://arxiv.org/pdf/1905.04899  
-5. He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep Residual Learning for Image Recognition. *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 770–778. https://arxiv.org/pdf/1512.03385v1  
-6. Sandler, M., Howard, A., Zhu, M., Zhmoginov, A., & Chen, L.-C. (2018). MobileNetV2: Inverted Residuals and Linear Bottlenecks. *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 4510–4520. https://arxiv.org/pdf/1801.04381  
-7. Müller, R., Kornblith, S., & Hinton, G. (2019). When Does Label Smoothing Help? *Advances in Neural Information Processing Systems*, 32. https://arxiv.org/pdf/1906.02629.pdf  
-8. Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., & Salakhutdinov, R. (2014). Dropout: A Simple Way to Prevent Neural Networks from Overfitting. *Journal of Machine Learning Research*, 15(1), 1929–1958. https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf  
-9. Li, X., Wang, W., Hu, X., & Yang, J. (2018). Understanding the Disharmony between Dropout and Batch Normalization by Variance Shift. *arXiv preprint arXiv:1801.05134*. https://arxiv.org/pdf/1801.05134.pdf  
-10. Huang, G., Sun, Y., Liu, Z., Sedra, D., & Weinberger, K. Q. (2016). Deep Networks with Stochastic Depth. *European Conference on Computer Vision (ECCV)*, 646–661. https://arxiv.org/abs/1603.09382v3  
-11. Yosinski, J., Clune, J., Bengio, Y., & Lipson, H. (2014). How transferable are features in deep neural networks? *Advances in Neural Information Processing Systems*, 27, 3320–3328. https://arxiv.org/pdf/1411.1792.pdf  
-12. Xie, Q., Luong, M.-T., Hovy, E., & Le, Q. V. (2020). Self-training with Noisy Student improves ImageNet classification. *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)*, 10687–10698. https://arxiv.org/pdf/1911.04252.pdf  
-13. Sung, F., Yang, Y., Zhang, L., Xiang, T., Torr, P. H. S., & Hospedales, T. M. (2018). Learning to Compare: Relation Network for Few-Shot Learning. *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 1199–1208. https://arxiv.org/pdf/1711.06025
+1. Perez, L., & Wang, J. (2017). The Effectiveness of Data Augmentation in Image Classification using Deep Learning. *arXiv preprint arXiv:1712.04621*. [PDF](https://arxiv.org/pdf/1712.04621.pdf)  
+2. Zhang, H., Cisse, M., Dauphin, Y. N., & Lopez-Paz, D. (2017). mixup: Beyond Empirical Risk Minimization. *arXiv preprint arXiv:1710.09412*. [PDF](https://arxiv.org/pdf/1710.09412)  
+3. Zhong, Z., Zheng, L., Kang, G., Li, S., & Yang, Y. (2017). Random Erasing Data Augmentation. *arXiv preprint arXiv:1708.04896*. [PDF](https://arxiv.org/pdf/1708.04896)  
+4. Yun, S., Han, D., Oh, S. J., Chun, S., Choe, J., & Yoo, Y. (2019). CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features. *Proceedings of the IEEE International Conference on Computer Vision (ICCV)*, 6023–6032. [PDF](https://arxiv.org/pdf/1905.04899)  
+5. He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep Residual Learning for Image Recognition. *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 770–778. [PDF](https://arxiv.org/pdf/1512.03385v1)  
+6. Sandler, M., Howard, A., Zhu, M., Zhmoginov, A., & Chen, L.-C. (2018). MobileNetV2: Inverted Residuals and Linear Bottlenecks. *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 4510–4520. [PDF](https://arxiv.org/pdf/1801.04381)  
+7. Müller, R., Kornblith, S., & Hinton, G. (2019). When Does Label Smoothing Help? *Advances in Neural Information Processing Systems*, 32. [PDF](https://arxiv.org/pdf/1906.02629.pdf)  
+8. Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., & Salakhutdinov, R. (2014). Dropout: A Simple Way to Prevent Neural Networks from Overfitting. *Journal of Machine Learning Research*, 15(1), 1929–1958. [PDF](https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)  
+9. Li, X., Wang, W., Hu, X., & Yang, J. (2018). Understanding the Disharmony between Dropout and Batch Normalization by Variance Shift. *arXiv preprint arXiv:1801.05134*. [PDF](https://arxiv.org/pdf/1801.05134.pdf)  
+10. Huang, G., Sun, Y., Liu, Z., Sedra, D., & Weinberger, K. Q. (2016). Deep Networks with Stochastic Depth. *European Conference on Computer Vision (ECCV)*, 646–661. [PDF](https://arxiv.org/abs/1603.09382v3)  
+11. Yosinski, J., Clune, J., Bengio, Y., & Lipson, H. (2014). How transferable are features in deep neural networks? *Advances in Neural Information Processing Systems*, 27, 3320–3328. [PDF](https://arxiv.org/pdf/1411.1792.pdf)  
+12. Xie, Q., Luong, M.-T., Hovy, E., & Le, Q. V. (2020). Self-training with Noisy Student improves ImageNet classification. *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)*, 10687–10698. [PDF](https://arxiv.org/pdf/1911.04252.pdf)  
+13. Sung, F., Yang, Y., Zhang, L., Xiang, T., Torr, P. H. S., & Hospedales, T. M. (2018). Learning to Compare: Relation Network for Few-Shot Learning. *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 1199–1208. [PDF](https://arxiv.org/pdf/1711.06025)

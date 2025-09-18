@@ -2,7 +2,7 @@
 layout:     post
 title:      "President of Automatants AI Student Association"
 subtitle:   "Leading 20 People, Organizing Events, and Promoting Machine Learning at CentraleSupélec"
-date:       2022-08-15 12:00:00
+date:       2022-02-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img/banners/automatants-banner-crop.png"
 catalog: true
@@ -10,8 +10,7 @@ published: true
 tags:
     - Leadership
     - Team Management
-    - Student association
-    - AI Education
+    - Student Association
     - Event Organization
     - Machine Learning
 ---

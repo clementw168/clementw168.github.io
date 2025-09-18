@@ -33,8 +33,12 @@ I began with a Deep Convolutional Generative Adversarial Network (DCGAN). I simp
 ### 2. Enhanced Architecture with Residual Connections
 To improve model performance, I experimented with adding residual connections to the GAN architecture. I had in mind that larger and deeper networks would be able to generate better images.
 
+![Residual Connections](/img/posts/automatants/residual_gan.png)
+
 ### 3. Progressive Growing GAN
 Then, I wanted to dive into more complexity. Since StyleGAN seemed a bit too complex, I decided to implement a Progressive GAN. The idea is to starts training on very small images (4×4 pixels) and gradually increases the resolution during training. The progressive nature allows the model to learn coarse features first, then refine them to finer details, theoretically producing more stable training and higher quality results. In practice, the implementation worked but I did not see any significant gain in quality.
+
+![Progressive Growing GAN](/img/posts/automatants/progressive_gan.png)
 
 ## Implementation and Deployment
 

@@ -4,7 +4,7 @@ title:      "Diagnostic Assistance with AI at Polygon Technologies"
 subtitle:   "Video Analysis for Learning Differences Diagnosis using Time Series Classification"
 date:       2023-01-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/pages/home-bg.jpg"
+header-img: "/img/banners/polygon-banner-dark.png"
 catalog: true
 published: true
 tags:
@@ -17,161 +17,59 @@ tags:
     - Healthcare
 ---
 
-> "Six-month internship at Polygon Technologies working on AI-assisted diagnosis of learning differences through video analysis and time series classification."
-
-![Polygon banner](/img/pages/polygon-banner.png)
 
 ## About Polygon Technologies
 
-Six-month internship at Polygon. [Polygon](https://hellopolygon.com/) is a new kind of psychology practice that provides remote diagnostics for dyslexia, ADHD, and other learning differences. The company is based in Santa Monica, California, United States.
+I spent six months at **Polygon Technologies**, a psychology startup based in Santa Monica, California. Polygon was trying something new: offering remote diagnostics for learning differences such as dyslexia and ADHD. The approach was innovative and ambitious, but after the 2023 tech downturn, the company unfortunately shut down.
+
+For me, this internship was a chance to work on the intersection of **AI, healthcare, and psychology** and to experience the fast-paced environment of the U.S. startup ecosystem.
+
 
 ## Project Overview
 
-I worked on a project to assist diagnosis of learning differences. The global idea is that we record testing sessions of patients with a camera. From these videos, we extract all the useful information as time series. And then, we use these time series to understand what happened at what moment because of what. This approach gets rid of high-dimensional video data. At the same time, it makes the global pipeline much more interpretable which is so important in the medical field where mistakes can cost a lot.
+The core idea was simple but powerful: record the sessions between psychologists and patients, then use AI to help interpret what happens during the tests.
 
-## Technical Approach
+Instead of working directly on raw high-dimensional video, we would **extract interpretable time series** (face landmarks, speech activity, transcripts, etc.). This reduced complexity and, increased interpretability since it was a must in healthcare, where transparency is essential.  
 
-### Video Analysis Pipeline
-- **Video Recording**: Capturing patient testing sessions with cameras
-- **Feature Extraction**: Converting high-dimensional video data to meaningful time series
-- **Time Series Analysis**: Analyzing temporal patterns in patient behavior
-- **Interpretable AI**: Creating explainable diagnostic assistance systems
+![Polygon pipeline](/img/posts/gap_year/polygon_pipeline.png)
 
-### Key Features Developed
 
-#### 1. Data Unification on AWS Storage
-- **Centralized Storage**: Unifying all patient data on AWS infrastructure
-- **Data Organization**: Structured storage for video and extracted features
-- **Access Control**: Secure access to sensitive medical data
-- **Scalability**: Handling growing datasets efficiently
+## My Work
 
-#### 2. Data Cleaning and Standardization
-- **Quality Control**: Ensuring data quality and consistency
-- **Standardization**: Creating uniform data formats across different sources
-- **Validation**: Implementing data validation and error checking
-- **Preprocessing**: Preparing data for analysis and modeling
+### Refactoring and feature additions
 
-#### 3. Voice Activity Detection with Gaussian Mixture Models
-- **Audio Processing**: Analyzing speech patterns in patient sessions
-- **GMM Implementation**: Using Gaussian Mixture Models for voice detection
-- **Temporal Analysis**: Understanding speech timing and patterns
-- **Feature Extraction**: Converting audio to meaningful time series features
+Two predecessors had already worked on **face landmarks detection** and **voice activity detection**. My first task was to refactor their pipelines and normalize outputs into a common time series format (stored in Parquet).  
 
-#### 4. 3D Face Landmarks Detection with Face Alignment Networks
-- **Facial Analysis**: Detecting and tracking facial landmarks in 3D
-- **Behavioral Indicators**: Using facial expressions as diagnostic indicators
-- **Temporal Tracking**: Monitoring facial changes over time
-- **Feature Engineering**: Creating meaningful behavioral time series
+I also added a **speaker recognition module** to separate patient vs. therapist, which was essential for later analysis.  
 
-#### 5. Speech-to-Text Solutions Benchmarking
-- **Technology Evaluation**: Comparing Whisper, AWS Transcribe, and other solutions
-- **Performance Analysis**: Evaluating accuracy and reliability
-- **Cost Optimization**: Balancing performance with cost considerations
-- **Integration**: Implementing best-performing solutions
 
-#### 6. AWS Batch Pipelines for Cost Optimization
-- **Batch Processing**: Optimizing feature extraction costs
-- **Resource Management**: Efficient use of cloud computing resources
-- **Scalability**: Handling varying workloads efficiently
-- **Cost Control**: Monitoring and optimizing processing costs
+### Speech-to-text pipeline
 
-#### 7. Time Series Visualization with Plotly and Streamlit
-- **Interactive Dashboards**: Creating user-friendly visualization interfaces
-- **Temporal Visualization**: Displaying time series data effectively
-- **Real-Time Updates**: Providing live updates during analysis
-- **User Interface**: Making complex data accessible to clinicians
+We also wanted transcripts of the testing sessions. Early in my internship, [Whisper](https://openai.com/research/whisper/) had just been released!  
 
-#### 8. Time Series Classification and Breakpoint Detection
-- **Pattern Recognition**: Identifying diagnostic patterns in time series
-- **Breakpoint Detection**: Detecting significant changes in patient behavior
-- **Classification**: Categorizing different types of behavioral patterns
-- **Diagnostic Support**: Providing AI assistance for clinical diagnosis
+I benchmarked Whisper against **Amazon Transcribe** and **Google Speech-to-Text**, using manually annotated transcripts and **BLEU scores** for evaluation. Whisper outperformed everything else (better accuracy, multilingual support, and free to use), so I integrated it into our pipeline.  
 
-## Technical Stack
+Radford, A., Kim, J. W., Xu, T., Brockman, G., McLeavey, C., & Sutskever, I. (2023). [Robust speech recognition via large-scale weak supervision](https://proceedings.mlr.press/v202/radford23a.html). *ICML 2023.*  
 
-- **AWS**: Cloud infrastructure and services
-- **Docker**: Containerization for consistent deployments
-- **PyTorch**: Deep learning framework for model development
-- **Streamlit**: Web application framework for dashboards
-- **Plotly**: Interactive visualization library
-- **Computer Vision**: Advanced image and video processing
-- **Time Series Analysis**: Specialized techniques for temporal data
 
-## Medical Applications
+### End-to-end feature extraction
 
-### Diagnostic Support
-- **Learning Differences**: Assisting in diagnosis of dyslexia, ADHD, and other conditions
-- **Behavioral Analysis**: Understanding patient behavior patterns
-- **Objective Assessment**: Providing quantitative measures for diagnosis
-- **Clinical Decision Support**: Supporting clinicians with AI insights
+The next step was to make the system run **end-to-end**.  
 
-### Interpretability and Trust
-- **Explainable AI**: Making AI decisions transparent and understandable
-- **Clinical Validation**: Ensuring AI recommendations align with clinical knowledge
-- **Error Analysis**: Understanding and preventing diagnostic errors
-- **Trust Building**: Building confidence in AI-assisted diagnosis
+- I migrated the existing Google Datalake into **AWS S3** (to unify our infrastructure).  
+- I set up **AWS Batch** to process long Zoom videos (often 3+ hours).  
+- I integrated face landmarks detection, voice activity detection, and Whisper transcription into a single scalable pipeline.  
 
-## Technical Innovation
+Debugging was horrible since running the pipeline on 3-hour long videos took hours. We had about 20 patients with each 3 recordings of 3 hours and each time I could have an exception. By the end, we had a fully functional automated pipeline from raw video to structured time series.
 
-### Video-to-Time-Series Conversion
-- **Dimensionality Reduction**: Converting high-dimensional video to manageable time series
-- **Feature Engineering**: Creating meaningful behavioral indicators
-- **Temporal Modeling**: Understanding temporal patterns in patient behavior
-- **Interpretability**: Making complex video data interpretable for clinicians
 
-### Multi-Modal Analysis
-- **Audio-Visual Fusion**: Combining speech and visual information
-- **Behavioral Indicators**: Using multiple modalities for comprehensive analysis
-- **Temporal Synchronization**: Aligning different data streams in time
-- **Comprehensive Assessment**: Providing holistic view of patient behavior
+### Temporal segmentation
 
-## Learning Outcomes
+My final project was **temporal segmentation**: automatically detecting the start and end of each cognitive test during a session. I manually annotated part of the dataset and started experimenting with models. Unfortunately, time ran out before I could achieve conclusive results but it laid the foundation for the next iteration of the project.
 
-### Technical Skills
-- Advanced video analysis and computer vision
-- Time series analysis and classification
-- AWS cloud infrastructure and services
-- Medical AI and diagnostic assistance systems
 
-### Domain Knowledge
-- Learning differences and diagnostic criteria
-- Medical AI applications and requirements
-- Healthcare data privacy and security
-- Clinical workflow integration
+## Thoughts
 
-### Professional Experience
-- Working in healthcare technology startup
-- International collaboration and remote work
-- Medical device development processes
-- Regulatory and compliance considerations
+This internship was much more than just technical work.
 
-## Impact and Applications
-
-### Healthcare Innovation
-- **Remote Diagnostics**: Enabling remote assessment of learning differences
-- **Objective Measurement**: Providing quantitative diagnostic measures
-- **Accessibility**: Making diagnostic services more accessible
-- **Efficiency**: Streamlining diagnostic processes
-
-### Clinical Benefits
-- **Improved Accuracy**: Supporting clinicians with AI insights
-- **Time Efficiency**: Reducing time required for comprehensive assessment
-- **Consistency**: Providing standardized assessment methods
-- **Documentation**: Creating detailed records of patient sessions
-
-## Future Directions
-
-- Integration with electronic health records
-- Extension to other diagnostic applications
-- Real-time diagnostic assistance
-- Mobile application development
-
-## Tags
-
-- **Medical AI**: Artificial intelligence in healthcare applications
-- **Video Analysis**: Computer vision for video understanding
-- **Time Series Classification**: Machine learning for temporal data
-- **Diagnostic Assistance**: AI support for medical diagnosis
-- **AWS**: Amazon Web Services cloud infrastructure
-- **Computer Vision**: AI for visual understanding
-- **Healthcare**: Medical technology and applications
+I discovered how psychology practices operate, and how delicate it is to introduce AI into the diagnostic process. Technically, I learned a lot about **speech processing, large-scale data pipelines, and AWS orchestration**. I learned how challenging (and rewarding) it can be to build tools for healthcare, where reliability and interpretability matter as much as accuracy. Even though Polygon didn’t survive the 2023 downturn, my time there left a lasting impression. I got my first deep dive into the U.S. tech ecosystem: the fast pace, the ambition, and the mindset of people always ready to take risks and innovate.
