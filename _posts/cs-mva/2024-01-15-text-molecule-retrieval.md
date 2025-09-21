@@ -1,10 +1,10 @@
 ---
 layout:     post
 title:      "Text-based Molecule Retrieval"
-subtitle:   "Retrieving Molecules from Text Queries using Contrastive Learning"
+subtitle:   "Learning to Match Molecular Graphs with Text Queries"
 date:       2024-01-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/pages/home-bg.jpg"
+header-img: "/img/posts/cs-mva/altegrad_contrastive_dark.png"
 catalog: true
 published: true
 tags:
@@ -16,133 +16,72 @@ tags:
     - Chemoinformatics
 ---
 
-> "Building a system to retrieve molecules from text queries using contrastive learning between molecular graphs and text descriptions."
-
 ## Project Overview
 
-This project was part of the [Advanced learning for text and graph data course](https://www.master-mva.com/cours/cat-advanced-learning-for-text-and-graph-data-altegrad/) of Michalis Vazirgiannis. The goal was to retrieve molecules from a text query, bridging the gap between natural language descriptions and molecular structures.
+This project, part of the [Advanced Learning for Text and Graph Data course](https://www.master-mva.com/cours/cat-advanced-learning-for-text-and-graph-data-altegrad/), tackled a challenging task: **retrieve the correct molecular structure from a text description**. 
 
-## Architecture
+We combined **textual descriptions** and **molecular graphs** using a contrastive learning framework, aligning representations of molecules and their textual descriptions in a shared embedding space.
 
-![Architecture](https://raw.githubusercontent.com/clementw168/Altegrad-Kaggle/main/graph_text_contrastive.png)
+![Architecture](/img/posts/cs-mva/altegrad_contrastive.png)
 
-## Technical Approach
 
-### Multi-Modal Learning
-- **Molecular Graphs**: Representing molecules as graph structures
-- **Text Descriptions**: Natural language descriptions of molecular properties
-- **Contrastive Learning**: Learning joint representations between graphs and text
+## Methodology
 
-### Model Architecture
-- **Graph Encoder**: Processing molecular graphs using Graph Neural Networks
-- **Text Encoder**: Processing text descriptions using transformer models
-- **Contrastive Loss**: Aligning molecular and text representations in shared space
+### Text Encoder
+Molecule names and descriptions often contain specialized vocabulary. Standard tokenizers split them poorly, so we trained a custom tokenizer to preserve meaningful units. On top of this, we trained a DistilBERT model from scratch using masked language modeling. This allowed the text encoder to generate embeddings that capture semantic nuances of chemical descriptions.
 
-### Retrieval System
-- **Query Processing**: Converting text queries into vector representations
-- **Similarity Search**: Finding most similar molecules in embedding space
-- **Ranking**: Ordering results by relevance to text query
+![Total number of tokens](/img/posts/cs-mva/altegrad_token.png)
 
-## Implementation Details
 
-### Graph Neural Networks
-- **Molecular Representation**: Converting molecular structures to graph format
-- **Feature Extraction**: Learning molecular features from graph structure
-- **Embedding Generation**: Creating dense vector representations
+### Graph Encoder
+Molecules are naturally represented as graphs. We used **Graph Attention Networks (GATs)** to encode structural information, allowing the model to assign dynamic importance to neighboring atoms and bonds. Multiple layers capture both local interactions and higher-order structural patterns. The graph encoder outputs embeddings that summarize the molecular graph in a way that can be directly compared to text embeddings.
 
-### Text Processing
-- **Natural Language Understanding**: Processing molecular descriptions
-- **Semantic Encoding**: Converting text to meaningful representations
-- **Query Expansion**: Enhancing query understanding for better retrieval
+![Graph Attention Network](/img/posts/cs-mva/altegrad_gat.png)
 
-### Contrastive Learning
-- **Positive Pairs**: Matching molecules with their descriptions
-- **Negative Sampling**: Creating challenging negative examples
-- **Loss Optimization**: Training joint embedding space
+### Training Tricks
+Training stability and convergence were critical. We used **cosine learning rate scheduling with warmup**, large batch sizes, and **online hard sample mining**. Hard sample mining prioritized the most challenging molecules within a batch, improving contrastive learning effectiveness. Dropout and layer normalization prevented overfitting, while mixed-precision training enabled scaling to large graphs efficiently.
 
-## Results and Performance
+### Graph Augmentations
+To improve generalization, we augmented graphs during training:
+- **Edge perturbation**: random removal or addition of edges.
+- **Graph sampling and k-hop subgraphs**: train on partial views of the molecule.
+- **Feature masking and noise**: hide or perturb node features to encourage robustness.
 
-### Retrieval Accuracy
-- **Top-K Accuracy**: Measuring retrieval performance at different ranks
-- **Semantic Similarity**: Evaluating quality of retrieved molecules
-- **Query Understanding**: Assessing text-to-molecule mapping quality
+Edge perturbation had the largest positive impact, while more aggressive augmentations sometimes degraded performance.
 
-### Model Evaluation
-- **Cross-Modal Retrieval**: Text-to-molecule and molecule-to-text retrieval
-- **Generalization**: Performance on unseen molecular types
-- **Scalability**: Handling large molecular databases
+### Self-Supervised Training
+Labeled data was limited, so we leveraged **self-supervised contrastive learning**. Inspired by the iBOT framework, we trained a student and teacher network using multiple augmented views of each molecule. The student was optimized to match the teacher’s embeddings for corresponding views, promoting invariant representations. Centering and temperature scaling stabilized training. This pretraining improved convergence and helped the model generalize better on unseen molecules.
+
+![Self-Supervised Training](/img/posts/cs-mva/altegrad_self_supervised.png)
+
+
+## Results
+
+We evaluated our approach using a combination of labeled and unlabeled data. The final model was an **ensemble of two GAT-based models**:
+- DistilBERT text encoder fine-tuned on molecule descriptions.
+- GAT graph encoder with 6 layers, hidden dimension 512, and 0.2 dropout.
+- Cosine learning rate scheduling with warmup, AdamW optimizer, large batch sizes.
+- Online hard sample mining and edge perturbation augmentations.
+- One model used self-supervised pretraining on unlabeled molecules.
+
+This setup achieved the best Label Ranking Average Precision (LRAP) on the validation set and generalized well to the Kaggle leaderboard.
+
 
 ## Documentation
 
-### Full Report
-[Complete Project Report](https://raw.githubusercontent.com/clementw168/Altegrad-Kaggle/main/report.pdf)
+- 📄 [Project Report](https://raw.githubusercontent.com/clementw168/Altegrad-Kaggle/main/report.pdf)  
+- 💻 [GitHub Repository](https://github.com/clementw168/Altegrad-Kaggle)  
 
-### Code Repository
-[GitHub Repository](https://github.com/clementw168/Altegrad-Kaggle)
+---
 
-## Technical Innovation
-
-### Multi-Modal Representation Learning
-- **Graph-Text Alignment**: Learning joint representations across modalities
-- **Contrastive Objectives**: Optimizing for cross-modal similarity
-- **Attention Mechanisms**: Focusing on relevant molecular and text features
-
-### Molecular AI
-- **Graph Neural Networks**: Advanced techniques for molecular representation
-- **Chemical Knowledge**: Incorporating domain-specific molecular properties
-- **Retrieval Systems**: Building efficient search systems for molecular databases
-
-## Applications
-
-### Drug Discovery
-- **Compound Search**: Finding molecules with specific properties
-- **Lead Optimization**: Identifying similar compounds for drug development
-- **Property Prediction**: Understanding molecular characteristics from descriptions
-
-### Chemoinformatics
-- **Database Search**: Efficient retrieval from large molecular databases
-- **Similarity Analysis**: Finding structurally or functionally similar molecules
-- **Knowledge Discovery**: Uncovering relationships between structure and function
-
-### Research Applications
-- **Literature Mining**: Extracting molecular information from scientific papers
-- **Property Annotation**: Automatically describing molecular properties
-- **Database Curation**: Organizing and indexing molecular databases
-
-## Technical Stack
-
-- **Graph Neural Networks**: PyTorch Geometric for molecular graph processing
-- **Natural Language Processing**: Transformers for text understanding
-- **Contrastive Learning**: Custom implementations for multi-modal learning
-- **Molecular Informatics**: RDKit for molecular data processing
-
-## Learning Outcomes
-
-### Technical Skills
-- Advanced graph neural network architectures
-- Multi-modal learning and contrastive objectives
-- Molecular representation and chemoinformatics
-- Information retrieval system design
-
-### Domain Knowledge
-- Molecular structure and properties
-- Chemical databases and representations
-- Text-molecule relationship modeling
-- Cross-modal similarity learning
-
-## Future Directions
-
-- Extension to more complex molecular properties
-- Integration with large-scale molecular databases
-- Real-time retrieval system development
-- Application to drug discovery workflows
-
-## Tags
-
-- **Molecular AI**: Artificial intelligence for molecular data
-- **Text Retrieval**: Information retrieval from text queries
-- **Contrastive Learning**: Advanced machine learning technique
-- **Graph Neural Networks**: Deep learning for graph-structured data
-- **Natural Language Processing**: AI for text understanding
-- **Chemoinformatics**: Computational chemistry and molecular informatics
-- **Multi-Modal Learning**: Learning across different data modalities
+## References
+1. Devlin, J., Chang, M.-W., Lee, K., Toutanova, K. *BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding*. 2018.  
+2. Sanh, V., Debut, L., Chaumond, J., Wolf, T. *DistilBERT: Smaller, Faster, Cheaper and Lighter*. 2019.  
+3. Frey, N., Soklaski, R., Axelrod, S., et al. *Neural Scaling of Deep Chemical Models*. ChemRxiv, 2022.  
+4. Lee, J., Yoon, W., Kim, S., et al. *BioBERT: Pre-trained Biomedical Language Representation Model*. 2020.  
+5. Veličković, P., Cucurull, G., Casanova, A., et al. *Graph Attention Networks*. 2017.  
+6. Gao, L., Zhang, Y. *Scaling Deep Contrastive Learning Batch Size*. 2021.  
+7. Shrivastava, A., Gupta, A., Girshick, R. *Online Hard Example Mining*. 2016.  
+8. Ding, K., Xu, Z., Tong, H., Liu, H. *Data Augmentation for Deep Graph Learning: A Survey*. 2022.  
+9. Zhou, J., Wei, C., Wang, H., et al. *iBOT: Image BERT Pre-training with Online Tokenizer*. 2021.  
+10. Rendle, S., Freudenthaler, C., Gantner, Z., Schmidt-Thieme, L. *BPR: Bayesian Personalized Ranking from Implicit Feedback*. 2012.
