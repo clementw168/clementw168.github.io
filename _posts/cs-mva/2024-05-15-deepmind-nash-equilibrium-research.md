@@ -236,7 +236,7 @@ We also explored a range of hyperparameters (e.g., population size, number of st
 
 ## Documentation
 
-* 📄 [Complete Project Report](https://raw.githubusercontent.com/clementw168/PAL-Forel/main/Project%20report.pdf)
+* 📄 [Complete Project Report](/assets/posts/Speeding_up_convergence_MARL.pdf)
 * 💻 [GitHub Repository](https://github.com/clementw168/PAL-Forel)
 
 
