@@ -6,7 +6,6 @@ In the past, I worked on many different projects, which is why I do not like to 
 
 - I was born in France from Asian parents, have lived in the US and Germany for 6 months each.
 - Even though I'm not particularly good at it, I love sports: volleyball, bouldering, spikeball, running, biking...
-- There's no fun if I don't aim for the best. Being competitive brings so much value, and it's okay not to be the best.
 - One day, I was playing basketball to cool down after an exam when I slipped on a clementine and broke my ankle. I then walked with crutches for 2 months.
 
 
