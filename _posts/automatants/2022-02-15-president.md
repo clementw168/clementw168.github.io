@@ -4,7 +4,7 @@ title:      "President of Automatants AI Student Association"
 subtitle:   "Leading 20 People, Organizing Events, and Promoting Machine Learning at CentraleSupélec"
 date:       2022-02-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/banners/automatants-banner-crop.png"
+header-img: "/img_compressed/banners/automatants-banner-crop.png"
 catalog: true
 published: true
 tags:
@@ -131,15 +131,15 @@ Organizing that weekend in the middle of the Covid pandemic was a nightmare. One
 
 
 <div class="img-gallery-2">
-  <img src="/img/posts/automatants/gite.JPG" alt="Cohesion weekend gîte" class="wide">
+  <img src="/img_compressed/posts/automatants/gite.JPG" alt="Cohesion weekend gîte" class="wide">
 </div>
 
 That weekend changed everything for me. At first, I was stressed and afraid of being bored among strangers. But once there, I spent my time making sure everyone was having fun. We cooked together, played games, hiked, partied… and I realized how much potential this association had. I thought that with some structure and leadership, this association could be amazing.  
 
 <div class="img-gallery-2">
-  <img src="/img/posts/automatants/wec2.jpg" alt="Cohesion weekend photo 2">
-  <img src="/img/posts/automatants/wec3.jpg" alt="Cohesion weekend photo 3">
-  <img src="/img/posts/automatants/wec1.jpg" alt="Cohesion weekend photo 1" class="wide">
+  <img src="/img_compressed/posts/automatants/wec2.jpg" alt="Cohesion weekend photo 2">
+  <img src="/img_compressed/posts/automatants/wec3.jpg" alt="Cohesion weekend photo 3">
+  <img src="/img_compressed/posts/automatants/wec1.jpg" alt="Cohesion weekend photo 1" class="wide">
 </div>
 
 
@@ -157,9 +157,9 @@ The essence of Automatants was to share knowledge and promote AI. Each semester,
 I personally taught a course on Generative Adversarial Networks (GANs) and helped in most of the practical workshops. You can find the material [here](https://automatants.cs-campus.fr/formation/2021_2_Intro_GAN) or the video (in French) [here](https://youtu.be/MrrlHYSFz3c?si=xCAjDiBXxmUveJYw).  
 
 <div class="img-gallery-2">
-  <img src="/img/posts/automatants/forma_1.png" alt="Course photo 1">
-  <img src="/img/posts/automatants/forma_2.png" alt="Course photo 2">
-  <img src="/img/posts/automatants/timeline_formations.png" alt="Timeline of courses" class="wide">
+  <img src="/img_compressed/posts/automatants/forma_1.png" alt="Course photo 1">
+  <img src="/img_compressed/posts/automatants/forma_2.png" alt="Course photo 2">
+  <img src="/img_compressed/posts/automatants/timeline_formations.png" alt="Timeline of courses" class="wide">
 </div>
 
 We also organized two competitions (computer vision and reinforcement learning) and launched student projects. Each project was supervised by an experienced member with a small group of 2 to 5 students. Over two semesters, we had 16 projects, with 7 successful ones — not too bad considering that many students switched to other associations.  
@@ -167,9 +167,9 @@ We also organized two competitions (computer vision and reinforcement learning) 
 I supervised two projects myself: handwritten letter classification and neural style transfer.  
 
 <div class="img-gallery-3">
-  <img src="/img/posts/automatants/project_1.jpg" alt="Project photo 1">
-  <img src="/img/posts/automatants/project_2.jpg" alt="Project photo 2">
-  <img src="/img/posts/automatants/project_3.png" alt="Project photo 3">
+  <img src="/img_compressed/posts/automatants/project_1.jpg" alt="Project photo 1">
+  <img src="/img_compressed/posts/automatants/project_2.jpg" alt="Project photo 2">
+  <img src="/img_compressed/posts/automatants/project_3.png" alt="Project photo 3">
 </div>
 
 
@@ -179,11 +179,11 @@ My first big mission was to secure a dedicated room for Automatants at CentraleS
 
 <div class="img-gallery-2">
   <figure>
-    <img src="/img/posts/automatants/hub_before.png" alt="AI Hub before">
+    <img src="/img_compressed/posts/automatants/hub_before.png" alt="AI Hub before">
     <figcaption>AI Hub before renovation</figcaption>
   </figure>
   <figure>
-    <img src="/img/posts/automatants/hub_after.png" alt="AI Hub after">
+    <img src="/img_compressed/posts/automatants/hub_after.png" alt="AI Hub after">
     <figcaption>AI Hub after renovation</figcaption>
   </figure>
 </div>
@@ -192,7 +192,7 @@ It became our headquarters. We had the freedom to organize it as we wanted, in e
 
 <div class="img-center">
   <figure>
-    <img src="/img/posts/automatants/hub_sponsor.png" alt="Presentation for sponsors">
+    <img src="/img_compressed/posts/automatants/hub_sponsor.png" alt="Presentation for sponsors">
     <figcaption>Presentation for sponsors</figcaption>
   </figure>
 </div>
@@ -202,10 +202,10 @@ During the pandemic, having this place was priceless. It quickly became the cent
 
 
 <div class="img-gallery-mixed">
-  <img src="/img/posts/automatants/hub_random_1.png" alt="Hub photo 1" class="tall">
-  <img src="/img/posts/automatants/hub_random_2.jpg" alt="Hub photo 2">
-  <img src="/img/posts/automatants/hub_random_3.jpg" alt="Hub photo 3">
-  <img src="/img/posts/automatants/hub_random_4.jpg" alt="Hub photo 4" class="wide">
+  <img src="/img_compressed/posts/automatants/hub_random_1.png" alt="Hub photo 1" class="tall">
+  <img src="/img_compressed/posts/automatants/hub_random_2.jpg" alt="Hub photo 2">
+  <img src="/img_compressed/posts/automatants/hub_random_3.jpg" alt="Hub photo 3">
+  <img src="/img_compressed/posts/automatants/hub_random_4.jpg" alt="Hub photo 4" class="wide">
 </div>
 
 
@@ -218,13 +218,13 @@ The year was full of events and partnerships. Here are some highlights:
 The Humaviron, organized by a student humanitarian association, is a 12-hour charity rowing competition aimed at raising funds. Teams take turns on rowing machines to cover the maximum distance possible. Since Automatants didn’t have many athletes, we partnered with the aeronautics association. Together, our 49 participants rowed a total of 179,453 meters over 12 hours.
 
 <div class="img-gallery-mixed">
-  <img src="/img/posts/automatants/huma3.jpg" alt="Humaviron 3" class="tall">
-  <img src="/img/posts/automatants/huma1.jpg" alt="Humaviron 1">
-  <img src="/img/posts/automatants/huma2.jpg" alt="Humaviron 2">
+  <img src="/img_compressed/posts/automatants/huma3.jpg" alt="Humaviron 3" class="tall">
+  <img src="/img_compressed/posts/automatants/huma1.jpg" alt="Humaviron 1">
+  <img src="/img_compressed/posts/automatants/huma2.jpg" alt="Humaviron 2">
 </div>
 
 <div class="img-gallery-2">
-  <img src="/img/posts/automatants/huma4.jpg" alt="Humaviron 4" class="wide">
+  <img src="/img_compressed/posts/automatants/huma4.jpg" alt="Humaviron 4" class="wide">
 </div>
 
 
@@ -233,7 +233,7 @@ The Humaviron, organized by a student humanitarian association, is a 12-hour cha
 Pantheon-Assas University, one of France’s top law schools, is known for training future legal professionals. Assas Legal Innovation, a student association at the university, aims to foster innovation in the legal field and prepare the next generation of lawyers for the challenges and opportunities brought by technological change. We presented the basics of artificial intelligence to law students, illustrating how AI can impact legal processes and decision-making.
 
 <div class="img-center">
-  <img src="/img/posts/automatants/assas.png" alt="Collaboration with Assas Legal Innovation">
+  <img src="/img_compressed/posts/automatants/assas.png" alt="Collaboration with Assas Legal Innovation">
 </div>
 
 
@@ -245,13 +245,13 @@ Our annual AI conference brings together students, professionals, and enthusiast
   - Marion Carré, entrepreneur and CEO of Ask Mona
 
 <div class="img-center">
-<img src="/img/posts/automatants/affiche_soiree_ia.png" alt="Soirée de l’IA affiche">
+<img src="/img_compressed/posts/automatants/affiche_soiree_ia.png" alt="Soirée de l’IA affiche">
 </div>
 
 Although the in-person event was cancelled just three weeks prior due to Covid restrictions, we quickly adapted and hosted the conference online. Despite the sudden change, the event attracted over 60 participants online.
 
 <div class="img-center">
-<img src="/img/posts/automatants/soiree_ia.jpg" alt="Soirée de l’IA online event">
+<img src="/img_compressed/posts/automatants/soiree_ia.jpg" alt="Soirée de l’IA online event">
 </div>
 
 #### Bouge la Science (05/07/2021)
@@ -261,11 +261,11 @@ This year, Automatants joined Bouge la Science, an event run by the humanitarian
 With another member of the association, I showed students aged 10 to 14 how a simple AI can play tic-tac-toe. It was fun to see their curiosity and excitement as they learned about science and AI.
 
 <div class="img-center">
-  <img src="/img/posts/automatants/bouge_la_science.png" alt="Bouge la Science 1">
+  <img src="/img_compressed/posts/automatants/bouge_la_science.png" alt="Bouge la Science 1">
 </div>
 
 <div class="img-gallery-2">
-  <img src="/img/posts/automatants/bouge_la_science_2.jpg" alt="Bouge la Science 2" class="wide">
+  <img src="/img_compressed/posts/automatants/bouge_la_science_2.jpg" alt="Bouge la Science 2" class="wide">
 </div>
 
 
@@ -274,7 +274,7 @@ With another member of the association, I showed students aged 10 to 14 how a si
 We presented our idea for a reinforcement learning competition, the Mind Games.  
 
 <div class="img-center">
-  <img src="/img/posts/automatants/jdb.jpg" alt="Journée des Bourses">
+  <img src="/img_compressed/posts/automatants/jdb.jpg" alt="Journée des Bourses">
 </div>
 
 #### Barspé (09/10/2022)
@@ -284,9 +284,9 @@ At the start of the school year, associations can organize a temporary restauran
 Preparing for 200 meals was intense. 10 of us turned my small flat into a mini kitchen, peeling potatoes until 2AM. It was stressful, but also a lot of fun.
 
 <div class="img-gallery-mixed">
-  <img src="/img/posts/automatants/barspé_1.png" alt="Barspé photo 1" class="tall">
-  <img src="/img/posts/automatants/barspé_2.png" alt="Barspé photo 2">
-  <img src="/img/posts/automatants/barspé_3.png" alt="Barspé photo 3">
+  <img src="/img_compressed/posts/automatants/barsp_1.png" alt="Barspé photo 1" class="tall">
+  <img src="/img_compressed/posts/automatants/barsp_2.png" alt="Barspé photo 2">
+  <img src="/img_compressed/posts/automatants/barsp_3.png" alt="Barspé photo 3">
 </div>
 
 #### Ubisoft Conference (12/13/2021)
@@ -294,7 +294,7 @@ Preparing for 200 meals was intense. 10 of us turned my small flat into a mini k
 We invited Guillaume Gaudron, Research Director at Ubisoft, to share how the company connects academic AI research with video games.  
 
 <div class="img-center">
-  <img src="/img/posts/automatants/ubisoft.png" alt="Ubisoft Conference">
+  <img src="/img_compressed/posts/automatants/ubisoft.png" alt="Ubisoft Conference">
 </div>
 
 #### Podcast with Polimi DataScientist (12/08/2021)
@@ -302,7 +302,7 @@ We invited Guillaume Gaudron, Research Director at Ubisoft, to share how the com
 A student association from Politecnico di Milano invited us for a podcast discussion on Reinforcement Learning. The podcast (in English) is [here](https://youtu.be/8uB7vfEwguE?si=Lqc-bdz25fkv1JYT).  
 
 <div class="img-center">
-  <img src="/img/posts/automatants/polimi.png" alt="Podcast with PMDS">
+  <img src="/img_compressed/posts/automatants/polimi.png" alt="Podcast with PMDS">
 </div>
 
 
@@ -312,7 +312,7 @@ A student association from Politecnico di Milano invited us for a podcast discus
 We worked with JCS (Junior Enterprise of CentraleSupélec), a student association that connects companies with students for short-term projects. Many of their projects were AI-related, so we trained their members to help them manage these projects. In return, they gave Automatants better access to AI-related company missions.
 
 <div class="img-center">
-  <img src="/img/posts/automatants/jcs.png" alt="Partnership with JCS">
+  <img src="/img_compressed/posts/automatants/jcs.png" alt="Partnership with JCS">
 </div>
 
 
@@ -321,19 +321,19 @@ We worked with JCS (Junior Enterprise of CentraleSupélec), a student associatio
 ## Other Memories  
 
 <div class="img-gallery-mixed">
-  <img src="/img/posts/automatants/random_1.jpg" alt="Random photo 1" class="tall">
-  <img src="/img/posts/automatants/random_3.jpg" alt="Random photo 3">
-  <img src="/img/posts/automatants/random_4.jpg" alt="Random photo 4">
-  <img src="/img/posts/automatants/random_2.jpg" alt="Random photo 2">
-  <img src="/img/posts/automatants/random_5.jpg" alt="Random photo 5">
-  <img src="/img/posts/automatants/random_6.jpg" alt="Random photo 6">
-  <img src="/img/posts/automatants/random_7.jpg" alt="Random photo 7">
-  <img src="/img/posts/automatants/random_8.jpg" alt="Random photo 8">
-  <img src="/img/posts/automatants/random_9.jpg" alt="Random photo 9">
+  <img src="/img_compressed/posts/automatants/random_1.jpg" alt="Random photo 1" class="tall">
+  <img src="/img_compressed/posts/automatants/random_3.jpg" alt="Random photo 3">
+  <img src="/img_compressed/posts/automatants/random_4.jpg" alt="Random photo 4">
+  <img src="/img_compressed/posts/automatants/random_2.jpg" alt="Random photo 2">
+  <img src="/img_compressed/posts/automatants/random_5.jpg" alt="Random photo 5">
+  <img src="/img_compressed/posts/automatants/random_6.jpg" alt="Random photo 6">
+  <img src="/img_compressed/posts/automatants/random_7.jpg" alt="Random photo 7">
+  <img src="/img_compressed/posts/automatants/random_8.jpg" alt="Random photo 8">
+  <img src="/img_compressed/posts/automatants/random_9.jpg" alt="Random photo 9">
 </div>
 
 <div class="img-gallery-2">
-  <img src="/img/posts/automatants/random_10.jpg" alt="Random photo 10" class="wide">
+  <img src="/img_compressed/posts/automatants/random_10.jpg" alt="Random photo 10" class="wide">
 </div>
 
 I’m also leaving a video [here](https://drive.google.com/file/d/1M0b4W8qG9A6TgW_x5G7u31CdRwTJhzwI/view) and my final legacy report [here](/assets/posts/rapport_passation_automatants.pdf).  

@@ -4,7 +4,7 @@ title:      "PhD Candidate at Institut Polytechnique de Paris and Mirakl"
 subtitle:   "Graph Representation Learning with Self-Supervised Learning"
 date:       2025-09-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/pages/home-bg.jpg"
+header-img: "/img_compressed/pages/home-bg.jpg"
 catalog: true
 published: false
 tags:
@@ -17,8 +17,8 @@ tags:
 
 > "Embarking on a PhD journey in graph representation learning, focusing on self-supervised learning methods."
 
-![IP Paris banner](/img/pages/ip-paris-banner.png)
-![Mirakl banner](/img/pages/mirakl-banner.jpeg)
+![IP Paris banner](/img_compressed/pages/ip-paris-banner.png)
+![Mirakl banner](/img_compressed/pages/mirakl-banner.jpeg)
 
 I am currently a PhD candidate at Institut Polytechnique de Paris, supervised by [Thomas Bonald](https://perso.telecom-paristech.fr/bonald/Home_page.html).
 

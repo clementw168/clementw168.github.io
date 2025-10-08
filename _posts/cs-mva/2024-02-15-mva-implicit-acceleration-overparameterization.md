@@ -4,7 +4,7 @@ title:      "Implicit Acceleration by Overparameterization"
 subtitle:   "Reimplementing Experiments from the Paper"
 date:       2024-02-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/cs-mva/linear_equivalence_dark.png"
+header-img: "/img_compressed/posts/cs-mva/linear_equivalence_dark.png"
 catalog: true
 published: true
 tags:
@@ -28,7 +28,7 @@ The central idea of the paper is **counterintuitive**: increasing the depth of a
 
 Consider a network of depth *N* with only linear layers and no activations. In function space, this is equivalent to a single linear transformation.
 
-![Linear network](/img/posts/cs-mva/linear_equivalence.png)
+![Linear network](/img_compressed/posts/cs-mva/linear_equivalence.png)
 
 
 Despite functional equivalence, the optimization trajectory differs. When training each layer with SGD, the equivalent one-layer model effectively inherits:

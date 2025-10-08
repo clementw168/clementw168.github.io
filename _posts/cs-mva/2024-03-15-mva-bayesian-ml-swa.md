@@ -4,7 +4,7 @@ title:      "Averaging Weights Leads to Wider Optima and Better Generalization"
 subtitle:   "Implementation of Stochastic Weight Averaging (SWA) for Better Generalization"
 date:       2024-03-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/cs-mva/swa_loss_landscape_dark.png"
+header-img: "/img_compressed/posts/cs-mva/swa_loss_landscape_dark.png"
 catalog: true
 published: true
 tags:
@@ -33,7 +33,7 @@ The core idea of **Stochastic Weight Averaging (SWA)** is to improve generalizat
 
 This process is computationally cheap and can be seen as an approximation of ensembling, but without training multiple models.  
 
-![SWA algorithm](/img/posts/cs-mva/swa_algo.png)
+![SWA algorithm](/img_compressed/posts/cs-mva/swa_algo.png)
 
 More details on the method are available in the [report](https://raw.githubusercontent.com/clementw168/BayesianML-SWA/main/BayesianML_Report.pdf).  
 
@@ -48,13 +48,13 @@ We evaluated SWA across different domains:
 
 Here I will only show results on the image classification tasks—the trends were similar for the other datasets. Full details can be found in the [report](https://raw.githubusercontent.com/clementw168/BayesianML-SWA/main/BayesianML_Report.pdf).  
 
-![Results on image classification](/img/posts/cs-mva/swa_image.png)
+![Results on image classification](/img_compressed/posts/cs-mva/swa_image.png)
 
 To examine the intuition behind SWA, we also visualized the loss landscapes of MobileNet V2 trained on CIFAR100:  
 
 | Loss landscape of MobileNet V2 on CIFAR100 |
 |:------------------------------------------:|
-| ![Visualization](/img/posts/cs-mva/swa_loss_landscape.png) |
+| ![Visualization](/img_compressed/posts/cs-mva/swa_loss_landscape.png) |
 
 
 ## Results

@@ -4,7 +4,7 @@ title:      "Training a Foundation Model for EEG Time Series at Beacon Biosignal
 subtitle:   "Self-Supervised Learning for Sleep EEG Analysis with 95% Fewer Labels"
 date:       2024-10-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/beacon/eeg.png"
+header-img: "/img_compressed/posts/beacon/eeg.png"
 catalog: true
 published: true
 mathjax: true
@@ -95,7 +95,7 @@ We adopt the tokenization pipeline from BIOT, which transforms a raw EEG segment
 
 6. **Flattening**: The resulting tensor is reshaped into $$\mathbf{Z}' \in \mathbb{R}^{(N_c \cdot T') \times n_{\text{hid}}}$$ forming the input token sequence for the Transformer.
 
-![EEG tokenization](/img/posts/beacon/tokens.png)
+![EEG tokenization](/img_compressed/posts/beacon/tokens.png)
 
 A learnable **[CLS] token** is prepended to the sequence, and the data is passed through an **encoder-only Transformer**. The final hidden state corresponding to the [CLS] token, denoted $\mathbf{h}_{\text{CLS}}$, serves as the representation of the entire EEG segment for downstream classification tasks.
 
@@ -139,7 +139,7 @@ Here, $\tau$ is a temperature parameter that controls how sharply similarities a
 - The **numerator** enforces high similarity between the positive pair $ (z^{(k)}_i, z^{(k)}_j) $.
 - The **denominator** aggregates similarities with all other representations in the batch, penalizing high similarity to negatives.
 
-![Contrastive learning](/img/posts/beacon/contrastive.png)
+![Contrastive learning](/img_compressed/posts/beacon/contrastive.png)
 
 From a probabilistic perspective, InfoNCE performs an $n$-way classification task, where each sample acts as its own class. The similarity matrix serves as the set of logits for this implicit classification.  
 For a batch of size $n$, there are $n$ positive pairs and $n(n-1)$ negative pairs, making the task increasingly challenging and potentially more robust as batch size grows.
@@ -160,7 +160,7 @@ We define two families of augmentations:
 - **Global transformations** $\mathcal{T}^{\text{glob}}$: produce large-scale crops (e.g., covering >50% of the temporal signal);
 - **Local transformations** $\mathcal{T}^{\text{local}}$: produce smaller crops (<50% of the signal), emphasizing fine-grained temporal information.
 
-![DINO](/img/posts/beacon/dino.png)
+![DINO](/img_compressed/posts/beacon/dino.png)
 
 Pseudo code for DINO:
 

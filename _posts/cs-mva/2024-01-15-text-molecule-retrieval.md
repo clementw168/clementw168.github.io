@@ -4,7 +4,7 @@ title:      "Text-based Molecule Retrieval"
 subtitle:   "Learning to Match Molecular Graphs with Text Queries"
 date:       2024-01-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/cs-mva/altegrad_contrastive_dark.png"
+header-img: "/img_compressed/posts/cs-mva/altegrad_contrastive_dark.png"
 catalog: true
 published: true
 tags:
@@ -22,7 +22,7 @@ This project, part of the [Advanced Learning for Text and Graph Data course](htt
 
 We combined **textual descriptions** and **molecular graphs** using a contrastive learning framework, aligning representations of molecules and their textual descriptions in a shared embedding space.
 
-![Architecture](/img/posts/cs-mva/altegrad_contrastive.png)
+![Architecture](/img_compressed/posts/cs-mva/altegrad_contrastive.png)
 
 
 ## Methodology
@@ -30,13 +30,13 @@ We combined **textual descriptions** and **molecular graphs** using a contrastiv
 ### Text Encoder
 Molecule names and descriptions often contain specialized vocabulary. Standard tokenizers split them poorly, so we trained a custom tokenizer to preserve meaningful units. On top of this, we trained a DistilBERT model from scratch using masked language modeling. This allowed the text encoder to generate embeddings that capture semantic nuances of chemical descriptions.
 
-![Total number of tokens](/img/posts/cs-mva/altegrad_token.png)
+![Total number of tokens](/img_compressed/posts/cs-mva/altegrad_token.png)
 
 
 ### Graph Encoder
 Molecules are naturally represented as graphs. We used **Graph Attention Networks (GATs)** to encode structural information, allowing the model to assign dynamic importance to neighboring atoms and bonds. Multiple layers capture both local interactions and higher-order structural patterns. The graph encoder outputs embeddings that summarize the molecular graph in a way that can be directly compared to text embeddings.
 
-![Graph Attention Network](/img/posts/cs-mva/altegrad_gat.png)
+![Graph Attention Network](/img_compressed/posts/cs-mva/altegrad_gat.png)
 
 ### Training Tricks
 Training stability and convergence were critical. We used **cosine learning rate scheduling with warmup**, large batch sizes, and **online hard sample mining**. Hard sample mining prioritized the most challenging molecules within a batch, improving contrastive learning effectiveness. Dropout and layer normalization prevented overfitting, while mixed-precision training enabled scaling to large graphs efficiently.
@@ -52,7 +52,7 @@ Edge perturbation had the largest positive impact, while more aggressive augment
 ### Self-Supervised Training
 Labeled data was limited, so we leveraged **self-supervised contrastive learning**. Inspired by the iBOT framework, we trained a student and teacher network using multiple augmented views of each molecule. The student was optimized to match the teacher’s embeddings for corresponding views, promoting invariant representations. Centering and temperature scaling stabilized training. This pretraining improved convergence and helped the model generalize better on unseen molecules.
 
-![Self-Supervised Training](/img/posts/cs-mva/altegrad_self_supervised.png)
+![Self-Supervised Training](/img_compressed/posts/cs-mva/altegrad_self_supervised.png)
 
 
 ## Results

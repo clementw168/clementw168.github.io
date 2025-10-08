@@ -4,7 +4,7 @@ title:      "3D Surgery Tools Tracking from Single RGB Camera at Stryker"
 subtitle:   "Computer Vision for Medical Device Tracking in Surgical Environments"
 date:       2023-07-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/gap_year/stryker_building.png"
+header-img: "/img_compressed/posts/gap_year/stryker_building.png"
 catalog: true
 published: true
 mathjax: true
@@ -27,14 +27,14 @@ Before returning to university, I did a six-month internship in the R&D team at 
 
 Accurate tracking of surgical instruments is essential for both the **success and safety** of procedures. At Stryker, the **FP8000 camera system** is used: it combines two near-infrared (NIR) cameras and a high-resolution RGB camera. The NIR cameras track passive fiducial markers via triangulation, providing real-time 3D coordinates, while the RGB camera captures high-resolution images of the surgical field.
 
-![FP8000 camera system](/img/posts/gap_year/stryker_nav_sys.png)
+![FP8000 camera system](/img_compressed/posts/gap_year/stryker_nav_sys.png)
 
 My internship focused on the **High-Speed Drill (HSD)**, a surgical tool consisting of:  
 - a **tracker** (with reflective fiducials),  
 - an **attachment** (straight or twisted),  
 - and the **bur**, the cutting or drilling head.
 
-![High-Speed Drill](/img/posts/gap_year/stryker_hsd.png)
+![High-Speed Drill](/img_compressed/posts/gap_year/stryker_hsd.png)
 
 The existing workflow required **manual calibration of each instrument** to determine the precise 3D offset between the tracker and the bur tip. Since a surgery may involve dozens of instruments, and each calibration could take minutes, the setup process was inefficient and time-consuming.  
 
@@ -55,7 +55,7 @@ In short, the pipeline achieves precise calibration by merging:
 - **3D tracker positions** from the NIR system,  
 - and a **multi-frame triangulation process** to minimize errors.
 
-![Global Pipeline](/img/posts/gap_year/stryker_global_pipeline.png)
+![Global Pipeline](/img_compressed/posts/gap_year/stryker_global_pipeline.png)
 
 
 ## Data Collection and Preparation  
@@ -70,7 +70,7 @@ I collected the dataset directly with the **FP8000 camera**, obtaining:
 
 The 3D data was projected onto the 2D images using linear algebra transformations and OpenCV's camera distortion parameters (radial, tangential, and prism coefficients).  
 
-![Data Acquisition](/img/posts/gap_year/stryker_data.png)
+![Data Acquisition](/img_compressed/posts/gap_year/stryker_data.png)
 
 ### Data Cleaning  
 To ensure quality:  
@@ -86,14 +86,14 @@ To make the model robust, I applied random flips, rotations, brightness/contrast
 
 Additionally, I created synthetic data: tools were filmed against a blue drape, segmented with GrabCut, and then **pasted onto random indoor backgrounds** with rotation and scaling. This “Photoshop augmentation” helped simulate realistic variability.
 
-![Photoshop Augmentation](/img/posts/gap_year/stryker_photoshop_augment.png)
+![Photoshop Augmentation](/img_compressed/posts/gap_year/stryker_photoshop_augment.png)
 
 
 ## HRNet Training
 
 For detecting surgical tool keypoints, I used the **HRNet architecture** in PyTorch. Instead of training from scratch, I initialized the model with **pretrained weights from human pose estimation**, which gave faster convergence and better accuracy than random initialization.  
 
-![HRNet](/img/posts/gap_year/stryker_HRnet.png)
+![HRNet](/img_compressed/posts/gap_year/stryker_HRnet.png)
 
 
 The training objective combined **MSE loss** with **Online Hard Keypoint Mining (OHKM)** and a **weighted loss** that emphasized the bur tip. This proved effective since the tip was the most critical keypoint.  
@@ -103,7 +103,7 @@ On the data side, I found that mixing **2/5 synthetic images** with real ones ga
 At inference, I applied **multi-flip ensembling** to reduce variance. Together with the refined loss functions, the final model achieved an **MSE of ~2.6 pixels for the tip**, which corresponds to sub-millimeter precision in real-world coordinates.  
 
 Random test results:
-![Random Test Results](/img/posts/gap_year/stryker_random_test_visualization.png)
+![Random Test Results](/img_compressed/posts/gap_year/stryker_random_test_visualization.png)
 
 ## Triangulation of the Tip  
 
@@ -208,7 +208,7 @@ The matrix $M^TM$ is a square symmetric non-negative matrix with a rank of at le
 
 The method achieved an **average error below 3.0 mm** when using 25 frames (≈10 seconds of video before filtering). Considering that the manual calibration used as ground truth can itself deviate by up to **2 mm**, this level of accuracy is very strong and demonstrates the effectiveness of the approach.
 
-![Results](/img/posts/gap_year/stryker_calibration_error.png)
+![Results](/img_compressed/posts/gap_year/stryker_calibration_error.png)
 
 
 ## Thoughts

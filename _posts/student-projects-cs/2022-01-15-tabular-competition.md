@@ -4,7 +4,7 @@ title:      "Tabular Data Competition: Building Classification from Geodata"
 subtitle:   "Ranked 2nd over 72 in Course Competition on Tabular Data"
 date:       2022-01-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/student-projects/tabular-competition/full_data_dark.jpg"
+header-img: "/img_compressed/posts/student-projects/tabular-competition/full_data_dark.jpg"
 catalog: true
 published: true
 tags:
@@ -24,7 +24,7 @@ Ranked **2nd out of 72 participants** in a machine learning course competition f
 
 The competition required participants to leverage both geographical coordinates and building characteristics to accurately predict building types, making it a complex feature engineering and model selection challenge.
 
-![Visualization of geo data](/img/posts/student-projects/tabular-competition/full_data.jpg)
+![Visualization of geo data](/img_compressed/posts/student-projects/tabular-competition/full_data.jpg)
 
 ## Technical Approach
 
@@ -37,7 +37,7 @@ Feature engineering was the key to success in this competition. We created over 
 - **Geometric Features**: Calculated length, width, and their ratios to distinguish between different building types (e.g., roads vs. buildings)
 - **Spatial Neighbors**: Exploited the fact that the dataset contained blocks of buildings from satellite views by adding features from the k-nearest neighbors within a certain radius
 
-![Visualization of some classes](/img/posts/student-projects/tabular-competition/buildings.png)
+![Visualization of some classes](/img_compressed/posts/student-projects/tabular-competition/buildings.png)
 
 ### Model Selection & Ensemble
 
@@ -49,7 +49,7 @@ We tested multiple models and achieved the best results with an ensemble of thre
 
 The ensemble was validated using 10-fold cross-validation with manual hyperparameter tuning for each model.
 
-![Models comparison](/img/posts/student-projects/tabular-competition/model_bench.png)
+![Models comparison](/img_compressed/posts/student-projects/tabular-competition/model_bench.png)
 
 ### Results & Lessons Learned
 

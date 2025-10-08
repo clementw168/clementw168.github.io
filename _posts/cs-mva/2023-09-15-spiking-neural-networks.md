@@ -4,7 +4,7 @@ title:      "Spiking Neural Networks Benchmark"
 subtitle:   "Exploring Bio-Inspired Computing for Image and Time Series Classification"
 date:       2023-09-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/cs-mva/snn.png"
+header-img: "/img_compressed/posts/cs-mva/snn.png"
 catalog: true
 published: true
 tags:

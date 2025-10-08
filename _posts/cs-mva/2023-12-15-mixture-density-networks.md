@@ -4,7 +4,7 @@ title:      "Mixture Density Networks Implementation"
 subtitle:   "Modeling Multi-Modal Regression with Probabilistic Neural Networks"
 date:       2023-12-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/cs-mva/mdn_poster_dark.jpg"
+header-img: "/img_compressed/posts/cs-mva/mdn_poster_dark.jpg"
 catalog: true
 published: true
 mathjax: true
@@ -21,7 +21,7 @@ tags:
 
 As part of the [Probabilistic Graphical Models and Deep Generative Models course](https://lmbp.uca.fr/~latouche/mva/IntroductiontoProbabilisticGraphicalModelsMVA.html) by Pierre Latouche and Pierre-Alexandre Mattei, I implemented **Mixture Density Networks (MDNs)** to model multi-modal regression problems with Antoine Debouchage and Valentin Denée. MDNs allow neural networks to predict full conditional probability distributions rather than single-point estimates, providing richer uncertainty quantification.
 
-![Poster](/img/posts/cs-mva/mdn_poster.jpg)
+![Poster](/img_compressed/posts/cs-mva/mdn_poster.jpg)
 
 
 ## Core Concept

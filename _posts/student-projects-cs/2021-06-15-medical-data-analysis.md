@@ -4,7 +4,7 @@ title:      "Infering Genes Links with Unsupervised Methods"
 subtitle:   "Collaboration with Pasteur Institute on Gene Expression Analysis"
 date:       2021-06-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/pasteur.png"
+header-img: "/img_compressed/posts/student-projects/pasteur.png"
 catalog: true
 published: true
 tags:
@@ -21,7 +21,7 @@ tags:
 
 This one-week project was conducted in collaboration with the Pasteur Institute, focusing on inferring gene relationships from expression data using unsupervised learning methods in R.
 
-![Logo of Pasteur institut](/img/posts/pasteur_logo.jpg)
+![Logo of Pasteur institut](/img_compressed/posts/student-projects/pasteur_logo.jpg)
 
 Our team consisted of 6 students working with a comprehensive dataset containing gene expression data from 2,000 patients across 5 different stimuli. The objective was to identify meaningful gene interactions and relationships from this dataset.
 

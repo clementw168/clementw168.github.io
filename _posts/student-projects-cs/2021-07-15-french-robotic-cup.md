@@ -4,7 +4,7 @@ title:      "French Robotic Cup - Autonomous Robot Development"
 subtitle:   "Building an Autonomous Robot for Object Manipulation in Defined Environment"
 date:       2021-07-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/student-projects/plan_croc.png"
+header-img: "/img_compressed/posts/student-projects/plan_croc.png"
 catalog: true
 published: true
 tags:
@@ -24,7 +24,7 @@ This comprehensive project integrated multiple engineering disciplines, includin
 
 Our robot           | Competition arena
 :-------------------------:|:-------------------------:
-![Photo of our robot](/img/posts/student-projects/croc_1.jpg)  |  ![Photo of the playground](/img/posts/student-projects/croc_2.jpg)
+![Photo of our robot](/img_compressed/posts/student-projects/croc_1.jpg)  |  ![Photo of the playground](/img_compressed/posts/student-projects/croc_2.jpg)
 
 The competition arena featured a structured environment with specific zones, obstacles, and target objects that robots needed to identify and manipulate. Our robot was equipped with multiple sensors, including cameras and a LiDAR, to navigate and interact with the environment autonomously.
 

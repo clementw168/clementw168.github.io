@@ -4,7 +4,7 @@ title:      "ViaRézo - Tech Student Association of CentraleSupélec"
 subtitle:   "My first steps in a tech environment"
 date:       2021-05-01 12:00:00
 author:     "Clement Wang"
-header-img: "/img/banners/viarezo.jpg"
+header-img: "/img_compressed/banners/viarezo.jpg"
 catalog: true
 published: true
 tags:

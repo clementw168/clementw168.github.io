@@ -4,7 +4,7 @@ title:      "Lymphocytosis Classification - Medical Imaging Project"
 subtitle:   "Automated Detection of Reactive vs Tumoral Lymphocytosis from Blood Smears"
 date:       2024-03-01 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/cs-mva/lympho.png"
+header-img: "/img_compressed/posts/cs-mva/lympho.png"
 catalog: true
 published: true
 tags:
@@ -23,7 +23,6 @@ This project aimed to build an automated system to distinguish **reactive** from
 
 This work was part of the [Deep Learning for Medical Imaging course](https://www.aramislab.fr/teaching/DLMI-2020-2021/) by Olivier Colliot and Maria Vakalopoulou.
 
----
 
 ## Approach
 

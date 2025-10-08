@@ -20,6 +20,7 @@
         "start": "bundle exec jekyll serve",
         "dev": "grunt watch & npm run start",
         "boil": "git push boilerplate boilerplate:master",
-        "push": "git push origin master --tag"
+        "push": "git push origin master --tag",
+        "compress-images": "find img -type f \\( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \\) -exec sh -c 'out=\"img_compressed/${1#img/}\"; if [ ! -f \"$out\" ]; then mkdir -p \"$(dirname \"$out\")\"; imagemin \"$1\" > \"$out\"; echo \"✅ Compressed: $1 → $out\"; else echo \"⏩ Skipped (exists): $out\"; fi' _ {} \\;"
     }
 }

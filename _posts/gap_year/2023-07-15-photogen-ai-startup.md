@@ -4,7 +4,7 @@ title:      "Photogen AI - Founding a Startup on Diffusion Models"
 subtitle:   "From Research to Production: AI-Generated Images for Customers"
 date:       2023-07-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/gap_year/photogen_dark.png"
+header-img: "/img_compressed/posts/gap_year/photogen_dark.png"
 catalog: true
 published: true
 tags:
@@ -47,7 +47,7 @@ With the right fine-tuning tricks, we managed to get results that felt like actu
 
 In front of the Eiffel Tower| In front of the Kremlin | In Rome | Professional picture
 :-----:|:-----:|:-----: | :-----:  
-![In front of the Eiffel Tower](/img/posts/gap_year/in_front_of_the_eiffel_tower.jpg)| ![In front of the Kremlin](/img/posts/gap_year/in_front_of_the_kremlin.jpg)| ![In Rome](/img/posts/gap_year/in_rome.jpg)| ![Professional Picture](/img/posts/gap_year/professional_picture.jpg)|  
+![In front of the Eiffel Tower](/img_compressed/posts/gap_year/in_front_of_the_eiffel_tower.jpg)| ![In front of the Kremlin](/img_compressed/posts/gap_year/in_front_of_the_kremlin.jpg)| ![In Rome](/img_compressed/posts/gap_year/in_rome.jpg)| ![Professional Picture](/img_compressed/posts/gap_year/professional_picture.jpg)|  
 
 
 
@@ -62,7 +62,7 @@ We also set up monitoring dashboards, error alerts, and cost optimizations to ke
 
 AWS Dashboard|  
 :-----:|  
-![AWS Dashboard](/img/posts/gap_year/aws.png)|  
+![AWS Dashboard](/img_compressed/posts/gap_year/aws.png)|  
 
 
 ### Paris GenAI Hackathon  
@@ -79,7 +79,7 @@ Example result (Prompt: *Wearing a red suit at Cannes*):
 
 Visualization|  
 :-----:|  
-![Visualization](/img/posts/gap_year/replacement.png)|  
+![Visualization](/img_compressed/posts/gap_year/replacement.png)|  
 
 
 ### Multi-Person Image Generation  
@@ -88,9 +88,9 @@ Another research direction was **group photo generation**. This required merging
 
 Here are some outputs:  
 
-| ![Image1](/img/posts/gap_year/group_dream_1.png)| ![Image2](/img/posts/gap_year/group_dream_2.png)| ![Image3](/img/posts/gap_year/group_dream_3.png)|  
+| ![Image1](/img_compressed/posts/gap_year/group_dream_1.png)| ![Image2](/img_compressed/posts/gap_year/group_dream_2.png)| ![Image3](/img_compressed/posts/gap_year/group_dream_3.png)|  
 |-|-|-|  
-| ![Image4](/img/posts/gap_year/group_caricature_1.png)| ![Image5](/img/posts/gap_year/group_caricature_2.png)| ![Image6](/img/posts/gap_year/group_caricature_3.png)|  
+| ![Image4](/img_compressed/posts/gap_year/group_caricature_1.png)| ![Image5](/img_compressed/posts/gap_year/group_caricature_2.png)| ![Image6](/img_compressed/posts/gap_year/group_caricature_3.png)|  
 
 
 ## Reflections  
