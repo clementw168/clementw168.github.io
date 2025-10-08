@@ -4,7 +4,7 @@ title:      "Delivery Date Estimation Model at Mirakl"
 subtitle:   "From POC to Production: Building a Time Series Forecasting Solution"
 date:       2025-10-07 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/mirakl/edd.png"
+header-img: "/img_compressed/posts/mirakl/edd.png"
 catalog: true
 published: true
 tags:

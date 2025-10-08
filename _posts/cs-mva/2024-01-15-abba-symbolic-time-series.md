@@ -4,7 +4,7 @@ title:      "Implementation of ABBA Symbolic Representation of Time Series"
 subtitle:   "Adaptive Brownian Bridge-based Symbolic Aggregation for Time Series Forecasting"
 date:       2024-01-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/cs-mva/sunspot_results_dark.png"
+header-img: "/img_compressed/posts/cs-mva/sunspot_results_dark.png"
 catalog: true
 published: true
 tags:
@@ -45,7 +45,7 @@ ABBA converts a time series into symbols through three main stages:
 
 3. **Reconstruction** – From the sequence of symbols, an approximate version of the original time series can be reconstructed, enabling lossy compression.  
 
-![ABBA decomposition](/img/posts/cs-mva/abba_decomposition.png)
+![ABBA decomposition](/img_compressed/posts/cs-mva/abba_decomposition.png)
 
 The promise is that instead of modeling thousands of raw values, one can train models on much shorter symbolic sequences.
 
@@ -65,11 +65,11 @@ We tested ABBA on two datasets:
 
 <div style="display: flex; justify-content: center; gap: 20px;">
   <div style="flex: 1; text-align: center;">
-    <img src="/img/posts/cs-mva/abba_example_sinus.png" alt="ABBA reconstruction - sinusoidal" style="max-width:100%; border-radius:10px;">
+    <img src="/img_compressed/posts/cs-mva/abba_example_sinus.png" alt="ABBA reconstruction - sinusoidal" style="max-width:100%; border-radius:10px;">
     <p><em>ABBA reconstruction on a sinusoidal dataset</em></p>
   </div>
   <div style="flex: 1; text-align: center;">
-    <img src="/img/posts/cs-mva/abba_example_sunspot.png" alt="ABBA reconstruction - sunspots" style="max-width:100%; border-radius:10px;">
+    <img src="/img_compressed/posts/cs-mva/abba_example_sunspot.png" alt="ABBA reconstruction - sunspots" style="max-width:100%; border-radius:10px;">
     <p><em>ABBA reconstruction on the Sunspots dataset</em></p>
   </div>
 </div>
@@ -84,8 +84,8 @@ We compared two forecasting approaches:
 - **Raw LSTM**: trained directly on raw time series values.  
 - **ABBA-LSTM**: trained on ABBA-generated symbol sequences.  
 
-![Results on sinusoidal](/img/posts/cs-mva/sinus_results.png)
-![Results on sunspots](/img/posts/cs-mva/sunspot_results.png)
+![Results on sinusoidal](/img_compressed/posts/cs-mva/sinus_results.png)
+![Results on sunspots](/img_compressed/posts/cs-mva/sunspot_results.png)
 
 | Dataset         | Raw LSTM (DTW ↓) | ABBA-LSTM (DTW ↓) |
 |-----------------|------------------|-------------------|

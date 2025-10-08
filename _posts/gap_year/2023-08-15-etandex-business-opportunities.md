@@ -4,7 +4,7 @@ title:      "Analyzing Business Opportunities at Etandex"
 subtitle:   "Freelance Business Intelligence Analysis with Explainable AI for Commercial Opportunity Prediction"
 date:       2023-08-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/gap_year/etandex_dark.png"
+header-img: "/img_compressed/posts/gap_year/etandex_dark.png"
 catalog: true
 published: true
 tags:
@@ -50,7 +50,7 @@ To interpret the predictions, I applied:
 - **SHAP values**: Quantified the contribution of each feature to predictions globally and locally. For example, “decision-maker role” consistently had a positive impact, while employee seniority varied depending on context.  
 - **Anchor rules**: Provided simple conditional rules explaining why a prediction was made, enhancing interpretability for non-technical stakeholders.  
 
-![Shap](/img/posts/gap_year/shap.png)
+![Shap](/img_compressed/posts/gap_year/shap.png)
 
 ## Takeaways
 

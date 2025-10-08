@@ -4,7 +4,7 @@ title:      "Neural Style Transfer and Perceptual Loss"
 subtitle:   "From Vanilla NST to Real-Time Style Transfer"
 date:       2021-09-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/automatants/nst-bg.png"
+header-img: "/img_compressed/posts/automatants/nst-bg.png"
 catalog: true
 published: true
 mathjax: true
@@ -23,7 +23,7 @@ Neural Style Transfer (NST) is a fascinating application of computer vision. The
 
 The core idea behind NST is that deep convolutional networks trained for image classification learn hierarchical representations that can separate content from style. By using pre-trained VGG networks, we can extract perceptual features that capture the essence of an image's content and style separately, enabling us to optimize a new image to match both and thus transfer the style of one image to another.
 
-![Visualization of NST](/img/posts/automatants/nst.png)
+![Visualization of NST](/img_compressed/posts/automatants/nst.png)
 
 
 ## Mathematical Foundation
@@ -90,7 +90,7 @@ I manually tuned the hyperparameters so that the content and style losses were b
 The optimization-based approach requires hundreds of iterations per image. Fast NST addresses this limitation by training a feed-forward network that can generate stylized images in a single forward pass. The neural network takes the content image as input and outputs the stylized image directly.
 
 
-![Fast NST](/img/posts/automatants/fast-nst.png)
+![Fast NST](/img_compressed/posts/automatants/fast-nst.png)
 
 
 ## Thoughts

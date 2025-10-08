@@ -4,7 +4,7 @@ title:      "Satellite Images Competition and Publication at BiDS 2023"
 subtitle:   "Predicting Leaf Area Index from Sentinel Satellite Data"
 date:       2023-11-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/gap_year/satellite.png"
+header-img: "/img_compressed/posts/gap_year/satellite.png"
 catalog: true
 published: true
 tags:
@@ -19,7 +19,7 @@ tags:
 
 In April 2023, I participated in a 3-week competition to predict the Leaf Area Index (LAI) for each pixel in satellite images from Sentinel-1 and Sentinel-2. The project combined remote sensing, computer vision, and deep learning, and led to a publication at the [Big Data from Space (BiDS) 2023 conference](https://www.bigdatafromspace2023.org/) in Vienna, Austria.
 
-![Data visualization](/img/posts/gap_year/lai_pred.png)
+![Data visualization](/img_compressed/posts/gap_year/lai_pred.png)
 
 Our work was accepted at BiDS 2023:
 

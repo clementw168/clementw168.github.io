@@ -4,7 +4,7 @@ title:      "Quick, Draw! Competition at Automatants"
 subtitle:   "Winning Competition on Imbalanced Image Classification"
 date:       2021-11-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/automatants/quickdraw-bg.jpg"
+header-img: "/img_compressed/posts/automatants/quickdraw-bg.jpg"
 catalog: true
 published: true
 tags:
@@ -27,7 +27,7 @@ For more details and the full code, see my [GitHub repository](https://github.co
 
 The competition dataset was a subset of the Google [Quick, Draw! dataset](https://quickdraw.withgoogle.com/), which consists of 28x28 pixel black-and-white sketches. For the competition, we were given 100 classes, but with a severe class imbalance: the first class had 1,000 images, the second had 990, the third 980, and so on, down to just 10 images for the last class. The test set, in contrast, was balanced and contained 100,000 images.
 
-![Quickdraw Dataset](/img/posts/automatants/quickdraw.jpg)
+![Quickdraw Dataset](/img_compressed/posts/automatants/quickdraw.jpg)
 
 Some of the competition rules made the challenge even more interesting:
 - Teams could have up to three participants.
@@ -54,7 +54,7 @@ References:
 
 Given limited computational resources, I focused on lightweight but effective architectures. My main choice was MobileNetV2 which was known to be both fast and efficient, and surprisingly powerful even on small datasets. I also experimented with classic CNNs and ResNet-style networks, but MobileNetV2 consistently offered the best trade-off between performance and training speed.
 
-![MobileNetV2](/img/posts/automatants/mobilenetv2.png)
+![MobileNetV2](/img_compressed/posts/automatants/mobilenetv2.png)
 
 
 References:

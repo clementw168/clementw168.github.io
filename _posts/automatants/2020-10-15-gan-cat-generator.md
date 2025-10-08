@@ -4,7 +4,7 @@ title:      "GAN: Cat Generator - My First Deep Learning Project"
 subtitle:   "From DCGAN to Progressive GAN for Cat Image Generation"
 date:       2020-10-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/automatants/gan.png"
+header-img: "/img_compressed/posts/automatants/gan.png"
 catalog: true
 published: true
 tags:
@@ -23,7 +23,7 @@ This project marked my introduction to deep learning. As my very first deep lear
 
 The journey from concept to working model was filled with both breakthroughs and setbacks. Here are some examples of the generated cat images produced by the different model architectures:
 
-![Generated cats](/img/posts/automatants/gan.png)
+![Generated cats](/img_compressed/posts/automatants/gan.png)
 
 ## Technical Approach
 
@@ -33,12 +33,12 @@ I began with a Deep Convolutional Generative Adversarial Network (DCGAN). I simp
 ### 2. Enhanced Architecture with Residual Connections
 To improve model performance, I experimented with adding residual connections to the GAN architecture. I had in mind that larger and deeper networks would be able to generate better images.
 
-![Residual Connections](/img/posts/automatants/residual_gan.png)
+![Residual Connections](/img_compressed/posts/automatants/residual_gan.png)
 
 ### 3. Progressive Growing GAN
 Then, I wanted to dive into more complexity. Since StyleGAN seemed a bit too complex, I decided to implement a Progressive GAN. The idea is to starts training on very small images (4×4 pixels) and gradually increases the resolution during training. The progressive nature allows the model to learn coarse features first, then refine them to finer details, theoretically producing more stable training and higher quality results. In practice, the implementation worked but I did not see any significant gain in quality.
 
-![Progressive Growing GAN](/img/posts/automatants/progressive_gan.png)
+![Progressive Growing GAN](/img_compressed/posts/automatants/progressive_gan.png)
 
 ## Implementation and Deployment
 

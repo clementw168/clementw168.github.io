@@ -4,7 +4,7 @@ title:      "Machine Learning Consultant at Paris Digital Lab"
 subtitle:   "Various Computer Vision Projects for Companies - 3 Projects of 7 Weeks Each"
 date:       2022-07-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/banners/paris_digital_lab_dark.jpg"
+header-img: "/img_compressed/banners/paris_digital_lab_dark.jpg"
 catalog: true
 published: true
 tags:
@@ -39,7 +39,7 @@ This project was unusual. The client needed to detect and classify radio signals
 
 We turned the time-frequency representation into an image-like format and applied YOLOv3 for detection. The intuition was simple: each type of radio signal manifests as a distinct pattern in the spectrogram, much like an object in a picture. I worked on YOLOv3 and it achieved **0.95 mAP @ IOU 0.5**, which was largely beyond what the client expected. The other two members worked on RCNN and Unet. I had the best results with YOLOv3.
 
-![Radio Wave Detection](/img/posts/gap_year/radio_wave_detection.png)
+![Radio Wave Detection](/img_compressed/posts/gap_year/radio_wave_detection.png)
 
 It was fascinating to see how techniques from computer vision could transfer to signal processing problems. It also taught me the importance of representation: a slightly different visualization could completely change the effectiveness of a model. Most of my time was spent on understanding the literature of Object Detection and modifying a Github repository to fit our needs.
 
@@ -52,7 +52,7 @@ This project was much simpler. L’Oréal wanted to identify the lipstick a pers
 
 In practice, there were a few twists. First, I used Dlib for face landmarks detection, which reliably localized lips. Then, I trained a regression CNN to predict color properties in LAB space — perceptually uniform, which makes matching more accurate. The client also wanted uncertainty estimation for each prediction, so I implemented **Deep Evidential Regression**, which gave not only a color prediction but also a confidence interval. By the end of the project, we had a fully functioning MVP capable of suggesting lipstick matches from a single selfie with reasonable confidence.
 
-![Lipstick from Selfies](/img/posts/gap_year/lipstick_retrieval.png)
+![Lipstick from Selfies](/img_compressed/posts/gap_year/lipstick_retrieval.png)
 
 [Amini, Alexander, et al. "Deep evidential regression." Advances in neural information processing systems 33 (2020): 14927-14937.](https://proceedings.neurips.cc/paper_files/paper/2020/file/aab085461de182608ee9f607f3f7d18f-Paper.pdf)
 
@@ -65,7 +65,7 @@ The final project was a bit more research-oriented. Oorion wanted a system where
 
 This was at the peak of zero-shot and few-shot learning hype. CLIP was just released and changed the game. I spent the first few weeks diving into literature: few-shot image classification, few-shot object detection, class-agnostic detection, open-world object detection, CLIP, and referring expression comprehension. Eventually, I designed a solution combining a class-agnostic detector with CLIP embeddings on top. The idea was simple but elegant: the detector finds all objects, and CLIP matches them to the desired class without retraining for each new label.
 
-![Personalized Object Detection](/img/posts/gap_year/oorion.png)
+![Personalized Object Detection](/img_compressed/posts/gap_year/oorion.png)
 
 We achieved **0.20 mAP on COCO**, which wasn’t groundbreaking, but the experience was interesting. We achieved interesting results with personalization since CLIP image-to-image distance is very good to retrieve personalized objects.
 

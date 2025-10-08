@@ -4,7 +4,7 @@ title:      "Diagnostic Assistance with AI at Polygon Technologies"
 subtitle:   "Video Analysis for Learning Differences Diagnosis using Time Series Classification"
 date:       2023-01-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/banners/polygon-banner-dark.png"
+header-img: "/img_compressed/posts/gap_year/polygon_dark.png"
 catalog: true
 published: true
 tags:
@@ -31,7 +31,7 @@ The core idea was simple but powerful: record the sessions between psychologists
 
 Instead of working directly on raw high-dimensional video, we would **extract interpretable time series** (face landmarks, speech activity, transcripts, etc.). This reduced complexity and, increased interpretability since it was a must in healthcare, where transparency is essential.  
 
-![Polygon pipeline](/img/posts/gap_year/polygon_pipeline.png)
+![Polygon pipeline](/img_compressed/posts/gap_year/polygon_pipeline.png)
 
 
 ## My Work

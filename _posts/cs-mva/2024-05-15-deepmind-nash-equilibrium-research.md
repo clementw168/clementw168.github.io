@@ -4,7 +4,7 @@ title: "Accelerating Nash Equilibrium Convergence with Google DeepMind"
 subtitle: "Population-Based Enhancements for Faster FoReL Convergence"
 date: 2024-05-15 12:00:00
 author: "Clement Wang"
-header-img: "/img/posts/cs-mva/forel_logo.png"
+header-img: "/img_compressed/posts/cs-mva/forel_logo.png"
 catalog: true
 published: true
 mathjax: true
@@ -109,7 +109,7 @@ Intuition: Actions performing above the current policy value are reinforced and 
 
 While vanilla FoReL is **no-regret**, its trajectories are **Poincaré recurrent**: they orbit around equilibria without converging. For instance, in RPS, pure best-responses lead to perpetual cycling (Rock → Paper → Scissors → Rock → ...).
 
-![Poincaré recurrence in Rock-Paper-Scissors](/img/posts/cs-mva/forel_rps.png)
+![Poincaré recurrence in Rock-Paper-Scissors](/img_compressed/posts/cs-mva/forel_rps.png)
 
 ### Reward Transformation
 
@@ -127,7 +127,7 @@ $$
 $$
 leading to **Iterative Lyapunov FoReL (IL-FoReL)**, which exhibits much better convergence than DL-FoReL.
 
-![DL-FoReL and IL-FoReL on Matching Pennies](/img/posts/cs-mva/forel_DL_and_IL.png)
+![DL-FoReL and IL-FoReL on Matching Pennies](/img_compressed/posts/cs-mva/forel_DL_and_IL.png)
 
 Our objective is to design a method that converges even faster than IL-FoReL.
 
@@ -151,7 +151,7 @@ yields faster convergence than IL-FoReL. We call this method **L*-FoReL**.
 
 Of course, $$\pi^*$$ is unknown in practice, so L\*-FoReL is not a usable algorithm. However, it provides a valuable **upper bound** on achievable convergence rates and highlights a large room for improvement between IL-FoReL and the L*-FoReL ideal.
 
-![L*-FoReL on Rock-Paper-Scissors](/img/posts/cs-mva/forel_l_star.png)
+![L*-FoReL on Rock-Paper-Scissors](/img_compressed/posts/cs-mva/forel_l_star.png)
 
 
 ### Pop-FoReL and PAL-FoReL
@@ -228,7 +228,7 @@ We validate our methods on Kuhn Poker and find that PAL-FoReL and Pop-FoReL conv
 - Model-based settings (exact payoff function known), and
 - Model-free settings (payoff approximated via Monte Carlo estimates).
 
-![FoReL on Kuhn Poker](/img/posts/cs-mva/forel_model_based_kuhn.png)
+![FoReL on Kuhn Poker](/img_compressed/posts/cs-mva/forel_model_based_kuhn.png)
 
 
 We also explored a range of hyperparameters (e.g., population size, number of steps per phase, anchor update cadence) and sampling/averaging schemes. Additional details are provided in the project report.

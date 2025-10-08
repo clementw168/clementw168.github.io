@@ -44,13 +44,13 @@ Both methods used a **decaying epsilon-greedy exploration strategy**: the agent 
 
 Both MCC and Sarsa(λ) converged to nearly optimal policies. The learned agents successfully flapped when necessary and remained idle otherwise, achieving high rewards compared to hand-crafted baselines such as always-flap or greedy heuristics.  
 
-![Policies](/img/posts/cs-mva/flappy_policies.png)
+![Policies](/img_compressed/posts/cs-mva/flappy_policies.png)
 
-![Rewards comparison](/img/posts/cs-mva/flappy_metrics.png)
+![Rewards comparison](/img_compressed/posts/cs-mva/flappy_metrics.png)
 
 Interestingly, the MCC converged slightly faster but showed instability while Sarsa(λ) was more robust and provided stable convergence.
 
-![Rewards convergence](/img/posts/cs-mva/flappy_convergence.png)
+![Rewards convergence](/img_compressed/posts/cs-mva/flappy_convergence.png)
 
 
 

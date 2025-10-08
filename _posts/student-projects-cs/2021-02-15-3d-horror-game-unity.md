@@ -4,7 +4,7 @@ title:      "To The Ground - Unity Game Jam"
 subtitle:   "My First Group Coding Project: 3D Horror Game in Unity"
 date:       2021-02-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/student-projects/to_the_ground.png"
+header-img: "/img_compressed/posts/student-projects/to_the_ground.png"
 catalog: true
 published: true
 tags:

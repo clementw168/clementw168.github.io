@@ -4,7 +4,7 @@ title:      "Graph Neural Network Benchmark on Twitch Dataset"
 subtitle:   "Benchmarking Different GNN Architectures on Multiple Classification and Regression Tasks"
 date:       2024-04-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img/posts/cs-mva/mlns_dark.png"
+header-img: "/img_compressed/posts/cs-mva/mlns_dark.png"
 catalog: true
 published: true
 mathjax: true
