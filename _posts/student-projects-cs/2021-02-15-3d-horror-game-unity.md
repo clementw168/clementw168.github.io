@@ -25,7 +25,36 @@ This was my very first group coding project with a team of 5 people. We designed
 
 ## Game Trailer
 
-<iframe src="https://drive.google.com/file/d/1N7Q-E08OffNUhwCf3AvRQVnei_BoTcfR/preview" width="640" height="480" allow="autoplay"></iframe>
+<div class="responsive-iframe-container">
+  <iframe src="https://drive.google.com/file/d/1N7Q-E08OffNUhwCf3AvRQVnei_BoTcfR/preview" allow="autoplay"></iframe>
+</div>
+
+<style>
+.responsive-iframe-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (480/640 * 100) */
+  margin: 20px 0;
+}
+
+.responsive-iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .responsive-iframe-container {
+    padding-bottom: 60%; /* Slightly taller on mobile for better viewing */
+  }
+}
+</style>
 
 ## Game Synopsis and Gameplay
 
