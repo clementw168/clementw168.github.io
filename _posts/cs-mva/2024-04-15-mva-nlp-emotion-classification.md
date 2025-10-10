@@ -8,13 +8,11 @@ header-img: "/img_compressed/posts/cs-mva/aspect.png"
 catalog: true
 published: true
 tags:
+    - Student project
+    - Deep Learning
     - Natural Language Processing
-    - Sentiment Analysis
-    - DistilBERT
     - Aspect-Based Analysis
-    - Emotion Classification
-    - Fine-tuning
-    - NLP
+    - Transformers
 ---
 
 ## Project Overview

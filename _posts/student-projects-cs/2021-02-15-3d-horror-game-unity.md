@@ -8,13 +8,13 @@ header-img: "/img_compressed/posts/student-projects/to_the_ground.png"
 catalog: true
 published: true
 tags:
-    - Game Development
+    - Student project
+    - Game
     - Unity
-    - C#
     - 3D Graphics
-    - Game Jam
-    - Team Project
+    - Team Management
     - Blender
+    - Development
 pride_score: 1
 ---
 

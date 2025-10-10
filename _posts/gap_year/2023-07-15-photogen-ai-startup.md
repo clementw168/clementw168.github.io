@@ -8,13 +8,14 @@ header-img: "/img_compressed/posts/gap_year/photogen_dark.png"
 catalog: true
 published: true
 tags:
+    - Gap year
     - Startup
+    - Computer Vision
+    - Image Generation
     - Diffusion Models
-    - Generative AI
-    - DreamBooth
-    - Stable Diffusion
-    - Production
     - AWS
+    - Development
+    - Infrastructure
 pride_score: 2
 ---
 

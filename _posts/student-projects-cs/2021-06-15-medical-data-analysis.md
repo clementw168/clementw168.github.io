@@ -8,12 +8,9 @@ header-img: "/img_compressed/posts/student-projects/pasteur.png"
 catalog: true
 published: true
 tags:
-    - Medical
+    - Healthcare AI
     - Unsupervised Learning
     - Gene Expression
-    - R Studio
-    - PCA
-    - Pasteur Institute
 ---
 
 

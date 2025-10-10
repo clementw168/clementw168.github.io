@@ -8,11 +8,8 @@ header-img: "/img_compressed/banners/viarezo.jpg"
 catalog: true
 published: true
 tags:
-    - Student Association
-    - Web Services
-    - CI/CD
-    - DevOps
-    - Docker
+    - Student organization
+    - Development
     - Infrastructure
     - Git
 ---

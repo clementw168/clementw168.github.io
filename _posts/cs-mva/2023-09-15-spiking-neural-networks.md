@@ -8,12 +8,9 @@ header-img: "/img_compressed/posts/cs-mva/snn.png"
 catalog: true
 published: true
 tags:
+    - Student project
+    - Deep Learning
     - Spiking Neural Networks
-    - Bio-Inspired Computing
-    - Neuromorphic Computing
-    - Image Classification
-    - Time Series Classification
-    - SNN
 ---
 
 

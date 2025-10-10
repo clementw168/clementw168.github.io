@@ -9,13 +9,15 @@ catalog: true
 published: true
 mathjax: true
 tags:
-    - EEG
+    - Internship
+    - Healthcare AI
+    - Time Series
     - Foundation Models
     - Self-Supervised Learning
-    - Sleep Analysis
-    - Medical AI
     - Contrastive Learning
     - DINO
+    - Sleep Analysis
+    - Transformers
 pride_score: 2
 ---
 

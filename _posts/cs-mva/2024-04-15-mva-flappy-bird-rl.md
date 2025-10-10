@@ -8,12 +8,11 @@ header-img: "https://raw.githubusercontent.com/clementw168/Flappy-Bird-RL/main/T
 catalog: true
 published: true
 tags:
+    - Student project
     - Reinforcement Learning
-    - Game AI
+    - Game
     - Q-Learning
     - Monte Carlo Control
-    - Sarsa
-    - Flappy Bird
 ---
 
 ## Project Overview

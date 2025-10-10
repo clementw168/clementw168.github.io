@@ -8,12 +8,10 @@ header-img: "/img_compressed/posts/cs-mva/sunspot_results_dark.png"
 catalog: true
 published: true
 tags:
+    - Student project
     - Time Series
-    - Symbolic Representation
-    - ABBA
-    - LSTM
-    - Forecasting
     - Machine Learning
+    - Deep Learning
 ---
 
 ## Project Overview

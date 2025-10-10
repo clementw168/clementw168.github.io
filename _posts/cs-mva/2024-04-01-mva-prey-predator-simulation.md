@@ -8,13 +8,11 @@ header-img: "/img/posts/cs-mva/maddpg.gif"
 catalog: true
 published: true
 tags:
-    - Multi-Agent RL
-    - MADDPG
-    - Cooperation
-    - Simulation
+    - Student project
     - Reinforcement Learning
-    - Game Theory
-    - Emergent Behavior
+    - Deep Learning
+    - Multi-Agent Learning
+    - MADDPG
 pride_score: 1
 ---
 

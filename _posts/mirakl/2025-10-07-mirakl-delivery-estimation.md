@@ -8,12 +8,9 @@ header-img: "/img_compressed/posts/mirakl/edd.png"
 catalog: true
 published: true
 tags:
+    - Machine Learning
     - Time Series
-    - Production ML
-    - Spark
-    - Databricks
-    - Airflow
-    - MLflow
+    - Development
 ---
 
 
