@@ -23,17 +23,25 @@ https://github.com/kitian616/jekyll-TeXt-theme
 					<sup>{{site.posts.size}}</sup>
 				</a>
 
-				{% capture tags %}
-				{% for tag in site.tags %}
-				<a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}"
-					data-encode="{{ tag[0] | strip | url_encode }}" class="tag-button" title="{{ tag[0] }}"
-					rel="{{ tag[1].size }}">
-					{{ tag[0] }}
-					<sup>{{tag[1].size}}</sup>
-				</a>__SEPERATOR__
-				{% endfor %}
-				{% endcapture %}
-				{{ tags | split:'__SEPERATOR__' | sort }}
+				<div class="tag-container">
+					<div class="tag-list js-tag-list">
+						{% capture tags %}
+						{% for tag in site.tags %}
+						<a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}"
+							data-encode="{{ tag[0] | strip | url_encode }}" class="tag-button" title="{{ tag[0] }}"
+							rel="{{ tag[1].size }}">
+							{{ tag[0] }}
+							<sup>{{tag[1].size}}</sup>
+						</a>__SEPERATOR__
+						{% endfor %}
+						{% endcapture %}
+						{{ tags | split:'__SEPERATOR__' | sort }}
+					</div>
+					<button class="tag-toggle-btn js-tag-toggle" type="button">
+						<span class="toggle-text">Show More</span>
+						<span class="toggle-icon">▼</span>
+					</button>
+				</div>
 			</div>
 
 			<!-- Article List -->

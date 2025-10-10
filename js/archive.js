@@ -46,6 +46,13 @@ https://github.com/kitian616/jekyll-TeXt-theme
     var $lastFocusButton = null;
     var sectionTopArticleIndex = [];
     var hasInit = false;
+    
+    // Tag collapse functionality
+    var $tagList = $('.js-tag-list');
+    var $tagToggle = $('.js-tag-toggle');
+    var $toggleText = $tagToggle.find('.toggle-text');
+    var $toggleIcon = $tagToggle.find('.toggle-icon');
+    var isExpanded = false;
 
     $sections.each(function() {
       sectionArticles.push($(this).find('.item'));
@@ -137,6 +144,21 @@ https://github.com/kitian616/jekyll-TeXt-theme
 
     $tags.on('click', 'a', function() {   /* only change */
       tagSelect($(this).data('encode'), $(this));
+    });
+    
+    // Tag toggle functionality
+    $tagToggle.on('click', function() {
+      isExpanded = !isExpanded;
+      
+      if (isExpanded) {
+        $tagList.addClass('expanded');
+        $tagToggle.addClass('expanded');
+        $toggleText.text('Show Less');
+      } else {
+        $tagList.removeClass('expanded');
+        $tagToggle.removeClass('expanded');
+        $toggleText.text('Show More');
+      }
     });
 
   });
