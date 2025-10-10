@@ -16,6 +16,7 @@ tags:
     - Medical AI
     - Contrastive Learning
     - DINO
+pride_score: 2
 ---
 
 

@@ -4,7 +4,7 @@ title:      "Prey Predator Simulation with MADDPG"
 subtitle:   "Multi-Agent Reinforcement Learning for Cooperative Behavior"
 date:       2024-04-01 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/posts/cs-mva/maddpg.gif"
+header-img: "/img/posts/cs-mva/maddpg.gif"
 catalog: true
 published: true
 tags:
@@ -15,6 +15,7 @@ tags:
     - Reinforcement Learning
     - Game Theory
     - Emergent Behavior
+pride_score: 1
 ---
 
 ## Project Overview

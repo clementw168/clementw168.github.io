@@ -12,6 +12,7 @@ tags:
     - Image Classification
     - Competition
     - Computer Vision
+pride_score: 1
 ---
 
 ## Introduction

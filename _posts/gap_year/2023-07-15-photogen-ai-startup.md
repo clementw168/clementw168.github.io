@@ -15,6 +15,7 @@ tags:
     - Stable Diffusion
     - Production
     - AWS
+pride_score: 2
 ---
 
 ## Startup Journey  

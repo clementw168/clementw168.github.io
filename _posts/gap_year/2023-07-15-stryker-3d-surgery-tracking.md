@@ -16,6 +16,7 @@ tags:
     - Triangulation
     - MedTech
     - R&D
+pride_score: 2
 ---
 
 ## About Stryker

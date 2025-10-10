@@ -16,6 +16,7 @@ tags:
   - Optimization
   - FoReL
   - Multi-Agent Learning
+pride_score: 2
 ---
 
 ## Project Overview

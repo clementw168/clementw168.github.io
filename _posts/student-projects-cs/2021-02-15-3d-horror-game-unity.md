@@ -15,6 +15,7 @@ tags:
     - Game Jam
     - Team Project
     - Blender
+pride_score: 1
 ---
 
 

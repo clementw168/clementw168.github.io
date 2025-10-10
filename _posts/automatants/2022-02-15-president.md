@@ -13,6 +13,7 @@ tags:
     - Student Association
     - Event Organization
     - Machine Learning
+pride_score: 2
 ---
 
 <style>

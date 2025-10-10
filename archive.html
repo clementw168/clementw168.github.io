@@ -69,6 +69,13 @@ https://github.com/kitian616/jekyll-TeXt-theme
 						<a href="{{ _article.url | prepend: site.baseurl }}">
 							<h2 class="post-title">
 								{{ _article.title }}
+								{% if _article.pride_score %}
+								<span style="margin-left: 10px; display: inline-flex; align-items: center; gap: 2px;">
+									{% for i in (1.._article.pride_score) %}
+										<span style="color: #ffc107; font-size: 0.9em;">⭐</span>
+									{% endfor %}
+								</span>
+								{% endif %}
 							</h2>
 							{% if _article.subtitle %}
 							<h3 class="post-subtitle">

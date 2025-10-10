@@ -13,6 +13,7 @@ tags:
     - Computer Vision
     - Competition
     - Publication
+pride_score: 1
 ---
 
 ## Project Overview
