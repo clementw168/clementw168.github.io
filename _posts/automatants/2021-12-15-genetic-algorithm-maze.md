@@ -8,10 +8,11 @@ header-img: "/img_compressed/posts/automatants/genetic-maze-bg.png"
 catalog: true
 published: true
 tags:
+    - Student organization
+    - Automatants
     - Genetic Algorithm
-    - Maze Solving
-    - Pygame
     - Optimization
+    - Game
 ---
 
 ## Introduction

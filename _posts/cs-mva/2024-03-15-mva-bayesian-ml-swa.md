@@ -8,13 +8,9 @@ header-img: "/img_compressed/posts/cs-mva/swa_loss_landscape_dark.png"
 catalog: true
 published: true
 tags:
-    - Bayesian Machine Learning
-    - Stochastic Weight Averaging
-    - SWA
-    - Generalization
+    - Student project
     - Optimization
     - Deep Learning
-    - Loss Landscape
 ---
 
 ## Project Overview

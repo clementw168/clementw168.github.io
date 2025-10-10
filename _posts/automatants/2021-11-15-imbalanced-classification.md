@@ -8,10 +8,14 @@ header-img: "/img_compressed/posts/automatants/quickdraw-bg.jpg"
 catalog: true
 published: true
 tags:
-    - Imbalanced dataset
-    - Image Classification
+    - Student organization
+    - Automatants
     - Competition
+    - Deep Learning
     - Computer Vision
+    - Image Classification
+    - Imbalanced dataset
+pride_score: 1
 ---
 
 ## Introduction

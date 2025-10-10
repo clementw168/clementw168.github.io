@@ -8,12 +8,11 @@ header-img: "/img_compressed/posts/gap_year/etandex_dark.png"
 catalog: true
 published: true
 tags:
+    - Gap year
+    - Consulting
     - Business Intelligence
     - Explainable AI
-    - SHAP
-    - LIME
-    - XGBoost
-    - Data Analysis
+    - Machine Learning
     - Freelance
 ---
 

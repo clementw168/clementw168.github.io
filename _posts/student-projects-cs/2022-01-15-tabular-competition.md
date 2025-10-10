@@ -8,13 +8,10 @@ header-img: "/img_compressed/posts/student-projects/tabular-competition/full_dat
 catalog: true
 published: true
 tags:
-    - Tabular Data
+    - Student project
     - Machine Learning
+    - Tabular Data
     - Competition
-    - XGBoost
-    - Feature Engineering
-    - LightGBM
-    - CatBoost
 ---
 
 

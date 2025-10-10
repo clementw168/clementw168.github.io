@@ -8,13 +8,14 @@ header-img: "/img_compressed/posts/gap_year/polygon_dark.png"
 catalog: true
 published: true
 tags:
-    - Medical AI
-    - Video Analysis
-    - Time Series Classification
-    - Diagnostic Assistance
-    - AWS
+    - Gap year
+    - Internship
+    - Healthcare AI
     - Computer Vision
-    - Healthcare
+    - Time Series
+    - Speech Processing
+    - AWS
+    - Development
 ---
 
 

@@ -8,12 +8,11 @@ header-img: "/img_compressed/posts/cs-mva/altegrad_contrastive_dark.png"
 catalog: true
 published: true
 tags:
-    - Molecular AI
-    - Text Retrieval
+    - Student project
+    - Natural Language Processing
     - Contrastive Learning
     - Graph Neural Networks
-    - Natural Language Processing
-    - Chemoinformatics
+pride_score: 1
 ---
 
 ## Project Overview

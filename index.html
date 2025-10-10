@@ -8,6 +8,13 @@ description: "Welcome to Clement Wang's personal website - PhD Candidate at IP P
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
             {{ post.title }}
+            {% if post.pride_score %}
+            <span style="margin-left: 10px; display: inline-flex; align-items: center; gap: 2px;">
+                {% for i in (1..post.pride_score) %}
+                    <span style="color: #ffc107; font-size: 0.9em;">⭐</span>
+                {% endfor %}
+            </span>
+            {% endif %}
         </h2>
         {% if post.subtitle %}
         <h3 class="post-subtitle">

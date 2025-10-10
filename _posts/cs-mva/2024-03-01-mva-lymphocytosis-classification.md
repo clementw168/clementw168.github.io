@@ -8,13 +8,10 @@ header-img: "/img_compressed/posts/cs-mva/lympho.png"
 catalog: true
 published: true
 tags:
-    - Medical Imaging
-    - Deep Learning
-    - Blood Analysis
-    - Classification
-    - Computer Vision
+    - Student project
     - Healthcare AI
-    - Diagnostic Assistance
+    - Deep Learning
+    - Computer Vision
 ---
 
 ## Project Overview

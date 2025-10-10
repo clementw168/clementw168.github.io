@@ -8,11 +8,12 @@ header-img: "/img_compressed/banners/automatants-banner-crop.png"
 catalog: true
 published: true
 tags:
+    - Student organization
+    - Automatants
     - Leadership
     - Team Management
-    - Student Association
     - Event Organization
-    - Machine Learning
+pride_score: 2
 ---
 
 <style>

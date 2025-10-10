@@ -9,12 +9,10 @@ catalog: true
 published: true
 mathjax: true
 tags:
+    - Student project
+    - Deep Learning
     - Mixture Density Networks
     - Probabilistic Models
-    - Deep Learning
-    - Regression
-    - Uncertainty Estimation
-    - Generative Models
 ---
 
 ## Project Overview

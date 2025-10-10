@@ -9,12 +9,12 @@ catalog: true
 published: true
 mathjax: true
 tags:
-    - Neural Style Transfer
-    - Perceptual Loss
-    - Computer Vision
-    - TensorFlow
-    - OpenCV
+    - Student organization
+    - Automatants
     - Deep Learning
+    - Computer Vision
+    - Perceptual Loss
+    - Optimization
 ---
 
 ## Introduction

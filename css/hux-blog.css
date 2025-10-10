@@ -1538,6 +1538,43 @@ img::-moz-selection {
 #tag_cloud .tag.tag-button--all.focus {
   background-color: #e4e4e4 !important;
 }
+#tag_cloud .tag-container {
+  position: relative;
+}
+#tag_cloud .tag-list {
+  max-height: 105px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+#tag_cloud .tag-list.expanded {
+  max-height: none;
+}
+#tag_cloud .tag-toggle-btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  color: #0085a1;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#tag_cloud .tag-toggle-btn:hover {
+  background: #0085a1;
+  color: white;
+  border-color: #0085a1;
+}
+#tag_cloud .tag-toggle-btn .toggle-icon {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+#tag_cloud .tag-toggle-btn.expanded .toggle-icon {
+  transform: rotate(180deg);
+}
 @media only screen and (min-width: 768px) {
   #tag_cloud {
     margin-bottom: 25px;

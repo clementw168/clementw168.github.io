@@ -8,10 +8,12 @@ header-img: "/img_compressed/posts/automatants/gan.png"
 catalog: true
 published: true
 tags:
-    - GAN
+    - Student organization
+    - Automatants
     - Deep Learning
+    - Computer Vision
     - Image Generation
-    - TensorFlow
+    - GAN
 ---
 
 

@@ -9,13 +9,13 @@ catalog: true
 published: true
 mathjax: true
 tags:
-  - Game Theory
-  - Nash Equilibrium
-  - DeepMind
-  - Research
+  - Student project
+  - Game
+  - Reinforcement Learning
   - Optimization
   - FoReL
   - Multi-Agent Learning
+pride_score: 2
 ---
 
 ## Project Overview

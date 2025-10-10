@@ -8,12 +8,13 @@ header-img: "/img_compressed/banners/paris_digital_lab_dark.jpg"
 catalog: true
 published: true
 tags:
+    - Gap year
+    - Internship
     - Consulting
     - Computer Vision
-    - Machine Learning
-    - YOLO
-    - Object Detection
     - Deep Learning
+    - Object Detection
+    - Transformers
 ---
 
 

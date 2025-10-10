@@ -9,13 +9,9 @@ catalog: true
 published: true
 mathjax: true
 tags:
+    - Student project
     - Graph Neural Networks
-    - GNN
-    - Benchmarking
-    - Twitch Dataset
-    - Classification
-    - Regression
-    - Network Science
+    - Deep Learning
 ---
 
 ## Project Overview

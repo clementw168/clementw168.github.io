@@ -8,11 +8,9 @@ header-img: "/img_compressed/posts/cs-mva/linear_equivalence_dark.png"
 catalog: true
 published: true
 tags:
+    - Student project
     - Optimization
-    - Deep Networks
-    - Theory
-    - Research Implementation
-    - Course Project
+    - Deep Learning
 ---
 
 ## Project Overview

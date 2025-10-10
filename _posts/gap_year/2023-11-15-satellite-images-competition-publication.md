@@ -8,11 +8,13 @@ header-img: "/img_compressed/posts/gap_year/satellite.png"
 catalog: true
 published: true
 tags:
+    - Gap year
+    - Deep Learning
     - Satellite Imagery
-    - Remote Sensing
     - Computer Vision
     - Competition
     - Publication
+pride_score: 1
 ---
 
 ## Project Overview

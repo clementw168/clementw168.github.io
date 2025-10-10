@@ -9,13 +9,14 @@ catalog: true
 published: true
 mathjax: true
 tags:
+    - Gap year
+    - Internship
+    - Healthcare AI
     - Computer Vision
-    - Medical AI
+    - Deep Learning
     - 3D Tracking
     - Keypoint Detection
-    - Triangulation
-    - MedTech
-    - R&D
+pride_score: 2
 ---
 
 ## About Stryker

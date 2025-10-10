@@ -8,9 +8,10 @@ header-img: "/img_compressed/posts/student-projects/plan_croc.png"
 catalog: true
 published: true
 tags:
+    - Student project
     - Robotics
     - Computer Vision
-    - OpenCV
+    - Development
 ---
 
 
