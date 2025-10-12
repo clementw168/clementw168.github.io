@@ -28,12 +28,22 @@ education:
     duration: 1 year
     institution: École Normale Supérieure Paris-Saclay
     description: "Relevant coursework: NLP, graph learning, time series and signals, computer vision, geometric data analysis, optimization."
+    projects:
+      - description: SWA
+        link: /some/link
+      - description: Mixture density network
+        link: /some/other/link
   
   - degree: MSc in Data Science
     period: Sep 2020 - Dec 2024
     duration: 4 years
     institution: CentraleSupélec - Université Paris-Saclay
     description: "Relevant coursework: machine learning, statistics, stochastic calculus, parallel calculus, algorithmics, signal processing."
+    projects:
+      - description: SWA
+        link: /some/link
+      - description: Mixture density network
+        link: /some/other/link
 
   - degree: Preparatory Courses - MPSI/MP*
     period: Sep 2018 - Jul 2020
@@ -132,8 +142,16 @@ highlights:
     duration: 1 year
     organization: Automatants, the AI student association of CentraleSupélec
     description: Led a team of 20 members, organized events, and promoted machine learning at CentraleSupélec
-    post_link: /automatants/2022-02-15-president/
-    post_text: Read more→
+    projects:
+      - description: My life as President 
+        link: /automatants/2022-02-15-president/
+      - description: My first Deep Learning project on GANs
+        link: /automatants/2022-02-15-president/
+      - description: Neural style transfer
+        link: /someting
+      - description: Solving a maze with a genetic algorithm
+        link: /automatants/2022-02-15-president/
+
 
   - title: Multi-Agent Reinforcement Learning Project
     period: 2023 - 2024
@@ -144,7 +162,7 @@ highlights:
     post_text: "Read more→"
 
   - title: Leaf Area Index prediction from satellite images Competition
-    period: 2023
+    period: "2023"
     duration: 3 months
     organization: ""
     description: "Won the first prize on this student competition over 30 participants. We published a paper on our solution..."

@@ -186,6 +186,37 @@ layout: default
     text-decoration: underline;
 }
 
+.resume-projects {
+    margin: 8px 0;
+}
+
+.resume-projects-intro {
+    margin: 0 0 5px 0;
+    font-size: 0.9em;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.resume-toggle-btn {
+    background: none;
+    border: none;
+    color: #3498db;
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 0;
+    margin: 5px 0;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.resume-toggle-btn:hover {
+    text-decoration: underline;
+}
+
+.resume-projects-content {
+    margin-top: 8px;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -307,3 +338,18 @@ layout: default
     }
 }
 </style>
+
+<script>
+function toggleProjects(button) {
+    const content = button.nextElementSibling;
+    const isHidden = content.style.display === 'none';
+    
+    if (isHidden) {
+        content.style.display = 'block';
+        button.textContent = 'Less...';
+    } else {
+        content.style.display = 'none';
+        button.textContent = 'More...';
+    }
+}
+</script>

@@ -12,6 +12,26 @@
         {% if education.supervisor %}
         <p class="resume-supervisor">Supervised by <a href="{{ education.supervisor_url }}" target="_blank">{{ education.supervisor }}</a></p>
         {% endif %}
+        {% if education.projects %}
+        <div class="resume-projects">
+            <button class="resume-toggle-btn" onclick="toggleProjects(this)">
+                More...
+            </button>
+            <div class="resume-projects-content" style="display: none;">
+                <p class="resume-projects-intro">A few examples of projects:</p>
+                <ul>
+                    {% for project in education.projects %}
+                    <li>
+                        {{ project.description }}
+                        {% if project.link %}
+                        <a href="{{ project.link }}" target="_blank">→</a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
     </div>
     {% endfor %}
 </div>

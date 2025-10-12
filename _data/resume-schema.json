@@ -16,9 +16,48 @@
         "pdf_download": {"type": "string"}
       }
     },
-    "education": {"type": "array"},
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "degree": {"type": "string"},
+          "period": {"type": "string"},
+          "duration": {"type": "string"},
+          "institution": {"type": "string"},
+          "description": {"type": "string"},
+          "supervisor": {"type": "string"},
+          "supervisor_url": {"type": "string"},
+          "projects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "description": {"type": "string"},
+                "link": {"type": "string"}
+              },
+              "required": ["description"]
+            }
+          }
+        }
+      }
+    },
     "experience": {"type": "array"},
-    "highlights": {"type": "array"},
+    "highlights": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {"type": "string"},
+          "period": {"type": "string"},
+          "duration": {"type": "string"},
+          "organization": {"type": "string"},
+          "description": {"type": "string"},
+          "post_link": {"type": "string"},
+          "post_text": {"type": "string"}
+        }
+      }
+    },
     "skills": {"type": "array"},
     "languages": {"type": "array"}
   }
