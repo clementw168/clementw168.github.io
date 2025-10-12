@@ -7,7 +7,10 @@
             <h3>{{ experience.title }}</h3>
             <span class="resume-date">{{ experience.period }} ({{ experience.duration }})</span>
         </div>
-        <p class="resume-organization">{{ experience.company }}</p>
+        <div class="resume-organization">
+            <span class="resume-company">{{ experience.company }}{% if experience.contract_type %} • {{ experience.contract_type }}{% endif %}</span>
+            {% if experience.location %}<span class="resume-location">{{ experience.location }}</span>{% endif %}
+        </div>
         <p class="resume-description">{{ experience.description }}</p>
         {% if experience.achievements %}
         <ul class="resume-achievements">

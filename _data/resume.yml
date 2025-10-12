@@ -17,7 +17,7 @@ personal_info:
 education:
   - degree: CIFRE PhD in Applied Mathematics
     period: 2025 - Present
-    duration: "Ongoing"
+    duration: Ongoing
     institution: Institut Polytechnique de Paris - Mirakl
     description: Graph Representation Learning with Self-Supervised Learning
     supervisor: Prof. Thomas Bonald
@@ -25,21 +25,23 @@ education:
   
   - degree: MSc in Applied Mathematics - MVA
     period: Sep 2023 - Dec 2024
-    duration: "1 year"
+    duration: 1 year
     institution: École Normale Supérieure Paris-Saclay
     description: "Relevant coursework: NLP, graph learning, time series and signals, computer vision, geometric data analysis, optimization."
   
   - degree: MSc in Data Science
     period: Sep 2020 - Dec 2024
-    duration: "4 years"
+    duration: 4 years
     institution: CentraleSupélec - Université Paris-Saclay
     description: "Relevant coursework: machine learning, statistics, stochastic calculus, parallel calculus, algorithmics, signal processing."
 
 experience:
   - title: Data Scientist
     period: Dec 2024 - Jul 2025
-    duration: "9 months"
+    duration: 9 months
+    contract_type: Permanent
     company: Mirakl
+    location: Paris, France
     description: Built end-to-end delivery date estimation model for marketplace orders, from POC to production deployment
     achievements:
       - Serving 250,000+ orders per month
@@ -48,22 +50,26 @@ experience:
     post_link: /2025/10/07/mirakl-delivery-estimation/
     post_text: Read more →
   
-  - title: Machine Learning Engineer Intern
+  - title: Machine Learning Engineer
     period: May 2024 - Oct 2024
-    duration: "6 months"
+    duration: 6 months
+    contract_type: Internship
     company: Beacon Biosignals
+    location: Paris, France
     description: Trained a foundation model for EEG signals.
     achievements:
       - Adapting transformer tokenization for time series
-      - 5M parameters model trained on 2B tokens with contrastive learning and DINO teacher-student architecture
+      - 25M parameters model trained on 2B tokens with contrastive learning and DINO teacher-student architecture
       - 80.0% accuracy on sleep staging with a limited amount of annotated data, a 2.6% decrease with 95% fewer labels compared to fully supervised models
     post_link: /2024/10/15/beacon-biosignals-eeg-foundation-model/
     post_text: Read more →
   
-  - title: 3D Computer Vision Engineer Intern
+  - title: 3D Computer Vision Engineer
     period: Feb 2023 - Jul 2023
-    duration: "6 months"
+    duration: 6 months
+    contract_type: "Internship"
     company: Stryker
+    location: Freiburg-im-Breisgau, Germany
     description: "3D calibration of surgery instruments: Developing an end-to-end pipeline to determine the 3D geometry of a surgery instrument from a single RGB camera"
     achievements:
       - 2D key points detection with High resolution network (CNN)
@@ -74,8 +80,10 @@ experience:
 
   - title: Co-Founder and MLOps Engineer
     period: Dec 2022 - Jun 2023
-    duration: "7 months"
+    duration: 7 months
+    contract_type: Co-founder
     company: Photogen AI
+    location: Paris, France (Remote)
     description: "Founding a startup on personalizing diffusion models"
     achievements:
       - Fine-tuning Stable Diffusion 1.5 with DreamBooth for realistic images on 10 images of a customer 
@@ -85,8 +93,10 @@ experience:
   
   - title: Data Scientist Intern
     period: Aug 2022 - Jan 2023
-    duration: "6 months"
+    duration: 6 months
+    contract_type: Internship
     company: Polygon Technologies
+    location: Santa Monica, CA, USA
     description: Extraction of features from videos of cognitive tests to diagnose learning differences
     achievements:
       - Benchmarking Speech-to-text models (Whisper, Amazon Transcribe, Google Speech-to-Text)
@@ -98,8 +108,10 @@ experience:
 
   - title: Machine Learning Consultant
     period: Aug 2022 - Jan 2023
-    duration: "6 months"
+    duration: 6 months
+    contract_type: Consulting
     company: Paris Digital Lab
+    location: Paris, France
     description: Various Computer Vision Projects for companies
     achievements:
       - "Radio wave detection for the French Ministry of Armed Forces: Achieved 0.95 mAP @ IOU 0.5 with YOLOv3"
@@ -112,23 +124,23 @@ experience:
 highlights:
   - title: Presidency of Automatants
     period: 2021 - 2022
-    duration: "1 year"
+    duration: 1 year
     organization: Automatants, the AI student association of CentraleSupélec
-    description: "Led a team of 20 members, organized events, and promoted machine learning at CentraleSupélec"
-    post_link: "/automatants/2022-02-15-president/"
-    post_text: "Read more→"
+    description: Led a team of 20 members, organized events, and promoted machine learning at CentraleSupélec
+    post_link: /automatants/2022-02-15-president/
+    post_text: Read more→
 
   - title: Multi-Agent Reinforcement Learning Project
     period: 2023 - 2024
-    duration: "1 year"
+    duration: 1 year
     organization: Google DeepMind
     description: Accelerating the convergence of FoReL for Nash equilibrium finding in two-player zero-sum games.
-    post_link: "/cs-mva/2024-04-15-mva-prey-predator-simulation/"
+    post_link: /cs-mva/2024-04-15-mva-prey-predator-simulation/
     post_text: "Read more→"
 
   - title: Leaf Area Index prediction from satellite images Competition
     period: 2023
-    duration: "3 months"
+    duration: 3 months
     organization: ""
     description: "Won the first prize on this student competition over 30 participants. We published a paper on our solution..."
     post_link: "/gap_year/2023-11-15-satellite-images-competition-publication/"
@@ -137,7 +149,7 @@ highlights:
   
 
 skills:
-  - title: "Machine Learning"
+  - title: Machine Learning
     items:
       - Deep Learning
       - Graph Neural Networks, Time Series
