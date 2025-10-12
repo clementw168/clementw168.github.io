@@ -5,6 +5,7 @@ subtitle:   "Self-Supervised Learning for Sleep EEG Analysis with 95% Fewer Labe
 date:       2024-10-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/beacon/eeg.png"
+header-mask: 0.4
 catalog: true
 published: true
 mathjax: true

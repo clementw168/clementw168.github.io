@@ -5,6 +5,7 @@ subtitle:   "From POC to Production: Building a Time Series Forecasting Solution
 date:       2025-10-07 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/mirakl/edd.png"
+header-mask: 0.4
 catalog: true
 published: true
 tags:

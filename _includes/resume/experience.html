@@ -1,0 +1,27 @@
+<!-- Experience Section -->
+<div class="resume-section">
+    <h2>Professional Experience</h2>
+    {% for experience in site.data.resume.experience %}
+    <div class="resume-item">
+        <div class="resume-item-header">
+            <h3>{{ experience.title }}</h3>
+            <span class="resume-date">{{ experience.period }} ({{ experience.duration }})</span>
+        </div>
+        <div class="resume-organization">
+            <span class="resume-company">{{ experience.company }}{% if experience.contract_type %} • {{ experience.contract_type }}{% endif %}</span>
+            {% if experience.location %}<span class="resume-location">{{ experience.location }}</span>{% endif %}
+        </div>
+        <p class="resume-description">{{ experience.description }}</p>
+        {% if experience.achievements %}
+        <ul class="resume-achievements">
+            {% for achievement in experience.achievements %}
+            <li>{{ achievement }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% if experience.post_link %}
+        <p class="resume-link"><a href="{{ experience.post_link }}">{{ experience.post_text }}</a></p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>

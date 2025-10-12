@@ -4,7 +4,8 @@ title:      "Quick, Draw! Competition at Automatants"
 subtitle:   "Winning Competition on Imbalanced Image Classification"
 date:       2021-11-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/posts/automatants/quickdraw-bg.jpg"
+header-img: "/img_compressed/posts/automatants/quickdraw.jpg"
+header-mask: 0.5
 catalog: true
 published: true
 tags:

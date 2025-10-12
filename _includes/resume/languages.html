@@ -1,0 +1,11 @@
+<!-- Languages Section -->
+<div class="resume-section">
+    <h2>Languages</h2>
+    <div class="languages-grid">
+        {% for language in site.data.resume.languages %}
+        <div class="language-item">
+            <strong>{{ language.name }}</strong> - {{ language.level }}
+        </div>
+        {% endfor %}
+    </div>
+</div>

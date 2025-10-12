@@ -5,6 +5,7 @@ subtitle:   "From Vanilla NST to Real-Time Style Transfer"
 date:       2021-09-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/automatants/nst-bg.png"
+header-mask: 0.3
 catalog: true
 published: true
 mathjax: true

@@ -4,7 +4,8 @@ title:      "Implementation of ABBA Symbolic Representation of Time Series"
 subtitle:   "Adaptive Brownian Bridge-based Symbolic Aggregation for Time Series Forecasting"
 date:       2024-01-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/posts/cs-mva/sunspot_results_dark.png"
+header-img: "/img_compressed/posts/cs-mva/sunspot_results.png"
+header-mask: 0.5
 catalog: true
 published: true
 tags:

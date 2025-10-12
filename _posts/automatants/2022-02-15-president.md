@@ -5,6 +5,7 @@ subtitle:   "Leading 20 People, Organizing Events, and Promoting Machine Learnin
 date:       2022-02-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/banners/automatants-banner-crop.png"
+header-mask: 0.5
 catalog: true
 published: true
 tags:

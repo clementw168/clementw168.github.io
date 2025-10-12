@@ -4,7 +4,8 @@ title:      "Implicit Acceleration by Overparameterization"
 subtitle:   "Reimplementing Experiments from the Paper"
 date:       2024-02-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/posts/cs-mva/linear_equivalence_dark.png"
+header-img: "/img_compressed/posts/cs-mva/linear_equivalence.png"
+header-mask: 0.5
 catalog: true
 published: true
 tags:

@@ -1,0 +1,37 @@
+<!-- Education Section -->
+<div class="resume-section">
+    <h2>Education</h2>
+    {% for education in site.data.resume.education %}
+    <div class="resume-item">
+        <div class="resume-item-header">
+            <h3>{{ education.degree }}</h3>
+            <span class="resume-date">{{ education.period }} ({{ education.duration }})</span>
+        </div>
+        <p class="resume-organization">{{ education.institution }}</p>
+        <p class="resume-description">{{ education.description }}</p>
+        {% if education.supervisor %}
+        <p class="resume-supervisor">Supervised by <a href="{{ education.supervisor_url }}" target="_blank">{{ education.supervisor }}</a></p>
+        {% endif %}
+        {% if education.projects %}
+        <div class="resume-projects">
+            <button class="resume-toggle-btn" onclick="toggleProjects(this)">
+                More...
+            </button>
+            <div class="resume-projects-content" style="display: none;">
+                <p class="resume-projects-intro">A few examples of project:</p>
+                <ul>
+                    {% for project in education.projects %}
+                    <li>
+                        {{ project.description }}
+                        {% if project.link %}
+                        <a href="{{ project.link }}" target="_blank" title="View project">🔗</a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>

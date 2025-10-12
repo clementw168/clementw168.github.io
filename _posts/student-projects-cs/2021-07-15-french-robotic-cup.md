@@ -5,6 +5,7 @@ subtitle:   "Building an Autonomous Robot for Object Manipulation in Defined Env
 date:       2021-07-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/student-projects/plan_croc.png"
+header-mask: 0.3
 catalog: true
 published: true
 tags:

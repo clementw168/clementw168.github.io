@@ -4,7 +4,8 @@ title:      "Graph Neural Network Benchmark on Twitch Dataset"
 subtitle:   "Benchmarking Different GNN Architectures on Multiple Classification and Regression Tasks"
 date:       2024-04-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/posts/cs-mva/mlns_dark.png"
+header-img: "/img_compressed/posts/cs-mva/mlns.png"
+header-mask: 0.5
 catalog: true
 published: true
 mathjax: true
@@ -29,7 +30,7 @@ We focused on four predictive tasks:
 
 To this end, we compared four widely used GNN architectures: **Graph Convolutional Network (GCN)**, **Graph Isomorphism Network (GIN)**, **Graph Attention Network (GAT)**, and **GraphSAGE**.
 
-![Learning curves](https://raw.githubusercontent.com/clementw168/mlns_twitch_project/main/assets/learning_curves.png)
+![Learning curves](/img_compressed/posts/cs-mva/mlns.png)
 
 
 ## Dataset

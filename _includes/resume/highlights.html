@@ -1,0 +1,37 @@
+<!-- Research Section -->
+<div class="resume-section">
+    <h2>Highlights</h2>
+    {% for highlight in site.data.resume.highlights %}
+    <div class="resume-item">
+        <div class="resume-item-header">
+            <h3>{{ highlight.title }}</h3>
+            <span class="resume-date">{{ highlight.period }} ({{ highlight.duration }})</span>
+        </div>
+        <p class="resume-organization">{{ highlight.organization }}</p>
+        <p class="resume-description">{{ highlight.description }}</p>
+        {% if highlight.projects %}
+        <div class="resume-projects">
+            <button class="resume-toggle-btn" onclick="toggleProjects(this)">
+                More...
+            </button>
+            <div class="resume-projects-content" style="display: none;">
+                <p class="resume-projects-intro">Linked articles:</p>
+                <ul>
+                    {% for project in highlight.projects %}
+                    <li>
+                        {{ project.description }}
+                        {% if project.link %}
+                        <a href="{{ project.link }}" target="_blank" title="View project">🔗</a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+        {% if highlight.post_link %}
+        <p class="resume-link"><a href="{{ highlight.post_link }}">{{ highlight.post_text }}</a></p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>

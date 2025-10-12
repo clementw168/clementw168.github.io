@@ -4,7 +4,8 @@ title:      "Text-based Molecule Retrieval"
 subtitle:   "Learning to Match Molecular Graphs with Text Queries"
 date:       2024-01-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/posts/cs-mva/altegrad_contrastive_dark.png"
+header-img: "/img_compressed/posts/cs-mva/altegrad_contrastive.png"
+header-mask: 0.5
 catalog: true
 published: true
 tags:

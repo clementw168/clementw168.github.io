@@ -4,7 +4,8 @@ title:      "Averaging Weights Leads to Wider Optima and Better Generalization"
 subtitle:   "Implementation of Stochastic Weight Averaging (SWA) for Better Generalization"
 date:       2024-03-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/posts/cs-mva/swa_loss_landscape_dark.png"
+header-img: "/img_compressed/posts/cs-mva/swa_loss_landscape.png"
+header-mask: 0.5
 catalog: true
 published: true
 tags:

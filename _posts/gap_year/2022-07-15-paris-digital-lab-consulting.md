@@ -4,7 +4,8 @@ title:      "Machine Learning Consultant at Paris Digital Lab"
 subtitle:   "Various Computer Vision Projects for Companies - 3 Projects of 7 Weeks Each"
 date:       2022-07-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/banners/paris_digital_lab_dark.jpg"
+header-img: "/img_compressed/banners/paris_digital_lab.jpg"
+header-mask: 0.3
 catalog: true
 published: true
 tags:
