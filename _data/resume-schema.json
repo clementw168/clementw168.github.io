@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "personal_info": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "title": {"type": "string"},
+        "email": {"type": "string"},
+        "github_username": {"type": "string"},
+        "github_link": {"type": "string"},
+        "linkedin_username": {"type": "string"},
+        "linkedin_link": {"type": "string"},
+        "website": {"type": "string"},
+        "pdf_download": {"type": "string"}
+      }
+    },
+    "education": {"type": "array"},
+    "experience": {"type": "array"},
+    "highlights": {"type": "array"},
+    "skills": {"type": "array"},
+    "languages": {"type": "array"}
+  }
+}

@@ -17,11 +17,9 @@ _includes/resume/
   header.html              # Personal info and contact details
   education.html           # Education section
   experience.html          # Professional experience
-  research.html            # Research and publications
+  highlights.html          # Notable achievements and projects
   skills.html              # Technical skills
-  projects.html            # Notable projects
   languages.html           # Language proficiencies
-  footer.html              # Footer with PDF download link
 
 resume.html                # Main resume page (uses resume layout)
 ```
@@ -71,17 +69,17 @@ experience:
     post_text: "Read more about this project →"  # Optional
 ```
 
-### 4. Add/Edit Research
-In the `research` section:
+### 4. Add/Edit Highlights
+In the `highlights` section:
 
 ```yaml
-research:
-  - title: "Research Title"
+highlights:
+  - title: "Achievement Title"
     period: "Year"
     organization: "Organization"
-    description: "Research description"
+    description: "Description of the achievement or project"
     post_link: "/path/to/detailed/post/"  # Optional
-    post_text: "Read more about this research →"  # Optional
+    post_text: "Read more →"  # Optional
 ```
 
 ### 5. Update Skills
@@ -96,19 +94,7 @@ skills:
       - "Skill 3"
 ```
 
-### 6. Add/Edit Projects
-In the `projects` section:
-
-```yaml
-projects:
-  - title: "Project Title"
-    period: "Year"
-    description: "Project description"
-    post_link: "/path/to/detailed/post/"  # Optional
-    post_text: "View project details →"  # Optional
-```
-
-### 7. Update Languages
+### 6. Update Languages
 In the `languages` section:
 
 ```yaml
@@ -128,6 +114,16 @@ To add a new section to your resume:
 ```html
 {% include resume/awards.html %}
 ```
+
+## Current Sections
+
+The resume system currently includes these sections:
+- **Personal Information** (`personal_info`)
+- **Education** (`education`)
+- **Experience** (`experience`)
+- **Highlights** (`highlights`) - Notable achievements and projects
+- **Skills** (`skills`)
+- **Languages** (`languages`)
 
 ## Styling
 

@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=resume-schema.json
 # Resume Data File
 # This file contains all the content for the resume page
 # Edit this file to update your resume content
@@ -99,7 +100,7 @@ experience:
     post_link: /gap_year/2022-07-15-paris-digital-lab-consulting/
     post_text: Read more →
 
-highliths:
+highlights:
   - title: Presidency of Automatants
     period: 2021-2022
     organization: Automatants, the AI student association of CentraleSupélec
@@ -126,39 +127,24 @@ highliths:
 skills:
   - title: "Machine Learning"
     items:
-      - "Deep Learning (PyTorch, TensorFlow)"
-      - "Graph Neural Networks"
-      - "Time Series Forecasting"
-      - "Computer Vision"
-      - "Natural Language Processing"
+      - Deep Learning
+      - Graph Neural Networks, Time Series
+      - Computer Vision, Natural Language Processing
+      - Numpy, Pandas, PyTorch, TensorFlow, Scikit-learn, Hugging Face
   
-  - title: "Programming"
+  - title: Technologies
     items:
-      - "Python (Advanced)"
-      - "R, SQL"
-      - "JavaScript, TypeScript"
-      - "Git, Docker"
-  
-  - title: "Data Infrastructure"
-    items:
-      - "Apache Spark, Databricks"
-      - "Apache Airflow"
-      - "MLflow, DVC"
-      - "AWS, GCP"
-  
-  - title: "Research"
-    items:
-      - "LaTeX, Jupyter"
-      - "Statistical Analysis"
-      - "Experimental Design"
-      - "Academic Writing"
-
+      - Python, C++, C#, C
+      - Bash, Linux, Git, Docker, AWS
+      - R, SQL, Spark
+      - Jupyter, Airflow, MLflow, Weights & Biases
+      - LaTeX
 
 
 languages:
-  - name: "French"
-    level: "Native"
-  - name: "English"
-    level: "Fluent"
-  - name: "Mandarin"
-    level: "Conversational"
+  - name: French
+    level: Native
+  - name: English
+    level: Fluent
+  - name: Mandarin
+    level: Conversational
