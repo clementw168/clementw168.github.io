@@ -35,6 +35,11 @@ education:
     institution: CentraleSupélec - Université Paris-Saclay
     description: "Relevant coursework: machine learning, statistics, stochastic calculus, parallel calculus, algorithmics, signal processing."
 
+  - degree: Preparatory Courses - MPSI/MP*
+    period: Sep 2018 - Jul 2020
+    duration: 2 years
+    institution: Lycée Henri IV
+
 experience:
   - title: Data Scientist
     period: Dec 2024 - Jul 2025
