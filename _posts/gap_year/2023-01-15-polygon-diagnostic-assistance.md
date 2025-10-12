@@ -4,7 +4,8 @@ title:      "Diagnostic Assistance with AI at Polygon Technologies"
 subtitle:   "Video Analysis for Learning Differences Diagnosis using Time Series Classification"
 date:       2023-01-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/posts/gap_year/polygon_dark.png"
+header-img: "/img_compressed/posts/gap_year/polygon.png"
+header-mask: 0.5
 catalog: true
 published: true
 tags:

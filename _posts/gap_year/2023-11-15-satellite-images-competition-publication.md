@@ -5,6 +5,7 @@ subtitle:   "Predicting Leaf Area Index from Sentinel Satellite Data"
 date:       2023-11-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/gap_year/satellite.png"
+header-mask: 0.3
 catalog: true
 published: true
 tags:

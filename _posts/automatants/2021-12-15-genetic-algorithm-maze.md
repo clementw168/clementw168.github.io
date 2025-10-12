@@ -4,7 +4,8 @@ title:      "Genetic Algorithm for Maze Solving"
 subtitle:   "Solving Maze Game with Genetic Algorithm - Just for Fun!"
 date:       2021-12-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/posts/automatants/genetic-maze-bg.png"
+header-img: "/img_compressed/posts/automatants/genetic-maze.png"
+header-mask: 0.4
 catalog: true
 published: true
 tags:

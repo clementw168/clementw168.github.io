@@ -4,7 +4,8 @@ title:      "Mixture Density Networks Implementation"
 subtitle:   "Modeling Multi-Modal Regression with Probabilistic Neural Networks"
 date:       2023-12-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/posts/cs-mva/mdn_poster_dark.jpg"
+header-img: "/img_compressed/posts/cs-mva/mdn_poster.jpg"
+header-mask: 0.5
 catalog: true
 published: true
 mathjax: true

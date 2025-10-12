@@ -5,6 +5,7 @@ subtitle:   "Multi-Agent Reinforcement Learning for Cooperative Behavior"
 date:       2024-04-01 12:00:00
 author:     "Clement Wang"
 header-img: "/img/posts/cs-mva/maddpg.gif"
+header-mask: 0.5
 catalog: true
 published: true
 tags:
@@ -22,7 +23,7 @@ This project simulates a prey-predator ecosystem using **multi-agent reinforceme
 
 The environment is a 2D world where multiple species interact dynamically: predators hunt, preys evade, and some species can even be both. This setup reflects the complexity of real ecosystems, where survival depends on both competition and cooperation.  
 
-![Demo gif](https://raw.githubusercontent.com/clementw168/prey-predator-rl/main/assets/demo.gif)  
+![Demo gif](/img/posts/cs-mva/maddpg.gif)  
 ![Poster](/img_compressed/posts/cs-mva/maddpg_poster.jpg)  
 
 

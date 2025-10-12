@@ -4,7 +4,8 @@ title:      "Photogen AI - Founding a Startup on Diffusion Models"
 subtitle:   "From Research to Production: AI-Generated Images for Customers"
 date:       2023-07-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/posts/gap_year/photogen_dark.png"
+header-img: "/img_compressed/posts/gap_year/photogen.png"
+header-mask: 0.4
 catalog: true
 published: true
 tags:

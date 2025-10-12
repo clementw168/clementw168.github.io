@@ -4,7 +4,8 @@ title:      "Analyzing Business Opportunities at Etandex"
 subtitle:   "Freelance Business Intelligence Analysis with Explainable AI for Commercial Opportunity Prediction"
 date:       2023-08-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/posts/gap_year/etandex_dark.png"
+header-img: "/img/posts/gap_year/etandex.png"
+header-mask: 0.4
 catalog: true
 published: true
 tags:

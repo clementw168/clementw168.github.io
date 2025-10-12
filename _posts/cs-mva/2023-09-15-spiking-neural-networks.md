@@ -5,6 +5,7 @@ subtitle:   "Exploring Bio-Inspired Computing for Image and Time Series Classifi
 date:       2023-09-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/cs-mva/snn.png"
+header-mask: 0.3
 catalog: true
 published: true
 tags:

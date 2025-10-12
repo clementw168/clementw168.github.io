@@ -5,6 +5,7 @@ subtitle:   "Fine-tuning DistilBERT for Aspect-Term Polarity Classification"
 date:       2024-04-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/cs-mva/aspect.png"
+header-mask: 0.5
 catalog: true
 published: true
 tags:

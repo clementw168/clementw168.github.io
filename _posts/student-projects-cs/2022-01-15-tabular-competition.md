@@ -4,7 +4,8 @@ title:      "Tabular Data Competition: Building Classification from Geodata"
 subtitle:   "Ranked 2nd over 72 in Course Competition on Tabular Data"
 date:       2022-01-15 12:00:00
 author:     "Clement Wang"
-header-img: "/img_compressed/posts/student-projects/tabular-competition/full_data_dark.jpg"
+header-img: "/img_compressed/posts/student-projects/tabular-competition/full_data.jpg"
+header-mask: 0.5
 catalog: true
 published: true
 tags:

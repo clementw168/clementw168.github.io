@@ -5,6 +5,7 @@ subtitle:   "Automated Detection of Reactive vs Tumoral Lymphocytosis from Blood
 date:       2024-03-01 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/cs-mva/lympho.png"
+header-mask: 0.4
 catalog: true
 published: true
 tags:

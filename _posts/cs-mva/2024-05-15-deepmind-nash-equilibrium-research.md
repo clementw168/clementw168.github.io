@@ -4,7 +4,8 @@ title: "Accelerating Nash Equilibrium Convergence with Google DeepMind"
 subtitle: "Population-Based Enhancements for Faster FoReL Convergence"
 date: 2024-05-15 12:00:00
 author: "Clement Wang"
-header-img: "/img_compressed/posts/cs-mva/forel_logo.png"
+header-img: "/img/posts/cs-mva/forel_logo.png"
+header-mask: 0.2
 catalog: true
 published: true
 mathjax: true
