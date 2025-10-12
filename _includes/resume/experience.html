@@ -19,7 +19,20 @@
             {% endfor %}
         </ul>
         {% endif %}
-        {% if experience.post_link %}
+        {% if experience.post_slug %}
+            {% assign post_found = false %}
+            {% for post in site.posts %}
+                {% assign post_slug = post.url | split: '/' | last | split: '.' | first %}
+                {% if post_slug == experience.post_slug %}
+                    {% assign post_found = true %}
+                    <p class="resume-link"><a href="{{ post.url }}" title="{{ post.title }}">{{ experience.post_text }}</a></p>
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+            {% unless post_found %}
+                <p class="resume-link" style="color: #999; font-size: 0.9em;">{{ experience.post_text }} (Post not found: {{ experience.post_slug }})</p>
+            {% endunless %}
+        {% elsif experience.post_link %}
         <p class="resume-link"><a href="{{ experience.post_link }}">{{ experience.post_text }}</a></p>
         {% endif %}
     </div>

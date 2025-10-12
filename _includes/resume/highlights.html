@@ -20,7 +20,20 @@
                     {% for project in highlight.projects %}
                     <li>
                         {{ project.description }}
-                        {% if project.link %}
+                        {% if project.post_slug %}
+                            {% assign post_found = false %}
+                            {% for post in site.posts %}
+                                {% assign post_slug = post.url | split: '/' | last | split: '.' | first %}
+                                {% if post_slug == project.post_slug %}
+                                    {% assign post_found = true %}
+                                    <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">🔗</a>
+                                    {% break %}
+                                {% endif %}
+                            {% endfor %}
+                            {% unless post_found %}
+                                <span style="color: #999; font-size: 0.8em;">(Post not found: {{ project.post_slug }})</span>
+                            {% endunless %}
+                        {% elsif project.link %}
                         <a href="{{ project.link }}" target="_blank" title="View project">🔗</a>
                         {% endif %}
                     </li>
@@ -29,7 +42,20 @@
             </div>
         </div>
         {% endif %}
-        {% if highlight.post_link %}
+        {% if highlight.post_slug %}
+            {% assign post_found = false %}
+            {% for post in site.posts %}
+                {% assign post_slug = post.url | split: '/' | last | split: '.' | first %}
+                {% if post_slug == highlight.post_slug %}
+                    {% assign post_found = true %}
+                    <p class="resume-link"><a href="{{ post.url }}" title="{{ post.title }}">{{ highlight.post_text }}</a></p>
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+            {% unless post_found %}
+                <p class="resume-link" style="color: #999; font-size: 0.9em;">{{ highlight.post_text }} (Post not found: {{ highlight.post_slug }})</p>
+            {% endunless %}
+        {% elsif highlight.post_link %}
         <p class="resume-link"><a href="{{ highlight.post_link }}">{{ highlight.post_text }}</a></p>
         {% endif %}
     </div>
