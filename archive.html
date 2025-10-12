@@ -74,23 +74,32 @@ https://github.com/kitian616/jekyll-TeXt-theme
 					{%- endif -%}
 
 					<div class="post-preview item" data-tags="{{ _tags }}">
-						<a href="{{ _article.url | prepend: site.baseurl }}">
-							<h2 class="post-title">
-								{{ _article.title }}
-								{% if _article.pride_score %}
-								<span style="margin-left: 10px; display: inline-flex; align-items: center; gap: 2px;">
-									{% for i in (1.._article.pride_score) %}
-										<span style="color: #ffc107; font-size: 0.9em;">⭐</span>
-									{% endfor %}
-								</span>
-								{% endif %}
-							</h2>
-							{% if _article.subtitle %}
-							<h3 class="post-subtitle">
-								{{ _article.subtitle }}
-							</h3>
+						<div class="post-preview-content">
+							{% if _article.header-img %}
+							<div class="post-preview-image">
+								<img src="{{ site.baseurl }}{{ _article.header-img }}" alt="{{ _article.title }}" class="post-header-thumbnail" onclick="openImageModal('{{ site.baseurl }}{{ _article.header-img }}', '{{ _article.title }}')">
+							</div>
 							{% endif %}
-						</a>
+							<div class="post-preview-text">
+								<a href="{{ _article.url | prepend: site.baseurl }}">
+									<h2 class="post-title">
+										{{ _article.title }}
+										{% if _article.pride_score %}
+										<span style="margin-left: 10px; display: inline-flex; align-items: center; gap: 2px;">
+											{% for i in (1.._article.pride_score) %}
+												<span style="color: #ffc107; font-size: 0.9em;">⭐</span>
+											{% endfor %}
+										</span>
+										{% endif %}
+									</h2>
+									{% if _article.subtitle %}
+									<h3 class="post-subtitle">
+										{{ _article.subtitle }}
+									</h3>
+									{% endif %}
+								</a>
+							</div>
+						</div>
 						<hr>
 					</div>
 					{%- if forloop.last -%}
@@ -100,3 +109,50 @@ https://github.com/kitian616/jekyll-TeXt-theme
 		</div>
 	</div>
 </div>
+
+<!-- Image Modal -->
+<div id="imageModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modalImage" src="" alt="">
+        <div id="modalCaption"></div>
+    </div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('imageModal');
+var modalImg = document.getElementById('modalImage');
+var captionText = document.getElementById('modalCaption');
+var span = document.getElementsByClassName('close')[0];
+
+// Function to open the modal
+function openImageModal(imageSrc, imageTitle) {
+    modal.style.display = 'block';
+    modalImg.src = imageSrc;
+    captionText.innerHTML = imageTitle;
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// When the user clicks anywhere outside of the modal, close it
+modal.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+});
+</script>
