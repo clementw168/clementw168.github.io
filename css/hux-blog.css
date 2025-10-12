@@ -1359,6 +1359,14 @@ samp {
   margin-bottom: 10px;
 }
 
+.post-preview-content .post-meta {
+  font-family: 'Lora', 'Times New Roman', serif;
+  color: #a3a3a3;
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 0;
+}
+
 /* Responsive adjustments */
 @media only screen and (max-width: 767px) {
   .post-preview-content {
@@ -1622,18 +1630,22 @@ samp {
   .post-preview-content .post-subtitle {
     font-size: 16px;
   }
+  .post-preview-content .post-meta {
+    font-size: 18px;
+  }
 }
 .post-content-preview {
-  font-size: 13px;
-  font-style: italic;
-  color: #a3a3a3;
+  font-size: 14px;
+  font-style: normal;
+  color: #666666;
+  line-height: 1.5;
 }
 .post-content-preview:hover {
   color: #0085a1;
 }
 @media only screen and (min-width: 768px) {
   .post-content-preview {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 .section-heading {
