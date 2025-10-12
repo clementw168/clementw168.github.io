@@ -1,0 +1,17 @@
+<!-- Research Section -->
+<div class="resume-section">
+    <h2>Highlights</h2>
+    {% for highlight in site.data.resume.highliths %}
+    <div class="resume-item">
+        <div class="resume-item-header">
+            <h3>{{ highlight.title }}</h3>
+            <span class="resume-date">{{ highlight.period }}</span>
+        </div>
+        <p class="resume-organization">{{ highlight.organization }}</p>
+        <p class="resume-description">{{ highlight.description }}</p>
+        {% if highlight.post_link %}
+        <p class="resume-link"><a href="{{ highlight.post_link }}">{{ highlight.post_text }}</a></p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>

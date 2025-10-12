@@ -1,0 +1,164 @@
+# Resume Data File
+# This file contains all the content for the resume page
+# Edit this file to update your resume content
+
+personal_info:
+  name: Clement Wang
+  title: PhD Student in Graph Representation Learning
+  email: clementwang.pro@gmail.com
+  github_username: clementw168
+  github_link: "https://github.com/clementw168"
+  linkedin_username: clem-wang
+  linkedin_link: "https://linkedin.com/in/clem-wang"
+  website: "https://clementw168.github.io/"
+  pdf_download: /assets/posts/resume_clement_wang.pdf
+
+education:
+  - degree: CIFRE PhD in Applied Mathematics
+    period: 2025 - Present
+    institution: Institut Polytechnique de Paris - Mirakl
+    description: Graph Representation Learning with Self-Supervised Learning
+    supervisor: Prof. Thomas Bonald
+    supervisor_url: "https://perso.telecom-paristech.fr/bonald/Home_page.html"
+  
+  - degree: MSc in Applied Mathematics - MVA
+    period: Sep 2023 - Dec 2024
+    institution: École Normale Supérieure Paris-Saclay
+    description: "Relevant coursework: NLP, graph learning, time series and signals, computer vision, geometric data analysis, optimization."
+  
+  - degree: MSc in Data Science
+    period: Sep 2020 - Dec 2024
+    institution: CentraleSupélec - Université Paris-Saclay
+    description: "Relevant coursework: machine learning, statistics, stochastic calculus, parallel calculus, algorithmics, signal processing."
+
+experience:
+  - title: Data Scientist
+    period: Dec 2024 - Jul 2025
+    company: Mirakl
+    description: Built end-to-end delivery date estimation model for marketplace orders, from POC to production deployment
+    achievements:
+      - Serving 250,000+ orders per month
+      - Increasing on-time delivery rate from 50% to 85%, reducing order late deliveries by 50%
+      - Successfully launched beta program in July 2025 and general release in October 2025
+    post_link: /2025/10/07/mirakl-delivery-estimation/
+    post_text: Read more →
+  
+  - title: Machine Learning Engineer Intern
+    period: May 2024 - Oct 2024
+    company: Beacon Biosignals
+    description: Trained a foundation model for EEG signals.
+    achievements:
+      - Adapting transformer tokenization for time series
+      - 5M parameters model trained on 2B tokens with contrastive learning and DINO teacher-student architecture
+      - 80.0% accuracy on sleep staging with a limited amount of annotated data, a 2.6% decrease with 95% fewer labels compared to fully supervised models
+    post_link: /2024/10/15/beacon-biosignals-eeg-foundation-model/
+    post_text: Read more →
+  
+  - title: 3D Computer Vision Engineer Intern
+    period: Feb 2023 - Jul 2023
+    company: Stryker
+    description: "3D calibration of surgery instruments: Developing an end-to-end pipeline to determine the 3D geometry of a surgery instrument from a single RGB camera"
+    achievements:
+      - 2D key points detection with High resolution network (CNN)
+      - 3D triangulation from several video frames
+      - Condensing the process from 2 minutes to 10 seconds with a 3.0 mm error
+    post_link: /2023/07/15/stryker-3d-surgery-tracking
+    post_text: Read more →
+
+  - title: Co-Founder and MLOps Engineer
+    period: Dec 2022 - Jun 2023
+    company: Photogen AI
+    description: "Founding a startup on personalizing diffusion models"
+    achievements:
+      - Fine-tuning Stable Diffusion 1.5 with DreamBooth for realistic images on 10 images of a customer 
+      - Setting up cost-optimized cloud infrastructure on AWS with queue service, batch jobs, and autoscaling
+    post_link: /2023/07/15/stryker-3d-surgery-tracking
+    post_text: Read more →
+  
+  - title: Data Scientist Intern
+    period: Aug 2022 - Jan 2023
+    company: Polygon Technologies
+    description: Extraction of features from videos of cognitive tests to diagnose learning differences
+    achievements:
+      - Benchmarking Speech-to-text models (Whisper, Amazon Transcribe, Google Speech-to-Text)
+      - Human pose detection, Face landmarks detection, Voice activity detection
+      - Setting up a scalable pipeline to process 3-hour long videos
+
+    post_link: /gap_year/2023-01-15-polygon-diagnostic-assistance/
+    post_text: Read more →
+
+  - title: Machine Learning Consultant
+    period: Aug 2022 - Jan 2023
+    company: Paris Digital Lab
+    description: Various Computer Vision Projects for companies
+    achievements:
+      - "Radio wave detection for the French Ministry of Armed Forces: Achieved 0.95 mAP @ IOU 0.5 with YOLOv3"
+      - Lipstick retrieval from selfies for L'Oréal Research & Innovation
+      - "Few shot object detection for Oorion: Annotation of object detection dataset with CLIP embeddings"
+
+    post_link: /gap_year/2022-07-15-paris-digital-lab-consulting/
+    post_text: Read more →
+
+highliths:
+  - title: Presidency of Automatants
+    period: 2021-2022
+    organization: Automatants, the AI student association of CentraleSupélec
+    description: "Led a team of 20 members, organized events, and promoted machine learning at CentraleSupélec"
+    post_link: "/automatants/2022-02-15-president/"
+    post_text: "Read more→"
+
+  - title: Multi-Agent Reinforcement Learning Project
+    period: 2024
+    organization: Google DeepMind
+    description: Accelerating the convergence of FoReL for Nash equilibrium finding in two-player zero-sum games.
+    post_link: "/cs-mva/2024-04-15-mva-prey-predator-simulation/"
+    post_text: "Read more→"
+
+  - title: Leaf Area Index prediction from satellite images Competition
+    period: 2023
+    organization: ""
+    description: "Won the first prize on this student competition over 30 participants. We published a paper on our solution..."
+    post_link: "/gap_year/2023-11-15-satellite-images-competition-publication/"
+    post_text: "Read more→"
+
+  
+
+skills:
+  - title: "Machine Learning"
+    items:
+      - "Deep Learning (PyTorch, TensorFlow)"
+      - "Graph Neural Networks"
+      - "Time Series Forecasting"
+      - "Computer Vision"
+      - "Natural Language Processing"
+  
+  - title: "Programming"
+    items:
+      - "Python (Advanced)"
+      - "R, SQL"
+      - "JavaScript, TypeScript"
+      - "Git, Docker"
+  
+  - title: "Data Infrastructure"
+    items:
+      - "Apache Spark, Databricks"
+      - "Apache Airflow"
+      - "MLflow, DVC"
+      - "AWS, GCP"
+  
+  - title: "Research"
+    items:
+      - "LaTeX, Jupyter"
+      - "Statistical Analysis"
+      - "Experimental Design"
+      - "Academic Writing"
+
+
+
+languages:
+  - name: "French"
+    level: "Native"
+  - name: "English"
+    level: "Fluent"
+  - name: "Mandarin"
+    level: "Conversational"

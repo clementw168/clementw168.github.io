@@ -1,0 +1,16 @@
+<!-- Skills Section -->
+<div class="resume-section">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        {% for skill_category in site.data.resume.skills %}
+        <div class="skill-category">
+            <h4>{{ skill_category.title }}</h4>
+            <ul>
+                {% for item in skill_category.items %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</div>

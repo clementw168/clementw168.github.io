@@ -1,0 +1,17 @@
+<!-- Education Section -->
+<div class="resume-section">
+    <h2>Education</h2>
+    {% for education in site.data.resume.education %}
+    <div class="resume-item">
+        <div class="resume-item-header">
+            <h3>{{ education.degree }}</h3>
+            <span class="resume-date">{{ education.period }}</span>
+        </div>
+        <p class="resume-organization">{{ education.institution }}</p>
+        <p class="resume-description">{{ education.description }}</p>
+        {% if education.supervisor %}
+        <p class="resume-supervisor">Supervised by <a href="{{ education.supervisor_url }}" target="_blank">{{ education.supervisor }}</a></p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
