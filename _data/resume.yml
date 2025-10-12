@@ -30,17 +30,17 @@ education:
     description: "Relevant coursework: NLP, graph learning, time series and signals, computer vision, geometric data analysis, optimization."
     projects:
       - description: Master Thesis internship on Time Series self-supervised learning
-        link: /2024/10/15/beacon-biosignals-eeg-foundation-model/
+        post_slug: beacon-biosignals-eeg-foundation-model
       - description: Text-based Molecule Retrieval
-        link: /2024/01/15/text-molecule-retrieval/
+        post_slug: text-molecule-retrieval
       - description: Mixture Density Networks
-        link: /2023/12/15/mixture-density-networks/
+        post_slug: mixture-density-networks
       - description: Stochastic Weight Averaging (SWA)
-        link: /2024/03/15/mva-bayesian-ml-swa/
+        post_slug: mva-bayesian-ml-swa
       - description: Lymphocytosis Classification
-        link: /2024/03/01/mva-lymphocytosis-classification/
+        post_slug: mva-lymphocytosis-classification
       - description: Adaptive Brownian Bridge-based Symbolic Representation of Time Series
-        link: /2024/01/15/abba-symbolic-time-series/
+        post_slug: abba-symbolic-time-series
 
   
   - degree: MSc in Data Science
@@ -50,19 +50,19 @@ education:
     description: "Relevant coursework: machine learning, statistics, stochastic calculus, parallel calculus, algorithmics, signal processing."
     projects:
       - description: Multi-Agent Reinforcement Learning Project with Google DeepMind
-        link: /2024/05/15/deepmind-nash-equilibrium-research/
+        post_slug: deepmind-nash-equilibrium-research
       - description: Prey Predator Simulation with MADDPG
-        link: /2024/04/01/mva-prey-predator-simulation/
+        post_slug: mva-prey-predator-simulation
       - description: Aspect-Based Sentiment Analysis
-        link: /2024/04/15/mva-nlp-emotion-classification/
+        post_slug: mva-nlp-emotion-classification
       - description: Graph Neural Network Benchmark on Twitch Dataset
-        link: /2024/04/15/mva-gnn-twitch-benchmark/
+        post_slug: mva-gnn-twitch-benchmark
       - description: Reinforcement Learning applied to Flappy Bird
-        link: /2024/04/15/mva-flappy-bird-rl/
+        post_slug: mva-flappy-bird-rl
       - description: Implicit Acceleration by Overparameterization
-        link: /2024/02/15/mva-implicit-acceleration-overparameterization/
+        post_slug: mva-implicit-acceleration-overparameterization
       - description: Spiking Neural Networks
-        link: /2023/09/15/spiking-neural-networks/
+        post_slug: spiking-neural-networks
 
 
   - degree: Preparatory Courses - MPSI/MP*
@@ -82,7 +82,7 @@ experience:
       - Serving 250,000+ orders per month
       - Increasing on-time delivery rate from 50% to 85%, reducing order late deliveries by 50%
       - Successfully launched beta program in July 2025 and general release in October 2025
-    post_link: /2025/10/07/mirakl-delivery-estimation/
+    post_slug: mirakl-delivery-estimation
     post_text: Read more →
   
   - title: Machine Learning Engineer
@@ -96,7 +96,7 @@ experience:
       - Adapting transformer tokenization for time series
       - 25M parameters model trained on 2B tokens with contrastive learning and DINO teacher-student architecture
       - 80.0% accuracy on sleep staging with a limited amount of annotated data, a 2.6% decrease with 95% fewer labels compared to fully supervised models
-    post_link: /2024/10/15/beacon-biosignals-eeg-foundation-model/
+    post_slug: beacon-biosignals-eeg-foundation-model
     post_text: Read more →
   
   - title: 3D Computer Vision Engineer
@@ -110,7 +110,7 @@ experience:
       - 2D key points detection with High resolution network (CNN)
       - 3D triangulation from several video frames
       - Condensing the process from 2 minutes to 10 seconds with a 3.0 mm error
-    post_link: /2023/07/15/stryker-3d-surgery-tracking
+    post_slug: stryker-3d-surgery-tracking
     post_text: Read more →
 
   - title: Co-Founder and MLOps Engineer
@@ -123,7 +123,7 @@ experience:
     achievements:
       - Fine-tuning Stable Diffusion 1.5 with DreamBooth for realistic images on 10 images of a customer 
       - Setting up cost-optimized cloud infrastructure on AWS with queue service, batch jobs, and autoscaling
-    post_link: /2023/07/15/photogen-ai-startup/
+    post_slug: photogen-ai-startup
     post_text: Read more →
   
   - title: Data Scientist Intern
@@ -138,7 +138,7 @@ experience:
       - Human pose detection, Face landmarks detection, Voice activity detection
       - Setting up a scalable pipeline to process 3-hour long videos
 
-    post_link: /2023/01/15/polygon-diagnostic-assistance/
+    post_slug: polygon-diagnostic-assistance
     post_text: Read more →
 
   - title: Machine Learning Consultant
@@ -153,7 +153,7 @@ experience:
       - Lipstick retrieval from selfies for L'Oréal Research & Innovation
       - "Few shot object detection for Oorion: Annotation of object detection dataset with CLIP embeddings"
 
-    post_link: /2022/07/15/paris-digital-lab-consulting/
+    post_slug: paris-digital-lab-consulting
     post_text: Read more →
 
 highlights:
@@ -164,22 +164,22 @@ highlights:
     description: Led a team of 20 members, organized events and courses, and promoted machine learning at CentraleSupélec, summarized 100+ papers
     projects:
       - description: My life as President
-        link: /2022/02/15/president/
+        post_slug: president
       - description: Winning an unbalanced image classification competition
-        link: /2021/11/15/imbalanced-classification/
+        post_slug: imbalanced-classification
       - description: Neural style transfer
-        link: /2021/09/15/neural-style-transfer/
+        post_slug: neural-style-transfer
       - description: Solving a maze with a genetic algorithm
-        link: /2021/12/15/genetic-algorithm-maze/
+        post_slug: genetic-algorithm-maze
       - description: My first Deep Learning project on GANs
-        link: /2020/10/15/gan-cat-generator/
+        post_slug: gan-cat-generator
 
   - title: Multi-Agent Reinforcement Learning Project
     period: 2023 - 2024
     duration: 1 year
     organization: Google DeepMind
     description: Accelerating the convergence of FoReL for Nash equilibrium finding in two-player zero-sum games.
-    post_link: /2024/05/15/deepmind-nash-equilibrium-research/
+    post_slug: deepmind-nash-equilibrium-research
     post_text: "Read more→"
 
   - title: Leaf Area Index prediction from satellite images Competition
@@ -187,7 +187,7 @@ highlights:
     duration: 3 months
     organization: ""
     description: "Won the first prize on this student competition over 30 participants. We published a paper on our solution at Big Data From Space 2023."
-    post_link: /2023/11/15/satellite-images-competition-publication/
+    post_slug: satellite-images-competition-publication
     post_text: "Read more→"
 
   - title: 3D horror game on Unity for a one-week Game Jam
@@ -195,7 +195,7 @@ highlights:
     duration: 1 week
     organization: "CentraleSupélec"
     description: "Developed a 3D horror game on Unity for a one-week Game Jam in a team of 5 students. We all learned C# one week before the game jam."
-    post_link: /2021/02/15/3d-horror-game-unity/
+    post_slug: 3d-horror-game-unity
     post_text: "Read more→"
 
   

@@ -23,7 +23,20 @@
                     {% for project in education.projects %}
                     <li>
                         {{ project.description }}
-                        {% if project.link %}
+                        {% if project.post_slug %}
+                            {% assign post_found = false %}
+                            {% for post in site.posts %}
+                                {% assign post_slug = post.url | split: '/' | last | split: '.' | first %}
+                                {% if post_slug == project.post_slug %}
+                                    {% assign post_found = true %}
+                                    <a href="{{ post.url }}" target="_blank" title="{{ post.title }}">🔗</a>
+                                    {% break %}
+                                {% endif %}
+                            {% endfor %}
+                            {% unless post_found %}
+                                <span style="color: #999; font-size: 0.8em;">(Post not found: {{ project.post_slug }})</span>
+                            {% endunless %}
+                        {% elsif project.link %}
                         <a href="{{ project.link }}" target="_blank" title="View project">🔗</a>
                         {% endif %}
                     </li>
