@@ -17,6 +17,7 @@ personal_info:
 education:
   - degree: CIFRE PhD in Applied Mathematics
     period: 2025 - Present
+    duration: "Ongoing"
     institution: Institut Polytechnique de Paris - Mirakl
     description: Graph Representation Learning with Self-Supervised Learning
     supervisor: Prof. Thomas Bonald
@@ -24,17 +25,20 @@ education:
   
   - degree: MSc in Applied Mathematics - MVA
     period: Sep 2023 - Dec 2024
+    duration: "1 year"
     institution: École Normale Supérieure Paris-Saclay
     description: "Relevant coursework: NLP, graph learning, time series and signals, computer vision, geometric data analysis, optimization."
   
   - degree: MSc in Data Science
     period: Sep 2020 - Dec 2024
+    duration: "4 years"
     institution: CentraleSupélec - Université Paris-Saclay
     description: "Relevant coursework: machine learning, statistics, stochastic calculus, parallel calculus, algorithmics, signal processing."
 
 experience:
   - title: Data Scientist
     period: Dec 2024 - Jul 2025
+    duration: "9 months"
     company: Mirakl
     description: Built end-to-end delivery date estimation model for marketplace orders, from POC to production deployment
     achievements:
@@ -46,6 +50,7 @@ experience:
   
   - title: Machine Learning Engineer Intern
     period: May 2024 - Oct 2024
+    duration: "6 months"
     company: Beacon Biosignals
     description: Trained a foundation model for EEG signals.
     achievements:
@@ -57,6 +62,7 @@ experience:
   
   - title: 3D Computer Vision Engineer Intern
     period: Feb 2023 - Jul 2023
+    duration: "6 months"
     company: Stryker
     description: "3D calibration of surgery instruments: Developing an end-to-end pipeline to determine the 3D geometry of a surgery instrument from a single RGB camera"
     achievements:
@@ -68,6 +74,7 @@ experience:
 
   - title: Co-Founder and MLOps Engineer
     period: Dec 2022 - Jun 2023
+    duration: "7 months"
     company: Photogen AI
     description: "Founding a startup on personalizing diffusion models"
     achievements:
@@ -78,6 +85,7 @@ experience:
   
   - title: Data Scientist Intern
     period: Aug 2022 - Jan 2023
+    duration: "6 months"
     company: Polygon Technologies
     description: Extraction of features from videos of cognitive tests to diagnose learning differences
     achievements:
@@ -90,6 +98,7 @@ experience:
 
   - title: Machine Learning Consultant
     period: Aug 2022 - Jan 2023
+    duration: "6 months"
     company: Paris Digital Lab
     description: Various Computer Vision Projects for companies
     achievements:
@@ -102,14 +111,16 @@ experience:
 
 highlights:
   - title: Presidency of Automatants
-    period: 2021-2022
+    period: 2021 - 2022
+    duration: "1 year"
     organization: Automatants, the AI student association of CentraleSupélec
     description: "Led a team of 20 members, organized events, and promoted machine learning at CentraleSupélec"
     post_link: "/automatants/2022-02-15-president/"
     post_text: "Read more→"
 
   - title: Multi-Agent Reinforcement Learning Project
-    period: 2024
+    period: 2023 - 2024
+    duration: "1 year"
     organization: Google DeepMind
     description: Accelerating the convergence of FoReL for Nash equilibrium finding in two-player zero-sum games.
     post_link: "/cs-mva/2024-04-15-mva-prey-predator-simulation/"
@@ -117,6 +128,7 @@ highlights:
 
   - title: Leaf Area Index prediction from satellite images Competition
     period: 2023
+    duration: "3 months"
     organization: ""
     description: "Won the first prize on this student competition over 30 participants. We published a paper on our solution..."
     post_link: "/gap_year/2023-11-15-satellite-images-competition-publication/"
