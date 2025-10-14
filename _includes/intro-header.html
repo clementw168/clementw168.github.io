@@ -133,12 +133,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const content = document.querySelector('.post-container');
     if (!content) return;
     
-    // Remove script and style elements
-    const scripts = content.querySelectorAll('script, style');
-    scripts.forEach(script => script.remove());
+    // Clone content and remove script/style elements for accurate reading time calculation
+    const textContent = content.cloneNode(true);
+    const elementsToRemove = textContent.querySelectorAll('script, style');
+    elementsToRemove.forEach(element => element.remove());
     
-    // Get text content
-    const text = content.innerText || content.textContent;
+    const text = textContent.innerText || textContent.textContent;
     
     // Calculate reading time (average 200 words per minute)
     const wordsPerMinute = 200;
