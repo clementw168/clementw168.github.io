@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Graph Neural Network Benchmark on Twitch Dataset"
-subtitle:   "Benchmarking Different GNN Architectures on Multiple Classification and Regression Tasks"
+subtitle:   "Benchmarking Different GNNs on Multiple Classification and Regression Tasks"
 date:       2024-04-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/cs-mva/mlns.png"
@@ -132,8 +132,8 @@ where AGG can be mean, max-pool, or LSTM.
 
 ## Results & Discussion
 
-While none of the models solved the tasks perfectly, our benchmark highlights how **different architectures specialize in different aspects** of the data. Future work could integrate more recent GNN variants (e.g., Graph Transformers, scalable spectral methods).
-
+None of the models solved the tasks perfectly. Our benchmark highlights how **different architectures specialize in different aspects** of the data. Future work could integrate more recent GNN variants (e.g., Graph Transformers, scalable spectral methods).
+Ò
 
 ## Documentation
 

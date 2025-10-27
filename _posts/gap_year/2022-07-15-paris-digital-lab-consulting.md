@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Machine Learning Consultant at Paris Digital Lab"
-subtitle:   "Various Computer Vision Projects for Companies - 3 Projects of 7 Weeks Each"
+title:      "Being a Machine Learning Consultant at Paris Digital Lab"
+subtitle:   "Various Computer Vision projects for companies"
 date:       2022-07-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/banners/paris_digital_lab.jpg"
@@ -26,18 +26,18 @@ After a year and a half of general engineering studies, I wanted to step into th
 
 Each project had its own challenges and learning curves. Some involved exploring cutting-edge research, while others were more engineering-focused, requiring practical solutions with tight deadlines. I quickly learned how to break down complex problems, experiment with multiple approaches, and communicate results clearly to both technical and non-technical stakeholders.
 
-The experience taught me a lot about working in a small team under pressure. We had to balance research, coding, debugging, and preparing presentations, often all at the same time. It pushed me to be both rigorous and creative, and gave me a firsthand view of how innovation happens in a fast-moving environment.
+The experience taught me a lot about working in a small team under pressure. We had to balance research, coding, debugging, and preparing presentations, often all at the same time. It pushed me to be both rigorous and creative, and gave me a firsthand view of how innovation happens in a fast-moving environment. It was the first time I faced clients and had to deliver results that were actually useful to them.
 
 
 ## About Paris Digital Lab
 
-Paris Digital Lab runs a unique program called the **Digital Tech Year**, a one-year gap-year experience for students. The first six months focus on real-world tech projects, where small teams of 3–4 students work full-time on company challenges in 7-week sprints. The goal of each sprint is to deliver a **Minimum Viable Product (MVP)**, allowing companies to test ideas quickly and evaluate them directly with end-users. The second half of the program is an internship in a tech hub, offering a more in-depth experience in a startup or innovation-driven environment.
+Paris Digital Lab runs a unique program called the **Digital Tech Year**, a one-year gap-year experience for students. The first six months focus on real-world tech projects, where small teams of 3–4 students work full-time on company challenges in 7-week sprints. The goal of each sprint is to deliver a **Minimum Viable Product (MVP)**, allowing companies to test ideas quickly. The second half of the program is an internship in a tech hub, offering a more in-depth experience in a startup or innovation-driven environment.
 
 
 
 ## Project 1: Confidential Company – YOLOv3 on Radio Wave Detection
 
-This project was unusual. The client needed to detect and classify radio signals in the IQ format — basically, a time series of complex numbers representing two orthogonal components of a radio signal. My first reaction was to visualize the Fast Fourier Transform of the signal, and it was immediately obvious that treating this like an object detection problem could work surprisingly well.
+This project was unusual. The client needed to detect and classify radio signals in the IQ format, basically a time series of complex numbers representing two orthogonal components of a radio signal. Our first reaction was to visualize the Fast Fourier Transform of the signal, and it was immediately obvious that treating this like an object detection problem could work surprisingly well.
 
 We turned the time-frequency representation into an image-like format and applied YOLOv3 for detection. The intuition was simple: each type of radio signal manifests as a distinct pattern in the spectrogram, much like an object in a picture. I worked on YOLOv3 and it achieved **0.95 mAP @ IOU 0.5**, which was largely beyond what the client expected. The other two members worked on RCNN and Unet. I had the best results with YOLOv3.
 

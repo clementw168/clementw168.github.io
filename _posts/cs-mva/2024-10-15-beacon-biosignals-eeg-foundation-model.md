@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Training a Foundation Model for EEG Time Series at Beacon Biosignals"
-subtitle:   "Self-Supervised Learning for Sleep EEG Analysis with 95% Fewer Labels"
+subtitle:   "Reaching over 80% Sleep Staging Accuracy with 5% of the annotated data"
 date:       2024-10-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/beacon/eeg.png"
@@ -25,7 +25,7 @@ pride_score: 2
 
 ## Project Overview
 
-This work was conducted during my Master’s thesis internship at **Beacon Biosignals**, an American company developing healthcare solutions for analyzing brain activity. My research focused on **training a foundation model for sleep EEG time series** using **self-supervised learning (SSL)**. I adapted **contrastive learning** and **DINO** from the computer vision literature to EEG data.
+This work was conducted during my Master’s thesis internship at **Beacon Biosignals**, an American company developing healthcare solutions for analyzing sleep brain activity. My research focused on **training a foundation model for sleep EEG time series** using **self-supervised learning (SSL)**. I adapted **contrastive learning** and **DINO** from the computer vision literature to EEG data.
 
 Because the project is closed-source, I cannot disclose specific data or implementation details. Instead, this article outlines the scientific motivation, relevant literature, and the conceptual approach that guided the work.
 
@@ -36,7 +36,7 @@ Electroencephalography (EEG) is a non-invasive method used to record the brain's
 
 This limitation motivates the development of an EEG *foundation model*: a large pretrained model that learns rich representations from vast amounts of unlabeled data and can later be fine-tuned for specific tasks such as sleep staging or pathology detection.
 
-Inspired by recent progress in computer vision and natural language processing, we designed and trained EEG encoders able to capture both temporal and spatial information across channels. In downstream sleep stage classification, the pretrained model reaches within **3% of the performance of fully supervised models**, while being trained on only **5% of the annotated data**.
+Inspired by recent progress in computer vision and natural language processing, we designed and trained EEG encoders able to capture both temporal and spatial information across channels. In downstream sleep stage classification, our pretrained model reaches within **3% of the performance of fully supervised models**, while being trained on only **5% of the annotated data**.
 
 
 ## Motivation and Objectives
@@ -45,7 +45,7 @@ At Beacon, foundation models serve two main goals.
 First, they accelerate the development of specialized models by providing strong pretrained backbones that require minimal labeled data for fine-tuning.
 Second, they generate meaningful latent representations that help researchers explore, visualize, and interpret EEG data more effectively.
 
-Training such a model requires balancing **generalization** and **transferability**. A foundation model must not only perform well on the data it has seen, but also adapt effectively to new subjects, devices, or even recording conditions. This paradigm, already dominant in language and vision [36, 37, 38], is still emerging in neuroscience, where signal variability and noise make it particularly challenging.
+Such a model must have both **generalization** and **transferability**. A foundation model must not only perform well on the data it has seen, but also adapt effectively to new subjects, devices, or even recording conditions. This paradigm, already dominant in language and vision [36, 37, 38], is still emerging in neuroscience, where signal variability and noise make it particularly challenging. It should also be easily fine-tuned for specific tasks.
 
 
 ## A bit of Literature

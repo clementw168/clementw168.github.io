@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "President of Automatants AI Student Association"
+title:      "Being President of Automatants AI Student Association"
 subtitle:   "Leading 20 People, Organizing Events, and Promoting Machine Learning at CentraleSupélec"
 date:       2022-02-15 12:00:00
 author:     "Clement Wang"
@@ -114,10 +114,6 @@ pride_score: 2
 
 </style>
 
-
-
-
-
 ## About Automatants  
 
 [Automatants](https://automatants.cs-campus.fr/) is the AI student association of CentraleSupélec. It promotes machine learning by sharing knowledge, organizing events, competitions, and projects.
@@ -164,9 +160,7 @@ I personally taught a course on Generative Adversarial Networks (GANs) and helpe
   <img src="/img_compressed/posts/automatants/timeline_formations.png" alt="Timeline of courses" class="wide">
 </div>
 
-We also organized two competitions (computer vision and reinforcement learning) and launched student projects. Each project was supervised by an experienced member with a small group of 2 to 5 students. Over two semesters, we had 16 projects, with 7 successful ones — not too bad considering that many students switched to other associations.  
-
-I supervised two projects myself: handwritten letter classification and neural style transfer.  
+We also organized two competitions (computer vision and reinforcement learning) and launched student projects. Each project was supervised by an experienced member with a small group of 2 to 5 students. Over two semesters, we had 16 projects, with 7 successful ones, not too bad considering that many students switched to other associations. I supervised two projects myself: handwritten letter classification and neural style transfer.  
 
 <div class="img-gallery-3">
   <img src="/img_compressed/posts/automatants/project_1.jpg" alt="Project photo 1">
@@ -177,7 +171,7 @@ I supervised two projects myself: handwritten letter classification and neural s
 
 ### Building the AI Hub of CentraleSupélec  
 
-My first big mission was to secure a dedicated room for Automatants at CentraleSupélec. Our predecessor had already started the process, but it was slowed down by bureaucracy and the pandemic. After many meetings and negotiations, we finally got it: the **AI Hub**.  
+My first big mission was to secure a dedicated room for Automatants at CentraleSupélec. Our predecessor had already started the discussion with the university, but it was slowed down by bureaucracy and the pandemic. After many meetings and negotiations, we finally got it: the **AI Hub**.
 
 <div class="img-gallery-2">
   <figure>
@@ -190,7 +184,7 @@ My first big mission was to secure a dedicated room for Automatants at CentraleS
   </figure>
 </div>
 
-It became our headquarters. We had the freedom to organize it as we wanted, in exchange for presenting projects to sponsors. We even received an incredible NVIDIA DGX A100 for our projects and negotiated with the school to get two huge sofas.  
+It became our headquarters. We had the freedom to organize it as we wanted, in exchange of presenting projects to sponsors. We even received an incredible NVIDIA DGX A100 for our projects and negotiated with the school to get two huge sofas.
 
 <div class="img-center">
   <figure>
@@ -200,7 +194,6 @@ It became our headquarters. We had the freedom to organize it as we wanted, in e
 </div>
 
 During the pandemic, having this place was priceless. It quickly became the center of our events, projects, and meetings. It became a real home for Automatants.
-
 
 
 <div class="img-gallery-mixed">

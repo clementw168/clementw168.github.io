@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Averaging Weights Leads to Wider Optima and Better Generalization"
-subtitle:   "Implementation of Stochastic Weight Averaging (SWA) for Better Generalization"
+subtitle:   "Experimenting with Stochastic Weight Averaging (SWA)"
 date:       2024-03-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/cs-mva/swa_loss_landscape.png"
@@ -19,14 +19,14 @@ tags:
 This project was part of the [Bayesian Machine Learning course](https://github.com/rbardenet/bml-course) taught by Rémi Bardenet.  
 Together with Thomas Lemercier, I reimplemented the paper **"Averaging Weights Leads to Wider Optima and Better Generalization"** by Izmailov et al. (2019).  
 
-The core idea of **Stochastic Weight Averaging (SWA)** is to improve generalization by averaging model weights collected at different points along the SGD trajectory. Instead of keeping the final checkpoint, SWA computes a running average of weights, which is hypothesized to fall into a **flatter region of the loss landscape**—a property empirically linked to better generalization.  
+The core idea of **Stochastic Weight Averaging (SWA)** is to improve generalization by averaging model weights collected at different points along the SGD trajectory. Instead of keeping the final checkpoint, SWA computes a running average of weights, which is hypothesized to fall into a **flatter region of the loss landscape**. This property is empirically linked to better generalization. 
 
 
 ## How SWA Works
 
 1. **Train a base model** with SGD using a high constant or cyclical learning rate.  
 2. **Periodically save weights** along the trajectory.  
-3. **Average the checkpoints** to obtain the SWA model (requiring only one extra vector in memory).  
+3. **Average the checkpoints** to obtain the SWA model.  
 
 This process is computationally cheap and can be seen as an approximation of ensembling, but without training multiple models.  
 
@@ -54,9 +54,7 @@ To examine the intuition behind SWA, we also visualized the loss landscapes of M
 | ![Visualization](/img_compressed/posts/cs-mva/swa_loss_landscape.png) |
 
 
-## Results
-
-In contrast to the original paper, our experiments showed that SWA **did not consistently improve performance** over standard training. While the idea of averaging weights to approximate ensembling remains elegant, our results suggest that **SWA is not universally effective** across datasets and architectures. The discrepancy with the original paper highlights the importance of **reproducibility in deep learning research**.  
+In contrast to the original paper, our experiments showed that SWA **did not consistently improve performance** over standard training. While the idea of averaging weights to approximate ensembling is elegant, our results suggest that **SWA is not universally effective** across datasets and architectures. The discrepancy with the original paper highlights the importance of **reproducibility in deep learning research**.
 
 
 ## Documentation
@@ -64,7 +62,6 @@ In contrast to the original paper, our experiments showed that SWA **did not con
 - 📄 [Complete Project Report](https://raw.githubusercontent.com/ThomasLEMERCIER/BayesianML-SWA/main/BayesianML_Report.pdf)  
 - 💻 [GitHub Repository](https://github.com/ThomasLEMERCIER/BayesianML-SWA)  
 
----
 
 ## References
 

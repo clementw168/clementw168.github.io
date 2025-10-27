@@ -46,21 +46,18 @@ The reward system balances survival and cooperation:
 Episodes end when all preys are caught or after a fixed number of steps.
 
 ### Algorithm: MADDPG
-We use **centralized training, decentralized execution**:  
-- Each agent has its own actor network (policy).  
-- A centralized critic uses states and actions of all agents to evaluate Q-values.  
-- Replay buffers and target networks stabilize training.  
+The core idea of MADDPG is to use **centralized training, decentralized execution**. Each agent has its own actor network (policy) to learn a local action-value function, while a centralized critic uses states and actions of all agents to evaluate Q-values. This architecture allows agents to learn cooperative behavior by taking into account the actions of other agents during training.
 
 To model species invariance, we also experimented with **shared networks** across agents of the same species. While promising, this introduced training instability due to conflicting gradients from agents with different experiences.
 
 
-## Some insights
+## Key Insights
 
-- With individual rewards, predators acted selfishly, failing to cooperate.  
-- Adding **shared rewards** encouraged coordination, leading to successful captures.  
-- Complex food chains generated chaotic but realistic dynamics, highly sensitive to agent initializations.  
-- Modeling the world as a torus made prey escape easier, highlighting how geometry influences emergent strategies.  
-- Shared networks for species improved representation capacity but slowed convergence due to unstable credit assignment. 
+Our experiments revealed several important findings about multi-agent cooperation. Initially, with individual rewards, predators acted selfishly and failed to cooperate effectively. However, introducing **shared rewards** dramatically improved coordination, leading to successful captures through teamwork. 
+
+Complex food chains generated chaotic but realistic dynamics that were highly sensitive to agent initializations, making training more challenging. We found that modeling the world as a torus made prey escape easier and interpretation more difficult, so we switched to a 2D plane with borders for clearer analysis.
+
+While shared networks for species improved representation capacity, they slowed convergence due to unstable credit assignment between agents with different experiences. Most importantly, careful tuning of agent speeds was crucial for observing cooperative behavior. We set prey to be much faster than predators to force the predators to work together rather than compete individually.
 
 More details can be found in the [report](https://raw.githubusercontent.com/clementw168/prey-predator-rl/main/report.pdf) and the [poster](https://raw.githubusercontent.com/clementw168/prey-predator-rl/main/assets/poster.pdf).
 

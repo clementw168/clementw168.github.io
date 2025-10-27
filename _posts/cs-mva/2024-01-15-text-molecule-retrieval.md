@@ -28,18 +28,18 @@ We combined **textual descriptions** and **molecular graphs** using a contrastiv
 ## Methodology
 
 ### Text Encoder
-Molecule names and descriptions often contain specialized vocabulary. Standard tokenizers split them poorly, so we trained a custom tokenizer to preserve meaningful units. On top of this, we trained a DistilBERT model from scratch using masked language modeling. This allowed the text encoder to generate embeddings that capture semantic nuances of chemical descriptions.
+Molecule names and descriptions often contain specialized vocabulary. Standard tokenizers split them poorly, so we trained a custom tokenizer to preserve meaningful units. On top of this, we trained a DistilBERT model from scratch using masked language modeling on the text data from the dataset. This allowed the text encoder to generate embeddings that capture semantic nuances of chemical descriptions.
 
 ![Total number of tokens](/img_compressed/posts/cs-mva/altegrad_token.png)
 
 
 ### Graph Encoder
-Molecules are naturally represented as graphs. We used **Graph Attention Networks (GATs)** to encode structural information, allowing the model to assign dynamic importance to neighboring atoms and bonds. Multiple layers capture both local interactions and higher-order structural patterns. The graph encoder outputs embeddings that summarize the molecular graph in a way that can be directly compared to text embeddings.
+Molecules are naturally represented as graphs. We used **Graph Attention Networks (GATs)** to encode molecule graphs. We chose GAT because of its ability to attribute dynamic importance to neighboring atoms and bonds. The graph encoder outputs embeddings that summarize the molecular graph in a way that can be directly compared to text embeddings.
 
 ![Graph Attention Network](/img_compressed/posts/cs-mva/altegrad_gat.png)
 
 ### Training Tricks
-Training stability and convergence were critical. We used **cosine learning rate scheduling with warmup**, large batch sizes, and **online hard sample mining**. Hard sample mining prioritized the most challenging molecules within a batch, improving contrastive learning effectiveness. Dropout and layer normalization prevented overfitting, while mixed-precision training enabled scaling to large graphs efficiently.
+Training stability and convergence were critical. We used **cosine learning rate scheduling with warmup**, large batch sizes, and **online hard sample mining**. Hard sample mining prioritized the most challenging molecules within a batch, improving contrastive learning effectiveness. Dropout and layer normalization prevented overfitting. We also used mixed-precision training to enable scaling to larger batch sizes. In contrastive learning, having larger batch sizes is crucial to obtain harder negative samples.
 
 ### Graph Augmentations
 To improve generalization, we augmented graphs during training:
@@ -55,7 +55,7 @@ Labeled data was limited, so we leveraged **self-supervised contrastive learning
 ![Self-Supervised Training](/img_compressed/posts/cs-mva/altegrad_self_supervised.png)
 
 
-## Results
+### Implementation details
 
 We evaluated our approach using a combination of labeled and unlabeled data. The final model was an **ensemble of two GAT-based models**:
 - DistilBERT text encoder fine-tuned on molecule descriptions.

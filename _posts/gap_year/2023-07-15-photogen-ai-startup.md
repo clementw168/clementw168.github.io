@@ -22,11 +22,11 @@ pride_score: 2
 
 ## Startup Journey  
 
-The idea for **Photogen AI** came during my gap year. After an internship in a US startup, I wanted to try building something myself. At the same time, **Generative AI** was exploding. When a friend suggested starting a project together, we jumped in and decided to launch a company around it.  
+The idea for **Photogen AI** came during my gap year. After an internship in a US startup, I wanted to try building something by myself. At the same time, **Generative AI** was exploding. When a friend suggested starting a project together, we jumped in and decided to launch a company around it.
 
-The concept was simple but ambitious: allow customers to generate **realistic, high-quality photos of themselves** with AI. At the time, dozens of “AI avatar” apps were popping up, but none were producing results that looked professional. That gap became our opportunity.  
+The concept was simple but ambitious: allow customers to generate **realistic, high-quality photos of themselves** with AI. At the time, dozens of “AI avatar” apps were popping up, but none were producing results that looked professional. That gap became our opportunity.
 
-I joined the adventure at the end of **December 2022**, and by **February 2023**, we had launched our first app. From there, we worked on communication and marketing, invested in ads, and started talking to early customers. The traction was rather low, and by **April 2023** we realized that a pure B2C might not be a good idea for us. We decided to pivot toward **B2B collaborations**, working with other companies that wanted to integrate our AI technology. We started discussions with one, did some work, but negotiations stalled. By **June 2023**, we decided to shut down the company and move on to other projects.
+I joined the adventure at the end of **December 2022**, and by **February 2023**, we had launched our first app. From there, we worked on communication and marketing, invested in ads, and started talking to early customers. The traction was rather low, and by **April 2023** we realized that a pure B2C might not be a good idea for us. We lacked the knowledge in marketing and sales to directly target customers. We decided to pivot toward **B2B collaborations**, working with other companies that wanted to integrate our AI technology. We started discussions with one, did some work, but negotiations stalled. By **June 2023**, we decided to shut down the company and move on to other projects.
 
 At **Photogen AI**, I was responsible for the **core technology**. Our team was small and focused: three developers on the app, one person on marketing, and myself as the ML and MLOps engineer. I worked on fine-tuning diffusion models for each customer, building the inference pipeline, and pushing forward the R&D that powered the product.
 

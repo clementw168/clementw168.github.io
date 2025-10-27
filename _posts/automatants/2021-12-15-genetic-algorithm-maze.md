@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Genetic Algorithm for Maze Solving"
-subtitle:   "Solving Maze Game with Genetic Algorithm - Just for Fun!"
+title:      "Solving a Maze without looking"
+subtitle:   "Genetic Algorithm for Maze Solving"
 date:       2021-12-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/automatants/genetic-maze.png"
@@ -18,7 +18,7 @@ tags:
 
 ## Introduction
 
-Genetic algorithms are a fascinating class of optimization methods inspired by the process of natural selection. In this project, I applied a genetic algorithm to solve a maze with a fun twist: the algorithm never sees the maze layout. Instead, it provides a list of moves of a fixed length and only receives feedback in the form of the distance to the exit and how many times it has bumped into a wall.
+Genetic algorithms are an interesting class of optimization methods inspired by the process of natural selection. In this project, I applied a genetic algorithm to solve a maze with a fun twist: the algorithm never sees the maze layout. Instead, it provides a list of moves of a fixed length and only receives feedback in the form of the distance to the exit and how many times it has bumped into a wall.
 
 This project was a playground for experimenting with genetic algorithms and object-oriented programming in Python, and also a great opportunity to build a simple game interface with Pygame.
 

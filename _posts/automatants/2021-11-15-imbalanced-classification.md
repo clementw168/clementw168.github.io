@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Quick, Draw! Competition at Automatants"
-subtitle:   "Winning Competition on Imbalanced Image Classification"
+subtitle:   "Winning a Competition on Imbalanced Image Classification"
 date:       2021-11-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/automatants/quickdraw.jpg"
@@ -30,7 +30,7 @@ For more details and the full code, see my [GitHub repository](https://github.co
 
 ## Dataset and Competition Rules
 
-The competition dataset was a subset of the Google [Quick, Draw! dataset](https://quickdraw.withgoogle.com/), which consists of 28x28 pixel black-and-white sketches. For the competition, we were given 100 classes, but with a severe class imbalance: the first class had 1,000 images, the second had 990, the third 980, and so on, down to just 10 images for the last class. The test set, in contrast, was balanced and contained 100,000 images.
+The competition dataset was a subset of the Google [Quick, Draw! dataset](https://quickdraw.withgoogle.com/), which consists of 28x28 pixel black-and-white sketches. For the competition, we were given drawings from 100 classes, but with a severe class imbalance: the first class had 1,000 images, the second had 990, the third 980, and so on, down to just 10 images for the last class. The test set, in contrast, was balanced and contained 100,000 images.
 
 ![Quickdraw Dataset](/img_compressed/posts/automatants/quickdraw.jpg)
 
@@ -38,7 +38,7 @@ Some of the competition rules made the challenge even more interesting:
 - Teams could have up to three participants.
 - Pre-trained models were forbidden; you could not fine-tune models trained on external data.
 - Only the provided data could be used: no external data since it was easy to find the full dataset online.
-- Each team was limited to 10 submissions during the competition.
+- Each team was limited to a total of 10 submissions during whole the competition, meaning that we had to be careful about the quality of our submissions.
 
 
 ## Approach and Techniques
@@ -57,7 +57,7 @@ References:
 
 ### Model Architectures
 
-Given limited computational resources, I focused on lightweight but effective architectures. My main choice was MobileNetV2 which was known to be both fast and efficient, and surprisingly powerful even on small datasets. I also experimented with classic CNNs and ResNet-style networks, but MobileNetV2 consistently offered the best trade-off between performance and training speed.
+Given limited computational resources, I focused on lightweight but effective architectures. My main choice was MobileNetV2 which was known to be both fast and efficient, and surprisingly powerful even on small datasets. I also experimented with classic CNNs and ResNet networks, but MobileNetV2 consistently offered the best trade-off between performance and training speed.
 
 ![MobileNetV2](/img_compressed/posts/automatants/mobilenetv2.png)
 
@@ -68,7 +68,7 @@ References:
 
 ### Regularization
 
-Overfitting was a persistent enemy. To combat it, I explored a range of regularization techniques:
+Overfitting was a major issue. To prevent it, I explored a range of regularization techniques:
 - **Weight decay:** Prevents weights from growing too large and forces the network to learn more robust features.
 - **Label smoothing:** Softens the target labels, making the model less confident and often more generalizable.
 - **Dropout:** Both classic and spatial dropout, plus stochastic depth, which randomly drops layers during training.
@@ -102,7 +102,7 @@ Reference:
 
 ### Few-Shot Learning
 
-I wanted to experiment with few-shot learning methods, particularly for the rarest classes, but ran out of time to fully integrate them. In the future, using a few-shot meta-learning algorithm like Relation Networks on the top K predictions from MobileNet could further improve rare class accuracy.
+I wanted to experiment with few-shot learning methods, particularly for the rarest classes, but ran out of time before making any progress. In the future, using a few-shot meta-learning algorithm like Relation Networks on the top K predictions from MobileNet could further improve rare class accuracy.
 
 Reference:
 - Sung, F., Yang, Y., Zhang, L., Xiang, T., Torr, P. H. S., & Hospedales, T. M. (2018). Learning to Compare: Relation Network for Few-Shot Learning. *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 1199–1208. [PDF](https://arxiv.org/pdf/1711.06025)
@@ -127,7 +127,7 @@ My top-performing solution was an ensemble of six MobileNets, each trained with 
 - **Semi-supervised learning** with Noisy Student had a major positive impact, showing the value of leveraging unlabeled data.
 - **Experimentation** was worth it. Even though some approaches (like classical ML with deep features, or meta-learned ensembles) didn’t pay off, they deepened my understanding and made the project more rewarding.
 
-This competition was a fantastic way to consolidate and challenge my deep learning skills, and it reaffirmed the importance of regularization, creative use of unlabeled data, and the value of systematic experimentation. I’m glad I prioritized learning and trying new ideas over simply tuning hyperparameters for incremental gains.
+This competition was an amazing way to consolidate and challenge my deep learning skills, and it reaffirmed the importance of regularization, creative use of unlabeled data, and the value of systematic experimentation. I’m glad I prioritized learning and trying new ideas over simply tuning hyperparameters for incremental gains.
 
 ## References
 

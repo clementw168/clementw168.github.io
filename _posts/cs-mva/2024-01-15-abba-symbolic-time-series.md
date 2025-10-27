@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Implementation of ABBA Symbolic Representation of Time Series"
-subtitle:   "Adaptive Brownian Bridge-based Symbolic Aggregation for Time Series Forecasting"
+title:      "ABBA Symbolic Representation of Time Series"
+subtitle:   "Time Series Forecasting with Adaptive Brownian Bridge-based Symbolic Aggregation "
 date:       2024-01-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/cs-mva/sunspot_results.png"
@@ -19,28 +19,26 @@ tags:
 
 This project was part of the [Machine Learning for Time Series course](http://www.laurentoudre.fr/ast.html) by Laurent Oudre. Together with Guillaume Levy, I reimplemented two papers on symbolic representations of time series, focusing on the **ABBA method** (Adaptive Brownian Bridge-based symbolic Aggregation).
 
-Our objectives were:  
-1. Understand how ABBA compresses and encodes time series.  
-2. Evaluate whether ABBA representations can be combined with LSTMs for forecasting, compared to raw time series baselines.  
+Our objectives were to understand how ABBA compresses and encodes time series and evaluate whether ABBA representations can be combined with LSTMs for forecasting, compared to raw time series baselines.  
 
 
-## Why Symbolic Representations?
+## Why symbolic representations?
 
 Time series often pose challenges for deep learning: they are long, noisy, and contain redundant patterns. Symbolic representations like ABBA attempt to **compress a signal into a sequence of discrete symbols**, preserving its key dynamics while reducing dimensionality.  
 
-Potential benefits include:  
+Potential benefits include:
 - Lower computational cost for training and inference  
 - Improved interpretability of recurring patterns  
 - A bridge between symbolic analysis and modern deep learning models  
 
 
-## The ABBA Method
+## The ABBA method
 
 ABBA converts a time series into symbols through three main stages:
 
-1. **Segmentation** – The signal is approximated with piecewise linear segments. Segments are chosen adaptively to respect a maximum reconstruction error.  
+1. **Segmentation**: The signal is approximated with piecewise linear segments. Segments are chosen adaptively to respect a maximum reconstruction error.  
 
-2. **Quantization / Symbolization** – Segment slopes and lengths are clustered (e.g., with k-means), and each cluster is mapped to a symbol. This builds a discrete dictionary of patterns.  
+2. **Quantization / Symbolization**: Segment slopes and lengths are clustered (e.g., with k-means), and each cluster is mapped to a symbol. This builds a discrete dictionary of patterns.  
 
 3. **Reconstruction** – From the sequence of symbols, an approximate version of the original time series can be reconstructed, enabling lossy compression.  
 
@@ -52,12 +50,9 @@ More details on the method can be found in the [report](https://raw.githubuserco
 
 ## Experiments
 
-We tested ABBA on two datasets:  
+We tested ABBA on two datasets: **Synthetic sinusoidal signal** (clean, periodic) and **Monthly Sunspots dataset** (real-world, noisy, quasi-periodic).  
 
-1. **Synthetic sinusoidal signal** (clean, periodic).  
-2. **Monthly Sunspots dataset** (real-world, noisy, quasi-periodic).  
-
-### Reconstruction Quality
+### Reconstruction quality
 
 - On the sinusoidal dataset, ABBA reconstructs the signal almost perfectly.  
 - On the Sunspots dataset, more symbols are required to capture variability, and reconstruction is less precise.  
@@ -73,15 +68,12 @@ We tested ABBA on two datasets:
   </div>
 </div>
 
-While reconstruction is decent, one can already question whether symbol sequences without inherent numerical meaning are suitable inputs for forecasting.  
+While reconstruction is decent, one can already question whether symbol sequences without inherent numerical meaning are suitable inputs for forecasting.
 
 
 ## Forecasting with LSTM
 
-We compared two forecasting approaches:  
-
-- **Raw LSTM**: trained directly on raw time series values.  
-- **ABBA-LSTM**: trained on ABBA-generated symbol sequences.  
+We compared two forecasting approaches: **Raw LSTM** trained directly on raw time series values and **ABBA-LSTM** trained on ABBA-generated symbol sequences.  
 
 ![Results on sinusoidal](/img_compressed/posts/cs-mva/sinus_results.png)
 ![Results on sunspots](/img_compressed/posts/cs-mva/sunspot_results.png)
@@ -94,14 +86,11 @@ We compared two forecasting approaches:
 Across both datasets, **ABBA-LSTM performed significantly worse**. This outcome is unsurprising: ABBA compresses signals into a symbolic dictionary, but those symbols carry no semantic or numerical continuity for forecasting models.  
 
 
-## Critical Findings
+## Critical findings
 
-Initially, we were surprised at the discrepancy between our results and those reported in the original papers. After reviewing the [authors’ official implementation](https://github.com/nla-group/ABBA), we discovered:  
+Initially, we were surprised at the discrepancy between our results and those reported in the original papers. After reviewing the [authors' official implementation](https://github.com/nla-group/ABBA), we discovered some methodological inconsistencies between the paper and the code. More importantly, the paper reported results where models were trained **directly on the test set**, inflating performance.  
 
-- Some methodological inconsistencies between the paper and the code.  
-- More importantly, the paper reported results where models were trained **directly on the test set**, inflating performance.  
-
-This was disappointing, especially given the publication venue (*Data Mining and Knowledge Discovery*). It was a valuable lesson in the importance of looking at both code and methodology when reproducing research.
+This was extremely disappointing, especially given the publication venue (*Data Mining and Knowledge Discovery*). It was a valuable lesson in the importance of looking at both code and methodology when reproducing research.
 
 
 ## Documentation

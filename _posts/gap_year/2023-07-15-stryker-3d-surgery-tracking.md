@@ -21,23 +21,23 @@ pride_score: 2
 
 ## About Stryker
 
-Before returning to university, I did a six-month internship in the R&D team at **Stryker** in Freiburg, Germany. Stryker is a global MedTech company that develops surgical equipment and navigation systems — the work felt meaningful because it directly aimed to improve operating-room workflows and patient safety.
+Before returning to university, I did another six-month internship in the R&D team at **Stryker** in Freiburg, Germany. Stryker is a global MedTech company that develops surgical equipment and navigation systems. The work felt meaningful because it directly aimed to improve operating-room workflows and patient safety.
 
 
 ## Project Context  
 
-Accurate tracking of surgical instruments is essential for both the **success and safety** of procedures. At Stryker, the **FP8000 camera system** is used: it combines two near-infrared (NIR) cameras and a high-resolution RGB camera. The NIR cameras track passive fiducial markers via triangulation, providing real-time 3D coordinates, while the RGB camera captures high-resolution images of the surgical field.
+Accurate tracking of surgical instruments is essential for both the **success and safety** of procedures. One of Stryker's key navigation systems is the **FP8000 camera system**. It combines two near-infrared (NIR) cameras and a high-resolution RGB camera. The NIR cameras track passive fiducial markers via triangulation, providing real-time 3D coordinates, while the RGB camera captures high-resolution images of the surgical field.
 
 ![FP8000 camera system](/img_compressed/posts/gap_year/stryker_nav_sys.png)
 
-My internship focused on the **High-Speed Drill (HSD)**, a surgical tool consisting of:  
+My internship focused on the **High-Speed Drill (HSD)** surgical tool. It is composed of:  
 - a **tracker** (with reflective fiducials),  
 - an **attachment** (straight or twisted),  
 - and the **bur**, the cutting or drilling head.
 
 ![High-Speed Drill](/img_compressed/posts/gap_year/stryker_hsd.png)
 
-The existing workflow required **manual calibration of each instrument** to determine the precise 3D offset between the tracker and the bur tip. Since a surgery may involve dozens of instruments, and each calibration could take minutes, the setup process was inefficient and time-consuming.  
+The existing workflow to track the HSD required **manual calibration of each instrument** to determine the precise 3D offset between the tracker and the bur tip. Since a surgery may involve dozens of instruments, and each calibration could take minutes, the setup process was inefficient and time-consuming.  
 
 The project therefore aimed to design a **faster, video-based calibration pipeline** using the RGB camera and deep learning. By automatically detecting keypoints on the tool and reconstructing the bur tip position in 3D, the goal was to minimize user effort while maintaining millimeter-level precision. This article is about how I implemented a 10-second video-based calibration pipeline reaching an average error of 3 mm.
 
@@ -47,16 +47,17 @@ The project therefore aimed to design a **faster, video-based calibration pipeli
 The idea was to replace manual calibration with a **video-based deep learning approach**.  
 At each video frame, the system already knows the **3D position of the tool’s tracker** from the NIR cameras. The task of the neural network is to predict the **2D position of the bur tip** in the RGB image.  
 
-By combining these two sources of information across many frames, the **3D geometry of the tool can be reconstructed through triangulation**. Using multiple frames makes the problem more robust, since errors in single-frame predictions can be averaged out.  
+By combining these two sources of information across many frames, the **3D geometry of the tool can be reconstructed through triangulation**. Using even more frames makes the triangulation more robust, since errors in single-frame predictions can be averaged out.
 
-This approach avoids the limits of end-to-end depth estimation (not precise enough at the millimeter scale) and leverages the fact that **2D keypoints can be annotated much more easily**. With known tracker positions and carefully labeled images, a reliable training dataset can be built.  
+![Global Pipeline](/img_compressed/posts/gap_year/stryker_global_pipeline.png)
+
+This approach avoids the limits of end-to-end depth estimation which is not precise enough at the millimeter scale and requires huge amounts of annotated data. This two-step approach also make use of the existing manual calibration process to create a training dataset.
 
 In short, the pipeline achieves precise calibration by merging:  
 - **2D tip predictions** from a keypoint detection model,  
 - **3D tracker positions** from the NIR system,  
 - and a **multi-frame triangulation process** to minimize errors.
 
-![Global Pipeline](/img_compressed/posts/gap_year/stryker_global_pipeline.png)
 
 
 ## Data Collection and Preparation  
@@ -66,7 +67,7 @@ Building a reliable dataset was a key step of the project. The goal was to cover
 ### Data Acquisition
 I collected the dataset directly with the **FP8000 camera**, obtaining:  
 - **RGB images** in real surgical-like conditions,  
-- **3D tracker positions** from the navigation system,  
+- **3D tracker positions** from the navigation system,
 - and the **ground truth 3D transformations** from manual calibration.
 
 The 3D data was projected onto the 2D images using linear algebra transformations and OpenCV's camera distortion parameters (radial, tangential, and prism coefficients).  
@@ -85,7 +86,7 @@ The final dataset contained **1,047 training images** and **645 test images**.
 ### Data Augmentation  
 To make the model robust, I applied random flips, rotations, brightness/contrast changes, and random cropping.  
 
-Additionally, I created synthetic data: tools were filmed against a blue drape, segmented with GrabCut, and then **pasted onto random indoor backgrounds** with rotation and scaling. This “Photoshop augmentation” helped simulate realistic variability.
+Additionally, I created synthetic data: tools were filmed against a blue drape, segmented with GrabCut, and then **pasted onto random indoor backgrounds** with rotation and scaling. This **Photoshop augmentation** helped simulate realistic variability.
 
 ![Photoshop Augmentation](/img_compressed/posts/gap_year/stryker_photoshop_augment.png)
 
@@ -97,11 +98,11 @@ For detecting surgical tool keypoints, I used the **HRNet architecture** in PyTo
 ![HRNet](/img_compressed/posts/gap_year/stryker_HRnet.png)
 
 
-The training objective combined **MSE loss** with **Online Hard Keypoint Mining (OHKM)** and a **weighted loss** that emphasized the bur tip. This proved effective since the tip was the most critical keypoint.  
+The training objective was an **MSE loss** on Gaussian heatmaps centered around keypoints. I also used **Online Hard Keypoint Mining (OHKM)**, putting more weights on hard samples. Then I added more weight to the tip keypoint since it was the most critical one.
 
-On the data side, I found that mixing **2/5 synthetic images** with real ones gave the best trade-off between generalization and stability. Data augmentation (rotations, brightness/contrast changes) significantly improved test performance, especially under challenging lighting.  
+On the data side, I found that mixing **2/5 synthetic images** with real ones gave the best trade-off between generalization and stability. Data augmentation (rotations, brightness/contrast changes) significantly improved test performance, especially under challenging lighting.
 
-At inference, I applied **multi-flip ensembling** to reduce variance. Together with the refined loss functions, the final model achieved an **MSE of ~2.6 pixels for the tip**, which corresponds to sub-millimeter precision in real-world coordinates.  
+At inference, I applied **multi-flip ensembling** to reduce variance. Together with the refined loss functions, the final model achieved an **MSE of ~2.6 pixels for the tip**, which corresponds to sub-millimeter precision in real-world coordinates.
 
 Random test results:
 ![Random Test Results](/img_compressed/posts/gap_year/stryker_random_test_visualization.png)
