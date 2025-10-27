@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Analyzing Business Opportunities at Etandex"
-subtitle:   "Freelance Business Intelligence Analysis with Explainable AI for Commercial Opportunity Prediction"
+subtitle:   "Commercial Opportunity Prediction as a Freelance Business Intelligence Analyst"
 date:       2023-08-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img/posts/gap_year/etandex.png"
@@ -19,7 +19,7 @@ tags:
 
 ## Project Overview
 
-Before returning from Germany, I took on a two-month freelance mission as a Business Intelligence Analyst at [Etandex](https://www.etandex.fr/), one of France’s largest construction and infrastructure companies. The goal was to predict the likelihood of converting a commercial opportunity into a signed contract and provide actionable insights into the model’s decisions.
+Before returning from Germany, I took on a two-month freelance mission as a **Business Intelligence Analyst** at [Etandex](https://www.etandex.fr/), one of France’s largest construction and infrastructure companies. The goal was to predict the likelihood of converting a commercial opportunity into a signed contract and provide actionable insights into the model’s decisions. It was a nice opportunity to try something different from my usual work.
 
 ## Data and Methodology
 

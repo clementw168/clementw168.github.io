@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Mixture Density Networks Implementation"
+title:      "Mixture Density Networks"
 subtitle:   "Modeling Multi-Modal Regression with Probabilistic Neural Networks"
 date:       2023-12-15 12:00:00
 author:     "Clement Wang"
@@ -23,7 +23,7 @@ As part of the [Probabilistic Graphical Models and Deep Generative Models course
 ![Poster](/img_compressed/posts/cs-mva/mdn_poster.jpg)
 
 
-## Core Concept
+## Core concepts
 
 Mixture Density Networks combine neural networks with **mixture models**. For an input \(x\), the network predicts the parameters of a mixture of \(m\) Gaussian components:
 
@@ -41,13 +41,14 @@ $$
 
 Here, \(c\) is the dimension of the target vector \(t\), and we assume the components are independent within each Gaussian.
 
-Unlike standard neural networks that output only a conditional mean \(f(x; w)\), MDNs provide a **full conditional distribution**, capturing multiple modes and heteroscedasticity in the data. This is particularly useful in regression tasks where the target is inherently multi-modal.
+Unlike standard neural networks that output only a conditional mean \(f(x; w)\), MDNs provide a **full conditional distribution**, capturing multiple modes in the data. This is particularly useful in regression tasks where the target is inherently multi-modal.
 
 
-## Implementation Highlights
+## Key implementation details
 
-- The network outputs three sets of parameters per component: **mixing coefficients**, **means**, and **variances**.  
-- Training is done using **maximum likelihood estimation**, minimizing the negative log-likelihood of the observed targets under the predicted mixture distribution.  
+- The neural network outputs three sets of parameters per component: **mixing coefficients**, **means**, and **variances**.  
+- Training is done using **maximum likelihood estimation**, minimizing the negative log-likelihood of the observed targets under the predicted mixture distribution.
+- The weights are updated with Adam optimizer.
 - We tested MDNs on several synthetic and real datasets to evaluate their ability to capture multi-modal patterns and uncertainty.  
 
 

@@ -55,7 +55,7 @@
                     </h1>
                     {% comment %} always create a h2 for keeping the margin {% endcomment %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
-                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}{% if site.reading_time %} • <span id="reading-time">Calculating...</span>{% endif %}</span>
                 </div>
             </div>
         </div>
@@ -120,4 +120,37 @@
     </div>
   </div>
 </header>
+{% endif %}
+
+<!-- Reading Time JavaScript -->
+{% if site.reading_time %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const readingTimeElement = document.getElementById('reading-time');
+    if (!readingTimeElement) return;
+    
+    // Get all text content from the post
+    const content = document.querySelector('.post-container');
+    if (!content) return;
+    
+    // Clone content and remove script/style elements for accurate reading time calculation
+    const textContent = content.cloneNode(true);
+    const elementsToRemove = textContent.querySelectorAll('script, style');
+    elementsToRemove.forEach(element => element.remove());
+    
+    const text = textContent.innerText || textContent.textContent;
+    
+    // Calculate reading time (average 200 words per minute)
+    const wordsPerMinute = 200;
+    const wordCount = text.trim().split(/\s+/).length;
+    const readingTime = Math.ceil(wordCount / wordsPerMinute);
+    
+    // Update the display
+    if (readingTime === 1) {
+        readingTimeElement.textContent = '1 min read';
+    } else {
+        readingTimeElement.textContent = readingTime + ' min read';
+    }
+});
+</script>
 {% endif %}

@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Diagnostic Assistance with AI at Polygon Technologies"
-subtitle:   "Video Analysis for Learning Differences Diagnosis using Time Series Classification"
+title:      "Diagnostic Learning Differences with AI at Polygon Technologies"
+subtitle:   "Analysing video sessions with AI"
 date:       2023-01-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/gap_year/polygon.png"
@@ -72,6 +72,4 @@ My final project was **temporal segmentation**: automatically detecting the star
 
 ## Thoughts
 
-This internship was much more than just technical work.
-
-I discovered how psychology practices operate, and how delicate it is to introduce AI into the diagnostic process. Technically, I learned a lot about **speech processing, large-scale data pipelines, and AWS orchestration**. I learned how challenging (and rewarding) it can be to build tools for healthcare, where reliability and interpretability matter as much as accuracy. Even though Polygon didn’t survive the 2023 downturn, my time there left a lasting impression. I got my first deep dive into the U.S. tech ecosystem: the fast pace, the ambition, and the mindset of people always ready to take risks and innovate.
+This internship was much more than just technical work. I discovered how psychology practices operate, and how delicate it is to introduce AI into the diagnostic process. Technically, I learned a lot about **speech processing, large-scale data pipelines, and AWS orchestration**. I learned how challenging (and rewarding) it can be to build tools for healthcare, where reliability and interpretability matter as much as accuracy. Even though Polygon didn’t survive the 2023 downturn, my time there left a lasting impression. I got my first deep dive into the U.S. tech ecosystem: the fast pace, the ambition, and the mindset of people always ready to take risks and innovate.

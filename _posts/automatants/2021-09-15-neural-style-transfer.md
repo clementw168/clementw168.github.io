@@ -20,7 +20,7 @@ tags:
 
 ## Introduction
 
-Neural Style Transfer (NST) is a fascinating application of computer vision. The ability to separate and recombine the content and style of images using perceptual loss opens new possibilities for how we can use neural networks. This project explored both the original NST algorithm and real-time style transfer.
+Neural Style Transfer (NST) is a fascinating application of computer vision. The ability to separate and recombine the content and style of images using perceptual loss opens new possibilities for how we can use neural networks. In this project, I explored both the original NST algorithm and real-time style transfer using a feed-forward network.
 
 The core idea behind NST is that deep convolutional networks trained for image classification learn hierarchical representations that can separate content from style. By using pre-trained VGG networks, we can extract perceptual features that capture the essence of an image's content and style separately, enabling us to optimize a new image to match both and thus transfer the style of one image to another.
 

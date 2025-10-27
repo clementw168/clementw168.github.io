@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Accelerating Nash Equilibrium Convergence with Google DeepMind"
-subtitle: "Population-Based Enhancements for Faster FoReL Convergence"
+title: "Nash Equilibrium Finding at Google DeepMind"
+subtitle: "Accelerating FoReL Convergence with Population-Based Methods"
 date: 2024-05-15 12:00:00
 author: "Clement Wang"
 header-img: "/img/posts/cs-mva/forel_logo.png"
@@ -23,34 +23,36 @@ pride_score: 2
 
 During my final year at CentraleSupélec, I had the opportunity to collaborate with **Google DeepMind** on a research project (Oct 2023 – Apr 2024) focused on improving the convergence of algorithms for computing **Nash equilibria** in two-player zero-sum games.
 
-Finding Nash equilibria is a central objective in game theory. The FoReL framework offers strong theoretical guarantees and scales to very large games (e.g., Stratego with $$10^{535}$$ states, compared to chess with $$10^{123}$$ states). Yet, to tackle even more complex domains, we need to **accelerate FoReL’s convergence**. Our project targeted exactly this challenge.
+Finding Nash equilibria is a central objective in game theory. The FoReL framework offers strong theoretical guarantees and scales to very large games (e.g., Stratego with $$10^{535}$$ states, compared to chess with $$10^{123}$$ states). Yet, to tackle even more complex domains, we need to **accelerate FoReL’s convergence**. Our project is exactly to address this challenge.
 
-We propose **Population Alternating Lyapunov FoReL (PAL-FoReL)**: an algorithm that marries FoReL’s theoretical strengths with population-based ideas. In normal-form games (Matching Pennies, Rock-Paper-Scissors, Kuhn Poker), our experiments demonstrate **orders-of-magnitude faster convergence** than existing methods.
+We introduce **Population Alternating Lyapunov FoReL (PAL-FoReL)**: an algorithm that marries FoReL’s theoretical strengths with population-based ideas. In normal-form games (Matching Pennies, Rock-Paper-Scissors, Kuhn Poker), our experiments demonstrate **orders-of-magnitude faster convergence** than existing methods.
 
-For full details, see the [technical report](https://raw.githubusercontent.com/clementw168/PAL-Forel/main/Project%20report.pdf).
+For full details, see the [report](https://raw.githubusercontent.com/clementw168/PAL-Forel/main/Project%20report.pdf).
 
 
 ## Background
 
-This section provides a concise overview of normal-form games, Nash equilibria, and the FoReL algorithm. It includes the essential concepts needed to understand the method and results.
+This section provides a concise overview of normal-form games, Nash equilibria, and the FoReL algorithm. It includes the essential concepts needed to understand the methods and results.
 
 ### Normal-Form Games (NFG)
 
-A normal-form game is defined by:
+A normal-form game is defined by a tuple:
 $$
 (\Pi, u, K)
 $$
 
-- $$\Pi = (\Pi^1, \dots, \Pi^K)$$: the strategy sets for each player
+- $$\Pi = (\Pi^1, \dots, \Pi^K)$$: the strategy sets of all players. Each player $$k$$ selects a strategy $$\pi^k$$, forming a strategy profile $$\pi = (\pi^1, \dots, \pi^K)$$. A strategy $$\pi^k$$ is a probability distribution over the possible actions of player $$k$$.
 - $$u: \Pi \to \mathbb{R}^K$$: the payoff function
 - $$K$$: the number of players
 
-Each player $$k$$ selects a (possibly mixed) strategy $$\pi^k$$, forming a strategy profile $$\pi = (\pi^1, \dots, \pi^K)$$. The expected utility for player $$k$$ is:
+A strategy is said to be **pure** if it is a deterministic distribution, i.e. a probability distribution over a single action. A strategy is said to be **mixed** if it is a probability distribution over a set of actions.
+
+The expected utility for player $$k$$ is:
 $$
 \overline{u}^k(\pi) = \mathbb{E}_{a \sim \pi}[u^k(a)].
 $$
 
-Example: In **Rock-Paper-Scissors**, $$\pi^1$$ is a probability distribution over $$\{R,P,S\}$$ (similarly for $$\pi^2$$). Once both players pick their mixed strategies, they together define the profile $$\pi = (\pi^1, \pi^2)$$, from which we compute expected utilities. For instance, a player might mix 50% Rock and 50% Paper, hence the need for expectations.
+Example: In **Rock-Paper-Scissors**, $$\pi^1$$ is a probability distribution over $$\{R,P,S\}$$ (similarly for $$\pi^2$$). Once both players pick their strategies, they together define the profile $$\pi = (\pi^1, \pi^2)$$, from which we compute expected utilities. For instance, a player might play Rock 50% of the time and Paper 50% of the time, hence the need for expectations.
 
 ### Nash Equilibrium
 
@@ -68,32 +70,33 @@ $$
 
 At equilibrium, no player can benefit by unilaterally deviating. Nash equilibria may not be unique, but they exist under standard conditions.
 
-To quantify proximity to equilibrium, we use **NashConv**:
+To quantify proximity to equilibrium, we use the **NashConv** metric:
 
 $$
 \text{NashConv}(\pi) = \sum_k \left[ \overline{u}^k(BR^k(\pi^{-k}), \pi^{-k}) - \overline{u}^k(\pi) \right].
 $$
 
-- $$\text{NashConv} = 0$$: the profile is at equilibrium
-- Larger values indicate greater deviation from equilibrium
+- If $$\text{NashConv} = 0$$ then the profile is at equilibrium
+- If $$\text{NashConv} > 0$$ then the profile is not at equilibrium
 
-NashConv is a practical convergence metric computable even without explicit knowledge of the equilibrium.
+**NashConv** is a practical convergence metric computable even without explicit knowledge of the equilibrium.
 
 ### Deriving FoReL
 
-We briefly introduce the key ideas behind FoReL (Follow-the-Regularized-Leader).
+We briefly introduce the key ideas behind **FoReL** (Follow-the-Regularized-Leader).
 
-For a trajectory of mixed strategies $$x(t)$$, the regret for player $$k$$ is:
+For a trajectory of mixed strategies $$x(t)$$, the regret for player $$k$$ is defined as
+
 $$
 Reg_k(\tilde{t}) = \max_{p_k \in \chi_k} \left\{ \frac{1}{\tilde{t}} \int_0^{\tilde{t}} \Big[u_k\big(p_k; x_{-k}(s)\big) - u_k\big(x(s)\big)\Big] \, ds \right\}.
 $$
 
-Intuition: $$Reg_k(\tilde{t})$$ measures how much better player $$k$$ could have done, on average, by always playing the best fixed strategy. A player has **no regret** if:
+Intuition: $$Reg_k(\tilde{t})$$ measures how much better player $$k$$ could have done, on average, by always playing the best fixed strategy. A strategy is **no regret** if:
 $$
 \limsup_{t \to \infty} Reg_k(t) \leq 0.
 $$
 
-FoReL updates are defined by:
+FoReL updates are defined by
 
 $$
 y_k(t) = \int_0^t \overline{u}^k(\pi(s)) \, ds,\quad
@@ -120,12 +123,14 @@ $$
 R_{\pi}^k(a^k, a^{-k}) = r^k(a^k, a^{-k}) - \eta \log \left( \frac{\pi^k(a^k)}{\mu^k(a^k)} \right) + \eta \log \left( \frac{\pi^{-k}(a^{-k})}{\mu^{-k}(a^{-k})} \right).
 $$
 
-With this reward transformation, trajectories converge to the equilibrium of the modified game. As $$\eta \to 0$$, the equilibrium approaches that of the original game. This idea is called **Decaying Lyapunov FoReL (DL-FoReL)**. However, in practice DL-FoReL can converge poorly: locally shrinking $$\eta$$ removes the reason of the convergence.
+With this reward transformation, trajectories converge to the equilibrium of the modified game. As $$\eta \to 0$$, the equilibrium approaches that of the original game. We call this idea **Decaying Lyapunov FoReL (DL-FoReL)**. However, in practice DL-FoReL can converge poorly: locally shrinking $$\eta$$ removes the reason of the convergence.
 
-To improve this, **Perolat et al. (2021)** proposed iteratively setting the friction anchor as:
+To improve this, **Perolat et al. (2021)** proposed iteratively setting the friction anchor as
+
 $$
 \mu = \pi_t,
 $$
+
 leading to **Iterative Lyapunov FoReL (IL-FoReL)**, which exhibits much better convergence than DL-FoReL.
 
 ![DL-FoReL and IL-FoReL on Matching Pennies](/img_compressed/posts/cs-mva/forel_DL_and_IL.png)

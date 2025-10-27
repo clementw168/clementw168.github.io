@@ -24,11 +24,10 @@ In April 2023, I participated in a 3-week competition to predict the Leaf Area I
 
 ![Data visualization](/img_compressed/posts/gap_year/lai_pred.png)
 
-Our work was accepted at BiDS 2023:
 
 **Wang, C., Debouchage, A., Goldité, V., Wery, A., & Salzinger, J. (2024).** Leveraging Multi-Temporal Sentinel 1 and 2 Satellite Data for Leaf Area Index Estimation With Deep Learning. *arXiv preprint arXiv:2410.19787*. [PDF](https://arxiv.org/pdf/2410.19787)
 
-The paper details how we leveraged multi-temporal Sentinel-1 and Sentinel-2 imagery, combining historical LAI measurements with current satellite data, to improve predictions at 256×256 pixel resolution. For technical details on the models, data processing, and evaluation, please refer directly to the [paper](https://arxiv.org/pdf/2410.19787) and the [GitHub repository](https://github.com/clementw168/LeafNothingBehind).
+The paper details how we used Sentinel-1 and Sentinel-2 images at multiple timestamps to improve Leaf Area Index estimation at 256×256 pixel resolution. For technical details on the models, data processing, and evaluation, please refer directly to the [paper](https://arxiv.org/pdf/2410.19787) and the [GitHub repository](https://github.com/clementw168/LeafNothingBehind).
 
 ## Reflections
 

@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Flappy Bird Reinforcement Learning"
-subtitle:   "Implementing RL Algorithms to Play Flappy Bird"
+title:      "Playing Flappy Bird with Reinforcement Learning"
+subtitle:   "Q-Learning and Monte Carlo Control for Text Flappy Bird"
 date:       2024-04-15 12:00:00
 author:     "Clement Wang"
 header-img: "https://raw.githubusercontent.com/clementw168/Flappy-Bird-RL/main/TFB_agent.gif"
@@ -17,16 +17,15 @@ tags:
 
 ## Project Overview
 
-As part of the Reinforcement Learning course by [Stergios Christodoulidis](https://stergioc.github.io/), I implemented reinforcement learning algorithms to train an agent to play **Text Flappy Bird (TFB)**, a simplified version of the classic game. The environment is defined by a compact state space describing the bird’s vertical position and distance to the next pipe.  
+As part of the Reinforcement Learning course by [Stergios Christodoulidis](https://stergioc.github.io/), I implemented reinforcement learning algorithms to train an agent to play **Text Flappy Bird (TFB)**, a simplified version of the classic game. The challenge was to design agents that could learn to survive as long as possible knowing where the next pipe is. The state is defined by a 2D vector (height, distance to next pipe) and the action is to flap or not to flap. We want to compute the optimal action-value function for this state space.
 
-The challenge was to design agents that could learn to survive as long as possible knowing where the next pipe is.
+
 
 ![Flappy bird](https://raw.githubusercontent.com/clementw168/Flappy-Bird-RL/main/TFB_agent.gif)
 
 
 ## Algorithms
 
-The state space is a 2D vector (height, distance to next pipe).
 
 I experimented with two classical RL approaches:
 

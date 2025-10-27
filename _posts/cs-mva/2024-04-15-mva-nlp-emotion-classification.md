@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "NLP: Emotion Classification with Aspect-Based Sentiment Analysis"
-subtitle:   "Fine-tuning DistilBERT for Aspect-Term Polarity Classification"
+title:      "Aspect-Based Sentiment Analysis"
+subtitle:   "Understanding Sentiment with Respect to Specific Aspects"
 date:       2024-04-15 12:00:00
 author:     "Clement Wang"
 header-img: "/img_compressed/posts/cs-mva/aspect.png"
