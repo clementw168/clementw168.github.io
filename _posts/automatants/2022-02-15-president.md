@@ -129,7 +129,7 @@ Organizing that weekend in the middle of the Covid pandemic was a nightmare. One
 
 
 <div class="img-gallery-2">
-  <img src="/img_compressed/posts/automatants/gite.JPG" alt="Cohesion weekend gîte" class="wide">
+  <img src="/img_compressed/posts/automatants/gite.jpg" alt="Cohesion weekend gîte" class="wide">
 </div>
 
 That weekend changed everything for me. At first, I was stressed and afraid of being bored among strangers. But once there, I spent my time making sure everyone was having fun. We cooked together, played games, hiked, partied… and I realized how much potential this association had. I thought that with some structure and leadership, this association could be amazing.  

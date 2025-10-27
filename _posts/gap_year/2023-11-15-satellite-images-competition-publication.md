@@ -22,8 +22,9 @@ pride_score: 1
 
 In April 2023, I participated in a 3-week competition to predict the Leaf Area Index (LAI) for each pixel in satellite images from Sentinel-1 and Sentinel-2. The project combined remote sensing, computer vision, and deep learning, and led to a publication at the [Big Data from Space (BiDS) 2023 conference](https://www.bigdatafromspace2023.org/) in Vienna, Austria.
 
-![Data visualization](/img_compressed/posts/gap_year/lai_pred.png)
-
+<div style="background:#ffffff; padding:12px; display:inline-block;">
+  <img src="/img_compressed/posts/gap_year/lai_pred.png" alt="Data visualization">
+</div>
 
 **Wang, C., Debouchage, A., Goldité, V., Wery, A., & Salzinger, J. (2024).** Leveraging Multi-Temporal Sentinel 1 and 2 Satellite Data for Leaf Area Index Estimation With Deep Learning. *arXiv preprint arXiv:2410.19787*. [PDF](https://arxiv.org/pdf/2410.19787)
 

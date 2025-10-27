@@ -73,7 +73,6 @@ We achieved **0.20 mAP on COCO**, which wasn’t groundbreaking, but the experie
 
 **Tech stack:** PyTorch, Hugging Face, CLIP, few-shot and zero-shot object detection, class-agnostic detection.
 
----
 
 ## Reflections
 

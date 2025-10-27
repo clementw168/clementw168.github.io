@@ -26,8 +26,9 @@ This makes the task more challenging than standard sentiment analysis, since the
 
 ## Task Visualization
 
-![Emotion classification](https://raw.githubusercontent.com/clementw168/nlp-aspect-term-polarity/main/images/sample.png)
-
+<div style="background:#ffffff; padding:12px; display:inline-block;">
+  <img src="https://raw.githubusercontent.com/clementw168/nlp-aspect-term-polarity/main/images/sample.png" alt="Emotion classification">
+</div>
 
 ## Model Architecture
 
@@ -39,8 +40,9 @@ We fine-tuned **DistilBERT**, a lightweight version of BERT, and adapted it to o
 
 This design allowed the model to leverage both contextual embeddings and structured aspect information.  
 
-![Architecture](https://raw.githubusercontent.com/clementw168/nlp-aspect-term-polarity/main/images/model.png)
-
+<div style="background:#ffffff; padding:12px; display:inline-block;">
+  <img src="https://raw.githubusercontent.com/clementw168/nlp-aspect-term-polarity/main/images/model.png" alt="Architecture">
+</div>
 
 ## Data Augmentation
 
