@@ -17,18 +17,35 @@
 
 // Container of Sidebar, also Friends
 .sidebar-container {
-  color: @gray-light;
+  color: @text-secondary;
   font-size: 14px;
+  background: @bg-secondary-gradient;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid @border-color;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, @light-effect, transparent);
+  }
   h5 {
-    color: @brand-gray;
+    color: @text-primary;
     padding-bottom: 1em;
     a {
-      color: @brand-gray !important;
+      color: @text-primary !important;
       text-decoration: none;
     }
   }
   a {
-    color: @gray-light !important;
+    color: @text-secondary !important;
     &:hover,
     &:active {
       color: @brand-primary !important;
@@ -36,7 +53,7 @@
   }
   .tags {
     a {
-      border-color: @gray-light;
+      border-color: @text-secondary;
       &:hover,
       &:active {
         border-color: @brand-primary;
