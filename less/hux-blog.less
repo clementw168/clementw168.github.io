@@ -12,13 +12,32 @@ body {
   .sans-serif;
   font-size: 16px;
   // Hux mpdify to 16px (Mobile First), and increase to 20px while 768+ width
-  color: @gray-dark;
+  color: @text-primary;
+  background: @bg-primary-gradient;
+  background-attachment: fixed;
+  position: relative;
   //-webkit-user-select:text; //对于 Blog 还是先不开启这句。
   overflow-x: hidden;
 
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  // Add subtle light effects
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 80%, @accent-glow 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, @accent-glow 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, @light-effect 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
 }
 
 // -- Typography
@@ -46,7 +65,7 @@ h4 {
   font-size: 21px;
 }
 a {
-  color: @gray-dark;
+  color: @text-primary;
   &:hover,
   &:focus {
     color: @brand-primary;
@@ -64,10 +83,14 @@ article {
   overflow: hidden;
 }
 blockquote {
-  color: gray;
+  color: @text-secondary;
   font-style: italic;
   font-size: 0.95em;
   margin: 20px 0 20px;
+  border-left: 4px solid @brand-primary;
+  padding-left: 20px;
+  background-color: @bg-secondary;
+  border-radius: 4px;
   p {
     margin: 0;
   }
@@ -90,11 +113,12 @@ img.shadow {
 // Select
 select {
   -webkit-appearance: none;
+  appearance: none;
   margin-top: 15px;
-  color: #337ab7;
-  border-color: #337ab7;
+  color: @brand-primary;
+  border-color: @brand-primary;
   padding: 0em 0.4em;
-  background: white;
+  background: @bg-secondary;
   &.sel-lang {
     min-height: 28px;
     font-size: 14px;
@@ -109,7 +133,9 @@ table.table > tbody,
 table.table > thead {
   th,
   td {
-    border: 1px solid #eee !important;
+    border: 1px solid @border-color !important;
+    background-color: @bg-secondary;
+    color: @text-primary;
   }
 }
 @media screen and (max-width: 767px) {
@@ -156,11 +182,11 @@ samp {
   a {
     // display: inline-block;
     // safari has bugs on word-break on inline elements.
-    color: #337ab7;
+    color: @brand-primary;
     // different to @brand-primary
     &:hover,
     &:focus {
-      color: @brand-primary;
+      color: lighten(@brand-primary, 10%);
     }
   }
   h1,
@@ -178,14 +204,14 @@ samp {
   h2::before {
     content: " ";
     display: block;
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid @border-color;
     margin-top: 44px;
     margin-bottom: 30px;
   }
   h4 {
     font-size: 22px;
     font-weight: 600;
-    color: gray;
+    color: @text-secondary;
     & + p {
       margin-top: 10px;
     }
@@ -194,7 +220,7 @@ samp {
   h6 {
     font-size: 20px;
     font-weight: 600;
-    color: gray;
+    color: @text-secondary;
     & + p {
       margin-top: 10px;
     }
@@ -291,10 +317,10 @@ samp {
     position: absolute;
     right: 0;
     border: none;
-    background: white;
-    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px,
-      rgba(0, 0, 0, 0.239216) 0px 1px 4px;
+    background: @bg-secondary;
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 6px,
+      rgba(0, 0, 0, 0.4) 0px 1px 4px;
     border-radius: 2px;
     width: 170px;
   }
@@ -469,13 +495,13 @@ samp {
       /* when the user scrolls down, we hide the header right above the viewport */
       position: fixed;
       top: -61px;
-      background-color: fade(white, 90%);
-      border-bottom: 1px solid darken(white, 5%);
+      background-color: fade(@bg-secondary, 95%);
+      border-bottom: 1px solid @border-color;
       -webkit-transition: -webkit-transform 0.3s;
       -moz-transition: -moz-transform 0.3s;
       transition: transform 0.3s;
       .navbar-brand {
-        color: @gray-dark;
+        color: @text-primary;
         &:hover,
         &:focus {
           color: @brand-primary;
@@ -484,7 +510,7 @@ samp {
       .nav {
         li {
           a {
-            color: @gray-dark;
+            color: @text-primary;
             &:hover,
             &:focus {
               color: @brand-primary;
@@ -513,7 +539,7 @@ samp {
     .post-heading,
     .page-heading {
       padding: 85px 0 20px;
-      color: @gray-dark;
+      color: @text-primary;
       .subheading {
         margin-bottom: 15px;
       }
@@ -521,11 +547,11 @@ samp {
     .tags {
       a,
       .tag {
-        border-color: @gray-dark;
-        color: @gray-dark;
+        border-color: @text-primary;
+        color: @text-primary;
         &:hover,
         &:active {
-          background-color: rgba(0, 0, 0, 0.05);
+          background-color: @hover-bg;
         }
       }
     }
@@ -640,7 +666,7 @@ samp {
 
 .post-preview {
   > a {
-    color: @gray-dark;
+    color: @text-primary;
     &:hover,
     &:focus {
       text-decoration: none;
@@ -662,13 +688,13 @@ samp {
   }
   > .post-meta {
     .serif;
-    color: @brand-gray;
+    color: @text-secondary;
     font-size: 16px;
     font-style: italic;
     margin-top: 0;
     > a {
       text-decoration: none;
-      color: @gray-dark;
+      color: @text-primary;
       &:hover,
       &:focus {
         color: @brand-primary;
@@ -697,7 +723,7 @@ samp {
 .post-content-preview {
   font-size: 13px;
   font-style: italic;
-  color: @brand-gray;
+  color: @text-secondary;
   &:hover {
     color: @brand-primary;
   }
@@ -728,6 +754,8 @@ samp {
 footer {
   font-size: 20px;
   padding: 50px 0 65px;
+  background-color: @bg-secondary;
+  color: @text-primary;
   .list-inline {
     margin: 0;
     padding: 0;
@@ -737,13 +765,76 @@ footer {
     text-align: center;
     margin-bottom: 0;
     a {
-      color: #337ab7;
+      color: @brand-primary;
       // different to @brand-primary
       &:hover,
       &:focus {
-        color: @brand-primary;
+        color: lighten(@brand-primary, 10%);
       }
     }
+  }
+  
+  /* Social media icons styling for dark theme */
+  .fa-stack {
+    .fa-circle {
+      color: @bg-tertiary !important;
+      transition: all 0.3s ease;
+    }
+    .fa-inverse {
+      color: @text-secondary !important;
+      transition: all 0.3s ease;
+    }
+  }
+  
+  .fa-stack:hover {
+    .fa-circle {
+      color: @brand-primary !important;
+      transform: scale(1.1);
+    }
+    .fa-inverse {
+      color: white !important;
+    }
+  }
+  
+  /* Specific icon colors for better dark theme integration */
+  a[href*="twitter"] .fa-stack:hover .fa-circle {
+    color: #1da1f2 !important;
+  }
+  
+  a[href*="github"] .fa-stack:hover .fa-circle {
+    color: #333 !important;
+  }
+  
+  a[href*="linkedin"] .fa-stack:hover .fa-circle {
+    color: #0077b5 !important;
+  }
+  
+  a[href*="facebook"] .fa-stack:hover .fa-circle {
+    color: #3b5998 !important;
+  }
+  
+  a[href*="instagram"] .fa-stack:hover .fa-circle {
+    color: #e4405f !important;
+  }
+  
+  a[href*="medium"] .fa-stack:hover .fa-circle {
+    color: #00ab6c !important;
+  }
+  
+  a[href*="mailto"] .fa-stack:hover .fa-circle {
+    color: #ea4335 !important;
+  }
+  
+  a[href*="zhihu"] .fa-stack:hover .fa-circle {
+    color: #0084ff !important;
+  }
+  
+  a[href*="weibo"] .fa-stack:hover .fa-circle {
+    color: #e6162d !important;
+  }
+  
+  a[href*="feed.xml"] .fa-stack:hover .fa-circle {
+    color: #ff6600 !important;
   }
 }
 // Button Styles
@@ -787,8 +878,10 @@ footer {
       font-weight: 800;
       letter-spacing: 1px;
       padding: 10px;
-      background-color: white;
+      background-color: @bg-secondary;
+      border: 1px solid @border-color;
       border-radius: 0;
+      color: @text-primary;
       @media only screen and (min-width: 768px) {
         font-size: 14px;
         padding: 15px 25px;
@@ -796,7 +889,7 @@ footer {
     }
 
     > a {
-      color: @gray-dark;
+      color: @text-primary;
     }
     > a:hover,
     > a:focus {
@@ -816,8 +909,8 @@ footer {
     > a:hover,
     > a:focus,
     > span {
-      color: @brand-gray;
-      background-color: @gray-dark;
+      color: @text-muted;
+      background-color: @bg-tertiary;
       cursor: not-allowed;
     }
   }
@@ -908,23 +1001,24 @@ img::-moz-selection {
     line-height: 28px;
     margin: 0 2px;
     margin-bottom: 8px;
-    background: #f3f5f5;
+    background: @bg-tertiary;
+    color: @text-primary;
     &:hover,
     &:active,
     &.focus {
-      background-color: #0085a1 !important;
+      background-color: @brand-primary !important;
     }
     &.focus {
-      box-shadow: rgba(0, 0, 0, 0.117647) 0 1px 6px,
-        rgba(0, 0, 0, 0.239216) 0 1px 4px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px,
+        rgba(0, 0, 0, 0.4) 0 1px 4px;
     }
     &.tag-button--all {
       font-weight: 700;
-      color: #0085a1 !important;
+      color: @brand-primary !important;
       &:hover,
       &:active,
       &.focus {
-        background-color: #e4e4e4 !important;
+        background-color: @hover-bg !important;
       }
     }
   }
@@ -948,19 +1042,19 @@ img::-moz-selection {
     width: 100%;
     margin-top: 10px;
     padding: 8px 16px;
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: @bg-tertiary;
+    border: 1px solid @border-color;
     border-radius: 20px;
-    color: #0085a1;
+    color: @brand-primary;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
     
     &:hover {
-      background: #0085a1;
+      background: @brand-primary;
       color: white;
-      border-color: #0085a1;
+      border-color: @brand-primary;
     }
     
     .toggle-icon {
@@ -990,7 +1084,7 @@ img::-moz-selection {
     margin-top: 0px;
   }
   hr:last-of-type {
-    //display: none;
+    display: none;
   }
 }
 .listing-seperator {
@@ -1084,7 +1178,7 @@ img::-moz-selection {
     width: 18px;
     border-radius: 0px;
     // materialize
-    background-color: white;
+    background-color: @bg-secondary;
   }
   .icon-bar + .icon-bar {
     margin-top: 3px;
@@ -1148,4 +1242,344 @@ img::-moz-selection {
 
 .no-scroll {
   overflow-y: hidden;
+}
+
+/* Post preview with header image layout */
+.post-preview-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background: @card-bg-gradient;
+  border-radius: 12px;
+  border: 1px solid @border-color;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, @light-effect, transparent);
+  }
+}
+
+.post-preview-content:hover {
+  background: @bg-tertiary-gradient;
+  border-color: lighten(@border-color, 10%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px @accent-glow;
+}
+
+.post-preview-image {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+
+.post-header-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 2px solid @border-color;
+  cursor: pointer;
+}
+
+.post-header-thumbnail:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.post-preview-text {
+  flex: 1;
+  min-width: 0; /* Allows text to shrink properly */
+  padding-top: 5px;
+}
+
+/* Adjust post title margin when image is present and ensure original font sizes */
+.post-preview-content .post-title {
+  margin-top: 0 !important;
+  font-size: 21px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  color: @text-primary;
+}
+
+.post-preview-content .post-subtitle {
+  font-size: 15px;
+  line-height: 1.3;
+  margin: 0;
+  font-weight: 300;
+  margin-bottom: 10px;
+  color: @text-secondary;
+}
+
+.post-preview-content .post-meta {
+  font-family: 'Lora', 'Times New Roman', serif;
+  color: @text-secondary;
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 0;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 767px) {
+  .post-preview-content {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .post-preview-image {
+    width: 100px;
+    height: 100px;
+    align-self: center;
+  }
+  
+  .post-preview-text {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .post-preview-content .post-title {
+    text-align: center;
+  }
+  
+  .post-preview-content .post-subtitle {
+    text-align: center;
+  }
+}
+
+/* Remove the default hr separator since we now have card-style layout */
+.post-preview + hr {
+  display: none;
+}
+
+/* Add subtle animation for the entire post preview */
+.post-preview {
+  transition: all 0.3s ease;
+}
+
+.post-preview:hover {
+  transform: translateY(-1px);
+}
+
+/* Image Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 800px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  animation: zoomIn 0.3s ease;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 1001;
+}
+
+.close:hover,
+.close:focus {
+  color: #ff6b6b;
+  text-decoration: none;
+}
+
+#modalCaption {
+  margin-top: 15px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { 
+    opacity: 0;
+    transform: translateY(-50%) scale(0.8);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+/* Responsive modal */
+@media only screen and (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .close {
+    top: -30px;
+    font-size: 30px;
+  }
+  
+  #modalCaption {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+/* Archive page specific styles */
+.mini-post-list .post-preview-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background: @bg-tertiary-gradient;
+  border-radius: 8px;
+  border: 1px solid @border-color;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, @light-effect, transparent);
+  }
+}
+
+.mini-post-list .post-preview-content:hover {
+  background: @bg-secondary-gradient;
+  border-color: lighten(@border-color, 10%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 15px @accent-glow;
+}
+
+.mini-post-list .post-preview-image {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+.mini-post-list .post-header-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 2px solid @border-color;
+  cursor: pointer;
+}
+
+.mini-post-list .post-header-thumbnail:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mini-post-list .post-preview-text {
+  flex: 1;
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.mini-post-list .post-preview-content .post-title {
+  margin-top: 0 !important;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: @text-primary;
+}
+
+.mini-post-list .post-preview-content .post-subtitle {
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: @text-secondary;
+}
+
+/* Remove the default hr separator in archive since we now have card-style layout */
+.mini-post-list .post-preview + hr {
+  display: none;
+}
+
+/* Responsive adjustments for archive */
+@media only screen and (max-width: 767px) {
+  .mini-post-list .post-preview-content {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+  
+  .mini-post-list .post-preview-image {
+    width: 70px;
+    height: 70px;
+    align-self: center;
+  }
+  
+  .mini-post-list .post-preview-text {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .mini-post-list .post-preview-content .post-title {
+    text-align: center;
+  }
+  
+  .mini-post-list .post-preview-content .post-subtitle {
+    text-align: center;
+  }
 }
