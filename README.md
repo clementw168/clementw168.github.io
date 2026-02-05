@@ -1,63 +1,28 @@
-[Hux Blog](https://huangxuan.me)
-================================
+# Clement Wang's personal website
 
-> I never expected this to become popular.
+Personal blog and portfolio, built with [Jekyll](https://jekyllrb.com/) and the [Hux Blog](https://github.com/Huxpro/huxpro.github.io) theme.
 
-![](http://huangxuan.me/img/blog-desktop.jpg)
+### Local development
 
+1. Install [Ruby](https://www.ruby-lang.org/) and [Bundler](https://bundler.io/), then:
 
-[User Manual 👉](_doc/Manual.md)
---------------------------------------------------
+   ```sh
+   bundle install
+   ```
 
-### Getting Started
+2. Serve the site (default: <http://localhost:4000>):
 
-1. You will need [Ruby](https://www.ruby-lang.org/en/) and [Bundler](https://bundler.io/) to use [Jekyll](https://jekyllrb.com/). Following [Using Jekyll with Bundler](https://jekyllrb.com/tutorials/using-jekyll-with-bundler/) to fullfill the enviromental requirement.
+   ```sh
+   bundle exec jekyll serve
+   # or: npm start
+   ```
 
-2. Installed dependencies in the `Gemfile`:
+### Theme customization
 
-```sh
-$ bundle install 
-```
+Theme source lives in `_includes/`, `_layouts/`, and `less/`. To rebuild CSS after editing `.less` files, use [Grunt](https://gruntjs.com/) (see `Gruntfile.js`).
 
-3. Serve the website (`localhost:4000` by default):
+More details: [_doc/Manual.md](_doc/Manual.md) (theme manual).
 
-```sh
-$ bundle exec jekyll serve  # alternatively, npm start
-```
+---
 
-### Development (Build From Source)
-
-To modify the theme, you will need [Grunt](https://gruntjs.com/). There are numbers of tasks you can find in the `Gruntfile.js`, includes minifing JavaScript, compiling `.less` to `.css`, adding banners to keep the Apache 2.0 license intact, watching for changes, etc. 
-
-Yes, they were inherited and are extremely old-fashioned. There is no modularization and transpilation, etc.
-
-Critical Jekyll-related code are located in `_include/` and `_layouts/`. Most of them are [Liquid](https://github.com/Shopify/liquid/wiki) templates.
-
-This theme uses the default code syntax highlighter of jekyll, [Rouge](http://rouge.jneen.net/), which is compatible with Pygments theme so just pick any pygments theme css (e.g. from [here](http://jwarby.github.io/jekyll-pygments-themes/languages/javascript.html) and replace the content of `highlight.less`.
-
-
-### Interesting to know more? Checkout the [full user manual](_doc/Manual.md)!
-
-
-Other Resources
----------------
-
-Ports
-- [**Hexo**](https://github.com/Kaijun/hexo-theme-huxblog) by @kaijun
-- [**React-SSR**](https://github.com/LucasIcarus/huxpro.github.io/tree/ssr) by @LucasIcarus
-
-[Starter/Boilerplate](https://github.com/huxpro/huxblog-boilerplate)
-- Out of date. Helps wanted for updating it on par with the main repo
-
-Translation
-- [🇨🇳  中文文档（有点过时）](https://github.com/Huxpro/huxpro.github.io/blob/master/_doc/README.zh.md)
-
-
-License
--------
-
-Apache License 2.0.
-Copyright (c) 2015-present Huxpro
-
-Hux Blog is derived from [Clean Blog Jekyll Theme (MIT License)](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll/)
-Copyright (c) 2013-2016 Blackrock Digital LLC.
+**License.** Apache 2.0. This site uses the [Hux Blog](https://github.com/Huxpro/huxpro.github.io) theme (Copyright (c) 2015-present Huxpro), derived from [Clean Blog Jekyll Theme](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll/) (MIT).

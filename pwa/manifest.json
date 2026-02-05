@@ -1,16 +1,11 @@
 {
-  "name": "Hux Blog",
-  "short_name": "Hux Blog",
-  "description": "About an engineer & designer who loves web.",
-  "icons": [{
-    "src": "icons/128.png",
-    "sizes": "128x128",
-    "type": "image/png"
-  }, {
-    "src": "icons/512.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }],
+  "name": "Clement Wang",
+  "short_name": "Clement Wang",
+  "description": "Clement Wang's personal website — PhD Student on Graph Representation Learning @ IP Paris / Mirakl",
+  "icons": [
+    { "src": "icons/128.png", "sizes": "128x128", "type": "image/png" },
+    { "src": "icons/512.png", "sizes": "512x512", "type": "image/png" }
+  ],
   "background_color": "#fff",
   "theme_color": "#000",
   "start_url": "/",
