@@ -122,6 +122,6 @@ Here are some of my key takeaways:
 
 This project was an amazing experience in **building a production-grade machine learning system from scratch**. I learned what it truly means to bring a model into production: handling reliability, scalability, and real-world constraints. I am deeply grateful to have had the opportunity to work on this project.
 
-That said, completing this project also helped me realize something deeper about myself: while I enjoyed the engineering and operational aspects, my real passion lies in **research**: exploring new methods, pushing boundaries, and solving major scientific problems.
+That said, completing this project also helped me realize something deeper about myself. While I enjoyed the engineering and operational aspects, my real passion lies in **research**: exploring new methods, pushing boundaries, and solving major scientific problems.
 This realization led me to transition back toward research-oriented projects after the algorithm was released.
 
