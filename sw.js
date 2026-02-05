@@ -251,18 +251,26 @@ function sendMessageToClientsAsync(msg) {
  * @return {Promise}
  */
 function revalidateContent(cachedResp, fetchedResp) {
-  // revalidate when both promise resolved
   return Promise.all([cachedResp, fetchedResp])
     .then(([cached, fetched]) => {
-      const cachedVer = cached.headers.get('last-modified')
-      const fetchedVer = fetched.headers.get('last-modified')
+      // If nothing was cached yet, or fetch failed, just stop quietly.
+      if (!cached || !fetched) return;
+
+      // Some responses may not expose headers (opaque responses).
+      if (!cached.headers || !fetched.headers) return;
+
+      const cachedVer = cached.headers.get('last-modified');
+      const fetchedVer = fetched.headers.get('last-modified');
+
       console.log(`"${cachedVer}" vs. "${fetchedVer}"`);
-      if (cachedVer !== fetchedVer) {
+
+      // Only compare if both exist
+      if (cachedVer && fetchedVer && cachedVer !== fetchedVer) {
         sendMessageToClientsAsync({
-          'command': 'UPDATE_FOUND',
-          'url': fetched.url
-        })
+          command: 'UPDATE_FOUND',
+          url: fetched.url
+        });
       }
     })
-    .catch(err => console.log(err))
+    .catch(err => console.log(err));
 }
