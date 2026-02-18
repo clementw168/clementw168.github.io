@@ -11,9 +11,9 @@ header-mask: 0.4
     {{ about_en | markdownify }}
 </div>
 
-<!-- Recent Posts -->
-<div class="post-container" style="margin-top: 3em;">
-    <h2>Recent posts</h2>
+<!-- Recent Posts (same structure as blog page so post-previews render identically) -->
+<div class="recent-posts-section" style="margin-top: 3em;">
+    <h2 class="recent-posts-heading">Recent posts</h2>
     {% assign recent_posts = site.posts | slice: 0, 5 %}
     {% for post in recent_posts %}
     <div class="post-preview">
