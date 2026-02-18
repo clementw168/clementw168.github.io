@@ -1,0 +1,66 @@
+{% if page.header-mask %}
+<style type="text/css">
+    header.intro-header .header-mask {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0,0,0, {{ page.header-mask }});
+    }
+</style>
+{% endif %}
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading site-heading-home">
+          {% if site.sidebar-avatar %}
+          <div class="home-avatar-wrapper">
+            <img src="{{ site.sidebar-avatar }}" alt="{{ site.title }}" class="home-avatar" />
+          </div>
+          {% endif %}
+          {% if site.sidebar-about-description %}
+          <span class="subheading home-short-description">
+            {% assign desc_parts = site.sidebar-about-description | split: " <br> " %}
+            {% for part in desc_parts %}{{ part | strip }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}
+          </span>
+          {% endif %}
+          {% include sns-links.html %}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<style>
+.site-heading-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.home-avatar-wrapper {
+  line-height: 0;
+}
+.home-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.9);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+@media only screen and (min-width: 768px) {
+  .home-avatar {
+    width: 200px;
+    height: 200px;
+  }
+}
+.home-short-description {
+  text-align: center;
+  max-width: 480px;
+}
+.site-heading-home .short-about,
+.site-heading-home .sns-link {
+  margin-top: 0.25rem;
+}
+</style>

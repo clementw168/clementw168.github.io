@@ -1,0 +1,96 @@
+---
+layout: page
+title: "Blog"
+description: "Articles and posts"
+header-img: "/img_compressed/pages/home-bg.jpg"
+header-mask: 0.4
+---
+
+{% for post in site.posts %}
+<div class="post-preview">
+    <div class="post-preview-content">
+        {% if post.header-img %}
+        <div class="post-preview-image">
+            <img src="{{ site.baseurl }}{{ post.header-img }}" alt="{{ post.title }}" class="post-header-thumbnail" onclick="openImageModal('{{ site.baseurl }}{{ post.header-img }}', '{{ post.title }}')">
+        </div>
+        {% endif %}
+        <div class="post-preview-text">
+            <a href="{{ post.url | prepend: site.baseurl }}">
+                <h2 class="post-title">
+                    {{ post.title }}
+                    {% if post.pride_score %}
+                    <span style="margin-left: 10px; display: inline-flex; align-items: center; gap: 2px;">
+                        {% for i in (1..post.pride_score) %}
+                            <span style="color: #ffc107; font-size: 0.9em;">⭐</span>
+                        {% endfor %}
+                    </span>
+                    {% endif %}
+                </h2>
+                {% if post.subtitle %}
+                <h3 class="post-subtitle">
+                    {{ post.subtitle }}
+                </h3>
+                {% endif %}
+                <div class="post-content-preview">
+                    {% if post.lang == 'en' %}
+                        {{ post.content | strip_html | truncate:300 }}
+                    {% else %}
+                        {{ post.content | strip_html | truncate:200 }}
+                    {% endif %}
+                </div>
+            </a>
+            <p class="post-meta">
+                Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+            </p>
+        </div>
+    </div>
+</div>
+<hr>
+{% endfor %}
+
+<!-- Image Modal -->
+<div id="imageModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modalImage" src="" alt="">
+        <div id="modalCaption"></div>
+    </div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('imageModal');
+var modalImg = document.getElementById('modalImage');
+var captionText = document.getElementById('modalCaption');
+var span = document.getElementsByClassName('close')[0];
+
+// Function to open the modal
+function openImageModal(imageSrc, imageTitle) {
+    modal.style.display = 'block';
+    modalImg.src = imageSrc;
+    captionText.innerHTML = imageTitle;
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// When the user clicks anywhere outside of the modal, close it
+modal.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+});
+</script>

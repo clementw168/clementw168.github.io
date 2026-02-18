@@ -1,66 +1,66 @@
 ---
-layout: page
-description: "Welcome to my personal website where I share my thoughts and projects"
+layout: home
+title: "Clement Wang"
+description: "PhD Student on Graph Representation Learning @ IP Paris / Mirakl"
 header-mask: 0.4
 ---
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <div class="post-preview-content">
-        {% if post.header-img %}
-        <div class="post-preview-image">
-            <img src="{{ site.baseurl }}{{ post.header-img }}" alt="{{ post.title }}" class="post-header-thumbnail" onclick="openImageModal('{{ site.baseurl }}{{ post.header-img }}', '{{ post.title }}')">
-        </div>
-        {% endif %}
-        <div class="post-preview-text">
-            <a href="{{ post.url | prepend: site.baseurl }}">
-                <h2 class="post-title">
-                    {{ post.title }}
-                    {% if post.pride_score %}
-                    <span style="margin-left: 10px; display: inline-flex; align-items: center; gap: 2px;">
-                        {% for i in (1..post.pride_score) %}
-                            <span style="color: #ffc107; font-size: 0.9em;">⭐</span>
-                        {% endfor %}
-                    </span>
+<!-- About Content -->
+<div class="post-container">
+    {% capture about_en %}{% include about/en.md %}{% endcapture %}
+    {{ about_en | markdownify }}
+</div>
+
+<!-- Recent Posts -->
+<div class="post-container" style="margin-top: 3em;">
+    <h2>Recent posts</h2>
+    {% assign recent_posts = site.posts | slice: 0, 5 %}
+    {% for post in recent_posts %}
+    <div class="post-preview">
+        <div class="post-preview-content">
+            {% if post.header-img %}
+            <div class="post-preview-image">
+                <img src="{{ site.baseurl }}{{ post.header-img }}" alt="{{ post.title }}" class="post-header-thumbnail" onclick="openImageModal('{{ site.baseurl }}{{ post.header-img }}', '{{ post.title }}')">
+            </div>
+            {% endif %}
+            <div class="post-preview-text">
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                    <h2 class="post-title">
+                        {{ post.title }}
+                        {% if post.pride_score %}
+                        <span style="margin-left: 10px; display: inline-flex; align-items: center; gap: 2px;">
+                            {% for i in (1..post.pride_score) %}
+                                <span style="color: #ffc107; font-size: 0.9em;">⭐</span>
+                            {% endfor %}
+                        </span>
+                        {% endif %}
+                    </h2>
+                    {% if post.subtitle %}
+                    <h3 class="post-subtitle">
+                        {{ post.subtitle }}
+                    </h3>
                     {% endif %}
-                </h2>
-                {% if post.subtitle %}
-                <h3 class="post-subtitle">
-                    {{ post.subtitle }}
-                </h3>
-                {% endif %}
-                <div class="post-content-preview">
-                    {% if post.lang == 'en' %}
-                        {{ post.content | strip_html | truncate:300 }}
-                    {% else %}
-                        {{ post.content | strip_html | truncate:200 }}
-                    {% endif %}
-                </div>
-            </a>
-            <p class="post-meta">
-                Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-            </p>
+                    <div class="post-content-preview">
+                        {% if post.lang == 'en' %}
+                            {{ post.content | strip_html | truncate:300 }}
+                        {% else %}
+                            {{ post.content | strip_html | truncate:200 }}
+                        {% endif %}
+                    </div>
+                </a>
+                <p class="post-meta">
+                    Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+                </p>
+            </div>
         </div>
     </div>
-</div>
-<hr>
-{% endfor %}
+    <hr>
+    {% endfor %}
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+    <p style="margin-top: 1.5em;">
+        <a href="{{ site.baseurl }}/blog/">All articles &rarr;</a>
+    </p>
+</div>
 
 <!-- Image Modal -->
 <div id="imageModal" class="modal">
