@@ -63,4 +63,21 @@
 .site-heading-home .sns-link {
   margin-top: 0.25rem;
 }
+
+/* Tone down SNS icons on the header so they're not too bright */
+.intro-header .site-heading-home .fa-stack .fa-circle {
+  color: rgba(255, 255, 255, 0.35) !important;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.intro-header .site-heading-home .fa-stack .fa-inverse {
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: color 0.3s ease;
+}
+.intro-header .site-heading-home .fa-stack:hover .fa-circle {
+  color: rgba(255, 255, 255, 0.6) !important;
+  transform: scale(1.1);
+}
+.intro-header .site-heading-home .fa-stack:hover .fa-inverse {
+  color: #fff !important;
+}
 </style>
