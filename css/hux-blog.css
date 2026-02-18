@@ -1827,6 +1827,23 @@ img::-moz-selection {
 .no-scroll {
   overflow-y: hidden;
 }
+/* Recent posts section on home: avoid .post-container so cards match blog page */
+.recent-posts-section .recent-posts-heading {
+  margin: 50px 0 20px;
+  line-height: 1.4;
+  font-size: 28px;
+}
+.recent-posts-section .recent-posts-heading:first-child {
+  margin-top: 0;
+}
+.recent-posts-section a[href*="/blog/"] {
+  color: #4a9eff;
+}
+.recent-posts-section a[href*="/blog/"]:hover,
+.recent-posts-section a[href*="/blog/"]:focus {
+  color: #7db9ff;
+}
+
 /* Post preview with header image layout */
 .post-preview-content {
   display: flex;
