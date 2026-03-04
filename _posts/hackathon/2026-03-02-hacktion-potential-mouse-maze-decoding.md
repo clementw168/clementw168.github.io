@@ -196,9 +196,12 @@ Predictions on the test set are noisy but follow the trajectory. Notice that the
 - **Model**: tune hyperparameters, regularization, data augmentation, cleaner preprocessing to reduce overfitting and shift.
 - **Generalization**: run on multiple mice (current runs are one mouse).
 - **Multi-subject**: train on pooled data across mice.
-- **Model redesign**: condition on maze geometry (e.g. ControlNet-style), predict position as a heatmap, or add past positions as input.
+- **Model redesign**: condition on maze geometry (e.g. ControlNet-style), predict position as a heatmap (example below), or add past positions as input.
 
-![Key points detection heatmaps](/img/posts/2026/keypoints_detection_heatmaps.png)
+<figure>
+  <img src="/img/posts/2026/keypoints_detection_heatmaps.png" alt="Key points detection heatmaps">
+  <figcaption>Example of predicting position as a heatmap (keypoint detection target).</figcaption>
+</figure>
 
 ## Conclusion
 
