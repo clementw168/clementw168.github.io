@@ -4,6 +4,8 @@ title:      "Decoding Mouse Maze Position from Brain Signals"
 subtitle:   "A 48-hour proof of concept at Hacktion Potential"
 date:       2026-03-02 12:00:00
 author:     "Clement Wang"
+header-img: "https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/trajectory/trajectory_trail.gif"
+header-mask: 0.4
 catalog: true
 published: true
 tags:
@@ -25,7 +27,7 @@ Since we had very limited time, we kept the approach simple: 1D-CNNs, a few abla
 
 ### Data
 
-Recordings come from the hippocampus (CA1) with a silicon probe at 20 kHz. Each probe has several shanks recording from different locations. For each decoding timepoint we have the true (x,y) position (in seconds or in indices at ~15 Hz). Only timepoints where the mouse is moving are used for decoding, since position encoding is physiologically only relevant during movement.
+Recordings come from the hippocampus with a silicon probe at 20 kHz. Each probe has several shanks recording from different locations. For each decoding timepoint we have the true (x,y) position (sampled at ~15 Hz). Only timepoints where the mouse is moving are used for decoding, since position encoding is physiologically only relevant during movement.
 
 The dataset is built from **highpass-filtered, spike-focused** activity. For each shank we: detect spikes when voltage exceeds 3× standard deviation on any channel.
 
@@ -44,19 +46,45 @@ We tested whether **spike waveforms** are needed for decoding. Two models:
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   margin: 20px 0;
+  align-items: stretch;
 }
-.img-row-2 img { width: 100%; height: auto; display: block; border-radius: 6px; }
-.img-row-2 figure { margin: 0; }
-.img-row-2 figcaption { text-align: center; font-size: 0.9em; color: #666; margin-top: 8px; }
+.img-row-2 figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.img-row-2 img {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
+}
+.img-row-2 figcaption { text-align: center; font-size: 0.9em; color: #666; margin-top: 8px; flex-shrink: 0; }
 .img-row-3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
   margin: 20px 0;
+  align-items: stretch;
 }
-.img-row-3 img { width: 100%; height: auto; display: block; border-radius: 6px; }
-.img-row-3 figure { margin: 0; }
-.img-row-3 figcaption { text-align: center; font-size: 0.9em; color: #666; margin-top: 8px; }
+.img-row-3 figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.img-row-3 img {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
+}
+.img-row-3 figcaption { text-align: center; font-size: 0.9em; color: #666; margin-top: 8px; flex-shrink: 0; }
 @media (max-width: 768px) { .img-row-2 { grid-template-columns: 1fr; } .img-row-3 { grid-template-columns: 1fr; } }
 </style>
 
@@ -86,7 +114,9 @@ Result: the Spiking Embedding Network does not generalize (low train loss, high 
 
 ### Window size
 
-We varied the spike window length (18+18, 54+54, 126+126 timesteps around the peak), i.e. 36, 108, and 252 timesteps. All settings learn; 108 converged fastest, consistent with a trade-off between information and noise.
+We varied the spike window length (18+18, 54+54, 126+126 timesteps around the peak), i.e. 36, 108, and 252 timesteps. All settings learn: 108 converged fastest, consistent with a trade-off between information and noise.
+
+Below we show learning curves for both shuffled and temporal splits (split types are detailed in the next section).
 
 <div class="img-row-3">
   <figure>
@@ -149,14 +179,17 @@ Train/test split had a large impact. We compared:
 | Middle        | 0.030            | 0.081           |
 | Shuffled      | 0.036            | 0.054           |
 
-Temporal and middle splits generalize poorly; shuffled generalizes better. That points to **distribution shift or non-stationarity** over the session (e.g. electrode drift, fatigue, or the mouse learning the maze) rather than simple data leakage. It does not rule out that the data still carries position information (e.g. Zhang et al., 1998, J Neurophysiol).
+
+Here, we did not use a validation set since we did not even tune hyperparameters.
+
+Temporal and middle splits generalize poorly while shuffled seems to generalize better. That suggests that there might be **distribution shift or non-stationarity** over the session. Another hypothesis is that the data might not carry position information. However, that goes against the results of this study: Zhang, K. et al. (1998) ‘Interpreting Neuronal Population Activity by Reconstruction: Unified Framework With Application to Hippocampal Place Cells’, Journal of Neurophysiology, 79(2), pp. 1017–1044. We might also have some data leakage issues for the shuffled split.
 
 <figure>
   <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/trajectory/prediction_visualization.gif" alt="Prediction visualization">
   <figcaption>Predictions on test (middle split)</figcaption>
 </figure>
 
-Predictions on the test set are noisy but follow the trajectory; the model often predicts positions outside the maze.
+Predictions on the test set are noisy but follow the trajectory. Notice that the model often predicts positions outside the maze.
 
 ### Future directions
 
@@ -169,7 +202,7 @@ Predictions on the test set are noisy but follow the trajectory; the model often
 
 ## Conclusion
 
-We didn’t win, and the experiments weren’t conclusive—expected when exploring a new dataset in two days. I was glad to get back into neuroscience and to work at that pace; the experience was very stimulating.
+We didn’t win, and the experiments weren’t really conclusive. I still really enjoyed the hackathon. The subject is really interesting and I got to get a glimpse back into neuroscience. I loved the opportunity to work at that pace. The experience was very stimulating.
 
 - **Repository**: [github.com/clementw168/mouse-maze-position-from-brain-signals](https://github.com/clementw168/mouse-maze-position-from-brain-signals)
 - **Slides**: [presentation.pdf](https://github.com/clementw168/mouse-maze-position-from-brain-signals/blob/main/assets/presentation.pdf) in the repo
