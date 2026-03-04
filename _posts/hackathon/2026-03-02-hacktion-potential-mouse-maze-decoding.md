@@ -48,7 +48,16 @@ We tested whether **spike waveforms** are needed for decoding. Two models:
 .img-row-2 img { width: 100%; height: auto; display: block; border-radius: 6px; }
 .img-row-2 figure { margin: 0; }
 .img-row-2 figcaption { text-align: center; font-size: 0.9em; color: #666; margin-top: 8px; }
-@media (max-width: 768px) { .img-row-2 { grid-template-columns: 1fr; } }
+.img-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  margin: 20px 0;
+}
+.img-row-3 img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.img-row-3 figure { margin: 0; }
+.img-row-3 figcaption { text-align: center; font-size: 0.9em; color: #666; margin-top: 8px; }
+@media (max-width: 768px) { .img-row-2 { grid-template-columns: 1fr; } .img-row-3 { grid-template-columns: 1fr; } }
 </style>
 
 <div class="img-row-2">
@@ -79,42 +88,34 @@ Result: the Spiking Embedding Network does not generalize (low train loss, high 
 
 We varied the spike window length (18+18, 54+54, 126+126 timesteps around the peak), i.e. 36, 108, and 252 timesteps. All settings learn; 108 converged fastest, consistent with a trade-off between information and noise.
 
-<div class="img-row-2">
+<div class="img-row-3">
   <figure>
-    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/window_size/losses_waveform_shuffled_36.png" alt="Window 36">
-    <figcaption>Window 36</figcaption>
+    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/window_size/losses_waveform_shuffled_36.png" alt="Window 36 shuffled">
+    <figcaption>Shuffled, window 36</figcaption>
   </figure>
   <figure>
-    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/window_size/losses_waveform_shuffled_108.png" alt="Window 108">
-    <figcaption>Window 108</figcaption>
+    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/window_size/losses_waveform_shuffled_108.png" alt="Window 108 shuffled">
+    <figcaption>Shuffled, window 108</figcaption>
+  </figure>
+  <figure>
+    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/window_size/losses_waveform_shuffled_252.png" alt="Window 252 shuffled">
+    <figcaption>Shuffled, window 252</figcaption>
   </figure>
 </div>
-<div class="img-row-2">
+<div class="img-row-3">
   <figure>
-    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/window_size/losses_waveform_shuffled_252.png" alt="Window 252">
-    <figcaption>Window 252</figcaption>
+    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/window_size/losses_waveform_temporal_36.png" alt="Window 36 temporal">
+    <figcaption>Temporal, window 36</figcaption>
   </figure>
   <figure>
     <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/window_size/losses_waveform_temporal_108.png" alt="Temporal split, window 108">
-    <figcaption>Temporal split, window 108</figcaption>
+    <figcaption>Temporal, window 108</figcaption>
+  </figure>
+  <figure>
+    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/window_size/losses_waveform_temporal_252.png" alt="Temporal split, window 252">
+    <figcaption>Temporal, window 252</figcaption>
   </figure>
 </div>
-
-<div class="img-row-2">
-  <figure>
-    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/splits/losses_waveform_mid_split.png" alt="Middle split">
-    <figcaption>Middle split</figcaption>
-  </figure>
-  <figure>
-    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/splits/losses_waveform_temporal_split.png" alt="Temporal split">
-    <figcaption>Temporal split</figcaption>
-  </figure>
-</div>
-<div class="img-row-2">
-  <figure>
-    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/splits/losses_waveform_shuffled_split.png" alt="Shuffled split">
-    <figcaption>Shuffled split</figcaption>
-  </figure>
 
 
 ### Splitting issues
@@ -124,6 +125,23 @@ Train/test split had a large impact. We compared:
 - **Temporal**: train on first 90%, test on last 10% (as suggested).
 - **Middle**: test on middle 10%, train on the rest.
 - **Shuffled**: random split.
+
+
+<div class="img-row-3">
+  <figure>
+    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/splits/losses_waveform_mid_split.png" alt="Middle split">
+    <figcaption>Middle split</figcaption>
+  </figure>
+  <figure>
+    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/splits/losses_waveform_temporal_split.png" alt="Temporal split">
+    <figcaption>Temporal split</figcaption>
+  </figure>
+  <figure>
+    <img src="https://github.com/clementw168/mouse-maze-position-from-brain-signals/raw/main/assets/splits/losses_waveform_shuffled_split.png" alt="Shuffled split">
+    <figcaption>Shuffled split</figcaption>
+  </figure>
+</div>
+
 
 | Split type    | Lowest train MSE | Lowest test MSE |
 |---------------|------------------|-----------------|
