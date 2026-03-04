@@ -11,8 +11,7 @@ published: true
 tags:
     - Hackathon
     - Neuroscience
-    - Computational Neuroscience
-    - Time series analysis
+    - Time Series
 ---
 
 Last weekend I took part in **[Hacktion Potential](https://www.hacktionpotential.fr/)**, a 48-hour computational neuroscience hackathon at the **Institut du Cerveau** in Paris. Our team worked on decoding **mouse maze position from brain signals**: mapping high-dimensional neural activity to the (x,y) position of a mouse in a closed environment.
@@ -31,7 +30,7 @@ Recordings come from the hippocampus with a silicon probe at 20 kHz. Each probe 
 
 The dataset is built from **highpass-filtered, spike-focused** activity. For each shank we: detect spikes when voltage exceeds 3× standard deviation on any channel.
 
-![Spike visualization](/img/posts/2026/hacktion_data.png)
+![Spike visualization](/img/posts/2026/hacktion_hackathon/hacktion_data.png)
 
 ### Model architecture and data ablation
 
@@ -90,11 +89,11 @@ We tested whether **spike waveforms** are needed for decoding. Two models:
 
 <div class="img-row-2">
   <figure>
-    <img src="/img/posts/2026/spiking_embedding_net.png" alt="Spiking Embedding Network">
+    <img src="/img/posts/2026/hacktion_hackathon/spiking_embedding_net.png" alt="Spiking Embedding Network">
     <figcaption>Spiking Embedding Network</figcaption>
   </figure>
   <figure>
-    <img src="/img/posts/2026/waveform_net.png" alt="Waveform Network">
+    <img src="/img/posts/2026/hacktion_hackathon/waveform_net.png" alt="Waveform Network">
     <figcaption>Waveform Network</figcaption>
   </figure>
 </div>
@@ -199,7 +198,7 @@ Predictions on the test set are noisy but follow the trajectory. Notice that the
 - **Model redesign**: condition on maze geometry (e.g. ControlNet-style), predict position as a heatmap (example below), or add past positions as input.
 
 <figure>
-  <img src="/img/posts/2026/keypoints_detection_heatmaps.png" alt="Key points detection heatmaps">
+  <img src="/img/posts/2026/hacktion_hackathon/keypoints_detection_heatmaps.png" alt="Key points detection heatmaps">
   <figcaption>Example of predicting position as a heatmap (keypoint detection target).</figcaption>
 </figure>
 
