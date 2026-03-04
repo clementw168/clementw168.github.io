@@ -115,7 +115,8 @@ A few examples of questions:
 We visited Chartres, built a working game, and had a great weekend. The app did what we wanted: one phone, pass it around, anonymous answers, average, and one designated outlier to blame. If you’re ever in the mood to build something silly with friends in a weekend, “For how much would you?” is a surprisingly solid format, and way easier to ship than social media analytics.
 
 
-## Repositories
+## Some links
 
 - **Backend:** [clementw168/for-how-much](https://github.com/clementw168/for-how-much)
 - **Frontend:** [assanediouf18/ChartresFront](https://github.com/assanediouf18/ChartresFront)
+- **The presentation deck:**  [Presentation deck](/assets/posts/for_how_much_deck.pdf)
