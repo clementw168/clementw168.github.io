@@ -107,7 +107,7 @@ A few examples of questions:
 
 **Backend**: **Python**, **FastAPI**, **SQLAlchemy**, **MySQL**. We didn’t need anything fancy: one device at a time, no real concurrency, so a simple API and a local DB were enough. No auth, no scaling. Just “give me a question” and “save these answers.” It was refreshing to build something that didn’t need to be bulletproof.
 
-**Frontend**: **React Native** with **Expo**. We ran it on our phones via **Expo Go** so we could test in real time. I hadn’t touched mobile in about 10 years when I started coding for fun during high school. Back then I found Android Studio painful and front-end code boring. This time, with **Cursor** and modern tooling, it was actually enjoyable. Things have changed a lot; we had a working app in 48 hours without wanting to throw the laptop out the window.
+**Frontend**: **React Native** with **Expo**. We ran it on our phones via **Expo Go** so we could test in real time. I hadn’t touched mobile in about 10 years when I started coding for fun during high school. Back then I found Android Studio painful and front-end code boring. This time, with **Cursor** and modern tooling, it was actually enjoyable. Things have changed a lot. We had a working app in 48 hours without wanting to throw the laptop out the window.
 
 
 ## Conclusion
