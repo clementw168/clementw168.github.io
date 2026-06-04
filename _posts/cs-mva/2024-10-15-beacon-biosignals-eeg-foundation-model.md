@@ -45,7 +45,7 @@ At Beacon, foundation models serve two main goals.
 First, they accelerate the development of specialized models by providing strong pretrained backbones that require minimal labeled data for fine-tuning.
 Second, they generate meaningful latent representations that help researchers explore, visualize, and interpret EEG data more effectively.
 
-Such a model must have both **generalization** and **transferability**. A foundation model must not only perform well on the data it has seen, but also adapt effectively to new subjects, devices, or even recording conditions. This paradigm, already dominant in language and vision [36, 37, 38], is still emerging in neuroscience, where signal variability and noise make it particularly challenging. It should also be easily fine-tuned for specific tasks.
+Such a model must have both **generalization** and **transferability**. A foundation model must not only perform well on the data it has seen, but also adapt effectively to new subjects, devices, or even recording conditions. This paradigm, already dominant in language and vision [19, 24], is still emerging in neuroscience, where signal variability and noise make it particularly challenging. It should also be easily fine-tuned for specific tasks.
 
 
 ## A bit of Literature
@@ -108,7 +108,7 @@ A learnable **[CLS] token** is prepended to the sequence, and the data is passed
 
 Contrastive learning is a self-supervised framework that aims to learn representations by distinguishing between similar and dissimilar pairs of data. The central idea is to bring positive pairs closer in the embedding space while pushing negative pairs farther apart. Positive pairs are generated from a single time series chunk on which we apply two different augmentations. By doing so, the model learns meaningful and invariant features without relying on explicit labels, which is particularly valuable in settings like EEG analysis where annotated data is scarce.
 
-Prior work [22, 23] suggests that contrastive learning is better suited for EEG signals than masked pretraining. While masked pretraining focuses on predicting missing segments, the high noise level in EEG makes it difficult to infer meaningful content from partially observed signals. Contrastive methods instead optimize for consistency between different augmented views of the same input, effectively learning invariant and discriminative representations. This approach can thus be viewed as an adaptation of masked pretraining that bypasses its limitations in noisy physiological data.
+Prior work [17, 18] suggests that contrastive learning is better suited for EEG signals than masked pretraining. While masked pretraining focuses on predicting missing segments, the high noise level in EEG makes it difficult to infer meaningful content from partially observed signals. Contrastive methods instead optimize for consistency between different augmented views of the same input, effectively learning invariant and discriminative representations. This approach can thus be viewed as an adaptation of masked pretraining that bypasses its limitations in noisy physiological data.
 
 
 The contrastive framework defines a family of transformations $\mathcal{T}$ that produce distinct but semantically consistent views of an input $x$.
