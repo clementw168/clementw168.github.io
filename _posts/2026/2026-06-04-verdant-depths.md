@@ -57,7 +57,7 @@ If is does not work:
 
 ![Main menu](/img/posts/2026/verdant_depths/main_menu.png)
 
-The game has three modes. **Dungeon** is the main run: 7 floors of procedurally connected rooms, perks after combat rooms, a shop per floor, and a relic choice after each boss. Run stats and a best-run high score are tracked.
+The game has three modes. **Dungeon** is the main mode: 7 floors of procedurally connected rooms, perks after combat rooms, a shop per floor, and a relic choice after each boss. Run stats and a best-run high score are tracked.
 
 **Arena** is a practice mode. Pick any enemy or boss, an optional relic, and fight in a sealed room. No coins, no progression, no healing.
 
@@ -98,9 +98,9 @@ I spent a few hours on a game where a tourist walks around Paris, visits landmar
 
 ## Technical highlights
 
-**Wall-aware enemy steering.** `Enemy._steer_toward` probes 8 compass directions ahead, scores each by dot-product with the goal vector, and subtracts a penalty for directions that hit a wall tile. The highest-scoring direction becomes the velocity. No pathfinding graph, no nav-mesh, O(1) per enemy per frame. Getting this right took several hours: enemies have circle hitboxes and kept getting stuck on wall corners.
+**Wall-aware enemy steering.** `Enemy._steer_toward` takes 8 compass directions, scores each by dot-product with the goal vector, and subtracts a penalty for directions that hit a wall tile. The highest-scoring direction becomes the velocity. No pathfinding graph, no nav-mesh, O(1) per enemy per frame. Getting this right took several hours: enemies have circular hitboxes and kept getting stuck on wall corners.
 
-**State machine.** The game has 18 states: MENU, PLAYING, TRANSITIONING, UPGRADE, SHOP, FLOOR_CLEAR, RELIC, VICTORY, DEAD, ARENA_SELECT, ARENA_RELIC_SELECT, ARENA, ARENA_WIN, ARENA_DEAD, ENDLESS_SELECT, ENDLESS, ENDLESS_BETWEEN, ENDLESS_DEAD. Each state has a dedicated event handler, update function, and draw function.
+**State machine.** The game itself is a state machine with 18 states. Each state has a dedicated event handler, update function, and draw function.
 
 **Web deployment with pygbag.** I wanted anyone to be able to play the game without installing anything. pygbag compiles a Pygame project to WebAssembly so it runs directly in the browser. The output is a static bundle that I uploaded to itch.io, which gives the embedded player you see above.
 
