@@ -15,25 +15,19 @@ tags:
 ---
 
 
-**Mirakl** is a French unicorn and global leader in **enterprise marketplace solutions**. Its technology enables leading retailers, manufacturers, and B2B companies to launch and scale online marketplaces efficiently. Mirakl powers hundreds of marketplaces worldwide, helping organizations expand product offerings, improve logistics, and create seamless e-commerce experiences.
+**Mirakl** builds enterprise marketplace software, letting retailers, manufacturers, and B2B companies launch and run their own online marketplaces.
 
 
 ### Joining Mirakl
 
-I joined Mirakl as a **Data Scientist** in **December 2024**, where I had the opportunity to work on one of the company’s key machine learning initiatives: **estimating delivery dates for marketplace orders**.  
-This project allowed me to apply everything I had learned so far, from model design to full-scale production deployment.
+I joined Mirakl as a **Data Scientist** in **December 2024**, and got put on one of the company's machine learning initiatives: **estimating delivery dates for marketplace orders**.
 
 
 ### Project Overview
 
-The goal was to build a **delivery date estimation model** capable of predicting when each order would reach the customer.  
-The project covered the **entire machine learning lifecycle**, including:
+The goal was to predict the arrival date of an order, framed as a regression task with interval prediction: not just a point estimate, but a window the customer could trust. I can't go into detail on the data, models, or metrics, but the core of it was statistics and classical machine learning. The project covered the whole lifecycle: data collection and preprocessing, an initial POC, validating that POC with the business team, then pipeline orchestration, production deployment, testing, and monitoring.
 
-- Data collection and preprocessing
-- Time series model design and proof of concept
-- Validation of POC with the business team
-- Pipeline orchestration, production deployment, testing
-- Performance monitoring
+The hardest part wasn't the modeling, it was agreeing with the product manager on what "good" actually meant. We started with a target of a 99% on-time rate within a 1-day window. Through the POC, it became clear that target wasn't realistic: some sellers had a lot of variance in how they operated, some working 5 days a week, others 6, and the underlying data was pretty messy. Getting to a metric that reflected reality, instead of the original wishful one, took as much work as the model itself, if not more.
 
 
 <div class="responsive-iframe-container">
@@ -110,18 +104,12 @@ After several months of testing and monitoring, we released the feature to **gen
 
 ### What I Learned
 
-Working on this project was both technically challenging and deeply rewarding.  
-Here are some of my key takeaways:
-
-- **Cross-functional collaboration** — I worked closely with SREs, data engineers, product managers, developers, and BI analysts.  
-- **Modern data infrastructure** — Everything was managed *as code*, leveraging tools like **Spark**, **Databricks**, **Airflow**, and **MLflow**.  
-- **End-to-end ownership** — From the first notebook to production pipelines and monitoring dashboards.
+I worked closely with SREs, data engineers, product managers, developers, and BI analysts, and everything was managed as code with **Spark**, **Databricks**, **Airflow**, and **MLflow**. But the main thing I took away wasn't technical. Data science is mostly about understanding the client's actual problem, discussing what really matters to them, and convincing them your solution will help even if it's not perfect.
 
 
 ### Final Thoughts
 
-This project was an amazing experience in **building a production-grade machine learning system from scratch**. I learned what it truly means to bring a model into production: handling reliability, scalability, and real-world constraints. I am deeply grateful to have had the opportunity to work on this project.
+I really liked this project. It taught me what it means to bring a model into production and deal with reliability, scale, and real-world constraints.
 
-That said, completing this project also helped me realize something deeper about myself. While I enjoyed the engineering and operational aspects, my real passion lies in **research**: exploring new methods, pushing boundaries, and solving major scientific problems.
-This realization led me to transition back toward research-oriented projects after the algorithm was released.
+That said, working through it also made me realize something about myself. While I enjoyed the engineering and operational side, my real interest is in research. That's what led me back toward research-oriented projects after the algorithm shipped.
 

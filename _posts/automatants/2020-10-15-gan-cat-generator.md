@@ -42,11 +42,11 @@ Then, I wanted to dive into more complexity. Since StyleGAN seemed a bit too com
 ## Implementation and Deployment
 
 ### Dataset and Preprocessing
-The project used a curated dataset of cat images sourced from the internet. The images underwent standard preprocessing steps including resizing, normalization, and augmentation to ensure consistent input for the neural networks.
+I trained on a dataset of cat images I found online, resized and normalized to feed the networks consistently, plus basic augmentation.
 
 
 ### Public Deployment
-To share the project with a broader audience, I deployed the trained models using TensorFlow.js, enabling real-time cat generation directly in web browsers.
+I wanted people to actually try it, so I deployed the trained models with TensorFlow.js, which runs the generator directly in the browser.
 
 **Try the live demo**: [Cat Generator](https://automatants.cs-campus.fr/projects/cat-generator)
 

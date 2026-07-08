@@ -51,13 +51,9 @@ The ensemble was validated using 10-fold cross-validation with manual hyperparam
 
 ### Results & Lessons Learned
 
-This was my first experience with classical machine learning, which provided valuable insights into the differences between traditional ML and deep learning approaches.
+This was my first real project with classical machine learning, and it looked very different from the deep learning I was used to. We spent most of our time on feature engineering and hyperparameter tuning, trying one idea after another. I got completely hooked on the dopamine of submitting and watching whether we'd gained 0.001% on the leaderboard.
 
-**Key Takeaways:**
-- **Feature Engineering Dominance**: Unlike deep learning where architecture matters most, traditional ML performance heavily depends on feature engineering
-- **Ensemble Benefits**: Combining multiple models consistently outperformed individual models
-- **Validation Strategy**: Proper cross-validation prevented overfitting and provided reliable performance estimates
-- **Domain Knowledge**: Understanding spatial relationships and urban planning concepts was crucial for creating meaningful features
+We held 1st place on the public leaderboard for most of the competition, then dropped to 2nd right at the end, which was pretty frustrating after being at the top for so long.
 
 ### Full Report
 [Complete Project Report](/assets/posts/ml_course_kaggle_report.pdf).

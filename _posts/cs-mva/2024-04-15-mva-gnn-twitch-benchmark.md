@@ -133,7 +133,7 @@ where AGG can be mean, max-pool, or LSTM.
 ## Results & Discussion
 
 None of the models solved the tasks perfectly. Our benchmark highlights how **different architectures specialize in different aspects** of the data. Future work could integrate more recent GNN variants (e.g., Graph Transformers, scalable spectral methods).
-Ò
+
 
 ## Documentation
 

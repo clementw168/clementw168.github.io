@@ -45,7 +45,7 @@ At Beacon, foundation models serve two main goals.
 First, they accelerate the development of specialized models by providing strong pretrained backbones that require minimal labeled data for fine-tuning.
 Second, they generate meaningful latent representations that help researchers explore, visualize, and interpret EEG data more effectively.
 
-Such a model must have both **generalization** and **transferability**. A foundation model must not only perform well on the data it has seen, but also adapt effectively to new subjects, devices, or even recording conditions. This paradigm, already dominant in language and vision [19, 24], is still emerging in neuroscience, where signal variability and noise make it particularly challenging. It should also be easily fine-tuned for specific tasks.
+Such a model must have both **generalization** and **transferability**. A foundation model must not only perform well on the data it has seen, but also adapt effectively to new subjects, devices, or even recording conditions. This is already common practice in language and vision [19, 24], but still emerging in neuroscience, where signal variability and noise make it harder. It should also be easily fine-tuned for specific tasks.
 
 
 ## A bit of Literature
@@ -75,7 +75,7 @@ Multi-modal extensions like **CLIP** [19] demonstrated that large-scale contrast
 
 ### Scaling and Efficiency
 
-A recurring lesson across modalities is that **scale drives performance**. Studies on scaling laws in language [31], vision [32], and image-text contrastive models [33] have shown that model capacity, dataset size, and compute power follow predictable relationships. Larger models are not only more accurate but also more **sample-efficient**: they learn faster from limited labeled data. For EEG, where annotated datasets are inherently small, this principle is particularly relevant: a well-pretrained large model may drastically reduce the need for human scoring.
+Across modalities, **scale drives performance**. Studies on scaling laws in language [31], vision [32], and image-text contrastive models [33] have shown that model capacity, dataset size, and compute power follow predictable relationships. Larger models are not only more accurate but also more **sample-efficient**: they learn faster from limited labeled data. For EEG, where annotated datasets are inherently small, this principle is particularly relevant: a well-pretrained large model may drastically reduce the need for human scoring.
 
 ## Method
 
@@ -226,7 +226,7 @@ where $\lambda$ is the momentum coefficient (typically between 0.9 and 0.9995).
 
 This asymmetric design combining stop-gradient, centering, and EMA updates prevents collapse and enables stable training without requiring explicit negative samples.  
 
-In summary, DINO provides a scalable, noise-resilient, and label-free training strategy for EEG data, capable of capturing hierarchical temporal features and long-range dependencies efficiently.
+DINO ends up being a scalable, noise-resilient, label-free training strategy for EEG data that captures both fine-grained and long-range temporal structure.
 
 
 ## Conclusion
