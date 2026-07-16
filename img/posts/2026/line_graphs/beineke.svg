@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 660" width="660" height="660">
+<rect x="0" y="0" width="660" height="660" fill="#ffffff"/>
+<line x1="110.0" y1="100.0" x2="55.0" y2="142.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="110.0" y1="100.0" x2="110.0" y2="38.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="110.0" y1="100.0" x2="165.0" y2="142.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="110.0" cy="100.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="110.0" y="100.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="55.0" cy="142.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="55.0" y="142.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="110.0" cy="38.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="110.0" y="38.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="165.0" cy="142.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="165.0" y="142.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<text x="110.0" y="195.0" font-size="15" fill="#111111" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Helvetica, Arial, sans-serif">G1</text>
+<line x1="330.0" y1="50.0" x2="275.0" y2="115.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="330.0" y1="50.0" x2="330.0" y2="115.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="330.0" y1="50.0" x2="385.0" y2="115.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="275.0" y1="115.0" x2="330.0" y2="115.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="275.0" y1="115.0" x2="330.0" y2="165.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="330.0" y1="115.0" x2="330.0" y2="165.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="385.0" y1="115.0" x2="330.0" y2="165.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="275.0" cy="115.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="275.0" y="115.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="330.0" cy="115.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="330.0" y="115.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="385.0" cy="115.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="385.0" y="115.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="330.0" cy="50.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="330.0" y="50.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="330.0" cy="165.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="330.0" y="165.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<text x="330.0" y="195.0" font-size="15" fill="#111111" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Helvetica, Arial, sans-serif">G2</text>
+<line x1="550.0" y1="35.0" x2="550.0" y2="90.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="550.0" y1="35.0" x2="495.0" y2="165.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="550.0" y1="35.0" x2="605.0" y2="165.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="550.0" y1="135.0" x2="550.0" y2="90.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="550.0" y1="135.0" x2="495.0" y2="165.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="550.0" y1="135.0" x2="605.0" y2="165.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="550.0" y1="90.0" x2="495.0" y2="165.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="550.0" y1="90.0" x2="605.0" y2="165.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="495.0" y1="165.0" x2="605.0" y2="165.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="550.0" cy="35.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="550.0" y="35.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="550.0" cy="90.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="550.0" y="90.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="550.0" cy="135.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="550.0" y="135.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="495.0" cy="165.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="495.0" y="165.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="605.0" cy="165.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="605.0" y="165.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<text x="550.0" y="195.0" font-size="15" fill="#111111" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Helvetica, Arial, sans-serif">G3</text>
+<line x1="20.0" y1="320.0" x2="65.0" y2="320.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="65.0" y1="320.0" x2="110.0" y2="280.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="65.0" y1="320.0" x2="110.0" y2="360.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="110.0" y1="280.0" x2="110.0" y2="360.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="110.0" y1="280.0" x2="155.0" y2="320.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="110.0" y1="360.0" x2="155.0" y2="320.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="155.0" y1="320.0" x2="200.0" y2="320.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="20.0" cy="320.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="20.0" y="320.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="65.0" cy="320.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="65.0" y="320.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="110.0" cy="280.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="110.0" y="280.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="110.0" cy="360.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="110.0" y="360.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="155.0" cy="320.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="155.0" y="320.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="200.0" cy="320.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="200.0" y="320.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<text x="110.0" y="415.0" font-size="15" fill="#111111" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Helvetica, Arial, sans-serif">G4</text>
+<line x1="275.0" y1="280.0" x2="330.0" y2="280.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="275.0" y1="280.0" x2="275.0" y2="360.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="275.0" y1="280.0" x2="330.0" y2="360.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="330.0" y1="280.0" x2="275.0" y2="360.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="330.0" y1="280.0" x2="330.0" y2="360.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="275.0" y1="360.0" x2="330.0" y2="360.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="330.0" y1="280.0" x2="385.0" y2="320.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="330.0" y1="360.0" x2="385.0" y2="320.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="385.0" y1="320.0" x2="435.0" y2="320.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="275.0" cy="280.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="275.0" y="280.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="330.0" cy="280.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="330.0" y="280.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="275.0" cy="360.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="275.0" y="360.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="330.0" cy="360.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="330.0" y="360.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="385.0" cy="320.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="385.0" y="320.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="435.0" cy="320.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="435.0" y="320.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<text x="330.0" y="415.0" font-size="15" fill="#111111" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Helvetica, Arial, sans-serif">G5</text>
+<line x1="512.0" y1="258.0" x2="588.0" y2="258.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="512.0" y1="320.0" x2="588.0" y2="320.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="512.0" y1="382.0" x2="588.0" y2="382.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="512.0" y1="258.0" x2="512.0" y2="320.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="512.0" y1="320.0" x2="512.0" y2="382.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="588.0" y1="258.0" x2="588.0" y2="320.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="588.0" y1="320.0" x2="588.0" y2="382.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="512.0" y1="258.0" x2="588.0" y2="320.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="588.0" y1="258.0" x2="512.0" y2="320.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="512.0" y1="320.0" x2="588.0" y2="382.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="588.0" y1="320.0" x2="512.0" y2="382.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="512.0" cy="258.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="512.0" y="258.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="588.0" cy="258.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="588.0" y="258.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="512.0" cy="320.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="512.0" y="320.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="588.0" cy="320.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="588.0" y="320.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="512.0" cy="382.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="512.0" y="382.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="588.0" cy="382.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="588.0" y="382.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<text x="550.0" y="415.0" font-size="15" fill="#111111" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Helvetica, Arial, sans-serif">G6</text>
+<line x1="89.0" y1="478.0" x2="40.0" y2="540.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="89.0" y1="478.0" x2="117.0" y2="540.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="40.0" y1="540.0" x2="117.0" y2="540.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="40.0" y1="540.0" x2="89.0" y2="602.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="117.0" y1="540.0" x2="89.0" y2="602.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="89.0" y1="478.0" x2="173.0" y2="478.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="173.0" y1="478.0" x2="173.0" y2="602.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="173.0" y1="602.0" x2="89.0" y2="602.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="40.0" cy="540.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="40.0" y="540.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="117.0" cy="540.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="117.0" y="540.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="89.0" cy="478.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="89.0" y="478.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="89.0" cy="602.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="89.0" y="602.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="173.0" cy="478.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="173.0" y="478.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="173.0" cy="602.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="173.0" y="602.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<text x="110.0" y="635.0" font-size="15" fill="#111111" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Helvetica, Arial, sans-serif">G7</text>
+<line x1="292.0" y1="478.0" x2="368.0" y2="478.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="292.0" y1="540.0" x2="368.0" y2="540.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="292.0" y1="602.0" x2="368.0" y2="602.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="292.0" y1="478.0" x2="292.0" y2="540.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="292.0" y1="540.0" x2="292.0" y2="602.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="368.0" y1="478.0" x2="368.0" y2="540.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="368.0" y1="540.0" x2="368.0" y2="602.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="292.0" y1="478.0" x2="368.0" y2="540.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="292.0" y1="540.0" x2="368.0" y2="602.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="292.0" cy="478.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="292.0" y="478.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="368.0" cy="478.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="368.0" y="478.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="292.0" cy="540.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="292.0" y="540.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="368.0" cy="540.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="368.0" y="540.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="292.0" cy="602.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="292.0" y="602.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="368.0" cy="602.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="368.0" y="602.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<text x="330.0" y="635.0" font-size="15" fill="#111111" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Helvetica, Arial, sans-serif">G8</text>
+<line x1="550.0" y1="540.0" x2="550.0" y2="475.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="550.0" y1="540.0" x2="611.8" y2="519.9" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="550.0" y1="540.0" x2="588.2" y2="592.6" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="550.0" y1="540.0" x2="511.8" y2="592.6" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="550.0" y1="540.0" x2="488.2" y2="519.9" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="550.0" y1="475.0" x2="611.8" y2="519.9" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="611.8" y1="519.9" x2="588.2" y2="592.6" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="588.2" y1="592.6" x2="511.8" y2="592.6" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="511.8" y1="592.6" x2="488.2" y2="519.9" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="488.2" y1="519.9" x2="550.0" y2="475.0" stroke="#999999" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="550.0" cy="540.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="550.0" y="540.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="550.0" cy="475.0" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="550.0" y="475.0" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="611.8" cy="519.9" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="611.8" y="519.9" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="588.2" cy="592.6" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="588.2" y="592.6" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="511.8" cy="592.6" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="511.8" y="592.6" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<circle cx="488.2" cy="519.9" r="12" fill="#cfe0f7" stroke="#333333" stroke-width="1.6"/>
+<text x="488.2" y="519.9" font-size="13" fill="#111111" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif"></text>
+<text x="550.0" y="635.0" font-size="15" fill="#111111" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Helvetica, Arial, sans-serif">G9</text>
+</svg>
