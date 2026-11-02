@@ -13,8 +13,7 @@ body {
   font-size: 16px;
   // Hux mpdify to 16px (Mobile First), and increase to 20px while 768+ width
   color: @text-primary;
-  background: @bg-primary-gradient;
-  background-attachment: fixed;
+  background-color: #0f0f23; // fallback; gradient lives on body::before (iOS ignores background-attachment: fixed)
   position: relative;
   //-webkit-user-select:text; //对于 Blog 还是先不开启这句。
   overflow-x: hidden;
@@ -34,7 +33,8 @@ body {
     background: 
       radial-gradient(circle at 20% 80%, @accent-glow 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, @accent-glow 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, @light-effect 0%, transparent 50%);
+      radial-gradient(circle at 40% 40%, @light-effect 0%, transparent 50%),
+      @bg-primary-gradient;
     pointer-events: none;
     z-index: -1;
   }

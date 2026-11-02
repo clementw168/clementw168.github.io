@@ -677,8 +677,7 @@ body {
   line-height: 1.7;
   font-size: 16px;
   color: #e5e7eb;
-  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-  background-attachment: fixed;
+  background-color: #0f0f23;
   position: relative;
   overflow-x: hidden;
   text-rendering: auto;
@@ -692,7 +691,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 20% 80%, rgba(74, 158, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(74, 158, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 80%, rgba(74, 158, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(74, 158, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%), linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
   pointer-events: none;
   z-index: -1;
 }
