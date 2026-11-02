@@ -978,6 +978,9 @@ samp {
     font-size: 13px;
     line-height: 28px;
   }
+  #huxblog_navbar .nav li a {
+    color: white;
+  }
   #huxblog_navbar .navbar-collapse {
     height: 0px;
     transform: scaleY(0);
