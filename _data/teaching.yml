@@ -1,0 +1,94 @@
+# Teaching Data File
+# Content for the teaching page (teaching.html)
+#
+# icon: any Font Awesome 4 icon name (without the "fa-" prefix)
+# points: optional short bullet list shown under the description
+# kind (on a link): slides | notes | report  (picks the button icon)
+
+sections:
+  - title: Lectures & labs
+    icon: graduation-cap
+    items:
+      - title: Graph Mining
+        accent: blue
+        organization: Télécom Paris
+        icon: university
+        period: 2025 - 2026
+        audience: 130 students
+        format: "2 lectures · 3 labs"
+        duration: "7.5 h"
+        description: "Learn the main properties of real graphs, such as scale-free and small-world structure, and key algorithms to sample, rank, classify, represent and cluster nodes."
+        points:
+          - "Course 1: sparse matrices and the general properties of large graphs."
+          - "Course 7: Graph Neural Networks, from message passing to GCN and GraphSAGE."
+        link_groups:
+          - title: "Course 1: Graph structure"
+            links:
+              - text: Introduction
+                kind: slides
+                url: /assets/teaching/graph_mining_1_intro.pdf
+              - text: Sparse matrices
+                kind: slides
+                url: /assets/teaching/graph_mining_1_sparse_matrices.pdf
+              - text: General properties of large graphs
+                kind: slides
+                url: /assets/teaching/graph_mining_1_general_properties.pdf
+          - title: "Course 7: Graph Neural Networks"
+            links:
+              - text: Slides
+                kind: slides
+                url: /assets/teaching/graph_mining_7_gnn.pdf
+              - text: Lecture notes
+                kind: notes
+                url: /assets/teaching/graph_mining_lecture_notes.pdf
+
+      - title: Graph Machine Learning
+        accent: green
+        organization: Mirakl
+        icon: building
+        period: 2026
+        audience: Data scientists and a general audience
+        format: "2 lectures"
+        duration: "4 h"
+        description: "Graph ML explained at two levels, a technical one for data scientists and a high-level one for everyone, co-written with Robin Brochier."
+        points:
+          - "Patterns of large graphs: sparsity, power laws, small world."
+          - "PageRank, to find the most important nodes."
+          - "Graph Neural Networks: from message passing to their limitations and extensions."
+          - "Applications of GNNs, and opportunities for Mirakl."
+        link_groups:
+          - title: Slides
+            links:
+              - text: "For data scientists: a gentle introduction to GNNs"
+                kind: slides
+                url: /assets/teaching/mirakl_gnn_data_scientists.pdf
+              - text: "For everyone: Graph ML"
+                kind: slides
+                url: /assets/teaching/mirakl_graph_ml_for_everyone.pdf
+
+  - title: Supervision
+    icon: users
+    items:
+      - title: "Data Science & AI project: Better Embeddings for Better GNNs"
+        accent: purple
+        organization: Télécom Paris
+        icon: university
+        period: Apr - Jun 2026
+        audience: 6 students
+        format: "7-week project"
+        description: "The team compared text features (TF-IDF, BoW, sBERT, CLIP-text, Qwen3) and image embeddings, alone and combined, to measure how node features affect a GraphSAGE model on Amazon e-commerce co-purchase graphs."
+        link_groups:
+          - title: Deliverable
+            links:
+              - text: Project report
+                kind: report
+                url: /assets/teaching/data_science_ai_project_report.pdf
+
+      - title: "Internship: GNN product recommender"
+        accent: orange
+        organization: Mirakl
+        icon: building
+        period: Apr - Sep 2026
+        audience: Neil Braun
+        format: "6-month internship"
+        description: "Supervised Neil Braun while he built a product recommender system based on Graph Neural Networks."

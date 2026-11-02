@@ -71,7 +71,7 @@ experience:
     location: Paris, France
     achievements:
       - "Benchmarked GNN mini-batch sampling: Random Node Sampling beats full-graph training on accuracy while running 2–12× faster with up to 3× less GPU memory, backed by a gradient-variance analysis (paper under review)"
-      - Taught Graph Mining at Télécom Paris (130 students); supervised a 5-student Data Science & AI project and a GNN recommender-systems intern
+      - Taught Graph Mining at Télécom Paris (130 students); supervised a 6-student Data Science & AI project and a GNN recommender-systems intern
     supervisor: Prof. Thomas Bonald
     supervisor_url: "https://perso.telecom-paristech.fr/bonald/Home_page.html"
 

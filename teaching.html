@@ -1,0 +1,271 @@
+---
+layout: default
+title: "Teaching"
+description: "Lectures, labs and supervision"
+header-img: "/img_compressed/unsplash/matthew-pablico-0czHAdon3js-unsplash.jpg"
+header-mask: 0.5
+---
+
+<!-- Page Header -->
+{% include intro-header.html type='page' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 teaching">
+
+      {% for section in site.data.teaching.sections %}
+      <h2 class="teaching-section-title">
+        <i class="fa fa-{{ section.icon }}"></i> {{ section.title }}
+      </h2>
+
+      <div class="teaching-grid">
+        {% for item in section.items %}
+        <article class="teaching-card accent-{{ item.accent }}">
+          <header class="teaching-card-head">
+            <span class="teaching-org"><i class="fa fa-{{ item.icon }}"></i> {{ item.organization }}</span>
+            <h3>{{ item.title }}</h3>
+          </header>
+
+          <ul class="teaching-chips">
+            <li title="Period"><i class="fa fa-calendar"></i> {{ item.period }}</li>
+            <li title="Audience"><i class="fa fa-users"></i> {{ item.audience }}</li>
+            <li title="Format"><i class="fa fa-list-ul"></i> {{ item.format }}</li>
+            {% if item.duration %}
+            <li title="Teaching time"><i class="fa fa-clock-o"></i> {{ item.duration }}</li>
+            {% endif %}
+          </ul>
+
+          <p class="teaching-desc">{{ item.description }}</p>
+          {% if item.points %}
+          <ul class="teaching-points">
+            {% for point in item.points %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+          {% if item.link_groups %}
+          <div class="teaching-materials">
+            {% for group in item.link_groups %}
+            <div class="teaching-group">
+              <span class="teaching-group-title">{{ group.title }}</span>
+              <div class="teaching-buttons">
+                {% for link in group.links %}
+                {% case link.kind %}
+                  {% when 'notes' %}{% assign link_icon = 'file-text-o' %}
+                  {% when 'report' %}{% assign link_icon = 'file-text-o' %}
+                  {% else %}{% assign link_icon = 'file-powerpoint-o' %}
+                {% endcase %}
+                <a class="teaching-btn" href="{{ link.url }}" target="_blank" rel="noopener">
+                  <i class="fa fa-{{ link_icon }}"></i> {{ link.text }}
+                  <span class="teaching-btn-pdf">PDF</span>
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.teaching {
+    --t-text: #e5e7eb;
+    --t-muted: #9ca3af;
+    --t-border: #374151;
+    --t-blue: #4a9eff;
+    --t-green: #34d399;
+    --t-purple: #a78bfa;
+    --t-orange: #fb923c;
+    color: var(--t-text);
+    margin-bottom: 60px;
+}
+
+/* Sections */
+.teaching-section-title {
+    margin: 10px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--t-border);
+    font-size: 1.6em;
+    font-weight: 400;
+    color: var(--t-text);
+}
+
+.teaching-section-title .fa {
+    color: var(--t-blue);
+    margin-right: 6px;
+}
+
+.teaching-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+    margin-bottom: 45px;
+}
+
+/* Cards */
+.teaching-card {
+    --accent: var(--t-blue);
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg, #1e1e3f 0%, #2d2d4a 100%);
+    border: 1px solid var(--t-border);
+    border-top: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.teaching-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.teaching-card.accent-green  { --accent: var(--t-green); }
+.teaching-card.accent-purple { --accent: var(--t-purple); }
+.teaching-card.accent-orange { --accent: var(--t-orange); }
+
+.teaching-org {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--accent);
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.teaching-card h3 {
+    margin: 12px 0 14px;
+    font-size: 1.35em;
+    line-height: 1.3;
+    font-weight: 500;
+    color: var(--t-text);
+}
+
+.teaching-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+}
+
+.teaching-chips li {
+    padding: 4px 11px;
+    border: 1px solid var(--t-border);
+    border-radius: 6px;
+    background: rgba(15, 15, 35, 0.45);
+    font-size: 0.85em;
+    color: var(--t-text);
+}
+
+.teaching-chips .fa {
+    margin-right: 5px;
+    color: var(--accent);
+}
+
+.teaching-desc {
+    margin: 0 0 18px;
+    line-height: 1.65;
+    color: var(--t-muted);
+}
+
+.teaching-points {
+    margin: -6px 0 18px;
+    padding-left: 20px;
+    color: var(--t-muted);
+    line-height: 1.6;
+}
+
+.teaching-points li {
+    margin-bottom: 4px;
+}
+
+.teaching-points li::marker {
+    color: var(--accent);
+}
+
+/* Materials */
+.teaching-materials {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px dashed var(--t-border);
+}
+
+.teaching-group + .teaching-group {
+    margin-top: 14px;
+}
+
+.teaching-group-title {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--t-muted);
+}
+
+.teaching-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.teaching-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 12px;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--t-text);
+    font-size: 0.88em;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.teaching-btn:hover,
+.teaching-btn:focus {
+    background: var(--accent);
+    color: #0f0f23;
+    text-decoration: none;
+}
+
+.teaching-btn .fa {
+    color: var(--accent);
+}
+
+.teaching-btn:hover .fa,
+.teaching-btn:focus .fa {
+    color: #0f0f23;
+}
+
+.teaching-btn-pdf {
+    padding: 0 5px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 0.7em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+    .teaching-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
