@@ -43,7 +43,7 @@ Some of the competition rules made the challenge even more interesting:
 
 ## Approach and Techniques
 
-Solving highly imbalanced classification tasks is a classic challenge in machine learning. With such an unbalanced training set and a large, balanced test set, it was clear that clever strategies would be required to win the competition. Below is a breakdown of the key techniques and experiments I conducted.
+With such an unbalanced training set and a large, balanced test set, it was clear that a plain training pipeline wouldn't cut it. Here's what I tried.
 
 ### Data Augmentation
 
@@ -121,7 +121,7 @@ Although I primarily used data augmentation to handle imbalance, another effecti
 My top-performing solution was an ensemble of six MobileNets, each trained with Noisy Student learning and heavy regularization. This combination delivered the highest accuracy on the balanced test set.
 
 **Key Takeaways**:
-- **Model architecture** mattered less than expected; MobileNetV2’s efficiency was a big win.
+- **Model architecture** mattered less than expected. MobileNetV2’s efficiency was a big win.
 - **Regularization** was crucial to avoid overfitting in this small, imbalanced data regime.
 - **Ensemble methods** consistently improved results.
 - **Semi-supervised learning** with Noisy Student had a major positive impact, showing the value of leveraging unlabeled data.

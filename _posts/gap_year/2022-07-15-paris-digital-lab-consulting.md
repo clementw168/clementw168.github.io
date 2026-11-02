@@ -24,7 +24,7 @@ tags:
 
 After a year and a half of general engineering studies, I wanted to step into the professional world before finishing my degree. That’s when I started my gap year and joined the Paris Digital Lab. During my time at Paris Digital Lab, I worked on **three Data science projects**, each lasting 7 weeks. Every project followed a sprint-like rhythm, with the goal of delivering a functional MVP to the client. This meant quick decision-making, rapid prototyping, and iterative development.
 
-Each project had its own challenges and learning curves. Some involved exploring cutting-edge research, while others were more engineering-focused, requiring practical solutions with tight deadlines. I quickly learned how to break down complex problems, experiment with multiple approaches, and communicate results clearly to both technical and non-technical stakeholders.
+Each project had its own challenges. Some meant digging into recent research papers, others were more about shipping something that worked under a tight deadline. I quickly learned how to break problems down, try several approaches in parallel, and explain results clearly to people who weren't technical.
 
 The experience taught me a lot about working in a small team under pressure. We had to balance research, coding, debugging, and preparing presentations, often all at the same time. It pushed me to be both rigorous and creative, and gave me a firsthand view of how innovation happens in a fast-moving environment. It was the first time I faced clients and had to deliver results that were actually useful to them.
 
