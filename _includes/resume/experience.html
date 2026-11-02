@@ -11,13 +11,16 @@
             <span class="resume-company">{{ experience.company }}{% if experience.contract_type %} • {{ experience.contract_type }}{% endif %}</span>
             {% if experience.location %}<span class="resume-location">{{ experience.location }}</span>{% endif %}
         </div>
-        <p class="resume-description">{{ experience.description }}</p>
+        {% if experience.description %}<p class="resume-description">{{ experience.description }}</p>{% endif %}
         {% if experience.achievements %}
         <ul class="resume-achievements">
             {% for achievement in experience.achievements %}
             <li>{{ achievement }}</li>
             {% endfor %}
         </ul>
+        {% endif %}
+        {% if experience.supervisor %}
+        <p class="resume-supervisor">Supervised by <a href="{{ experience.supervisor_url }}" target="_blank">{{ experience.supervisor }}</a></p>
         {% endif %}
         {% if experience.post_slug %}
             {% assign post_found = false %}
