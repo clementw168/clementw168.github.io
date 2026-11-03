@@ -36,6 +36,16 @@
     height: 1px;
     background: linear-gradient(90deg, transparent, @light-effect, transparent);
   }
+  // Home page only: the sidebar column sticks while the post list scrolls
+  .home-row > & {
+    @media (min-width: 992px) {
+      position: sticky;
+      top: 20px;
+      align-self: flex-start;
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+    }
+  }
   h5 {
     color: @text-primary;
     padding-bottom: 1em;
@@ -54,9 +64,12 @@
   .tags {
     a {
       border-color: @text-secondary;
+      transition: all 0.2s ease;
       &:hover,
       &:active {
         border-color: @brand-primary;
+        background-color: @brand-primary;
+        color: @bg-primary !important;
       }
     }
   }

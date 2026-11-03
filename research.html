@@ -1,0 +1,78 @@
+---
+layout: default
+title: "Research"
+description: "Papers and preprints"
+header-img: "/img_compressed/unsplash/daniel-sessler-IyhdFcaRYqE-unsplash.jpg"
+header-mask: 0.5
+---
+
+<!-- Page Header -->
+{% include intro-header.html type='page' %}
+
+{% include academic-style.html %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 acad">
+
+      {% for section in site.data.research.sections %}
+      <h2 class="acad-section-title">
+        <i class="fa fa-{{ section.icon }}"></i> {{ section.title }}
+      </h2>
+
+      <div class="acad-grid">
+        {% for item in section.items %}
+        <article class="acad-card accent-{{ item.accent }}">
+          <header class="acad-card-head">
+            <span class="acad-org"><i class="fa fa-{{ item.icon }}"></i> {{ item.venue }}</span>
+            <h3>{{ item.title }}</h3>
+          </header>
+
+          <p class="acad-authors">
+            {% for author in item.authors %}{% if author == 'Clement Wang' %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
+          </p>
+
+          <ul class="acad-chips">
+            <li title="Date"><i class="fa fa-calendar"></i> {{ item.period }}</li>
+            <li title="Status"><i class="fa fa-check-circle-o"></i> {{ item.status }}</li>
+            <li title="Role"><i class="fa fa-user"></i> {{ item.role }}</li>
+          </ul>
+
+          <p class="acad-desc">{{ item.description }}</p>
+          <ul class="acad-points">
+            {% for point in item.points %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+
+          <div class="acad-materials">
+            <div class="acad-group">
+              <span class="acad-group-title">{{ item.link_group.title }}</span>
+              <div class="acad-buttons">
+                {% for link in item.link_group.links %}
+                {% assign link_url = link.url %}
+                {% if link.post_slug %}
+                  {% assign link_url = nil %}
+                  {% for post in site.posts %}
+                    {% assign post_slug = post.url | split: '/' | last | split: '.' | first %}
+                    {% if post_slug == link.post_slug %}{% assign link_url = post.url %}{% break %}{% endif %}
+                  {% endfor %}
+                {% endif %}
+                {% if link_url %}
+                <a class="acad-btn" href="{{ link_url }}"{% if link.post_slug == nil %} target="_blank" rel="noopener"{% endif %}>
+                  <i class="fa fa-{{ link.icon }}"></i> {{ link.text }}
+                  <span class="acad-btn-pdf">{{ link.badge }}</span>
+                </a>
+                {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>

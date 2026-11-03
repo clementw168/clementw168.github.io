@@ -1,0 +1,3 @@
+- I was born in France from Asian parents, have lived in the US and Germany for 6 months each.
+- Even though I'm not particularly good at it, I love sports: volleyball, bouldering, spikeball, running, biking...
+- One day, I was playing basketball to cool down after an exam when I slipped on a clementine and broke my ankle. I then walked with crutches for 2 months.

@@ -5,7 +5,7 @@
 
 personal_info:
   name: Clement Wang
-  title: PhD Student in Graph Representation Learning
+  title: Applied Scientist · CIFRE PhD in Graph ML, Institut Polytechnique de Paris × Mirakl
   email: clementwang.pro@gmail.com
   github_username: clementw168
   github_link: "https://github.com/clementw168"
@@ -15,15 +15,7 @@ personal_info:
   pdf_download: /assets/posts/resume_clement_wang.pdf
 
 education:
-  - degree: CIFRE PhD in Applied Mathematics
-    period: 2025 - Present
-    duration: Ongoing
-    institution: Institut Polytechnique de Paris - Mirakl
-    description: Graph Representation Learning with Self-Supervised Learning
-    supervisor: Prof. Thomas Bonald
-    supervisor_url: "https://perso.telecom-paristech.fr/bonald/Home_page.html"
-  
-  - degree: MSc in Applied Mathematics - MVA
+  - degree: MSc in Applied Mathematics - MVA (GPA 4.1/4.33)
     period: Sep 2023 - Dec 2024
     duration: 1 year
     institution: École Normale Supérieure Paris-Saclay
@@ -43,7 +35,7 @@ education:
         post_slug: abba-symbolic-time-series
 
   
-  - degree: MSc in Data Science
+  - degree: MSc in Data Science (GPA 4.1/4.33)
     period: Sep 2020 - Dec 2024
     duration: 4 years
     institution: CentraleSupélec - Université Paris-Saclay
@@ -71,45 +63,49 @@ education:
     institution: Lycée Henri IV
 
 experience:
+  - title: CIFRE PhD Researcher, Graph Machine Learning
+    period: Sep 2025 - Present
+    duration: Ongoing
+    contract_type: CIFRE PhD
+    company: Mirakl × Institut Polytechnique de Paris
+    location: Paris, France
+    achievements:
+      - "Benchmarked GNN mini-batch sampling: Random Node Sampling beats full-graph training on accuracy while running 2–12× faster with up to 3× less GPU memory, backed by a gradient-variance analysis (paper under review)"
+      - Taught Graph Mining at Télécom Paris (130 students); supervised a 6-student Data Science & AI project and a GNN recommender-systems intern
+    supervisor: Prof. Thomas Bonald
+    supervisor_url: "https://perso.telecom-paristech.fr/bonald/Home_page.html"
+
   - title: Data Scientist
-    period: Dec 2024 - Jul 2025
+    period: Dec 2024 - Aug 2025
     duration: 9 months
     contract_type: Permanent
     company: Mirakl
     location: Paris, France
-    description: Built end-to-end delivery date estimation model for marketplace orders, from POC to production deployment
     achievements:
-      - Serving 250,000+ orders per month
-      - Increasing on-time delivery rate from 50% to 85%, reducing order late deliveries by 50%
-      - Successfully launched beta program in July 2025 and general release in October 2025
+      - Built and deployed a delivery-date model in production for 10 clients (150,000+ orders per week), raising the share of orders delivered by the predicted date from 51% to 85%
+      - Owned the end-to-end pipeline, with data cleaning and feature engineering on Databricks with PySpark, experiment tracking with MLflow, and weekly automated retraining orchestrated with Airflow
     post_slug: mirakl-delivery-estimation
     post_text: Read more →
-  
+
   - title: Machine Learning Engineer
     period: May 2024 - Oct 2024
     duration: 6 months
     contract_type: Internship
     company: Beacon Biosignals
     location: Paris, France
-    description: Trained a foundation model for EEG signals.
     achievements:
-      - Adapting transformer tokenization for time series
-      - 25M parameters model trained on 2B tokens with contrastive learning and DINO teacher-student architecture
-      - 80.0% accuracy on sleep staging with a limited amount of annotated data, a 2.6% decrease with 95% fewer labels compared to fully supervised models
+      - "Adapted contrastive learning and DINO to self-supervised sleep EEG representation learning: 80.0% sleep-staging accuracy with 5% of labels (within 2.6 pts of full supervision)"
     post_slug: beacon-biosignals-eeg-foundation-model
     post_text: Read more →
-  
-  - title: 3D Computer Vision Engineer
+
+  - title: 3D Computer Vision R&D Intern
     period: Feb 2023 - Jul 2023
     duration: 6 months
-    contract_type: "Internship"
+    contract_type: Internship
     company: Stryker
     location: Freiburg-im-Breisgau, Germany
-    description: "3D calibration of surgery instruments: Developing an end-to-end pipeline to determine the 3D geometry of a surgery instrument from a single RGB camera"
     achievements:
-      - 2D key points detection with High resolution network (CNN)
-      - 3D triangulation from several video frames
-      - Condensing the process from 2 minutes to 10 seconds with a 3.0 mm error
+      - Developed a 3D surgical-instrument tracking pipeline combining keypoint detection and multi-frame triangulation, reducing processing time from 2 minutes to 10 seconds with 3.0 mm average error
     post_slug: stryker-3d-surgery-tracking
     post_text: Read more →
 
@@ -117,42 +113,33 @@ experience:
     period: Dec 2022 - Jun 2023
     duration: 7 months
     contract_type: Co-founder
-    company: Photogen AI
-    location: Paris, France (Remote)
-    description: "Founding a startup on personalizing diffusion models"
+    company: Photogen
+    location: Remote - Paris, France
     achievements:
-      - Fine-tuning Stable Diffusion 1.5 with DreamBooth for realistic images on 10 images of a customer 
-      - Setting up cost-optimized cloud infrastructure on AWS with queue service, batch jobs, and autoscaling
+      - Built an automated per-client fine-tuning pipeline (Stable Diffusion, DreamBooth, ControlNet) producing a personalized model in ~30 minutes, on AWS with job queues and autoscaling
+      - Served ~20 clients before pivoting to B2B
     post_slug: photogen-ai-startup
     post_text: Read more →
-  
+
   - title: Data Scientist Intern
     period: Aug 2022 - Jan 2023
     duration: 6 months
     contract_type: Internship
     company: Polygon Technologies
-    location: Santa Monica, CA, USA
-    description: Extraction of features from videos of cognitive tests to diagnose learning differences
+    location: Santa Monica, United States
     achievements:
-      - Benchmarking Speech-to-text models (Whisper, Amazon Transcribe, Google Speech-to-Text)
-      - Human pose detection, Face landmarks detection, Voice activity detection
-      - Setting up a scalable pipeline to process 3-hour long videos
-
+      - Built a multimodal feature-extraction pipeline (speech transcription, voice activity detection, human-pose estimation) over 200+ hours of cognitive-test videos for learning-difference assessment
     post_slug: polygon-diagnostic-assistance
     post_text: Read more →
 
   - title: Machine Learning Consultant
-    period: Aug 2022 - Jan 2023
+    period: Feb 2022 - Jul 2022
     duration: 6 months
     contract_type: Consulting
     company: Paris Digital Lab
     location: Paris, France
-    description: Various Computer Vision Projects for companies
     achievements:
-      - "Radio wave detection for the French Ministry of Armed Forces: Achieved 0.95 mAP @ IOU 0.5 with YOLOv3"
-      - Lipstick retrieval from selfies for L'Oréal Research & Innovation
-      - "Few shot object detection for Oorion: Annotation of object detection dataset with CLIP embeddings"
-
+      - Delivered 3 projects for the French Armed Forces (YOLOv3 radio-signal detection, 0.95 mAP@0.5), L'Oréal and Oorion
     post_slug: paris-digital-lab-consulting
     post_text: Read more →
 

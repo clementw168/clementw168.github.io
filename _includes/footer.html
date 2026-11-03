@@ -3,13 +3,20 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="footer-links">
+                    <li><a href="{{ site.baseurl }}/">Home</a></li>
+                    <li><a href="{{ site.baseurl }}/research/">Research</a></li>
+                    <li><a href="{{ site.baseurl }}/teaching/">Teaching</a></li>
+                    <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+                    <li><a href="{{ site.baseurl }}/resume/">Resume</a></li>
+                </ul>
+
                 <!-- SNS Link -->
                 {% include sns-links.html center=true %}
 
                 <p class="copyright text-muted">
                     Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
-                    <br>
-                    Powered by <a href="https://github.com/Huxpro/huxpro.github.io">Hux Blog</a>
+                    <span class="powered-by">Theme: <a href="https://github.com/Huxpro/huxpro.github.io">Hux Blog</a></span>
                 </p>
             </div>
         </div>
@@ -88,17 +95,7 @@
 {% endif %}
 
 
-{% if page.title == 'Archive' %}
-<!-- jquery.tagcloud.js -->
-<script>
-    async('{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}', function () {
-        $.fn.tagcloud.defaults = {
-            //size: {start: 1, end: 1, unit: 'em'},
-            color: { start: '#4a5568', end: '#6b7280' },
-        };
-        $('#tag_cloud a').tagcloud();
-    })
-</script>
+{% if page.title == 'Blog' %}
 <script src='{{ "/js/archive.js " | prepend: site.baseurl }}'></script>
 {% endif %}
 

@@ -1,0 +1,79 @@
+---
+layout: default
+title: "Teaching"
+description: "Lectures, labs and supervision"
+header-img: "/img_compressed/unsplash/matthew-pablico-0czHAdon3js-unsplash.jpg"
+header-mask: 0.5
+---
+
+<!-- Page Header -->
+{% include intro-header.html type='page' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 acad">
+
+      {% for section in site.data.teaching.sections %}
+      <h2 class="acad-section-title">
+        <i class="fa fa-{{ section.icon }}"></i> {{ section.title }}
+      </h2>
+
+      <div class="acad-grid">
+        {% for item in section.items %}
+        <article class="acad-card accent-{{ item.accent }}">
+          <header class="acad-card-head">
+            <span class="acad-org"><i class="fa fa-{{ item.icon }}"></i> {{ item.organization }}</span>
+            <h3>{{ item.title }}</h3>
+          </header>
+
+          <ul class="acad-chips">
+            <li title="Period"><i class="fa fa-calendar"></i> {{ item.period }}</li>
+            <li title="Audience"><i class="fa fa-users"></i> {{ item.audience }}</li>
+            <li title="Format"><i class="fa fa-list-ul"></i> {{ item.format }}</li>
+            {% if item.duration %}
+            <li title="Teaching time"><i class="fa fa-clock-o"></i> {{ item.duration }}</li>
+            {% endif %}
+          </ul>
+
+          <p class="acad-desc">{{ item.description }}</p>
+          {% if item.points %}
+          <ul class="acad-points">
+            {% for point in item.points %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+          {% if item.link_groups %}
+          <div class="acad-materials">
+            {% for group in item.link_groups %}
+            <div class="acad-group">
+              <span class="acad-group-title">{{ group.title }}</span>
+              <div class="acad-buttons">
+                {% for link in group.links %}
+                {% case link.kind %}
+                  {% when 'notes' %}{% assign kind_icon = 'file-text-o' %}
+                  {% when 'report' %}{% assign kind_icon = 'file-text-o' %}
+                  {% else %}{% assign kind_icon = 'file-powerpoint-o' %}
+                {% endcase %}
+                {% assign link_icon = link.icon | default: kind_icon %}
+                <a class="acad-btn" href="{{ link.url }}" target="_blank" rel="noopener">
+                  <i class="fa fa-{{ link_icon }}"></i> {{ link.text }}
+                  <span class="acad-btn-pdf">{{ link.badge | default: 'PDF' }}</span>
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+{% include academic-style.html %}

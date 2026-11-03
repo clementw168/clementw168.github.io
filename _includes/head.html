@@ -1,5 +1,13 @@
 <head>
     <meta charset="utf-8">
+    <script>
+        // Set the theme before first paint (saved choice, else dark) to avoid a flash
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+        })();
+    </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="{{ site.google-site-verification }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -28,7 +36,12 @@
     <meta property="og:description"
         content="{% if page.description %}{{ page.description }}{% else %}{{ site.website_description }}{% endif %}">
     {% endcase %}
+    {% if page.header-img %}
+    <meta property="og:image" content="{{ site.url }}{{ page.header-img }}">
+    {% else %}
     <meta property="og:image" content="{{ site.url }}{{ site.sidebar-avatar }}">
+    {% endif %}
+    <meta name="twitter:card" content="summary_large_image">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:site_name" content="{{ site.SEOTitle }}">
 

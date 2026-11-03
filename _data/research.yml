@@ -1,0 +1,79 @@
+# Research Data File
+# Content for the research page (research.html)
+#
+# short_title: optional, used in the compact summary on the home page
+# authors: list of names, "Clement Wang" is shown in bold
+# links: icon (Font Awesome 4 name) and badge (small label) are optional;
+#        use post_slug to link to a blog post instead of url
+
+sections:
+  - title: Papers
+    icon: file-text-o
+    items:
+      - title: Implicit Regularization of Mini-Batch Training in Graph Neural Networks
+        short_title: Implicit regularization of mini-batch GNN training
+        accent: blue
+        venue: arXiv preprint
+        icon: file-text-o
+        period: May 2026
+        status: Under review
+        role: First author
+        authors:
+          - Clement Wang
+          - Antoine Vialle
+          - Robin Vaysse
+          - Thomas Bonald
+        description: "Training a GNN on random subgraphs is usually seen as an approximation of full-graph training. This paper shows it can be better: the choice of graph sampler acts as an implicit regularizer."
+        points:
+          - "Random Node Sampling matches or beats full-graph training on 8 of 10 datasets."
+          - "It runs 2 to 12 times faster, with up to 3 times less GPU memory."
+          - "Backward error analysis: mini-batch SGD implicitly minimizes the sampled loss plus a penalty on the mini-batch gradient variance."
+        link_group:
+          title: Read
+          links:
+            - text: Paper on arXiv
+              icon: file-text-o
+              badge: arXiv
+              url: https://arxiv.org/abs/2605.22480
+            - text: PDF
+              icon: file-pdf-o
+              badge: PDF
+              url: https://arxiv.org/pdf/2605.22480
+
+      - title: Leveraging Multi-Temporal Sentinel 1 and 2 Satellite Data for Leaf Area Index Estimation With Deep Learning
+        short_title: Leaf Area Index from Sentinel 1 and 2
+        accent: green
+        venue: BiDS 2023
+        icon: globe
+        period: Nov 2023
+        status: Published, peer-reviewed
+        role: First author
+        authors:
+          - Clement Wang
+          - Antoine Debouchage
+          - Valentin Goldité
+          - Aurélien Wery
+          - Jules Salzinger
+        description: "Predicting Leaf Area Index, a key indicator of vegetation health, for every pixel of a satellite image, by combining Sentinel-1 radar and Sentinel-2 multispectral images taken at several dates."
+        points:
+          - "Several U-Nets are pretrained to map each input into a shared latent space, then fine-tuned end to end with a common decoder that accounts for seasonality."
+          - "RMSE of 0.06 and R² of 0.93 on public data."
+        link_group:
+          title: Read
+          links:
+            - text: Paper on arXiv
+              icon: file-text-o
+              badge: arXiv
+              url: https://arxiv.org/abs/2410.19787
+            - text: PDF
+              icon: file-pdf-o
+              badge: PDF
+              url: https://arxiv.org/pdf/2410.19787
+            - text: Code
+              icon: github
+              badge: GitHub
+              url: https://github.com/valentingol/LeafNothingBehind
+            - text: "Blog post: the competition behind the paper"
+              icon: pencil
+              badge: Post
+              post_slug: satellite-images-competition-publication
