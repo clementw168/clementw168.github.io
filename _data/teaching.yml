@@ -1,6 +1,7 @@
 # Teaching Data File
 # Content for the teaching page (teaching.html)
 #
+# short_title: optional, used in the compact summary on the home page
 # icon: any Font Awesome 4 icon name (without the "fa-" prefix)
 # points: optional short bullet list shown under the description
 # kind (on a link): slides | notes | report  (picks the button icon)
@@ -70,6 +71,7 @@ sections:
     icon: users
     items:
       - title: "Data Science & AI project: Better Embeddings for Better GNNs"
+        short_title: Data Science & AI project
         accent: purple
         organization: Télécom Paris
         icon: university
@@ -85,6 +87,7 @@ sections:
                 url: /assets/teaching/data_science_ai_project_report.pdf
 
       - title: "Internship: GNN product recommender"
+        short_title: Intern supervision, GNN recommender
         accent: orange
         organization: Mirakl
         icon: building

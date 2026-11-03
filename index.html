@@ -11,6 +11,126 @@ header-mask: 0.4
     {{ about_en | markdownify }}
 </div>
 
+<!-- Research & Teaching summary (generated from _data/research.yml and _data/teaching.yml) -->
+<div class="home-links">
+    {% assign research_count = 0 %}
+    {% for section in site.data.research.sections %}{% assign research_count = research_count | plus: section.items.size %}{% endfor %}
+    <a class="home-link-card accent-blue" href="{{ site.baseurl }}/research/">
+        <span class="home-link-title"><i class="fa fa-file-text-o"></i> Research <span class="home-link-count">{{ research_count }} paper{% if research_count != 1 %}s{% endif %}</span></span>
+        <ul class="home-link-list">
+            {% for section in site.data.research.sections %}{% for item in section.items %}
+            <li>{{ item.short_title | default: item.title }} <span>{{ item.venue }}</span></li>
+            {% endfor %}{% endfor %}
+        </ul>
+        <span class="home-link-more">See research <i class="fa fa-arrow-right"></i></span>
+    </a>
+    {% assign teaching_count = 0 %}
+    {% for section in site.data.teaching.sections %}{% assign teaching_count = teaching_count | plus: section.items.size %}{% endfor %}
+    <a class="home-link-card accent-green" href="{{ site.baseurl }}/teaching/">
+        <span class="home-link-title"><i class="fa fa-graduation-cap"></i> Teaching <span class="home-link-count">{{ teaching_count }} activit{% if teaching_count == 1 %}y{% else %}ies{% endif %}</span></span>
+        <ul class="home-link-list">
+            {% for section in site.data.teaching.sections %}{% for item in section.items %}
+            <li>{{ item.short_title | default: item.title }} <span>{{ item.organization }}</span></li>
+            {% endfor %}{% endfor %}
+        </ul>
+        <span class="home-link-more">See teaching <i class="fa fa-arrow-right"></i></span>
+    </a>
+</div>
+
+<div class="post-container">
+    {% capture about_facts %}{% include about/facts.md %}{% endcapture %}
+    {{ about_facts | markdownify }}
+</div>
+
+<style>
+.home-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 20px;
+    margin: 2.5em 0 0;
+}
+
+.home-link-card {
+    --accent: #4a9eff;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    background: linear-gradient(145deg, #1e1e3f 0%, #2d2d4a 100%);
+    border: 1px solid #374151;
+    border-top: 4px solid var(--accent);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-link-card.accent-green { --accent: #34d399; }
+
+.home-link-card:hover,
+.home-link-card:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+}
+
+.home-link-title {
+    font-size: 1.25em;
+    font-weight: 500;
+    color: #e5e7eb;
+}
+
+.home-link-title .fa {
+    margin-right: 6px;
+    color: var(--accent);
+}
+
+.home-link-count {
+    margin-left: 6px;
+    font-size: 0.65em;
+    font-weight: 400;
+    color: #9ca3af;
+}
+
+.home-link-list {
+    flex-grow: 1;
+    margin: 0;
+    padding-left: 18px;
+    line-height: 1.5;
+    color: #e5e7eb;
+    font-size: 0.95em;
+}
+
+.home-link-list li {
+    margin-bottom: 4px;
+}
+
+.home-link-list li::marker {
+    color: var(--accent);
+}
+
+.home-link-list li span {
+    display: block;
+    font-size: 0.85em;
+    color: #9ca3af;
+}
+
+.home-link-more {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.home-link-more .fa {
+    margin-left: 4px;
+    transition: transform 0.2s ease;
+}
+
+.home-link-card:hover .home-link-more .fa {
+    transform: translateX(4px);
+}
+</style>
+
 <!-- Recent Posts (same structure as blog page so post-previews render identically) -->
 <div class="recent-posts-section" style="margin-top: 3em;">
     <h2 class="recent-posts-heading">Recent posts</h2>

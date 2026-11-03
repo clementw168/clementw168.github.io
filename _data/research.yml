@@ -1,6 +1,7 @@
 # Research Data File
 # Content for the research page (research.html)
 #
+# short_title: optional, used in the compact summary on the home page
 # authors: list of names, "Clement Wang" is shown in bold
 # links: icon (Font Awesome 4 name) and badge (small label) are optional;
 #        use post_slug to link to a blog post instead of url
@@ -10,6 +11,7 @@ sections:
     icon: file-text-o
     items:
       - title: Implicit Regularization of Mini-Batch Training in Graph Neural Networks
+        short_title: Implicit regularization of mini-batch GNN training
         accent: blue
         venue: arXiv preprint
         icon: file-text-o
@@ -39,6 +41,7 @@ sections:
               url: https://arxiv.org/pdf/2605.22480
 
       - title: Leveraging Multi-Temporal Sentinel 1 and 2 Satellite Data for Leaf Area Index Estimation With Deep Learning
+        short_title: Leaf Area Index from Sentinel 1 and 2
         accent: green
         venue: BiDS 2023
         icon: globe
