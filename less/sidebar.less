@@ -54,9 +54,12 @@
   .tags {
     a {
       border-color: @text-secondary;
+      transition: all 0.2s ease;
       &:hover,
       &:active {
         border-color: @brand-primary;
+        background-color: @brand-primary;
+        color: @bg-primary !important;
       }
     }
   }

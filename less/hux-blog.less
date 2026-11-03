@@ -72,10 +72,26 @@ a {
   }
 }
 
-a img {
-  &:hover,
-  &:focus {
-    cursor: zoom-in;
+a:focus-visible,
+button:focus-visible,
+.tags a:focus-visible {
+  outline: 2px solid @brand-primary;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.post-header-thumbnail {
+  cursor: zoom-in;
+}
+
+.pride-stars {
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  .pride-star {
+    color: #ffc107;
+    font-size: 0.9em;
   }
 }
 
@@ -727,9 +743,7 @@ samp {
   font-size: 13px;
   font-style: italic;
   color: @text-secondary;
-  &:hover {
-    color: @brand-primary;
-  }
+  transition: color 0.2s ease;
   @media only screen and (min-width: 768px) {
     font-size: 14px;
   }
@@ -767,16 +781,27 @@ footer {
     font-size: 14px;
     text-align: center;
     margin-bottom: 0;
-    a {
-      color: @brand-primary;
-      // different to @brand-primary
-      &:hover,
-      &:focus {
-        color: lighten(@brand-primary, 10%);
+    .powered-by {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      opacity: 0.6;
+      a {
+        color: inherit;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+          color: @text-primary;
+          text-decoration: underline;
+        }
       }
     }
   }
-  
+}
+
+// Social icons: shared by footer and sidebar
+footer,
+.sidebar-container {
   /* Social media icons styling for dark theme */
   .fa-stack {
     .fa-circle {
@@ -805,7 +830,7 @@ footer {
   }
   
   a[href*="github"] .fa-stack:hover .fa-circle {
-    color: #333 !important;
+    color: #f0f6fc !important;
   }
   
   a[href*="linkedin"] .fa-stack:hover .fa-circle {
@@ -1247,6 +1272,25 @@ img::-moz-selection {
   overflow-y: hidden;
 }
 
+/* Recent posts section on home: avoid .post-container so cards match blog page */
+.recent-posts-section {
+  .recent-posts-heading {
+    margin: 50px 0 20px;
+    line-height: 1.4;
+    font-size: 28px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  a[href*="/blog/"] {
+    color: @brand-primary;
+    &:hover,
+    &:focus {
+      color: lighten(@brand-primary, 10%);
+    }
+  }
+}
+
 /* Post preview with header image layout */
 .post-preview-content {
   display: flex;
@@ -1301,6 +1345,23 @@ img::-moz-selection {
 .post-header-thumbnail:hover {
   transform: scale(1.03);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.post-preview-text > a {
+  &,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+  &:hover,
+  &:focus {
+    .post-title {
+      color: #fff;
+    }
+    .post-content-preview {
+      color: @text-primary;
+    }
+  }
 }
 
 .post-preview-text {
