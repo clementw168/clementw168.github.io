@@ -88,7 +88,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
 						<div class="post-preview-content">
 							{% if _article.header-img %}
 							<div class="post-preview-image">
-								<img src="{{ site.baseurl }}{{ _article.header-img }}" alt="{{ _article.title }}" class="post-header-thumbnail" onclick="openImageModal('{{ site.baseurl }}{{ _article.header-img }}', '{{ _article.title }}')">
+								<img src="{{ site.baseurl }}{{ _article.header-img }}" alt="{{ _article.title }}" class="post-header-thumbnail" width="120" height="120" loading="lazy" decoding="async" onclick="openImageModal('{{ site.baseurl }}{{ _article.header-img }}', '{{ _article.title }}')">
 							</div>
 							{% endif %}
 							<div class="post-preview-text">
@@ -133,24 +133,24 @@ https://github.com/kitian616/jekyll-TeXt-theme
 
 .view-switch-btn {
 	padding: 6px 14px;
-	border: 1px solid #374151;
+	border: 1px solid var(--border-color);
 	border-radius: 20px;
 	background: transparent;
-	color: #9ca3af;
+	color: var(--text-secondary);
 	font-size: 13px;
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
 
 .view-switch-btn:hover {
-	border-color: #4a9eff;
-	color: #e5e7eb;
+	border-color: var(--brand-primary);
+	color: var(--text-primary);
 }
 
 .view-switch-btn.active {
-	border-color: #4a9eff;
-	background: #4a9eff;
-	color: #0f0f23;
+	border-color: var(--brand-primary);
+	background: var(--brand-primary);
+	color: var(--on-accent);
 }
 
 /* Compact view hides the preview and the byline */

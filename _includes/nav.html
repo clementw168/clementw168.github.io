@@ -1,4 +1,5 @@
 <!-- Navigation -->
+{% assign current_url = page.url | remove: 'index.html' %}
 {% if page.nav-style == "invert" or page.header-style == "text" %}
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
     {% else %}
@@ -20,19 +21,27 @@
             <div id="huxblog_navbar">
                 <div class="navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="{{ site.baseurl }}/">Home</a>
+                        <li{% if current_url == '/' %} class="active"{% endif %}>
+                            <a href="{{ site.baseurl }}/"{% if current_url == '/' %} aria-current="page"{% endif %}>Home</a>
                         </li>
-                        {% for page in site.pages %}
-                        {% if page.title and page.hide-in-nav != true and page.title != site.title %}
-                        <li>
-                            <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                        {% for item in site.pages %}
+                        {% if item.title and item.hide-in-nav != true and item.title != site.title %}
+                        {% assign item_url = item.url | remove: 'index.html' %}
+                        {% assign is_active = false %}
+                        {% if item_url == current_url or current_url contains item_url and item_url != '/' %}{% assign is_active = true %}{% endif %}
+                        <li{% if is_active %} class="active"{% endif %}>
+                            <a href="{{ item.url | prepend: site.baseurl }}"{% if is_active %} aria-current="page"{% endif %}>{{ item.title }}</a>
                         </li>
                         {% endif %}
                         {% endfor %}
                         <li class="search-icon">
-                            <a href="javascript:void(0)">
+                            <a href="javascript:void(0)" aria-label="Search">
                                 <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        <li class="theme-toggle">
+                            <a href="javascript:void(0)" role="button" aria-label="Switch between light and dark theme">
+                                <i class="fa fa-adjust"></i>
                             </a>
                         </li>
                     </ul>
@@ -51,6 +60,14 @@
         var $toggle = document.querySelector('.navbar-toggle');
         var $navbar = document.querySelector('#huxblog_navbar');
         var $collapse = document.querySelector('.navbar-collapse');
+
+        // Light / dark theme toggle
+        document.querySelector('.theme-toggle a').addEventListener('click', function (e) {
+            e.stopPropagation();
+            var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', next);
+            try { localStorage.setItem('theme', next); } catch (err) {}
+        });
 
         var __HuxNav__ = {
             close: function () {

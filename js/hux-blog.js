@@ -71,6 +71,9 @@ jQuery(document).ready(function($) {
                 }
                 this.previousTop = currentTop;
 
+                // slide the catalog down while the navbar is shown, so they don't overlap
+                $catalog.toggleClass('nav-shown', $('.navbar-custom').hasClass('is-visible'));
+
 
                 //adjust the appearance of side-catalog
                 $catalog.show()
@@ -81,4 +84,23 @@ jQuery(document).ready(function($) {
                 }
             });
     }
+});
+
+// Copy button on code blocks
+$(document).ready(function() {
+    $('div.highlight').each(function() {
+        var $block = $(this);
+        var $btn = $('<button type="button" class="copy-code" aria-label="Copy code">Copy</button>');
+        $btn.on('click', function() {
+            var text = $block.find('pre').text();
+            var done = function() {
+                $btn.text('Copied');
+                setTimeout(function() { $btn.text('Copy'); }, 1500);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done);
+            }
+        });
+        $block.append($btn);
+    });
 });

@@ -12,6 +12,7 @@ header-mask: 0.4
 </div>
 
 <!-- Research & Teaching summary (generated from _data/research.yml and _data/teaching.yml) -->
+<h2 class="home-section-heading">Research &amp; Teaching</h2>
 <div class="home-links">
     {% assign research_count = 0 %}
     {% for section in site.data.research.sections %}{% assign research_count = research_count | plus: section.items.size %}{% endfor %}
@@ -37,6 +38,7 @@ header-mask: 0.4
     </a>
 </div>
 
+<h2 class="home-section-heading">A few facts about myself</h2>
 <div class="post-container">
     {% capture about_facts %}{% include about/facts.md %}{% endcapture %}
     {{ about_facts | markdownify }}
@@ -51,21 +53,22 @@ header-mask: 0.4
 }
 
 .home-link-card {
-    --accent: #4a9eff;
+    --accent: var(--brand-primary);
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 20px;
-    background: linear-gradient(145deg, #1e1e3f 0%, #2d2d4a 100%);
-    border: 1px solid #374151;
+    background: var(--bg-secondary-gradient);
+    border: 1px solid var(--border-color);
     border-top: 4px solid var(--accent);
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px var(--card-shadow);
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .home-link-card.accent-green { --accent: #34d399; }
+:root[data-theme="light"] .home-link-card.accent-green { --accent: #047857; }
 
 .home-link-card:hover,
 .home-link-card:focus {
@@ -77,7 +80,7 @@ header-mask: 0.4
 .home-link-title {
     font-size: 1.25em;
     font-weight: 500;
-    color: #e5e7eb;
+    color: var(--text-primary);
 }
 
 .home-link-title .fa {
@@ -89,7 +92,7 @@ header-mask: 0.4
     margin-left: 6px;
     font-size: 0.65em;
     font-weight: 400;
-    color: #9ca3af;
+    color: var(--text-secondary);
 }
 
 .home-link-list {
@@ -97,7 +100,7 @@ header-mask: 0.4
     margin: 0;
     padding-left: 18px;
     line-height: 1.5;
-    color: #e5e7eb;
+    color: var(--text-primary);
     font-size: 0.95em;
 }
 
@@ -112,7 +115,7 @@ header-mask: 0.4
 .home-link-list li span {
     display: block;
     font-size: 0.85em;
-    color: #9ca3af;
+    color: var(--text-secondary);
 }
 
 .home-link-more {
@@ -140,7 +143,7 @@ header-mask: 0.4
         <div class="post-preview-content">
             {% if post.header-img %}
             <div class="post-preview-image">
-                <img src="{{ site.baseurl }}{{ post.header-img }}" alt="{{ post.title }}" class="post-header-thumbnail" onclick="openImageModal('{{ site.baseurl }}{{ post.header-img }}', '{{ post.title }}')">
+                <img src="{{ site.baseurl }}{{ post.header-img }}" alt="{{ post.title }}" class="post-header-thumbnail" width="120" height="120" loading="lazy" decoding="async" onclick="openImageModal('{{ site.baseurl }}{{ post.header-img }}', '{{ post.title }}')">
             </div>
             {% endif %}
             <div class="post-preview-text">

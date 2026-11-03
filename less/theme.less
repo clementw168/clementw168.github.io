@@ -1,0 +1,53 @@
+// Theme palettes. Dark is the default; light applies when <html data-theme="light">.
+// The attribute is set by the inline script in _includes/head.html (saved choice,
+// else the OS preference).
+
+:root {
+  color-scheme: dark;
+  --brand-primary: #4a9eff;
+  --brand-primary-hover: #7db9ff;
+  --on-accent: #0f0f23;
+  --bg-primary: #0f0f23;
+  --bg-primary-gradient: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  --bg-secondary: #1e1e3f;
+  --bg-secondary-gradient: linear-gradient(145deg, #1e1e3f 0%, #2d2d4a 100%);
+  --bg-tertiary: #2a2a4a;
+  --bg-tertiary-gradient: linear-gradient(145deg, #2a2a4a 0%, #3a3a5a 100%);
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --text-muted: #8b95a5;
+  --border-color: #374151;
+  --border-hover: #4b5563;
+  --hover-bg: #374151;
+  --nav-bg: rgba(30, 30, 63, 0.95);
+  --accent-glow: rgba(74, 158, 255, 0.1);
+  --light-effect: rgba(255, 255, 255, 0.05);
+  --surface-subtle: rgba(255, 255, 255, 0.05);
+  --surface-hover: rgba(255, 255, 255, 0.1);
+  --card-shadow: rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --brand-primary: #1d6fd8;
+  --brand-primary-hover: #0f56b3;
+  --on-accent: #ffffff;
+  --bg-primary: #f6f7fb;
+  --bg-primary-gradient: linear-gradient(135deg, #f6f7fb 0%, #eef1f8 50%, #e8edf7 100%);
+  --bg-secondary: #ffffff;
+  --bg-secondary-gradient: linear-gradient(145deg, #ffffff 0%, #f3f5fa 100%);
+  --bg-tertiary: #edf0f7;
+  --bg-tertiary-gradient: linear-gradient(145deg, #f1f3f9 0%, #e8ecf5 100%);
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --border-color: #d5d9e4;
+  --border-hover: #b4bbcc;
+  --hover-bg: #e2e6f0;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --accent-glow: rgba(29, 111, 216, 0.08);
+  --light-effect: rgba(0, 0, 0, 0.02);
+  --surface-subtle: rgba(0, 0, 0, 0.03);
+  --surface-hover: rgba(0, 0, 0, 0.06);
+  --card-shadow: rgba(31, 41, 55, 0.12);
+}
