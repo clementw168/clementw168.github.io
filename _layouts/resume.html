@@ -8,17 +8,9 @@ layout: default
 <!-- Main Content -->
 <div class="container">
   <div class="row">
-    {% if site.sidebar == false %}
-    <!-- NO SIDEBAR -->
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 postlist-container">
       {{ content }}
     </div>
-    {% else %}
-    <!-- USE SIDEBAR -->
-    <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 postlist-container">
-      {{ content }}
-    </div>
-    {% endif %}
   </div>
 </div>
 
@@ -78,7 +70,16 @@ layout: default
     font-size: 0.9em;
 }
 
+.resume-header > * {
+    min-width: 0;
+}
+
+.resume-contact {
+    flex-shrink: 0;
+}
+
 .resume-contact p {
+    white-space: nowrap;
     margin: 5px 0;
     color: var(--text-secondary, #9ca3af);
 }
@@ -131,9 +132,10 @@ layout: default
 }
 
 .resume-date {
-    color: var(--text-secondary, #9ca3af);
+    color: var(--text-primary, #e5e7eb);
+    opacity: 0.8;
     font-size: 0.9em;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .resume-organization {
@@ -152,7 +154,7 @@ layout: default
 }
 
 .resume-location {
-    font-weight: 300;
+    font-weight: 400;
     color: var(--text-secondary, #9ca3af);
     font-size: 0.9em;
 }

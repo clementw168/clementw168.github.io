@@ -51,6 +51,13 @@ layout: default
                     {% include multilingual-sel.html %}
                 {% endif %}
 
+                {% unless page.no-catalog %}
+                <details class="mobile-toc hidden-lg">
+                    <summary>On this page</summary>
+                    <ul class="mobile-toc-body"></ul>
+                </details>
+                {% endunless %}
+
 				{{ content }}
 
                 <hr style="visibility: hidden;">
@@ -59,7 +66,7 @@ layout: default
                     <li class="previous">
                         <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
                         Previous<br>
-                        <span>{{page.previous.title}}</span>
+                        <span>{{page.previous.title}}</span>{% if page.previous.subtitle %}<small>{{ page.previous.subtitle }}</small>{% endif %}
                         </a>
                     </li>
                     {% endif %}
@@ -67,7 +74,7 @@ layout: default
                     <li class="next">
                         <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
                         Next<br>
-                        <span>{{page.next.title}}</span>
+                        <span>{{page.next.title}}</span>{% if page.next.subtitle %}<small>{{ page.next.subtitle }}</small>{% endif %}
                         </a>
                     </li>
                     {% endif %}
