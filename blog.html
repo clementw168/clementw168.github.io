@@ -1,52 +1,177 @@
 ---
-layout: page
-title: "Blog"
-description: "Articles and posts"
-header-img: "/img_compressed/pages/blog-bg.jpg"
+title: Blog
+layout: default
+description: "「What I have done in the past」"
+header-img: "/img_compressed/pages/archive-bg.jpg"
 header-mask: 0.4
 ---
 
-{% for post in site.posts %}
-<div class="post-preview">
-    <div class="post-preview-content">
-        {% if post.header-img %}
-        <div class="post-preview-image">
-            <img src="{{ site.baseurl }}{{ post.header-img }}" alt="{{ post.title }}" class="post-header-thumbnail" onclick="openImageModal('{{ site.baseurl }}{{ post.header-img }}', '{{ post.title }}')">
-        </div>
-        {% endif %}
-        <div class="post-preview-text">
-            <a href="{{ post.url | prepend: site.baseurl }}">
-                <h2 class="post-title">
-                    {{ post.title }}
-                    {% if post.pride_score %}
-                    <span style="margin-left: 10px; display: inline-flex; align-items: center; gap: 2px;">
-                        {% for i in (1..post.pride_score) %}
-                            <span style="color: #ffc107; font-size: 0.9em;">⭐</span>
-                        {% endfor %}
-                    </span>
-                    {% endif %}
-                </h2>
-                {% if post.subtitle %}
-                <h3 class="post-subtitle">
-                    {{ post.subtitle }}
-                </h3>
-                {% endif %}
-                <div class="post-content-preview">
-                    {% if post.lang == 'en' %}
-                        {{ post.content | strip_html | truncate:300 }}
-                    {% else %}
-                        {{ post.content | strip_html | truncate:200 }}
-                    {% endif %}
-                </div>
-            </a>
-            <p class="post-meta">
-                Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-            </p>
-        </div>
-    </div>
+<!--
+Credits: this page shamelessly borrowed a lot from:
+https://github.com/kitian616/jekyll-TeXt-theme
+-->
+<!-- Page Header -->
+{% include intro-header.html type='page' short=true %}
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<!-- Tags (as filter) -->
+			<div id='tag_cloud' class="tags tags-sup js-tags">
+				<a class="tag-button--all" data-encode="">
+					Show All
+					<sup>{{site.posts.size}}</sup>
+				</a>
+
+				<div class="tag-container">
+					<div class="tag-list js-tag-list">
+						{% capture tags %}
+						{% for tag in site.tags %}
+						<a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}"
+							data-encode="{{ tag[0] | strip | url_encode }}" class="tag-button" title="{{ tag[0] }}"
+							rel="{{ tag[1].size }}">
+							{{ tag[0] }}
+							<sup>{{tag[1].size}}</sup>
+						</a>__SEPERATOR__
+						{% endfor %}
+						{% endcapture %}
+						{{ tags | split:'__SEPERATOR__' | sort }}
+					</div>
+					<button class="tag-toggle-btn js-tag-toggle" type="button">
+						<span class="toggle-text">Show More</span>
+						<span class="toggle-icon">▼</span>
+					</button>
+				</div>
+			</div>
+
+			<!-- View switch -->
+			<div class="view-switch" role="group" aria-label="Post list style">
+				<button type="button" class="view-switch-btn js-view-btn" data-view="detailed" title="Show a preview of each post">
+					<i class="fa fa-th-list"></i> Detailed
+				</button>
+				<button type="button" class="view-switch-btn js-view-btn" data-view="compact" title="Show titles only">
+					<i class="fa fa-list"></i> Compact
+				</button>
+			</div>
+
+			<!-- Article List -->
+			<div class="mini-post-list js-result view-detailed d-none">
+				{%- assign _sorted_list = site.posts -%}
+				{%- assign _sorted_list = _sorted_list | sort: 'date' -%}
+				{%- assign _sorted_list = _sorted_list | reverse -%}
+
+
+				{%- for _article in _sorted_list -%}
+				{%- assign _tags = '' -%}
+				{%- for _tag in _article.tags -%}
+				{%- assign _tag_encode = _tag | strip | url_encode -%}
+				{%- if forloop.last -%}
+				{%- assign _tags = _tags | append: _tag_encode -%}
+				{%- else -%}
+				{%- assign _tags = _tags | append: _tag_encode | append: ',' -%}
+				{%- endif -%}
+				{%- endfor -%}
+
+				{% comment %} group by year {% endcomment %}
+				{%- assign _currentdate = _article.date | date: '%Y' -%}
+				{%- if _currentdate != _date -%}
+				{%- unless forloop.first -%}</section>{%- endunless -%}
+				<section>
+					<span class="fa listing-seperator">
+						<span class="tag-text">{{ _currentdate }}</span>
+					</span>
+					{%- assign _date = _currentdate -%}
+					{%- endif -%}
+
+					<div class="post-preview item" data-tags="{{ _tags }}">
+						<div class="post-preview-content">
+							{% if _article.header-img %}
+							<div class="post-preview-image">
+								<img src="{{ site.baseurl }}{{ _article.header-img }}" alt="{{ _article.title }}" class="post-header-thumbnail" onclick="openImageModal('{{ site.baseurl }}{{ _article.header-img }}', '{{ _article.title }}')">
+							</div>
+							{% endif %}
+							<div class="post-preview-text">
+								<a href="{{ _article.url | prepend: site.baseurl }}">
+									<h2 class="post-title">
+										{{ _article.title }}
+										{% if _article.pride_score %}
+										<span style="margin-left: 10px; display: inline-flex; align-items: center; gap: 2px;">
+											{% for i in (1.._article.pride_score) %}
+												<span style="color: #ffc107; font-size: 0.9em;">⭐</span>
+											{% endfor %}
+										</span>
+										{% endif %}
+									</h2>
+									{% if _article.subtitle %}
+									<h3 class="post-subtitle">
+										{{ _article.subtitle }}
+									</h3>
+									{% endif %}
+									<div class="post-detail">
+										<div class="post-content-preview">
+											{{ _article.content | strip_html | truncate: 300 }}
+										</div>
+									</div>
+								</a>
+								<p class="post-meta post-detail">
+									Posted by {% if _article.author %}{{ _article.author }}{% else %}{{ site.title }}{% endif %} on {{ _article.date | date: "%B %-d, %Y" }}
+								</p>
+							</div>
+						</div>
+						<hr>
+					</div>
+					{%- if forloop.last -%}
+				</section>{%- endif -%}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 </div>
-<hr>
-{% endfor %}
+
+<style>
+.view-switch {
+	display: flex;
+	justify-content: flex-end;
+	gap: 6px;
+	margin: 15px 0 0;
+}
+
+.view-switch-btn {
+	padding: 6px 14px;
+	border: 1px solid #374151;
+	border-radius: 20px;
+	background: transparent;
+	color: #9ca3af;
+	font-size: 13px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.view-switch-btn:hover {
+	border-color: #4a9eff;
+	color: #e5e7eb;
+}
+
+.view-switch-btn.active {
+	border-color: #4a9eff;
+	background: #4a9eff;
+	color: #0f0f23;
+}
+
+/* Compact view hides the preview and the byline */
+.js-result.view-compact .post-detail {
+	display: none;
+}
+
+/* Detailed view: full-width byline under the preview */
+.js-result.view-detailed .post-preview > .post-preview-content .post-meta.post-detail {
+	position: static;
+	margin: 8px 0 0;
+	font-size: 13px;
+	line-height: 1.4;
+}
+</style>
 
 <!-- Image Modal -->
 <div id="imageModal" class="modal">
@@ -85,6 +210,32 @@ modal.onclick = function(event) {
         document.body.style.overflow = 'auto'; // Restore scrolling
     }
 }
+
+// Detailed / compact list switch, remembered between visits
+;(function() {
+    var list = document.querySelector('.js-result');
+    var buttons = document.querySelectorAll('.js-view-btn');
+    var KEY = 'blogView';
+
+    function setView(view) {
+        list.classList.toggle('view-detailed', view === 'detailed');
+        list.classList.toggle('view-compact', view === 'compact');
+        buttons.forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.view === view);
+        });
+    }
+
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    setView(saved === 'compact' ? 'compact' : 'detailed');
+
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            setView(btn.dataset.view);
+            try { localStorage.setItem(KEY, btn.dataset.view); } catch (e) {}
+        });
+    });
+})();
 
 // Close modal with Escape key
 document.addEventListener('keydown', function(event) {
