@@ -308,21 +308,18 @@ samp {
     }
   }
   // V1.6 Hux display title by default.
+  // Previous/next sit side by side and stretch to the same height
   .pager li {
-    width: 48%;
+    display: flex;
+    flex: 0 0 48.5%;
+    width: 48.5%;
+    float: none;
     &.next {
-      float: right;
-    }
-    &.previous {
-      float: left;
+      margin-left: auto;
     }
     > a {
+      flex: 1;
       width: 100%;
-      > span {
-        color: @brand-gray;
-        font-weight: normal;
-        letter-spacing: 0.5px;
-      }
     }
   }
   .anchorjs-link {
@@ -372,8 +369,13 @@ samp {
       font-size: 13px;
       line-height: 28px;
     }
+    // the dropdown has a themed background, so its links follow the theme too
     .nav li a {
-      color: white;
+      color: @text-primary;
+      &:hover,
+      &:focus {
+        color: @brand-primary;
+      }
     }
     .navbar-collapse {
       // the navbar do height-transition
@@ -913,41 +915,65 @@ footer,
 // Pager Styling
 
 .pager {
-  margin: 20px 0 0 !important;
+  margin: 20px 0 40px !important;
   padding: 0px !important;
+  display: flex;
+  align-items: stretch;
 
   li {
     > a,
     > span {
       .sans-serif;
-      text-transform: uppercase;
-      font-size: 13px;
-      font-weight: 800;
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
       letter-spacing: 1px;
-      padding: 10px;
-      background-color: @bg-secondary;
+      text-transform: uppercase;
+      line-height: 1.5;
+      padding: 14px 18px;
+      background: @card-bg-gradient;
       border: 1px solid @border-color;
-      border-radius: 0;
-      color: @text-primary;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      color: @text-secondary;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
       @media only screen and (min-width: 768px) {
-        font-size: 14px;
-        padding: 15px 25px;
+        padding: 16px 22px;
+      }
+      // the post title
+      > span {
+        display: block;
+        margin-top: 4px;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0;
+        text-transform: none;
+        color: @text-primary;
+        text-wrap: balance;
+      }
+      > small {
+        display: block;
+        margin-top: 4px;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0;
+        text-transform: none;
+        line-height: 1.4;
+        color: @text-secondary;
       }
     }
-
-    > a {
-      color: @text-primary;
+    &.previous > a {
+      text-align: left;
+    }
+    &.next > a {
+      text-align: right;
     }
     > a:hover,
     > a:focus {
-      color: white;
-      background-color: @brand-primary;
-      border: 1px solid @brand-primary;
-
-      // V1.6 display title
-      > span {
-        color: white;
-      }
+      background: @card-bg-gradient;
+      border-color: @brand-primary;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px @accent-glow;
     }
   }
 
@@ -1838,4 +1864,159 @@ footer .footer-links {
   .home-link-card:hover {
     transform: none !important;
   }
+}
+
+// ---------------------------------------------------------------------
+// Scan fixes
+// ---------------------------------------------------------------------
+
+// Dividers follow the theme instead of Bootstrap's near-white line
+hr {
+  border-top-color: @border-color;
+}
+.post-preview > hr,
+.post-preview-content + hr {
+  display: none;
+}
+
+// 404 (fullscreen) page: footer sits at the bottom, no card background
+.page-fullscreen {
+  footer {
+    position: fixed;
+    background: transparent;
+    padding: 0 0 16px;
+    .footer-links,
+    .list-inline {
+      display: none;
+    }
+  }
+  .intro-header::after {
+    display: none;
+  }
+  .fullscreen-actions {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: calc(50% + 60px);
+    text-align: center;
+    z-index: 5;
+    .btn {
+      color: @on-accent;
+      background: @brand-primary;
+      border-color: @brand-primary;
+      border-radius: 999px;
+      &:hover,
+      &:focus {
+        background: @brand-primary-hover;
+        border-color: @brand-primary-hover;
+      }
+    }
+  }
+}
+
+// Hero images fade into the page background
+.intro-header:not(.style-text)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 90px;
+  background: linear-gradient(to bottom, transparent, @bg-primary);
+  pointer-events: none;
+  z-index: 0;
+}
+
+// Post header on small screens: tighter and easier to read over the image
+@media only screen and (max-width: 767px) {
+  .intro-header .post-heading {
+    padding-top: 70px;
+    padding-bottom: 40px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+    h1 {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+    .subheading {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    .tags a {
+      font-size: 11px;
+      line-height: 22px;
+      padding: 0 8px;
+    }
+  }
+  .intro-header .header-mask {
+    background: rgba(0, 0, 0, 0.6) !important;
+  }
+}
+
+// "On this page" box for screens without the side catalog
+.mobile-toc {
+  margin: 0 0 30px;
+  padding: 0;
+  background: @card-bg-gradient;
+  border: 1px solid @border-color;
+  border-radius: 10px;
+  summary {
+    padding: 12px 16px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: @text-primary;
+    cursor: pointer;
+  }
+  .mobile-toc-body {
+    margin: 0;
+    padding: 0 16px 12px;
+    list-style: none;
+    li a {
+      display: block;
+      padding: 6px 0;
+      font-size: 15px;
+      line-height: 1.4;
+      color: @text-secondary;
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        color: @brand-primary;
+      }
+    }
+    .h3_nav a {
+      padding-left: 14px;
+    }
+    .h4_nav a,
+    .h5_nav a,
+    .h6_nav a {
+      padding-left: 28px;
+      font-size: 14px;
+    }
+  }
+}
+
+// Blog tag filter: keep the post list close to the top on phones
+@media only screen and (max-width: 767px) {
+  #tag_cloud .tag-list {
+    max-height: 72px;
+  }
+}
+
+.mobile-toc summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &::-webkit-details-marker {
+    display: none;
+  }
+  &::after {
+    content: '\25BE';
+    font-size: 14px;
+    transition: transform 0.2s ease;
+  }
+}
+.mobile-toc[open] summary::after {
+  transform: rotate(180deg);
 }

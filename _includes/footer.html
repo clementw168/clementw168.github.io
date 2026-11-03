@@ -180,6 +180,10 @@
 
     generateCatalog(".catalog-body");
 
+    // "On this page" box for narrow screens (the side catalog is hidden there)
+    generateCatalog(".mobile-toc-body");
+    if (!$(".mobile-toc-body li").length) { $(".mobile-toc").hide(); }
+
     // toggle side catalog
     $(".catalog-toggle").click((function (e) {
         e.preventDefault();
@@ -247,6 +251,7 @@
         }
         // interop with catalog 
         generateCatalog(".catalog-body");
+        generateCatalog(".mobile-toc-body");
     }
 
     // handle select change
