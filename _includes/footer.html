@@ -5,10 +5,12 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="footer-links">
                     <li><a href="{{ site.baseurl }}/">Home</a></li>
-                    <li><a href="{{ site.baseurl }}/research/">Research</a></li>
-                    <li><a href="{{ site.baseurl }}/teaching/">Teaching</a></li>
-                    <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
-                    <li><a href="{{ site.baseurl }}/resume/">Resume</a></li>
+                    {% comment %} Same rule as the navbar: every page with a title, unless hide-in-nav is set. {% endcomment %}
+                    {% for item in site.pages %}
+                    {% if item.title and item.hide-in-nav != true and item.title != site.title %}
+                    <li><a href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a></li>
+                    {% endif %}
+                    {% endfor %}
                 </ul>
 
                 <!-- SNS Link -->
