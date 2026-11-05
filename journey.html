@@ -1,0 +1,315 @@
+---
+layout: default
+title: "Journey"
+description: "A timeline of what I did, what I thought, and what I built on the side"
+header-img: "/img_compressed/unsplash/tamas-szedlak-wyFpJRafxyo-unsplash.jpg"
+header-mask: 0.6
+---
+
+<!-- Page Header -->
+{% include intro-header.html type='page' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 journey">
+
+      <p class="journey-intro">{{ site.data.journey.intro }}</p>
+
+      <div id="jt-root" class="jt-root" aria-label="Timeline of my journey"></div>
+      <noscript><p>This timeline needs JavaScript. The same stories are in the blog archive.</p></noscript>
+
+    </div>
+  </div>
+</div>
+
+<!-- Data: the journey file, plus a lookup of blog posts by slug -->
+<script id="jt-data" type="application/json">{{ site.data.journey | jsonify }}</script>
+<script id="jt-posts" type="application/json">{
+{%- for p in site.posts -%}
+  {{ p.slug | jsonify }}: { "url": {{ p.url | relative_url | jsonify }}, "title": {{ p.title | jsonify }}, "img": {{ p.header-img | default: '' | jsonify }}, "date": {{ p.date | date: "%Y-%m" | jsonify }} }{% unless forloop.last %},{% endunless %}
+{%- endfor -%}
+}</script>
+
+<style>
+.journey { color: var(--text-primary); margin-bottom: 60px; }
+.journey-intro { font-size: 1.15em; color: var(--text-secondary); margin: 10px 0 24px; }
+
+/* ---------- Horizontal chart ---------- */
+.jt-wrap { border: 1px solid var(--border-color); border-radius: 10px; background: var(--surface-subtle); }
+.jt-axisbar { position: sticky; top: 0; z-index: 20; display: flex; height: 30px; border-radius: 10px 10px 0 0;
+  background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); transition: top .25s ease; }
+.jt-axisbar .jt-label { position: static; height: 30px; padding: 6px 12px; flex: 0 0 120px; }
+.jt-axisclip { position: relative; flex: 1 1 auto; overflow: hidden; }
+.jt-axisin { position: relative; height: 30px; will-change: transform; }
+.jt-chart { overflow-x: auto; position: relative; padding-bottom: 6px; }
+.jt-inner { position: relative; }
+.jt-lane { display: flex; border-top: 1px solid var(--border-color); }
+.jt-lane:first-child { border-top: 0; }
+.jt-label { position: sticky; left: 0; z-index: 5; flex: 0 0 120px; box-sizing: border-box; padding: 10px 12px;
+  background: var(--bg-secondary); border-right: 1px solid var(--border-color);
+  font-size: 0.85em; font-weight: 600; color: var(--text-secondary); }
+.jt-label .fa { color: var(--brand-primary); margin-right: 6px; width: 14px; }
+.jt-track { position: relative; flex: 0 0 auto; }
+.jt-tick { position: absolute; top: 0; bottom: 0; border-left: 1px solid var(--border-color); }
+.jt-tick span { position: absolute; top: 6px; left: 6px; font-size: 0.8em; color: var(--text-muted); }
+.jt-gridline { position: absolute; top: 0; bottom: 0; border-left: 1px dashed var(--border-color); opacity: .5; }
+
+.jt-item { position: absolute; box-sizing: border-box; overflow: hidden; text-decoration: none !important;
+  color: var(--text-primary); border-radius: 6px; transition: transform .12s, box-shadow .12s; }
+a.jt-item:hover, a.jt-item:focus, .jt-item:hover { transform: translateY(-1px); box-shadow: 0 3px 10px var(--card-shadow); z-index: 3; }
+
+/* main bars */
+.jt-bar { height: 44px; padding: 5px 9px; background: var(--bg-tertiary); border-left: 4px solid var(--jt-c, var(--brand-primary));
+  font-size: 0.82em; line-height: 1.2; white-space: nowrap; text-overflow: ellipsis; }
+.jt-ico { float: left; width: 34px; height: 34px; margin: 0 8px 0 0; border-radius: 5px;
+  background: var(--bg-secondary) center/cover no-repeat; border: 1px solid var(--border-color); }
+.jt-mind .jt-ico { width: 36px; height: 36px; margin-top: 1px; font-style: normal; }
+.jt-bar b { display: block; overflow: hidden; text-overflow: ellipsis; }
+.jt-bar small { display: block; overflow: hidden; text-overflow: ellipsis; color: var(--text-secondary); }
+.k-school { --jt-c: #60a5fa; } .k-work { --jt-c: #34d399; } .k-startup { --jt-c: #fb923c; }
+.k-research { --jt-c: #a78bfa; } .k-association { --jt-c: #f472b6; } .k-gap { --jt-c: #9ca3af; }
+:root[data-theme="light"] .k-school { --jt-c: #2563eb; } :root[data-theme="light"] .k-work { --jt-c: #047857; }
+:root[data-theme="light"] .k-startup { --jt-c: #c2410c; } :root[data-theme="light"] .k-research { --jt-c: #6d28d9; }
+:root[data-theme="light"] .k-association { --jt-c: #be185d; } :root[data-theme="light"] .k-gap { --jt-c: #6b7280; }
+.jt-bar.k-gap { background: transparent; border: 1px dashed var(--border-hover); border-left: 4px solid var(--jt-c); }
+
+/* mindset cards */
+.jt-mind { height: 50px; padding: 5px 9px; font-style: italic; font-size: 0.82em; line-height: 1.25;
+  border: 1px dashed var(--brand-primary); background: transparent; }
+/* interest chips */
+.jt-umb { font-weight: 600; background: var(--bg-tertiary); border: 1px solid var(--border-hover); border-radius: 6px; }
+.jt-chip { height: 20px; padding: 1px 9px; font-size: 0.74em; line-height: 17px; border-radius: 10px; white-space: nowrap;
+  background: var(--surface-hover); border: 1px solid var(--border-color); }
+/* project thumbnails */
+.jt-thumb { height: 44px; padding: 0; border: 1px solid var(--border-color); background: var(--bg-tertiary) center/cover no-repeat; }
+
+/* popover */
+.jt-guide { display: none; position: absolute; top: 0; bottom: 0; width: 0; border-left: 2px dotted var(--brand-primary); pointer-events: none; z-index: 2; }
+.jt-item:hover + .jt-guide { display: block; }
+.jt-pop { position: fixed; z-index: 50; max-width: 330px; padding: 10px 12px; border-radius: 8px; pointer-events: none;
+  background: var(--bg-secondary); border: 1px solid var(--border-hover); box-shadow: 0 6px 20px var(--card-shadow);
+  font-size: 0.85em; display: none; }
+.jt-pop b { display: block; margin-bottom: 2px; }
+.jt-pop small { color: var(--text-secondary); }
+
+.jt-pop img { display: block; width: 100%; max-height: 110px; object-fit: cover; border-radius: 5px; margin-bottom: 6px; }
+
+</style>
+{% include academic-style.html %}
+
+<script>
+(function () {
+  var D = JSON.parse(document.getElementById('jt-data').textContent);
+  var P = JSON.parse(document.getElementById('jt-posts').textContent);
+  var root = document.getElementById('jt-root');
+  var LABEL_W = 120;
+
+  // ---- months & scale ----
+  function mon(s) { if (s === 'now') s = D.axis.now; var a = s.split('-'); return +a[0] * 12 + (+a[1]) - 1; }
+  var A0 = mon(D.axis.start), A1 = mon(D.axis.end) + 1;
+  var zoom = D.axis.zoom.map(function (z) { return { m: mon(z.from), ppm: z.ppm }; });
+  function X(m) {            // piecewise-linear: months -> px
+    var x = 0;
+    for (var i = 0; i < zoom.length; i++) {
+      var from = zoom[i].m, to = i + 1 < zoom.length ? zoom[i + 1].m : A1;
+      if (m <= from) break;
+      x += (Math.min(m, to) - from) * zoom[i].ppm;
+    }
+    return x;
+  }
+  var W = X(A1);
+
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function post(it) { return it.post_slug ? P[it.post_slug] : null; }
+  function ico(it) {
+    var p = post(it);
+    return p && p.img ? '<span class="jt-ico" style="background-image:url(' + esc(p.img) + ')"></span>' : '';
+  }
+  function period(it) {
+    var f = function (s) { return s === 'now' ? 'now' : s; };
+    return it.start ? (it.end ? f(it.start) + ' to ' + f(it.end) : f(it.start)) : (it.date || '');
+  }
+
+  // ---- row packing: items stack when they overlap in x ----
+  function pack(items, h, gap) {
+    var rows = [], maxRow = 0;
+    items.sort(function (a, b) { return a.x - b.x; });
+    items.forEach(function (it) {
+      var r = 0;
+      while (rows[r] !== undefined && rows[r] > it.x - 4) r++;
+      rows[r] = it.x + it.w;
+      it.row = r; if (r > maxRow) maxRow = r;
+    });
+    return { height: (maxRow + 1) * (h + gap) + gap, step: h + gap, gap: gap };
+  }
+
+  // Spread packing: keep at most maxRows rows; a crowded item slides right to the nearest free slot
+  // instead of opening a new row. Its true x is kept in x0 (used for the hover guide line).
+  function packSpread(items, h, gap, maxRows) {
+    var right = [], i;
+    for (i = 0; i < maxRows; i++) right.push(-1e9);
+    items.sort(function (a, b) { return a.x - b.x; });
+    items.forEach(function (it) {
+      var best = null;
+      for (var r = 0; r < maxRows; r++) {
+        var px = Math.max(it.x, right[r] + 6), cost = px - it.x;
+        if (best === null || cost < best.cost - 0.5) best = { r: r, px: px, cost: cost };
+      }
+      it.x0 = it.x; it.x = best.px; it.row = best.r; right[best.r] = best.px + it.w;
+    });
+    return { height: maxRows * (h + gap) + gap, step: h + gap, gap: gap };
+  }
+
+  // ---- lane definitions: how to place/draw each item type ----
+  var LANES = {
+    main: function (it) {
+      var x = X(mon(it.start)), w = Math.max(X(mon(it.end) + 1) - x - 6, 175);  // -6: small gap so back-to-back bars share a row
+      return { x: x, w: w, h: 44, cls: 'jt-bar k-' + (it.kind || 'work'),
+        html: ico(it) + '<b>' + esc(it.title) + '</b>' + (it.sub ? '<small>' + esc(it.sub) + '</small>' : '') };
+    },
+    mindset: function (it) {
+      return { x: X(mon(it.start)), w: 255, h: 50, cls: 'jt-mind', html: ico(it) + '“' + esc(it.text) + '”' };
+    },
+    interests: function (it) {
+      var x = X(mon(it.start)), w = Math.max(X(mon(it.end) + 1) - x - 3, 18 + it.label.length * 6.3);
+      return { x: x, w: w, h: 20, cls: 'jt-chip', html: esc(it.label) };
+    },
+    projects: function (it) {
+      var p = post(it), x = X(mon(it.date));
+      return { x: x, w: 62, h: 44, cls: 'jt-thumb', html: '',
+        style: p && p.img ? 'background-image:url(' + esc(p.img) + ')' : '' };
+    }
+  };
+
+  // ---- build chart ----
+  // interests lane: grouped (umbrella bar + topic chips); flatten for the phone list
+  var il = D.lanes.interests;
+  if (il && il.groups) {
+    il.items = [];
+    il.groups.forEach(function (g) { if (g.umbrella) il.items.push(g.umbrella); g.items.forEach(function (i) { il.items.push(i); }); });
+  }
+
+  // projects lane: every post that is not already on the main lane
+  var pl = D.lanes.projects;
+  if (pl && pl.auto) {
+    var used = {};
+    D.lanes.main.items.forEach(function (i) { if (i.post_slug) used[i.post_slug] = 1; });
+    (pl.exclude || []).forEach(function (s) { used[s] = 1; });
+    pl.items = Object.keys(P).filter(function (slug) { return !used[slug]; }).map(function (slug) {
+      return { date: (pl.dates || {})[slug] || P[slug].date, post_slug: slug };
+    });
+  }
+  var order = ['main', 'projects', 'interests', 'mindset'];
+  var y1 = Math.floor((A1 - 1) / 12);
+  var ticks = '';
+  for (var y = Math.floor(A0 / 12); y <= y1; y++)
+    ticks += '<div class="jt-tick" style="left:' + Math.max(X(y * 12), 0) + 'px"><span>' + y + '</span></div>';
+  // the year bar lives outside the horizontal scroller so it can stick to the top of the page;
+  // its content is shifted in JS to follow the chart's horizontal scroll
+  var html = '<div class="jt-wrap"><div class="jt-axisbar" id="jt-axisbar"><div class="jt-label">Year</div>' +
+    '<div class="jt-axisclip"><div class="jt-axisin" id="jt-axisin" style="width:' + W + 'px">' + ticks + '</div></div></div>' +
+    '<div class="jt-chart"><div class="jt-inner" style="width:' + (LABEL_W + W) + 'px">';
+
+  var gridYears = [];
+  for (var gy = Math.floor(A0 / 12); gy <= y1; gy++) gridYears.push(Math.max(X(gy * 12), 0));
+
+  order.forEach(function (key) {
+    var lane = D.lanes[key]; if (!lane) return;
+    var placed, layout;
+    if (lane.groups) {
+      // each group = optional umbrella bar + its chips packed beneath. Groups that do not overlap
+      // in time share a band (same rows); groups that overlap get a new band below.
+      var gs = lane.groups.map(function (g) {
+        var items = [], t = 0;
+        if (g.umbrella) { var u = LANES[key](g.umbrella); u.it = g.umbrella; u.cls += ' jt-umb'; u.top = 0; items.push(u); t = 23; }
+        var ch = g.items.map(function (it) { var p = LANES[key](it); p.it = it; return p; });
+        var lay = pack(ch, 20, 3);
+        ch.forEach(function (p) { p.top = t + p.row * lay.step; items.push(p); });
+        return { items: items, h: t + lay.height - lay.gap,
+          l: Math.min.apply(null, items.map(function (p) { return p.x; })),
+          r: Math.max.apply(null, items.map(function (p) { return p.x + p.w; })) };
+      });
+      var bands = [];
+      gs.forEach(function (g) {
+        var band = null;
+        for (var i = 0; i < bands.length && !band; i++)
+          if (bands[i].gs.every(function (o) { return g.l >= o.r || g.r <= o.l; })) band = bands[i];
+        if (!band) { band = { gs: [], h: 0 }; bands.push(band); }
+        band.gs.push(g); band.h = Math.max(band.h, g.h);
+      });
+      placed = []; var top = 5;
+      bands.forEach(function (b) {
+        b.gs.forEach(function (g) { g.items.forEach(function (p) { p.top += top; placed.push(p); }); });
+        top += b.h + 7;
+      });
+      layout = { height: top - 1, gap: 3, step: 23 };
+    } else {
+      placed = lane.items.map(function (it) { var p = LANES[key](it); p.it = it; return p; });
+      var maxH = Math.max.apply(null, placed.map(function (p) { return p.h; }));
+      layout = lane.max_rows ? packSpread(placed, maxH, 6, lane.max_rows) : pack(placed, maxH, 6);
+    }
+    html += '<div class="jt-lane"><div class="jt-label"><i class="fa fa-' + esc(lane.icon) + '"></i>' + esc(lane.title) + '</div>';
+    html += '<div class="jt-track" style="width:' + W + 'px;height:' + layout.height + 'px">';
+    gridYears.forEach(function (gx) { html += '<div class="jt-gridline" style="left:' + gx + 'px"></div>'; });
+    placed.forEach(function (p) {
+      var it = p.it, po = post(it);
+      var tag = po ? 'a' : 'div';
+      var title = key === 'projects' ? (po ? po.title : '') : (it.title || it.label || it.where || it.text);
+      var desc = key === 'mindset' ? (it.full || '') : (it.sub || '');
+      html += '<' + tag + ' class="jt-item ' + p.cls + '"' + (po ? ' href="' + esc(po.url) + '"' : '') +
+        ' style="left:' + p.x + 'px;top:' + (p.top !== undefined ? p.top : layout.gap + p.row * layout.step) + 'px;width:' + p.w + 'px;height:' + p.h + 'px;' + (p.style || '') + '"' +
+        ' data-t="' + esc(title) + '" data-d="' + esc(desc) + '" data-p="' + esc(period(it)) + '" data-s="' + esc(po ? po.title : '') + '" data-l="' + (po ? 1 : 0) + '" data-i="' + esc(po && po.img ? po.img : '') + '">' +
+        p.html + '</' + tag + '>';
+      if (p.x0 !== undefined && Math.abs(p.x0 - p.x) > 2)
+        html += '<i class="jt-guide" style="left:' + (p.x0 + 1) + 'px"></i>';
+    });
+    html += '</div></div>';
+  });
+  html += '</div></div></div>';
+
+  html += '<div class="jt-pop" id="jt-pop"></div>';
+  root.innerHTML = html;
+
+  // ---- popover ----
+  var pop = document.getElementById('jt-pop');
+  function show(e) {
+    var el = e.currentTarget, t = el.getAttribute('data-t'), d = el.getAttribute('data-d'), p = el.getAttribute('data-p');
+    if (!t && !d) return;
+    var im = el.getAttribute('data-i');
+    var st = el.getAttribute('data-s');
+    pop.innerHTML = (im ? '<img src="' + esc(im) + '" alt="">' : '') + (t ? '<b>' + esc(t) + '</b>' : '') + (d ? esc(d) + '<br>' : '') + (st && st !== t ? '<small><i class="fa fa-pencil"></i> ' + esc(st) + '</small><br>' : '') + '<small>' + esc(p) +
+      (el.getAttribute('data-l') === '1' ? ' · click to read the story' : '') + '</small>';
+    pop.style.display = 'block';
+    var r = el.getBoundingClientRect();
+    var left = Math.min(Math.max(r.left, 8), window.innerWidth - pop.offsetWidth - 8);
+    var top = r.bottom + 8; if (top + pop.offsetHeight > window.innerHeight - 8) top = r.top - pop.offsetHeight - 8;
+    pop.style.left = left + 'px'; pop.style.top = top + 'px';
+  }
+  function hide() { pop.style.display = 'none'; }
+  // touch screens: a tap shows the card, a tap anywhere else hides it
+  document.addEventListener('touchstart', function (e) { if (!e.target.closest || !e.target.closest('.jt-item')) hide(); }, { passive: true });
+  [].forEach.call(root.querySelectorAll('.jt-item'), function (el) {
+    el.addEventListener('mouseenter', show); el.addEventListener('focus', show);
+    el.addEventListener('mouseleave', hide); el.addEventListener('blur', hide);
+  });
+  var chart = root.querySelector('.jt-chart');
+  var axisIn = document.getElementById('jt-axisin'), axisBar = document.getElementById('jt-axisbar');
+  function syncAxis() { axisIn.style.transform = 'translateX(' + (-chart.scrollLeft) + 'px)'; }
+  chart.addEventListener('scroll', function () { hide(); syncAxis(); });
+
+  // Sticky year bar vs. the navbar: the theme hides the navbar when scrolling down and slides it back
+  // in when scrolling up (class is-visible). Sit below it while it shows, at the very top otherwise.
+  var nav = document.querySelector('.navbar-custom');
+  function placeAxis() {
+    var showing = nav && nav.classList.contains('is-fixed') && nav.classList.contains('is-visible');
+    axisBar.style.top = (showing ? nav.offsetHeight : 0) + 'px';
+  }
+  if (nav) {
+    new MutationObserver(placeAxis).observe(nav, { attributes: true, attributeFilter: ['class'] });
+    placeAxis();
+  }
+
+  // open at the beginning of the story
+  chart.scrollLeft = 0;
+})();
+</script>

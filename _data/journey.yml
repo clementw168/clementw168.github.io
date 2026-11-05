@@ -1,0 +1,155 @@
+# Journey Data File
+# Content for the journey page (journey.html): a horizontal swimlane timeline.
+#
+# Dates are "YYYY-MM". An item with no "end" is a point in time; end: now means ongoing.
+# post_slug links an item to a blog post (its cover image is used for project thumbnails).
+#
+# DRAFT: mindset and interests are my guesses from the posts. Rewrite freely.
+# Lanes (in display order): main, mindset, interests, projects, life.
+
+intro: ""
+
+# Axis and zoom. ppm = pixels per month, applied from "from" until the next entry.
+axis:
+  start: "2018-09"
+  end: "2026-12"
+  now: "2026-11"
+  zoom:
+    - { from: "2018-09", ppm: 9 }
+    - { from: "2021-01", ppm: 16 }
+    - { from: "2022-01", ppm: 20 }
+
+lanes:
+  main:
+    title: Main occupation
+    icon: briefcase
+    # kind: school | work | startup | research | association | gap (picks the colour)
+    items:
+      - { title: "Lycée Henri IV", sub: "Student, MPSI/MP*", start: "2018-09", end: "2020-07", kind: school }
+      - { title: "CentraleSupélec", sub: "Student, MSc Data Science", start: "2020-09", end: "2022-01", kind: school }
+      - { title: "Gap year", sub: "", start: "2022-02", end: "2023-08", kind: gap }
+      - { title: "CentraleSupélec", sub: "Student, MSc Data Science (last year)", start: "2023-09", end: "2024-11", kind: school }
+      - { title: "Automatants", sub: "President", start: "2021-01", end: "2022-01", kind: association, post_slug: president }
+      - { title: "Paris Digital Lab", sub: "Machine Learning Consultant", start: "2022-02", end: "2022-07", kind: work, post_slug: paris-digital-lab-consulting }
+      - { title: "Polygon", sub: "Data Scientist Intern", start: "2022-08", end: "2023-01", kind: work, post_slug: polygon-diagnostic-assistance }
+      - { title: "Photogen", sub: "Co-Founder and MLOps Engineer", start: "2022-12", end: "2023-06", kind: startup, post_slug: photogen-ai-startup }
+      - { title: "Stryker", sub: "3D Computer Vision R&D Intern", start: "2023-02", end: "2023-07", kind: work, post_slug: stryker-3d-surgery-tracking }
+      - { title: "ENS Paris-Saclay", sub: "Student, MSc Applied Mathematics (MVA)", start: "2023-09", end: "2024-11", kind: school }
+      - { title: "Google DeepMind", sub: "Student Researcher, Nash Equilibrium Project", start: "2023-10", end: "2024-04", kind: research, post_slug: deepmind-nash-equilibrium-research }
+      - { title: "Beacon Biosignals", sub: "Machine Learning Engineer Intern", start: "2024-05", end: "2024-10", kind: work, post_slug: beacon-biosignals-eeg-foundation-model }
+      - { title: "Mirakl", sub: "Data Scientist", start: "2024-12", end: "2025-08", kind: work, post_slug: mirakl-delivery-estimation }
+      - { title: "Mirakl × IP Paris", sub: "CIFRE PhD Researcher", start: "2025-09", end: now, kind: research }
+
+
+  projects:
+    title: Other projects
+    icon: flask
+    # Built automatically from every published blog post that is not already on the
+    # "main" lane. Placed at the post's date unless overridden below.
+    auto: true
+    max_rows: 4            # crowded thumbnails slide sideways instead of stacking higher
+    exclude: []            # post slugs to hide
+    dates: {}              # post slug -> "YYYY-MM", when the work really happened
+    #  e.g.  mirakl-delivery-estimation: "2025-03"
+
+  interests:
+    title: Interests
+    icon: compass
+    # "umbrella" is the wide bar for a whole cycle of curiosity; the chips under it are its
+    # topics. Short chips = exploring, long chip = focusing.
+    # Groups that do not overlap in time share the same rows (left to right); otherwise they stack.
+    groups:
+      - items:
+          - { label: "Maths", start: "2018-09", end: "2020-08" }
+          - { label: "Computer science & algorithms", start: "2018-09", end: "2020-08" }
+
+      - umbrella: { label: "Coding and applied machine learning", start: "2020-09", end: "2023-08" }
+        items:
+          - { label: "AI and deep learning", start: "2020-09", end: "2021-12" }
+          - { label: "Web dev", start: "2020-09", end: "2021-03" }
+          - { label: "Robotics", start: "2020-11", end: "2021-07" }
+          - { label: "Game dev", start: "2021-01", end: "2021-03" }
+          - { label: "Computer vision", start: "2021-06", end: "2023-07" }
+          - { label: "Infrastructure and MLOps", start: "2022-08", end: "2023-06" }   # Polygon, Photogen
+          - { label: "Diffusion models", start: "2022-12", end: "2023-07" }
+
+      - umbrella: { label: "Research topics in AI", start: "2023-09", end: now }
+        items:
+          - { label: "Reinforcement learning", start: "2023-09", end: "2024-06" }
+          - { label: "Time series", start: "2024-01", end: "2024-12" }
+          - { label: "Scaling and foundation models", start: "2024-05", end: now }
+          - { label: "Graphs", start: "2024-04", end: now }
+
+  mindset:
+    title: Mindset
+    icon: lightbulb-o
+    # Each card sits at "start". text = short headline shown on the card, where = hover title,
+    # full = the longer reflection shown on hover. post_slug links to the story.
+    items:
+      - start: "2019-01"
+        where: "Lycée Henri IV"
+        text: "I wanted to be the best. Then I met people far better."
+        full: "I just wanted to be the best in the hardest theoretical discipline. I was humbled when I discovered how many people were so much better than me."
+
+      - start: "2020-09"
+        where: "Beginning of CentraleSupélec"
+        text: "So much beyond maths, and I felt late."
+        full: "I discovered so many things beyond maths and algorithms: robotics, software dev, AI. I was so happy to find so many interesting things. But I felt late: there is so much to learn, and others had started so early compared to me."
+
+      - start: "2021-02"
+        where: "To The Ground game jam"
+        text: "I can learn about anything."
+        full: "I understood that I had the capacity to learn about anything."
+        post_slug: 3d-horror-game-unity
+
+      - start: "2021-11"
+        where: "Automatants"
+        text: "Building with friends is fun. I'd rather build than lead."
+        full: "I discovered the joy of working with friends on a common passion, and how broad AI is. Leading people is fun, but I would rather work on a project than lead it."
+        post_slug: president
+
+      - start: "2022-04"
+        where: "Paris Digital Lab"
+        text: "I can do a lot, but it doesn't make me vibrate."
+        full: "I can do so many applied things, but it doesn't make me vibrate. I need to do harder things."
+        post_slug: paris-digital-lab-consulting
+
+      - start: "2022-09"
+        where: "Polygon"
+        text: "How can US founders be that good at everything?"
+        full: "The US founders are mind-blowing. How can they be that good at everything? How can I get better?"
+        post_slug: polygon-diagnostic-assistance
+
+      - start: "2023-02"
+        where: "Stryker"
+        text: "I can build a pipeline alone. ML is one piece."
+        full: "I can build a pipeline by myself, even from obscure hardware. Deep learning solves just a part of it."
+        post_slug: stryker-3d-surgery-tracking
+
+      - start: "2023-06"
+        where: "Photogen"
+        text: "We built a great product. It wasn't enough."
+        full: "We built an amazing product, but that wasn't enough. Maybe technical skills are not enough."
+        post_slug: photogen-ai-startup
+
+      - start: "2023-11"
+        where: "Last year of studies"
+        text: "So many fields to discover. I feel rushed."
+        full: "I feel rushed: there are so many research fields I do not know yet. I am proud of what I have done until now, but I feel like I have not put my energy in the right place."
+
+      - start: "2024-08"
+        where: "Beacon Biosignals"
+        text: "Scaling laws are powerful. I'm still a beginner in ML."
+        full: "Scaling laws are so powerful. Next to them I felt like a beginner in deep learning research, with so much left to learn."
+        post_slug: beacon-biosignals-eeg-foundation-model
+
+      - start: "2025-03"
+        where: "Data scientist at Mirakl"
+        text: "Exciting to ship, but not intellectually enough."
+        full: "It was exciting to build a product end to end and see customers using it. But it wasn't satisfying intellectually."
+        post_slug: mirakl-delivery-estimation
+
+      - start: "2025-09"
+        where: "PhD"
+        text: "A PhD is hard, and exciting at the same time."
+        full: "Doing a PhD is hard, but exciting at the same time."
